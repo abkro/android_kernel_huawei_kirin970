@@ -18,7 +18,7 @@
 #include "csmi_sanity.h"
 #include "csmi_regs.h"
 #include "cps.h"
-#include "slimbus_debug.h"
+#include "../../../slimbus_debug.h"
 #include "slimbus_drv.h"
 
 /*lint -e750 -e578 -e866 -e774 -e730 -e514 -e64 -e527 -e613*/
@@ -901,7 +901,7 @@ static uint32_t CSMI_EncodeMessage(CSMI_Instance *instance, uint8_t *memoryToFil
 		messageIntegrity = CSMI_CrcMessageIntegrity(memoryToFill, primaryIntegrityBytes -1, remainingLength - 3 + 1, primaryIntegrity);
 		CSMI_SetMsgField(memoryToFill, messageIntegrity, (offset + message->payloadLength), MESSAGE_INTEGRITY);
 	}
-	return lengthArbitrationField + lengthHeaderField + message->payloadLength + 1;/* [false alarm]:fortify Îó¾¯  */
+	return lengthArbitrationField + lengthHeaderField + message->payloadLength + 1;/* [false alarm]:fortify ï¿½ï¿½  */
 
 }
 
@@ -1419,7 +1419,7 @@ static inline uint8_t CSMI_ReceiveMessages(CSMI_Instance *instance) {
 				SLIMBUS_CORE_LIMIT_ERR("process message fail\n");
 		}
 	}
-	return errors ? EIO : 0;													/* [false alarm]:fortify Îó¾¯  */
+	return errors ? EIO : 0;													/* [false alarm]:fortify ï¿½ï¿½  */
 }
 
 

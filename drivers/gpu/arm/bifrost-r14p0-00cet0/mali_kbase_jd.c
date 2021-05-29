@@ -28,14 +28,14 @@
 #ifdef CONFIG_COMPAT
 #include <linux/compat.h>
 #endif
-#include <mali_kbase.h>
+#include "mali_kbase.h"
 #include <linux/random.h>
 #include <linux/version.h>//lint !e451
 #include <linux/ratelimit.h>
 
-#include <mali_kbase_jm.h>
-#include <mali_kbase_hwaccess_jm.h>
-#include <mali_kbase_tlstream.h>
+#include "mali_kbase_jm.h"
+#include "mali_kbase_hwaccess_jm.h"
+#include "mali_kbase_tlstream.h"
 
 #include "mali_kbase_dma_fence.h"
 #include "mali_kbase_config_platform.h"

@@ -43,7 +43,7 @@
 #ifdef CONFIG_HISI_BCI_BATTERY
 #include <linux/power/hisi/hisi_bci_battery.h>
 #endif
-#include <bq2419x_charger.h>
+#include "bq2419x_charger.h"
 
 #define HWLOG_TAG bq2419x_charger
 HWLOG_REGIST();

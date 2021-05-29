@@ -22,9 +22,9 @@
 #include "contexthub_route.h"
 #include "contexthub_boot.h"
 #include "protocol.h"
-#include <sensor_sysfs.h>
-#include <sensor_config.h>
-#include <sensor_detect.h>
+#include "sensor_sysfs.h"
+#include "sensor_config.h"
+#include "sensor_detect.h"
 #include "contexthub_debug.h"
 #include <linux/mtd/hisi_nve_interface.h>
 #include <linux/switch.h>
@@ -3222,12 +3222,12 @@ static void register_priv_notifier(SENSOR_DETECT_LIST s_id)
 
 /*******************************************************************************************
 Function:	sensor_set_cfg_data
-Description: ½«ÅäÖÃ²ÎÊý·¢ÖÁmcu ²à
-Data Accessed:  ÎÞ
-Data Updated:   ÎÞ
-Input:        ÎÞ
-Output:         ÎÞ
-Return:         ³É¹¦»òÕßÊ§°ÜÐÅÏ¢: 0->³É¹¦, -1->Ê§°Ü
+Description: ï¿½ï¿½ï¿½ï¿½ï¿½Ã²ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½mcu ï¿½ï¿½
+Data Accessed:  ï¿½ï¿½
+Data Updated:   ï¿½ï¿½
+Input:        ï¿½ï¿½
+Output:         ï¿½ï¿½
+Return:         ï¿½É¹ï¿½ï¿½ï¿½ï¿½ï¿½Ê§ï¿½ï¿½ï¿½ï¿½Ï¢: 0->ï¿½É¹ï¿½, -1->Ê§ï¿½ï¿½
 *******************************************************************************************/
 int sensor_set_cfg_data(void)
 {

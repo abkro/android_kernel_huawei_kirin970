@@ -73,8 +73,8 @@ static struct of_device_id hisi_noc_match[] = {
 	{} /* end */
 };
 
-/*µ±ptype=1Ê±£¬½«nocµÄ¼Ä´æÆ÷ÐÅÏ¢ÓÃprintkÊä³ö£¬
-	µ±ptype=0Ê±£¬½«ÆäÐ´ÈëpstoreµÄÄÚ´æÖÐ*/
+/*ï¿½ï¿½ptype=1Ê±ï¿½ï¿½ï¿½ï¿½nocï¿½Ä¼Ä´ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢ï¿½ï¿½printkï¿½ï¿½ï¿½ï¿½ï¿½
+	ï¿½ï¿½ptype=0Ê±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð´ï¿½ï¿½pstoreï¿½ï¿½ï¿½Ú´ï¿½ï¿½ï¿½*/
 void noc_record_log_pstorememory(void __iomem *base, int ptype)
 {
 	unsigned int offset;

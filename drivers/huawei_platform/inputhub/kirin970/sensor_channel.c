@@ -20,7 +20,7 @@
 #include <linux/uaccess.h>
 #include <linux/device.h>
 #include <huawei_platform/inputhub/sensorhub.h>
-#include <sensor_detect.h>
+#include "sensor_detect.h"
 #include "contexthub_route.h"
 #include "contexthub_boot.h"
 #include "sensor_config.h"
@@ -268,12 +268,12 @@ static int send_sensor_cmd(unsigned int cmd, unsigned long arg)
 
 /*******************************************************************************************
 Function:       shb_read
-Description:    ¶¨Òå/dev/sensorhub½ÚµãµÄ¶Áº¯Êý£¬´ÓkernelµÄÊÂ¼þ»º³åÇøÖÐ¶ÁÊý¾Ý
-Data Accessed:  ÎÞ
-Data Updated:   ÎÞ
+Description:    ï¿½ï¿½ï¿½ï¿½/dev/sensorhubï¿½Úµï¿½Ä¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½kernelï¿½ï¿½ï¿½Â¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð¶ï¿½ï¿½ï¿½ï¿½ï¿½
+Data Accessed:  ï¿½ï¿½
+Data Updated:   ï¿½ï¿½
 Input:          struct file *file, char __user *buf, size_t count, loff_t *pos
-Output:         ÎÞ
-Return:         Êµ¼Ê¶ÁÈ¡Êý¾ÝµÄ³¤¶È
+Output:         ï¿½ï¿½
+Return:         Êµï¿½Ê¶ï¿½È¡ï¿½ï¿½ï¿½ÝµÄ³ï¿½ï¿½ï¿½
 *******************************************************************************************/
 static ssize_t shb_read(struct file *file, char __user *buf, size_t count,
               loff_t *pos)
@@ -494,12 +494,12 @@ static void send_sensor_add_data(void)//additional data
 
 /*******************************************************************************************
 Function:       shb_ioctl
-Description:    ¶¨Òå/dev/sensorhub½ÚµãµÄioctlº¯Êý£¬Ö÷ÒªÓÃÓÚÉèÖÃ´«¸ÐÆ÷ÃüÁîºÍ»ñÈ¡MCUÊÇ·ñ´æÔÚ
-Data Accessed:  ÎÞ
-Data Updated:   ÎÞ
-Input:          struct file *file, unsigned int cmd, unsigned long arg£¬cmdÊÇÃüÁîÂë£¬argÊÇÃüÁî¸úµÄ²ÎÊý
-Output:         ÎÞ
-Return:         ³É¹¦»òÕßÊ§°ÜÐÅÏ¢
+Description:    ï¿½ï¿½ï¿½ï¿½/dev/sensorhubï¿½Úµï¿½ï¿½ioctlï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ã´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í»ï¿½È¡MCUï¿½Ç·ï¿½ï¿½ï¿½ï¿½
+Data Accessed:  ï¿½ï¿½
+Data Updated:   ï¿½ï¿½
+Input:          struct file *file, unsigned int cmd, unsigned long argï¿½ï¿½cmdï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ë£¬argï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä²ï¿½ï¿½ï¿½
+Output:         ï¿½ï¿½
+Return:         ï¿½É¹ï¿½ï¿½ï¿½ï¿½ï¿½Ê§ï¿½ï¿½ï¿½ï¿½Ï¢
 *******************************************************************************************/
 static long shb_ioctl(struct file *file, unsigned int cmd, unsigned long arg)
 {
@@ -535,12 +535,12 @@ static long shb_ioctl(struct file *file, unsigned int cmd, unsigned long arg)
 
 /*******************************************************************************************
 Function:       shb_open
-Description:    ¶¨Òå/dev/sensorhub½ÚµãµÄopenº¯Êý£¬ÔÝÎ´ÊµÏÖÊµÖÊ¹¦ÄÜ
-Data Accessed:  ÎÞ
-Data Updated:   ÎÞ
+Description:    ï¿½ï¿½ï¿½ï¿½/dev/sensorhubï¿½Úµï¿½ï¿½openï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Î´Êµï¿½ï¿½Êµï¿½Ê¹ï¿½ï¿½ï¿½
+Data Accessed:  ï¿½ï¿½
+Data Updated:   ï¿½ï¿½
 Input:          struct inode *inode, struct file *file
-Output:         ÎÞ
-Return:         ³É¹¦»òÕßÊ§°ÜÐÅÏ¢
+Output:         ï¿½ï¿½
+Return:         ï¿½É¹ï¿½ï¿½ï¿½ï¿½ï¿½Ê§ï¿½ï¿½ï¿½ï¿½Ï¢
 *******************************************************************************************/
 static int shb_open(struct inode *inode, struct file *file)
 {
@@ -550,12 +550,12 @@ static int shb_open(struct inode *inode, struct file *file)
 
 /*******************************************************************************************
 Function:       shb_release
-Description:    ¶¨Òå/dev/sensorhub½ÚµãµÄreleaseº¯Êý£¬ÔÝÎ´ÊµÏÖÊµÖÊ¹¦ÄÜ
-Data Accessed:  ÎÞ
-Data Updated:   ÎÞ
+Description:    ï¿½ï¿½ï¿½ï¿½/dev/sensorhubï¿½Úµï¿½ï¿½releaseï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Î´Êµï¿½ï¿½Êµï¿½Ê¹ï¿½ï¿½ï¿½
+Data Accessed:  ï¿½ï¿½
+Data Updated:   ï¿½ï¿½
 Input:          struct inode *inode, struct file *file
-Output:         ÎÞ
-Return:         ³É¹¦»òÕßÊ§°ÜÐÅÏ¢
+Output:         ï¿½ï¿½
+Return:         ï¿½É¹ï¿½ï¿½ï¿½ï¿½ï¿½Ê§ï¿½ï¿½ï¿½ï¿½Ï¢
 *******************************************************************************************/
 static int shb_release(struct inode *inode, struct file *file)
 {
@@ -630,12 +630,12 @@ static struct miscdevice senorhub_miscdev = {
 
 /*******************************************************************************************
 Function:       sensorhub_init
-Description:    ÉêÇëkernel»º³åÇø²¢³õÊ¼»¯¶ÁÐ´Ö¸Õë£¬×¢²ámsicÉè±¸
-Data Accessed:  ÎÞ
-Data Updated:   ÎÞ
-Input:          ÎÞ
-Output:         ÎÞ
-Return:         ³É¹¦»òÕßÊ§°ÜÐÅÏ¢
+Description:    ï¿½ï¿½ï¿½ï¿½kernelï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½Ð´Ö¸ï¿½ë£¬×¢ï¿½ï¿½msicï¿½è±¸
+Data Accessed:  ï¿½ï¿½
+Data Updated:   ï¿½ï¿½
+Input:          ï¿½ï¿½
+Output:         ï¿½ï¿½
+Return:         ï¿½É¹ï¿½ï¿½ï¿½ï¿½ï¿½Ê§ï¿½ï¿½ï¿½ï¿½Ï¢
 *******************************************************************************************/
 static int __init sensorhub_init(void)
 {
@@ -664,12 +664,12 @@ static int __init sensorhub_init(void)
 
 /*******************************************************************************************
 Function:       sensorhub_exit
-Description:    ÊÍ·Åkernel»º³åÇø²¢³õÊ¼»¯¶ÁÐ´Ö¸Õë£¬×¢ÏúmsicÉè±¸
-Data Accessed:  ÎÞ
-Data Updated:   ÎÞ
-Input:          ÎÞ
-Output:         ÎÞ
-Return:         ³É¹¦»òÕßÊ§°ÜÐÅÏ¢
+Description:    ï¿½Í·ï¿½kernelï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½Ð´Ö¸ï¿½ë£¬×¢ï¿½ï¿½msicï¿½è±¸
+Data Accessed:  ï¿½ï¿½
+Data Updated:   ï¿½ï¿½
+Input:          ï¿½ï¿½
+Output:         ï¿½ï¿½
+Return:         ï¿½É¹ï¿½ï¿½ï¿½ï¿½ï¿½Ê§ï¿½ï¿½ï¿½ï¿½Ï¢
 *******************************************************************************************/
 static void __exit sensorhub_exit(void)
 {

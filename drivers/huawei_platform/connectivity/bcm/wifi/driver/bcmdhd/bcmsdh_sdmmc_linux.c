@@ -37,9 +37,9 @@
 #include <linux/mmc/host.h>
 #include <linux/mmc/sdio_func.h>
 #include <linux/mmc/sdio_ids.h>
-#include <dhd_linux.h>
+#include "dhd_linux.h"
 #include <bcmsdh_sdmmc.h>
-#include <dhd_dbg.h>
+#include "dhd_dbg.h"
 #include <bcmsdh.h>
 #include "hw_wifi.h"
 

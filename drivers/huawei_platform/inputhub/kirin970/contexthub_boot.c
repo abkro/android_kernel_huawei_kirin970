@@ -17,7 +17,7 @@
 #include <linux/of_address.h>
 #include <linux/workqueue.h>
 #include <linux/delay.h>
-#include <soc_pmctrl_interface.h>
+#include "../../../hisi/ap/platform/kirin970/soc_pmctrl_interface.h"
 #include <linux/regulator/consumer.h>
 #ifdef CONFIG_HUAWEI_DSM
 #include <dsm/dsm_pub.h>

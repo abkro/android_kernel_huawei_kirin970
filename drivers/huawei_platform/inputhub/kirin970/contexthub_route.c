@@ -33,7 +33,7 @@
 #include <huawei_platform/log/imonitor.h>
 
 #ifdef CONFIG_CONTEXTHUB_SHMEM
-#include "shmem.h"
+#include "../../../contexthub/shmem.h"
 #endif
 
 #define ROUTE_BUFFER_MAX_SIZE (1024 * 128)

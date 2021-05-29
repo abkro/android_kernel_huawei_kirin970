@@ -68,7 +68,7 @@
 #include "dump_config.h"
 #include <bsp_slice.h>
 #include <bsp_nvim.h>
-#include <dump_lphy_tcm.h>
+#include "dump_lphy_tcm.h"
 
 struct dsp_dump
 {

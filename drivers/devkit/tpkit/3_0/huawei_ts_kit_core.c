@@ -33,17 +33,17 @@
 #define CREATE_TRACE_POINTS
 #include "trace-events-touch.h"
 
-#include <huawei_ts_kit.h>
-#include <huawei_ts_kit_platform.h>
-#include <huawei_ts_kit_misc.h>
+#include "huawei_ts_kit.h"
+#include "huawei_ts_kit_platform.h"
+#include "huawei_ts_kit_misc.h"
 //#ifdef CONFIG_HUAWEI_HW_DEV_DCT
 //#include <huawei_platform/devdetect/hw_dev_dec.h>
 //#endif
 //#include <linux/mfd/hisi_hi6xxx_pmic.h>
 //#include <linux/hisi/hi6xxx-lcd_type.h>
-#include <tpkit_platform_adapter.h>
-#include <huawei_ts_kit_api.h>
-#include <huawei_ts_kit_algo.h>
+#include "tpkit_platform_adapter.h"
+#include "huawei_ts_kit_api.h"
+#include "huawei_ts_kit_algo.h"
 #include <linux/hwspinlock.h>
 #include "hwspinlock_internal.h"
 

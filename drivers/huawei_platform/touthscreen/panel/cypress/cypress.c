@@ -11,7 +11,7 @@
 #include <linux/input/mt.h>
 #include <asm/unaligned.h>
 #include <linux/firmware.h>
-#include <cypress_params.h>
+#include "cypress_params.h"
 #include <../../huawei_touchscreen_chips.h>
 #include "cypress.h"
 

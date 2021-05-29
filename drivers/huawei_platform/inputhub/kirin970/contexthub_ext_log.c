@@ -1,5 +1,5 @@
 #include <linux/err.h>
-#include "linux/spinlock_types.h"
+#include <linux/spinlock_types.h>
 #include <linux/types.h>
 #include <linux/init.h>
 #include <linux/device.h>
