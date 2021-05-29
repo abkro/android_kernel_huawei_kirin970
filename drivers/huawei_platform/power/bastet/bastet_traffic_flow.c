@@ -118,8 +118,8 @@ static void handle_traffic_flow_update(char *name,
 		return;
 	}
 
-	bastet_update_if_tag_stat(name, uid, sk, IFS_TX, proto, tx_bytes);
-	bastet_update_if_tag_stat(name, uid, sk, IFS_RX, proto, rx_bytes);
+/* 	bastet_update_if_tag_stat(name, uid, sk, IFS_TX, proto, tx_bytes);
+	bastet_update_if_tag_stat(name, uid, sk, IFS_RX, proto, rx_bytes); */
 }
 
 /*
@@ -159,11 +159,11 @@ static int adjust_traffic_flow_generic(struct bst_traffic_flow_prop *flow_p)
 	}
 
 	/* adjust total traffic flow */
-	if (bastet_update_total_bytes(cur_netdev_name,
+/* 	if (bastet_update_total_bytes(cur_netdev_name,
 		protocol, tx_bytes, rx_bytes)) {
 		BASTET_LOGE("bastet_update_total_bytes error");
 		return -EINVAL;
-	}
+	} */
 
 	return 0;
 }
@@ -203,10 +203,10 @@ int adjust_traffic_flow_by_sock(struct sock *sk,
 	handle_traffic_flow_update(cur_netdev_name,
 		sk, sk->sk_protocol, uid, tx, rx);
 	/* adjust total traffic flow */
-	if (bastet_update_total_bytes(cur_netdev_name, proto, tx, rx)) {
+/* 	if (bastet_update_total_bytes(cur_netdev_name, proto, tx, rx)) {
 		BASTET_LOGE("bastet_update_total_bytes error");
 		return -EINVAL;
-	}
+	} */
 
 	return 0;
 }
