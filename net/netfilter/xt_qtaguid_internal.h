@@ -39,6 +39,8 @@
 #define CDEBUG
 #define DDEBUG
 
+extern uint qtaguid_debug_mask;
+
 #define MSK_DEBUG(mask, ...) do {                           \
 		if (unlikely(qtaguid_debug_mask & (mask)))  \
 			pr_debug(__VA_ARGS__);              \
@@ -69,7 +71,6 @@
 #define DR_DEBUG(...) no_printk(__VA_ARGS__)
 #endif
 
-extern uint qtaguid_debug_mask;
 
 /*---------------------------------------------------------------------------*/
 /*
