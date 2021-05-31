@@ -205,7 +205,7 @@ int lcdkit_parse_dcs_cmds(struct device_node* np, char* cmd_key,
     }
 
     pcmds->cmd_cnt = cnt;
-    pcmds->buf = buf;
+//    pcmds->buf = buf;
     pcmds->blen = buflen;
 
     bp = buf;
@@ -225,7 +225,7 @@ int lcdkit_parse_dcs_cmds(struct device_node* np, char* cmd_key,
         pcmds->cmds[i].wait     = dchdr->wait;
         pcmds->cmds[i].waittype = dchdr->waittype;
         pcmds->cmds[i].dlen     = dchdr->dlen;
-        pcmds->cmds[i].payload  = bp;
+//       pcmds->cmds[i].payload  = bp;
 
         for (j = 0; j < dchdr->dlen; j++, bp++){
             *(pcmds->cmds[i].payload+j)  = (char)(*bp);
@@ -560,7 +560,7 @@ void lcdkit_parse_panel_dts(struct device_node* np)
         ret = lcdkit_parse_dcs_cmds(np, "hw,lcdkit-panel-checksum-enable-command", "hw,lcdkit-panel-checksum-enable-command-state",  &lcdkit_info.panel_infos.checksum_enable_cmds);
         ret = lcdkit_parse_dcs_cmds(np, "hw,lcdkit-panel-checksum-disable-command", "hw,lcdkit-panel-checksum-disable-command-state",  &lcdkit_info.panel_infos.checksum_disable_cmds);
         ret = lcdkit_parse_arrays_data(np, "hw,lcdkit-panel-checksum-value", &lcdkit_info.panel_infos.checksum_value);
-        ret = lcdkit_parse_arrays_data(np, "hw,lcdkit-panel-checksum-read-again", &lcdkit_info.panel_infos.checksum_read_again);
+        ret = lcdkit_parse_arrays_data(np, "hw,lcdkit-panel-checksum-read-again", lcdkit_info.panel_infos.checksum_read_again);
         if (lcdkit_info.panel_infos.checksum_second_part_support) {
             ret = lcdkit_parse_dcs_cmds(np, "hw,lcdkit-panel-checksum-enter-second-part-command", "hw,lcdkit-panel-checksum-enter-second-part-command-state",  &lcdkit_info.panel_infos.checksum_enter_second_part_cmds);
         }

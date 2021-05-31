@@ -165,16 +165,16 @@ static void __dynamic_vip_dequeue(struct task_struct *task, int type)
 	struct rq *rq = NULL;
 	u64 dynamic_vip = 0;
 
-	rq = task_rq_lock(task, &flags);
+	rq = task_rq_lock(task, flags);
 	dynamic_vip = atomic64_read(&task->dynamic_vip);
 	if (dynamic_vip <= 0) {
-		task_rq_unlock(rq, task, &flags);
+		task_rq_unlock(rq, task, flags);
 		return;
 	}
 	dynamic_vip_dec(task, type);
 	dynamic_vip = atomic64_read(&task->dynamic_vip);
 	if (dynamic_vip > 0) {
-		task_rq_unlock(rq, task, &flags);
+		task_rq_unlock(rq, task, flags);
 		return;
 	}
 	task->vip_depth = 0;
@@ -185,7 +185,7 @@ static void __dynamic_vip_dequeue(struct task_struct *task, int type)
 		list_del_init(&task->vip_entry);
 		put_task_struct(task);
 	}
-	task_rq_unlock(rq, task, &flags);
+	task_rq_unlock(rq, task, flags);
 }
 
 void dynamic_vip_dequeue(struct task_struct *task, int type)
@@ -203,14 +203,14 @@ static void __dynamic_vip_enqueue(struct task_struct *task, int type, int depth)
 	bool exist = false;
 	struct rq *rq = NULL;
 
-	rq = task_rq_lock(task, &flags);
+	rq = task_rq_lock(task, flags);
 	if (task->sched_class != &fair_sched_class) {
-		task_rq_unlock(rq, task, &flags);
+		task_rq_unlock(rq, task, flags);
 		return;
 	}
 	if (unlikely(!list_empty(&task->vip_entry))) {
 		printk(KERN_WARNING "task(%s,%d,%d) is already in another list", task->comm, task->pid, task->policy);
-		task_rq_unlock(rq, task, &flags);
+		task_rq_unlock(rq, task, flags);
 		return;
 	}
 
@@ -225,7 +225,7 @@ static void __dynamic_vip_enqueue(struct task_struct *task, int type, int depth)
 			trace_sched_vip_queue_op(task, "dynamic_vip_enqueue_succ");
 		}
 	}
-	task_rq_unlock(rq, task, &flags);
+	task_rq_unlock(rq, task, flags);
 }
 
 void dynamic_vip_enqueue(struct task_struct *task, int type, int depth)

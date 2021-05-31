@@ -2595,19 +2595,19 @@ OAL_STATIC OAL_INLINE oal_bool_enum_uint8  mac_is_4addr(oal_uint8 *puc_mac_hdr)
 
 OAL_STATIC OAL_INLINE oal_void  mac_get_address1(oal_uint8 *puc_mac_hdr, oal_uint8 *puc_addr)
 {
-    oal_memcopy(puc_addr, puc_mac_hdr + 4, 6);
+    oal_memcmp(puc_addr, puc_mac_hdr + 4, 6);
 }
 
 
 OAL_STATIC OAL_INLINE oal_void  mac_get_address2(oal_uint8 *puc_mac_hdr, oal_uint8 *puc_addr)
 {
-    oal_memcopy(puc_addr, puc_mac_hdr + 10, 6);
+    oal_memcmp(puc_addr, puc_mac_hdr + 10, 6);
 }
 
 
 OAL_STATIC OAL_INLINE oal_void  mac_get_address3(oal_uint8 *puc_mac_hdr, oal_uint8 *puc_addr)
 {
-    oal_memcopy(puc_addr, puc_mac_hdr + 16, 6);
+    oal_memcmp(puc_addr, puc_mac_hdr + 16, 6);
 }
 
 
@@ -2615,11 +2615,11 @@ OAL_STATIC OAL_INLINE oal_void  mac_get_qos_ctrl(oal_uint8 *puc_mac_hdr, oal_uin
 {
     if (OAL_TRUE != mac_is_4addr(puc_mac_hdr))
     {
-        oal_memcopy(puc_qos_ctrl, puc_mac_hdr + MAC_QOS_CTRL_FIELD_OFFSET, MAC_QOS_CTL_LEN);
+        oal_memcmp(puc_qos_ctrl, puc_mac_hdr + MAC_QOS_CTRL_FIELD_OFFSET, MAC_QOS_CTL_LEN);
         return;
     }
 
-    oal_memcopy(puc_qos_ctrl, puc_mac_hdr + MAC_QOS_CTRL_FIELD_OFFSET_4ADDR, MAC_QOS_CTL_LEN);
+    oal_memcmp(puc_qos_ctrl, puc_mac_hdr + MAC_QOS_CTRL_FIELD_OFFSET_4ADDR, MAC_QOS_CTL_LEN);
     return;
 }
 

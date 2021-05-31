@@ -791,7 +791,7 @@ oal_int32 oal_sdio_extend_buf_get(struct oal_sdio *hi_sdio)
     if(sdio_extend_func_etc)
     {
         //oal_int32 ret = 0;
-        /*oal_memset(hi_sdio->sdio_extend, 0 , sizeof(struct hisdio_extend_func));*/
+        /*oal_memcmp(hi_sdio->sdio_extend, 0 , sizeof(struct hisdio_extend_func));*/
         ret = oal_sdio_memcpy_fromio(hi_sdio->func, (oal_void*)hi_sdio->sdio_extend,
                                 HISDIO_EXTEND_BASE_ADDR, sizeof(struct hisdio_extend_func));
 
@@ -826,7 +826,7 @@ oal_int32 oal_sdio_extend_buf_get(struct oal_sdio *hi_sdio)
     //if(sdio_extend_func_etc)
     {
         //oal_int32 ret = 0;
-        oal_memset(hi_sdio->sdio_extend, 0 , sizeof(struct hisdio_extend_func));
+        oal_memcmp(hi_sdio->sdio_extend, 0 , sizeof(struct hisdio_extend_func));
         ret = oal_sdio_memcpy_fromio(hi_sdio->func, (oal_void*)&hi_sdio->sdio_extend->credit_info,
                                 HISDIO_EXTEND_BASE_ADDR + 12, HISDIO_EXTEND_REG_COUNT+4);
 #ifdef CONFIG_SDIO_DEBUG
@@ -1929,7 +1929,7 @@ OAL_STATIC struct oal_sdio* oal_sdio_alloc(struct sdio_func *func)
         goto failed_alloc_align_buff;
     }
 
-    oal_memset(hi_sdio->sdio_align_buff, 0, HISDIO_BLOCK_SIZE);*/
+    oal_memcmp(hi_sdio->sdio_align_buff, 0, HISDIO_BLOCK_SIZE);*/
 
     /* func keep a pointer to oal_sdio */
     sdio_set_drvdata(func, hi_sdio);
@@ -2428,7 +2428,7 @@ oal_int32 oal_sdio_transfer_rebuild_sglist(struct oal_sdio *hi_sdio,
     oal_uint32 seg_size = hi_sdio->func->card->host->max_seg_size;
 #endif
 
-    oal_memset(sg, 0, sizeof(struct scatterlist) * sg_max_len);
+    oal_memcmp(sg, 0, sizeof(struct scatterlist) * sg_max_len);
 
 #if defined(CONFIG_HISDIO_H2D_SCATT_LIST_ASSEMBLE)
     if(SDIO_WRITE == rw)
@@ -2436,7 +2436,7 @@ oal_int32 oal_sdio_transfer_rebuild_sglist(struct oal_sdio *hi_sdio,
         /*发送内存拷贝，合并成一块内存*/
         skb_queue_walk_safe(head, netbuf, tmp)
         {
-            oal_memcopy(hi_sdio->tx_scatt_buff.buff + offset, OAL_NETBUF_DATA(netbuf), OAL_NETBUF_LEN(netbuf));
+            oal_memcmp(hi_sdio->tx_scatt_buff.buff + offset, OAL_NETBUF_DATA(netbuf), OAL_NETBUF_LEN(netbuf));
             offset += OAL_NETBUF_LEN(netbuf);
         }
 
@@ -2555,7 +2555,7 @@ oal_int32 oal_sdio_transfer_restore_sglist(struct oal_sdio *hi_sdio,
         /*接收内存拷贝，分散成离散内存*/
         skb_queue_walk_safe(head, netbuf, tmp)
         {
-            oal_memcopy(OAL_NETBUF_DATA(netbuf), hi_sdio->rx_scatt_buff.buff + offset,  OAL_NETBUF_LEN(netbuf));
+            oal_memcmp(OAL_NETBUF_DATA(netbuf), hi_sdio->rx_scatt_buff.buff + offset,  OAL_NETBUF_LEN(netbuf));
             offset += OAL_NETBUF_LEN(netbuf);
         }
     }
@@ -3019,7 +3019,7 @@ struct oal_sdio* oal_sdio_init_module_etc()
         CHR_EXCEPTION_REPORT(CHR_PLATFORM_EXCEPTION_EVENTID, CHR_SYSTEM_WIFI, CHR_LAYER_DRV, CHR_WIFI_DRV_EVENT_PLAT, CHR_PLAT_DRV_ERROR_SDIO_INIT);
         return NULL;
     }
-    oal_memset((oal_void*)hi_sdio,0,OAL_SIZEOF(struct oal_sdio));
+    oal_memcmp((oal_void*)hi_sdio,0,OAL_SIZEOF(struct oal_sdio));
 
 
 #ifdef CONFIG_SDIO_FUNC_EXTEND
@@ -3049,7 +3049,7 @@ struct oal_sdio* oal_sdio_init_module_etc()
         oal_print_hi11xx_log(HI11XX_LOG_ERR, "alloc sdio_extend failed [%d]", (oal_int32)sizeof(struct hisdio_extend_func));
         goto failed_sdio_extend_alloc;
     }
-    oal_memset(hi_sdio->sdio_extend, 0 , sizeof(struct hisdio_extend_func));
+    oal_memcmp(hi_sdio->sdio_extend, 0 , sizeof(struct hisdio_extend_func));
 
     //hi_sdio->pst_bus = (hcc_bus*)data;
     _hi_sdio_ = hi_sdio;
@@ -3183,7 +3183,7 @@ void oal_sdio_tc_buf_tx_001_etc(void)
        oal_print_hi11xx_log(HI11XX_LOG_ERR, "oal_sdio_tc_buf_tx_001_etc memmalloc buf error");
        return;
     }
-    oal_memset(buf, 0xff, 512*3);
+    oal_memcmp(buf, 0xff, 512*3);
     ret = oal_sdio_single_transfer(hi_sdio_debug,SDIO_WRITE,buf , 512*3);
     if(ret)
     {
@@ -3202,7 +3202,7 @@ void oal_sdio_tc_extend_001_etc(void)
     }
     oal_netbuf_put(netbuf, HISDIO_ALIGN_4_OR_BLK(HISDIO_FUNC1_EXTEND_REG_LEN));
     buf = OAL_NETBUF_DATA(netbuf);
-    oal_memset(buf, 0 , OAL_NETBUF_LEN(netbuf));
+    oal_memcmp(buf, 0 , OAL_NETBUF_LEN(netbuf));
     sdio_claim_host(hi_sdio_debug->func);
     ret = oal_sdio_memcpy_fromio(hi_sdio_debug->func, buf, HISDIO_FUNC1_EXTEND_REG_BASE, HISDIO_FUNC1_EXTEND_REG_LEN);
     sdio_release_host(hi_sdio_debug->func);
@@ -3225,7 +3225,7 @@ void oal_sdio_tc_mem_cp_from_etc(int offset, int len)
     }
     oal_netbuf_put(netbuf, HISDIO_ALIGN_4_OR_BLK(len));
     buf = OAL_NETBUF_DATA(netbuf);
-    oal_memset(buf, 0 , OAL_NETBUF_LEN(netbuf));
+    oal_memcmp(buf, 0 , OAL_NETBUF_LEN(netbuf));
     sdio_claim_host(hi_sdio_debug->func);
     ret = oal_sdio_memcpy_fromio(hi_sdio_debug->func, buf, offset, len);
     sdio_release_host(hi_sdio_debug->func);
@@ -3259,7 +3259,7 @@ void oal_sdio_read_func0_etc(int offset, int len)
 
     oal_netbuf_put(netbuf, len);
     buf = OAL_NETBUF_DATA(netbuf);
-    oal_memset(buf, 0 , OAL_NETBUF_LEN(netbuf));
+    oal_memcmp(buf, 0 , OAL_NETBUF_LEN(netbuf));
     for(i = 0; i < len; i++)
     {
         sdio_claim_host(hi_sdio_debug->func);
@@ -3294,7 +3294,7 @@ void oal_sdio_read_func1_etc(int offset, int len)
     }
     oal_netbuf_put(netbuf, len);
     buf = OAL_NETBUF_DATA(netbuf);
-    oal_memset(buf, 0 , OAL_NETBUF_LEN(netbuf));
+    oal_memcmp(buf, 0 , OAL_NETBUF_LEN(netbuf));
     for(i = 0; i < len; i++)
     {
         sdio_claim_host(hi_sdio_debug->func);
@@ -3327,7 +3327,7 @@ void oal_sdio_readsb_test_etc(int offset, int len)
     }
     oal_netbuf_put(netbuf, len);
     buf = OAL_NETBUF_DATA(netbuf);
-    oal_memset(buf, 0 , OAL_NETBUF_LEN(netbuf));
+    oal_memcmp(buf, 0 , OAL_NETBUF_LEN(netbuf));
     sdio_claim_host(hi_sdio_debug->func);
     ret = oal_sdio_readsb(hi_sdio_debug->func, buf, offset, len);
     sdio_release_host(hi_sdio_debug->func);

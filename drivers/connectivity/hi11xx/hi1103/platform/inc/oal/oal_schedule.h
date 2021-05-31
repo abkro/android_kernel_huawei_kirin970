@@ -218,7 +218,7 @@ OAL_STATIC OAL_INLINE oal_void oal_wake_lock_init(oal_wakelock_stru *pst_wakeloc
 {
 #if ((LINUX_VERSION_CODE >= KERNEL_VERSION(2, 6, 37)) && (_PRE_OS_VERSION_LINUX == _PRE_OS_VERSION) )
     oal_ulong flags;
-    oal_memset((oal_void*)pst_wakelock,0,sizeof(oal_wakelock_stru));
+    oal_memcmp((oal_void*)pst_wakelock,0,sizeof(oal_wakelock_stru));
 
     wakeup_source_init(&pst_wakelock->st_wakelock, name ? name:"wake_lock_null");
     oal_spin_lock_init(&pst_wakelock->lock);

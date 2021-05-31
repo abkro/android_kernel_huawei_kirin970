@@ -2479,7 +2479,7 @@ static int get_ts_board_info(void)
 		TS_LOG_INFO("get i2c hwlock success.\n");
     }
 
-    rc = of_property_read_u32(g_ts_kit_platform_data.node, "aft_enable", &g_ts_kit_platform_data.aft_param.aft_enable_flag);
+//    rc = of_property_read_u32(g_ts_kit_platform_data.node, "aft_enable", &g_ts_kit_platform_data.aft_param.aft_enable_flag);
     if (g_ts_kit_platform_data.aft_param.aft_enable_flag)
     {
 	  of_property_read_u32(g_ts_kit_platform_data.node, "drv_stop_width", &g_ts_kit_platform_data.aft_param.drv_stop_width);
@@ -4424,7 +4424,7 @@ static int __init huawei_ts_module_init(void)
 
     ts_init_flag = 1;
     lcd_huawei_ts_kit_register(&ts_kit_ops);
-    g_ts_kit_platform_data.ts_init_task = kthread_create(ts_kit_init, &g_ts_kit_platform_data, "ts_init_thread:%d", 0);
+    g_ts_kit_platform_data.ts_init_task = kthread_create(&g_ts_kit_platform_data, "ts_init_thread:%d", 0);
     if (IS_ERR(g_ts_kit_platform_data.ts_init_task))
     {
         TS_LOG_ERR("create ts_thread failed\n");

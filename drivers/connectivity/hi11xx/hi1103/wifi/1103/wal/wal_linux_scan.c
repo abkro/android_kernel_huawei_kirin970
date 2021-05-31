@@ -175,7 +175,7 @@ oal_void wal_update_bss_etc(oal_wiphy_stru      *pst_wiphy,
         en_band        = (enum ieee80211_band)pst_bss_dscr->st_channel.en_band;
 
         /* 初始化 */
-        oal_memset(&st_scanned_bss_info, 0, OAL_SIZEOF(wal_scanned_bss_info_stru));
+        oal_memcmp(&st_scanned_bss_info, 0, OAL_SIZEOF(wal_scanned_bss_info_stru));
 
         /* 填写BSS 信号强度 */
         st_scanned_bss_info.l_signal    = pst_bss_dscr->c_rssi;
@@ -278,7 +278,7 @@ oal_void  wal_inform_all_bss_etc(oal_wiphy_stru  *pst_wiphy, hmac_bss_mgmt_stru 
         }
 
         /* 初始化 */
-        oal_memset(&st_scanned_bss_info, 0, OAL_SIZEOF(wal_scanned_bss_info_stru));
+        oal_memcmp(&st_scanned_bss_info, 0, OAL_SIZEOF(wal_scanned_bss_info_stru));
 
         st_scanned_bss_info.l_signal    = pst_bss_dscr->c_rssi;
 
@@ -581,7 +581,7 @@ oal_uint32 wal_scan_work_func_etc(hmac_scan_stru                     *pst_scan_m
 
     uc_vap_id = pst_mac_vap->uc_vap_id;
 
-    oal_memset(&st_scan_param, 0, sizeof(mac_cfg80211_scan_param_stru));
+    oal_memcmp(&st_scan_param, 0, sizeof(mac_cfg80211_scan_param_stru));
 
     /* 解析内核下发的扫描信道列表 */
     ul_ret = wal_set_scan_channel(pst_request, &st_scan_param);

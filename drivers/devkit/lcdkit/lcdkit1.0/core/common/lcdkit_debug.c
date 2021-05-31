@@ -1355,7 +1355,7 @@ int lcdkit_mipi_prcess_ic_reg(int op_type,int reg, int cmd_type,
     lcd_lreg_cmd.wait = LCDKIT_READ_REG_WAIT_RESPONSE_TIME;
     lcd_lreg_cmd.waittype = LCDKIT_WAIT_TYPE_US;
     lcd_lreg_cmd.dlen = sizeof(reg);
-    lcd_lreg_cmd.payload = &reg;
+//    lcd_lreg_cmd.payload = &reg;
 
    switch(op_type)
    {

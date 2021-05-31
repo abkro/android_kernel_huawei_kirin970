@@ -21,7 +21,7 @@ ssize_t get_lcdkit_support(void)
         return -ENXIO;
     }
 
-    ret = of_property_read_string(lcdkit_np, "support_lcd_type", &support_type);
+    ret = of_property_read_string(lcdkit_np, "support_lcd_type", support_type);
 
     if (ret)
     {

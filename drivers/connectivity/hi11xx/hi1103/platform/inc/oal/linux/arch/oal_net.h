@@ -862,7 +862,7 @@ OAL_STATIC OAL_INLINE oal_void  oal_get_cpu_stat(oal_cpu_usage_stat_stru *pst_cp
 #if (defined(_PRE_BOARD_SD5610) || defined(_PRE_BOARD_SD5115))
     oal_memcopy(pst_cpu_stat, &kstat_cpu(0).cpustat, OAL_SIZEOF(oal_cpu_usage_stat_stru));
 #else
-    oal_memset(pst_cpu_stat, 0, OAL_SIZEOF(oal_cpu_usage_stat_stru));
+    oal_memcmp(pst_cpu_stat, 0, OAL_SIZEOF(oal_cpu_usage_stat_stru));
 #endif
 }
 
@@ -1928,7 +1928,7 @@ OAL_STATIC OAL_INLINE oal_sock_stru* oal_netlink_kernel_create(
     struct netlink_kernel_cfg cfg;
 
     // C01分支同步而来:不初始化会导致内核随机踩内存
-    oal_memset(&cfg, 0, OAL_SIZEOF(cfg));
+    oal_memcmp(&cfg, 0, OAL_SIZEOF(cfg));
     cfg.groups = 0;
     cfg.input = input;
     cfg.cb_mutex = NULL;

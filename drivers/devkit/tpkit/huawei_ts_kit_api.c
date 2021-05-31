@@ -948,9 +948,9 @@ int ts_read_rawdata_for_newformat(struct ts_cmd_node* in_cmd, struct ts_cmd_node
 	if(!g_ts_kit_platform_data.chip_data->is_parade_solution){
         ts_stop_wd_timer(&g_ts_kit_platform_data);
     }
-    if (dev->ops->chip_get_rawdata){
-		error = dev->ops->chip_get_rawdata(info, out_cmd); 
-	}
+//    if (dev->ops->chip_get_rawdata){
+//		error = dev->ops->chip_get_rawdata(info, out_cmd); 
+//	}
     if(!g_ts_kit_platform_data.chip_data->is_parade_solution){
         ts_start_wd_timer(&g_ts_kit_platform_data);
     }

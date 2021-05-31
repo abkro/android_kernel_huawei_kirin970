@@ -913,7 +913,7 @@ static const struct arm64_cpu_capabilities arm64_features[] = {
 	{
 		.desc = "Huawei Hypervisor Execution Environment",
 		.capability = ARM64_HAS_HHEE,
-		.matches = has_hhee,
+//		.matches = has_hhee,
 	},
 #endif
 	{

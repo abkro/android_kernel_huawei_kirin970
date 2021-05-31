@@ -151,10 +151,10 @@ OAL_STATIC OAL_INLINE oal_void  oal_free(oal_void *p_buf)
 }
 
 
-OAL_STATIC OAL_INLINE oal_void oal_memcopy(oal_void *p_dst, const oal_void *p_src, oal_uint32 ul_size)
-{
-    memcpy(p_dst, p_src, ul_size);
-}
+//OAL_STATIC OAL_INLINE oal_void oal_memcopy(oal_void *p_dst, const oal_void *p_src, oal_uint32 ul_size)
+//{
+//    memcpy(p_dst, p_src, ul_size);
+//}
 
 
 OAL_STATIC OAL_INLINE oal_void  oal_memmove(oal_void *p_dst, const oal_void *p_src, oal_uint32 ul_size)

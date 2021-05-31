@@ -1371,7 +1371,7 @@ struct cgroup_subsys io_cgrp_subsys = {
 	.can_attach = blkcg_can_attach,
 #ifdef CONFIG_BLK_DEV_THROTTLING
 	.attach = blkcg_attach,
-	.fork = blkcg_fork,
+//	.fork = blkcg_fork,
 #endif
 	.bind = blkcg_bind,
 	.dfl_cftypes = blkcg_files,

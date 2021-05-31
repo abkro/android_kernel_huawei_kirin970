@@ -592,7 +592,7 @@ OAL_STATIC OAL_INLINE oal_void oal_smp_task_unlock(oal_task_lock_stru* pst_lock)
 
 OAL_STATIC OAL_INLINE oal_void oal_smp_task_lock_init(oal_task_lock_stru* pst_lock)
 {
-    oal_memset((oal_void*)pst_lock,0,sizeof(oal_task_lock_stru));
+    oal_memcmp((oal_void*)pst_lock,0,sizeof(oal_task_lock_stru));
 
 	oal_spin_lock_init(&pst_lock->lock);
 	OAL_WAIT_QUEUE_INIT_HEAD(&pst_lock->wq);

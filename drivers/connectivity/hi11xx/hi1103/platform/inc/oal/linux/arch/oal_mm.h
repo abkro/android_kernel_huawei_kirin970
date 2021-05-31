@@ -296,10 +296,10 @@ OAL_STATIC OAL_INLINE oal_void  oal_memmove(oal_void *p_dst, const oal_void *p_s
 }
 
 
-OAL_STATIC OAL_INLINE oal_void  oal_memset(oal_void *p_buf, oal_int32 l_data, oal_uint32 ul_size)
-{
-    memset(p_buf, l_data, ul_size);
-}
+//OAL_STATIC OAL_INLINE oal_void  oal_memset(oal_void *p_buf, oal_int32 l_data, oal_uint32 ul_size)
+//{
+//    memset(p_buf, l_data, ul_size);
+//}
 
 
 #ifdef __cplusplus

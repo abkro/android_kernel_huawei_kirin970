@@ -1671,7 +1671,7 @@ oal_uint32 oal_crypto_aes_cmac_encrypt_etc(oal_aes_ctx_stru *aes_ctx, oal_netbuf
     }
     oal_netbuf_put(pst_netbuf, OAL_SIZEOF(*mmie));
     mmie = (oal_mmie_stru *)(pst_netbuf->tail - OAL_SIZEOF(*mmie));
-    oal_memset((oal_void *)mmie, 0, OAL_SIZEOF(*mmie));
+    oal_memcmp((oal_void *)mmie, 0, OAL_SIZEOF(*mmie));
     mmie->element_id = OAL_EID_MMIE;
     mmie->length = OAL_SIZEOF(*mmie) - OAL_IE_HDR_LEN;
     mmie->key_id = oal_host_to_le16(aes_ctx->key_idx);

@@ -190,7 +190,7 @@ typedef struct
 }wal_msg_rep_hdr;
 
 #define DECLARE_WAL_MSG_REQ_STRU(name)  wal_msg_request_stru name;
-#define WAL_MSG_REQ_STRU_INIT(name) do{oal_memset((oal_void*)(&name), 0,OAL_SIZEOF(name));name.ul_request_address = (oal_ulong)&name;}while(0)
+#define WAL_MSG_REQ_STRU_INIT(name) do{oal_memcmp((oal_void*)(&name), 0,OAL_SIZEOF(name));name.ul_request_address = (oal_ulong)&name;}while(0)
 
 typedef struct
 {

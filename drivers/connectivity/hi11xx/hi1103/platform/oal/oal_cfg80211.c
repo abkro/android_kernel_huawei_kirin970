@@ -884,7 +884,7 @@ oal_void  oal_cfg80211_sched_scan_result_etc(oal_wiphy_stru *pst_wiphy)
 #if defined(_PRE_PRODUCT_ID_HI110X_HOST)
 oal_void oal_kobject_uevent_env_sta_join_etc(oal_net_device_stru *pst_net_device, const oal_uint8 *puc_mac_addr)
 {
-    oal_memset(&env, 0, sizeof(env));
+    oal_memcmp(&env, 0, sizeof(env));
 	/* Android上层需要STA_JOIN和mac地址，中间参数无效，但是必须是4个参数 */
 	add_uevent_var(&env, "SOFTAP=STA_JOIN wlan0 wlan0 %02x:%02x:%02x:%02x:%02x:%02x",
 				puc_mac_addr[0], puc_mac_addr[1], puc_mac_addr[2], puc_mac_addr[3], puc_mac_addr[4], puc_mac_addr[5]);
@@ -897,7 +897,7 @@ oal_void oal_kobject_uevent_env_sta_join_etc(oal_net_device_stru *pst_net_device
 
 oal_void oal_kobject_uevent_env_sta_leave_etc(oal_net_device_stru *pst_net_device, const oal_uint8 *puc_mac_addr)
 {
-    oal_memset(&env, 0, sizeof(env));
+    oal_memcmp(&env, 0, sizeof(env));
 	/* Android上层需要STA_LEAVE和mac地址，中间参数无效，但是必须是4个参数 */
 	add_uevent_var(&env, "SOFTAP=STA_LEAVE wlan0 wlan0 %02x:%02x:%02x:%02x:%02x:%02x",
 				puc_mac_addr[0], puc_mac_addr[1], puc_mac_addr[2], puc_mac_addr[3], puc_mac_addr[4], puc_mac_addr[5]);

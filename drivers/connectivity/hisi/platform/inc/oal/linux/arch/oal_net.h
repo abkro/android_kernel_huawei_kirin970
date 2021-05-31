@@ -801,7 +801,7 @@ OAL_STATIC OAL_INLINE oal_void oal_set_single_netbuf_tail(oal_netbuf_stru *pst_n
 OAL_STATIC OAL_INLINE oal_void  oal_get_cpu_stat(oal_cpu_usage_stat_stru *pst_cpu_stat)
 {
 #if (defined(_PRE_BOARD_SD5610) || defined(_PRE_BOARD_SD5115))
-    oal_memcopy(pst_cpu_stat, &kstat_cpu(0).cpustat, OAL_SIZEOF(oal_cpu_usage_stat_stru));
+    oal_memcmp(pst_cpu_stat, &kstat_cpu(0).cpustat, OAL_SIZEOF(oal_cpu_usage_stat_stru));
 #endif
 }
 
@@ -1061,7 +1061,7 @@ OAL_STATIC OAL_INLINE oal_int32 oal_net_device_set_macaddr(oal_net_device_stru *
 
     pst_mac = (oal_sockaddr_stru *)pst_addr;
 
-    oal_memcopy(pst_dev->dev_addr, pst_mac->sa_data, 6);
+    oal_memcmp(pst_dev->dev_addr, pst_mac->sa_data, 6);
 
     return OAL_SUCC;
 }

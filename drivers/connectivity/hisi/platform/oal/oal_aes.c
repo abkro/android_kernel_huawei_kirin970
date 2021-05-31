@@ -1498,7 +1498,7 @@ OAL_STATIC oal_void oal_bip_aad(oal_netbuf_stru *pst_netbuf, oal_uint8 *aad)
     /* Mask FC Retry, PwrMgt, MoreData flags to zero */
     aad[1] = pst_netbuf->data[1] & ~(BIT(4) | BIT(5) | BIT(6));
     /* A1 || A2 || A3 */
-    oal_memcopy(aad + 2, pst_netbuf->data + 4, 3 * OAL_ETH_ALEN);
+    oal_memcmp(aad + 2, pst_netbuf->data + 4, 3 * OAL_ETH_ALEN);
 }
 
 OAL_STATIC oal_void oal_gf_mulx(oal_uint8 *pad)
@@ -1612,7 +1612,7 @@ OAL_STATIC oal_uint32 oal_aes_128_cmac_vector(oal_aes_key_stru *aes_key,
 
     oal_crypto_cipher_encrypt_one(aes_key, pad, pad);
 
-    oal_memcopy(mac, pad, OAL_CMAC_TLEN);
+    oal_memcmp(mac, pad, OAL_CMAC_TLEN);
 
     return OAL_SUCC;
 }
@@ -1720,7 +1720,7 @@ OAL_STATIC oal_uint32 oal_crypto_aes_cmac_decrypt(oal_aes_ctx_stru *aes_ctx,
         return OAL_ERR_CODE_PMF_MMIE_ERR;
     }
 
-    oal_memcopy(aes_ctx->pn, ipn, 6);
+    oal_memcmp(aes_ctx->pn, ipn, 6);
 
     /* Remove MMIE */
     oal_netbuf_trim(pst_netbuf, OAL_SIZEOF(*mmie));

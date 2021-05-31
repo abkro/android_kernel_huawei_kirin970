@@ -259,7 +259,7 @@ oal_uint32  wal_asoc_comp_proc_sta_etc(frw_event_mem_stru *pst_event_mem)
         return OAL_ERR_CODE_PTR_NULL;
     }
 
-    oal_memset(&st_connet_result, 0, OAL_SIZEOF(oal_connet_result_stru));
+    oal_memcmp(&st_connet_result, 0, OAL_SIZEOF(oal_connet_result_stru));
 
     /* 准备上报内核的关联结果结构体 */
     oal_memcopy(st_connet_result.auc_bssid, pst_asoc_rsp->auc_addr_ap, WLAN_MAC_ADDR_LEN);
@@ -472,6 +472,7 @@ oal_uint32  wal_disasoc_comp_proc_sta_etc(frw_event_mem_stru *pst_event_mem)
     oal_uint32                   ul_ret;
 #endif
 
+#if
     if (OAL_UNLIKELY(OAL_PTR_NULL == pst_event_mem))
     {
         OAM_ERROR_LOG0(0, OAM_SF_ASSOC, "{wal_disasoc_comp_proc_sta_etc::pst_event_mem is null!}\r\n");
@@ -491,24 +492,24 @@ oal_uint32  wal_disasoc_comp_proc_sta_etc(frw_event_mem_stru *pst_event_mem)
     /* 获取去关联原因码指针 */
     pus_disasoc_reason_code = (oal_uint16 *)pst_event->auc_event_data;
 
-    oal_memset(&st_disconnect_result, 0, OAL_SIZEOF(oal_disconnect_result_stru));
+    oal_memcmp(&st_disconnect_result, 0, OAL_SIZEOF(oal_disconnect_result_stru));
 
     /* 准备上报内核的关联结果结构体 */
     st_disconnect_result.us_reason_code = *pus_disasoc_reason_code;
 
     /* 调用内核接口，上报去关联结果 */
-#if (LINUX_VERSION_CODE >= KERNEL_VERSION(2,6,34))
-    oal_cfg80211_disconnected_etc(pst_net_device,
-                              st_disconnect_result.us_reason_code,
-                              st_disconnect_result.pus_disconn_ie,
-                              st_disconnect_result.us_disconn_ie_len,
-                              GFP_ATOMIC);
-#else
-    ul_ret = oal_cfg80211_disconnected_etc(pst_net_device,
-                              st_disconnect_result.us_reason_code,
-                              st_disconnect_result.pus_disconn_ie,
-                              st_disconnect_result.us_disconn_ie_len,
-                              GFP_ATOMIC);
+//#if (LINUX_VERSION_CODE >= KERNEL_VERSION(2,6,34))
+//    oal_cfg80211_disconnected_etc(pst_net_device,
+//                              st_disconnect_result.us_reason_code,
+//                              st_disconnect_result.pus_disconn_ie,
+//                              st_disconnect_result.us_disconn_ie_len,
+//                              GFP_ATOMIC);
+//#else
+//   ul_ret = oal_cfg80211_disconnected_etc(pst_net_device,
+//                              st_disconnect_result.us_reason_code,
+//                              st_disconnect_result.pus_disconn_ie,
+//                              st_disconnect_result.us_disconn_ie_len,
+//                              GFP_ATOMIC);
     if (OAL_SUCC != ul_ret)
     {
         OAM_WARNING_LOG1(pst_event->st_event_hdr.uc_vap_id, OAM_SF_ASSOC, "{wal_disasoc_comp_proc_sta_etc::oal_cfg80211_disconnected_etc fail[%d]!}\r\n", ul_ret);
@@ -557,7 +558,7 @@ oal_uint32  wal_connect_new_sta_proc_ap_etc(frw_event_mem_stru *pst_event_mem)
 
 
 
-    oal_memset(&st_station_info, 0, OAL_SIZEOF(oal_station_info_stru));
+    oal_memcmp(&st_station_info, 0, OAL_SIZEOF(oal_station_info_stru));
 
 #if (LINUX_VERSION_CODE >= KERNEL_VERSION(3,10,44))
     /* 向内核标记填充了关联请求帧的ie信息 */
@@ -785,7 +786,7 @@ oal_uint32 wal_receive_all_sta_rssi_proc(frw_event_mem_stru *pst_event_mem)
 
     //所有sta的rssi信息接收完，才更新wal层数据
     oal_spin_lock_bh(&(pst_wal_sta_stru->st_lock));
-    oal_memset(pst_wal_sta_stru->auc_cache_user_mac_addr, 0, WLAN_MAC_ADDR_LEN);
+    oal_memcmp(pst_wal_sta_stru->auc_cache_user_mac_addr, 0, WLAN_MAC_ADDR_LEN);
     pst_wal_sta_stru->c_rssi = 0;
     for (ul_loop = 0; ul_loop < MAC_VAP_USER_HASH_MAX_VALUE; ul_loop++)
     {

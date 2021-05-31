@@ -1804,7 +1804,7 @@ OAL_STATIC oal_uint32  wal_config_set_rate(mac_vap_stru *pst_mac_vap, oal_uint16
     oal_uint32  ul_ret;
     mac_cfg_tx_comp_stru            st_event_set_bcast;
 
-    oal_memset(&st_event_set_bcast, 0, OAL_SIZEOF(mac_cfg_tx_comp_stru));
+    oal_memcmp(&st_event_set_bcast, 0, OAL_SIZEOF(mac_cfg_tx_comp_stru));
     if (OAL_UNLIKELY(OAL_PTR_NULL == pst_mac_vap || OAL_PTR_NULL == puc_param))
     {
         OAM_WARNING_LOG2(0, OAM_SF_ANY, "{wal_config_set_rate::pst_mac_vap/puc_param is null ptr %d %d!}\r\n", pst_mac_vap, puc_param);
