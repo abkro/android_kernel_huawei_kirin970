@@ -497,7 +497,7 @@ int doc_exmpl_echo(struct sk_buff *skb2, struct genl_info *info)
     if(info == NULL)
       goto error;
 
-    oal_memcopy(&g_st_info, info, OAL_SIZEOF(*info));
+    oal_memcmp(&g_st_info, info, OAL_SIZEOF(*info));
 
     //对于每个属性，genl_info的域attrs可以索引到具体结构，里面有payload
     na = info->attrs[DOC_EXMPL_A_MSG];
@@ -752,7 +752,7 @@ void dev_netlink_rev(oal_netbuf_stru *skb)
         /* 后续需要拷贝sizeof(st_msg_hdr),故判断之 */
         if (ul_len < OAL_EXCP_DATA_BUF_LEN && ul_len >= sizeof(st_msg_hdr))
         {
-            oal_memcopy(dev_excp_handler_data.data, OAL_NLMSG_DATA(pst_nlh), ul_len);
+            oal_memcmp(dev_excp_handler_data.data, OAL_NLMSG_DATA(pst_nlh), ul_len);
         }
         else
         {
@@ -760,7 +760,7 @@ void dev_netlink_rev(oal_netbuf_stru *skb)
             kfree_skb(pst_skb);
             return;
         }
-        oal_memcopy((void *)&st_msg_hdr, dev_excp_handler_data.data, sizeof(st_msg_hdr));
+        oal_memcmp((void *)&st_msg_hdr, dev_excp_handler_data.data, sizeof(st_msg_hdr));
 
         if (0 == st_msg_hdr.cmd)
         {
@@ -836,7 +836,7 @@ oal_int32 dev_netlink_send (oal_uint8 *data, oal_int data_len)
 
     OAL_IO_PRINT("WIFI DFR: data[%s].\n", data);
 
-    oal_memcopy(OAL_NLMSG_DATA(nlh), data, data_len);
+    oal_memcmp(OAL_NLMSG_DATA(nlh), data, data_len);
 #if (LINUX_VERSION_CODE >= KERNEL_VERSION(2,6,34))
     OAL_NETLINK_CB(skb).portid = 0;                 /* from kernel */
 #endif

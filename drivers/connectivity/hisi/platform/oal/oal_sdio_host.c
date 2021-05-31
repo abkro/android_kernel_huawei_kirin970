@@ -1832,7 +1832,7 @@ oal_int32 oal_sdio_tx_scatt_list_merge(struct oal_sdio *hi_sdio,
 
     for_each_sg(sg, sg_t, sg_len, i)
     {
-        oal_memcopy(pst_scatt_buff + offset,sg_virt(sg_t),sg_t->length);
+        oal_memcmp(pst_scatt_buff + offset,sg_virt(sg_t),sg_t->length);
         offset += sg_t->length;
     }
 

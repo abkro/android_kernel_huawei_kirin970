@@ -1,0 +1,848 @@
+  CHK     include/config/kernel.release
+  CHK     include/generated/uapi/linux/version.h
+  CHK     scripts/mod/devicetable-offsets.h
+  CHK     include/generated/utsrelease.h
+  CHK     include/generated/timeconst.h
+  CHK     include/generated/bounds.h
+  CHK     include/generated/asm-offsets.h
+  CALL    scripts/checksyscalls.sh
+  CHK     include/generated/compile.h
+  CHK     kernel/config_data.h
+drivers/connectivity/hi11xx/hi1103/platform/hi1103_comm_defconfig:44: hisi built-in no
+drivers/connectivity/hi11xx/hi1103/platform/Makefile:24: defconfig: ./drivers/connectivity/hi11xx/hi1103/platform/plat_1103_default_defconfig
+drivers/connectivity/hisi/platform/hi1102_comm_defconfig:42: hisi built-in no
+drivers/connectivity/hisi/platform/Makefile:24: defconfig: ./drivers/connectivity/hisi/platform/plat_1102_v8r2_defconfig
+drivers/connectivity/hi11xx/hi1103/platform/Makefile:193: HI110X_VER_COMMIT_ID: 
+drivers/connectivity/hi11xx/hi1103/platform/Makefile:194: HI110X_VER_COMMIT_TIME: 
+drivers/connectivity/hi11xx/hi1103/platform/Makefile:195: HI110X_VERSION: 
+drivers/connectivity/hisi/platform/Makefile:159: HI110X_VER_COMMIT_ID: 
+drivers/connectivity/hisi/platform/Makefile:160: HI110X_VER_COMMIT_TIME: 
+drivers/connectivity/hisi/platform/Makefile:161: HI110X_VERSION: 
+drivers/connectivity/hi11xx/hi1103/wifi/1103/Makefile:3: HI110X_DRIVER_BUILTIN_PATH drivers/connectivity/hi11xx
+drivers/connectivity/hi11xx/hi1103/platform/hi1103_comm_defconfig:44: hisi built-in no
+drivers/connectivity/hi11xx/hi1103/wifi/1103/Makefile:25: defconfig: ./drivers/connectivity/hi11xx/hi1103/wifi/1103/wifi_1103_default_defconfig
+  CC      drivers/connectivity/hisi/platform/oal/oal_net.o
+drivers/connectivity/hisi/wifi/Makefile:3: HI1102_DRIVER_BUILTIN_PATH drivers/connectivity/hisi
+drivers/connectivity/hisi/platform/hi1102_comm_defconfig:42: hisi built-in no
+drivers/connectivity/hisi/wifi/Makefile:25: defconfig: ./drivers/connectivity/hisi/wifi/wifi_1102_v8r2_defconfig
+  CC      drivers/connectivity/hi11xx/hi1103/platform/oal/oal_sdio_host.o
+  CC      drivers/connectivity/hi11xx/hi1103/wifi/1103/wal/wal_linux_rx_rsp.o
+  CC      drivers/connectivity/hi11xx/hi1103/wifi/1103/wal/wal_linux_ioctl.o
+  CC      drivers/connectivity/hisi/wifi/wal/wal_config.o
+  CC      drivers/connectivity/hisi/wifi/wal/wal_config_debug.o
+  CC      drivers/connectivity/hisi/platform/oal/oal_aes.o
+drivers/connectivity/hisi/platform/oal/oal_net.c: In function 'dev_netlink_rev':
+drivers/connectivity/hisi/platform/oal/oal_net.c:755:13: error: implicit declaration of function 'oal_memcopy'; did you mean 'oal_memcmp'? [-Werror=implicit-function-declaration]
+  755 |             oal_memcopy(dev_excp_handler_data.data, OAL_NLMSG_DATA(pst_nlh), ul_len);
+      |             ^~~~~~~~~~~
+      |             oal_memcmp
+drivers/connectivity/hi11xx/hi1103/platform/oal/oal_sdio_host.c: In function 'oal_sdio_tc_buf_tx_001_etc':
+drivers/connectivity/hi11xx/hi1103/platform/oal/oal_sdio_host.c:3186:21: error: passing argument 2 of 'oal_memcmp' makes pointer from integer without a cast [-Werror=int-conversion]
+ 3186 |     oal_memcmp(buf, 0xff, 512*3);
+      |                     ^~~~
+      |                     |
+      |                     int
+In file included from drivers/connectivity/hi11xx/hi1103/platform/oal/oal_sdio_host.c:10:
+./drivers/connectivity/hi11xx/hi1103/platform/inc/oal/oal_util.h:472:91: note: expected 'const oal_void *' {aka 'const void *'} but argument is of type 'int'
+  472 | OAL_STATIC OAL_INLINE oal_int  oal_memcmp(OAL_CONST oal_void *p_buf1, OAL_CONST oal_void *p_buf2, oal_uint32 ul_count)
+cc1: all warnings being treated as errors
+make[4]: *** [scripts/Makefile.build:356: drivers/connectivity/hisi/platform/oal/oal_net.o] Error 1
+make[4]: *** Waiting for unfinished jobs....
+In file included from ./drivers/connectivity/hisi/wifi/inc/dmac/mac_device.h:20,
+                 from drivers/connectivity/hisi/wifi/wal/wal_config.c:19:
+./drivers/connectivity/hisi/wifi/inc/dmac/mac_vap.h: In function 'mac_set_wep_key_value':
+./drivers/connectivity/hisi/wifi/inc/dmac/mac_vap.h:3031:5: error: implicit declaration of function 'oal_memcopy'; did you mean 'oal_memcmp'? [-Werror=implicit-function-declaration]
+ 3031 |     oal_memcopy(&puc_dot11WEPDefaultKeyValue[WLAN_WEP_KEY_VALUE_OFFSET], puc_key, uc_size);
+      |     ^~~~~~~~~~~
+      |     oal_memcmp
+drivers/connectivity/hi11xx/hi1103/wifi/1103/wal/wal_linux_rx_rsp.c: In function 'wal_disasoc_comp_proc_sta_etc':
+drivers/connectivity/hi11xx/hi1103/wifi/1103/wal/wal_linux_rx_rsp.c:475:4: error: #if with no expression
+  475 | #if
+      |    ^
+drivers/connectivity/hi11xx/hi1103/wifi/1103/wal/wal_linux_rx_rsp.c:470:34: error: unused variable 'pus_disasoc_reason_code' [-Werror=unused-variable]
+  470 |     oal_uint16                  *pus_disasoc_reason_code;
+      |                                  ^~~~~~~~~~~~~~~~~~~~~~~
+drivers/connectivity/hi11xx/hi1103/wifi/1103/wal/wal_linux_rx_rsp.c:469:34: error: unused variable 'pst_net_device' [-Werror=unused-variable]
+  469 |     oal_net_device_stru         *pst_net_device;
+      |                                  ^~~~~~~~~~~~~~
+  CC      drivers/connectivity/hisi/wifi/wal/wal_linux_bridge.o
+cc1: all warnings being treated as errors
+drivers/connectivity/hi11xx/hi1103/wifi/1103/wal/wal_linux_ioctl.c: In function 'wal_android_priv_cmd_etc':
+drivers/connectivity/hi11xx/hi1103/wifi/1103/wal/wal_linux_ioctl.c:6092:5: error: implicit declaration of function 'oal_memset'; did you mean 'oal_memcmp'? [-Werror=implicit-function-declaration]
+ 6092 |     oal_memset(pc_command, 0, (oal_uint32)(st_priv_cmd.l_total_len + 5));
+      |     ^~~~~~~~~~
+      |     oal_memcmp
+make[6]: *** [scripts/Makefile.build:356: drivers/connectivity/hi11xx/hi1103/wifi/1103/wal/wal_linux_rx_rsp.o] Error 1
+make[6]: *** Waiting for unfinished jobs....
+  CC      drivers/connectivity/hisi/wifi/wal/wal_main.o
+In file included from ./drivers/connectivity/hisi/wifi/inc/dmac/mac_device.h:20,
+                 from drivers/connectivity/hisi/wifi/wal/wal_config_debug.c:19:
+./drivers/connectivity/hisi/wifi/inc/dmac/mac_vap.h: In function 'mac_set_wep_key_value':
+./drivers/connectivity/hisi/wifi/inc/dmac/mac_vap.h:3031:5: error: implicit declaration of function 'oal_memcopy'; did you mean 'oal_memcmp'? [-Werror=implicit-function-declaration]
+ 3031 |     oal_memcopy(&puc_dot11WEPDefaultKeyValue[WLAN_WEP_KEY_VALUE_OFFSET], puc_key, uc_size);
+      |     ^~~~~~~~~~~
+      |     oal_memcmp
+In file included from ./drivers/connectivity/hisi/wifi/hmac/hmac_vap.h:17,
+                 from drivers/connectivity/hisi/wifi/wal/wal_linux_bridge.c:23:
+./drivers/connectivity/hisi/wifi/inc/dmac/mac_vap.h: In function 'mac_set_wep_key_value':
+./drivers/connectivity/hisi/wifi/inc/dmac/mac_vap.h:3031:5: error: implicit declaration of function 'oal_memcopy'; did you mean 'oal_memcmp'? [-Werror=implicit-function-declaration]
+ 3031 |     oal_memcopy(&puc_dot11WEPDefaultKeyValue[WLAN_WEP_KEY_VALUE_OFFSET], puc_key, uc_size);
+      |     ^~~~~~~~~~~
+      |     oal_memcmp
+In file included from ./drivers/connectivity/hisi/wifi/inc/dmac/mac_device.h:20,
+                 from ./drivers/connectivity/hisi/wifi/inc/hmac/hmac_ext_if.h:18,
+                 from drivers/connectivity/hisi/wifi/wal/wal_main.c:20:
+./drivers/connectivity/hisi/wifi/inc/dmac/mac_vap.h: In function 'mac_set_wep_key_value':
+./drivers/connectivity/hisi/wifi/inc/dmac/mac_vap.h:3031:5: error: implicit declaration of function 'oal_memcopy'; did you mean 'oal_memcmp'? [-Werror=implicit-function-declaration]
+ 3031 |     oal_memcopy(&puc_dot11WEPDefaultKeyValue[WLAN_WEP_KEY_VALUE_OFFSET], puc_key, uc_size);
+      |     ^~~~~~~~~~~
+      |     oal_memcmp
+cc1: all warnings being treated as errors
+make[4]: *** [scripts/Makefile.build:356: drivers/connectivity/hisi/wifi/wal/wal_config.o] Error 1
+make[4]: *** Waiting for unfinished jobs....
+cc1: all warnings being treated as errors
+make[4]: *** [scripts/Makefile.build:356: drivers/connectivity/hisi/wifi/wal/wal_linux_bridge.o] Error 1
+cc1: all warnings being treated as errors
+make[4]: *** [scripts/Makefile.build:356: drivers/connectivity/hisi/wifi/wal/wal_config_debug.o] Error 1
+find lcdkit hisi folder, include it now!
+make[3]: *** [scripts/Makefile.build:687: drivers/connectivity/hisi/platform] Error 2
+make[3]: *** Waiting for unfinished jobs....
+cc1: all warnings being treated as errors
+make[4]: *** [scripts/Makefile.build:356: drivers/connectivity/hisi/wifi/wal/wal_main.o] Error 1
+make[3]: *** [scripts/Makefile.build:687: drivers/connectivity/hisi/wifi] Error 2
+make[2]: *** [scripts/Makefile.build:687: drivers/connectivity/hisi] Error 2
+make[2]: *** Waiting for unfinished jobs....
+  CC      drivers/devkit/tpkit/huawei_ts_kit_core.o
+  CC      drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_fb_util_hs.o
+In file included from /home/ubuntu/kirin970/include/linux/rcupdate.h:47,
+                 from /home/ubuntu/kirin970/include/linux/rbtree.h:34,
+                 from /home/ubuntu/kirin970/include/linux/mm_types.h:9,
+                 from /home/ubuntu/kirin970/include/linux/mmzone.h:21,
+                 from /home/ubuntu/kirin970/include/linux/gfp.h:5,
+                 from /home/ubuntu/kirin970/include/linux/slab.h:14,
+                 from ./drivers/connectivity/hi11xx/hi1103/platform/inc/oal/linux/arch/oal_mm.h:17,
+                 from ./drivers/connectivity/hi11xx/hi1103/platform/inc/oal/oal_mm.h:17,
+                 from ./drivers/connectivity/hi11xx/hi1103/platform/inc/oal/oal_util.h:17,
+                 from drivers/connectivity/hi11xx/hi1103/platform/oal/oal_sdio_host.c:10:
+drivers/connectivity/hi11xx/hi1103/platform/oal/oal_sdio_host.c: In function '_oal_sdio_transfer_scatt':
+/home/ubuntu/kirin970/include/linux/ktime.h:60:43: error: 'time_start.tv64' may be used uninitialized in this function [-Werror=maybe-uninitialized]
+   60 |   ({ (ktime_t){ .tv64 = (lhs).tv64 - (rhs).tv64 }; })
+      |                                           ^
+  CC      drivers/gpu/arm/bifrost-r14p0-00cet0/mali_kbase_gpuprops.o
+  LD      drivers/gpu/drm/bridge/built-in.o
+  LD      drivers/gpu/drm/hisilicon/built-in.o
+drivers/devkit/tpkit/huawei_ts_kit_core.c: In function 'rawdata_proc_printf':
+drivers/devkit/tpkit/huawei_ts_kit_core.c:499:20: warning: format '%s' expects argument of type 'char *', but argument 3 has type 'int *' [-Wformat=]
+  499 |    seq_printf(m, "%s\n", info->tx_delta_buf);
+      |                   ~^     ~~~~~~~~~~~~~~~~~~
+      |                    |         |
+      |                    char *    int *
+      |                   %ls
+drivers/devkit/tpkit/huawei_ts_kit_core.c:500:20: warning: format '%s' expects argument of type 'char *', but argument 3 has type 'int *' [-Wformat=]
+  500 |    seq_printf(m, "%s\n", info->rx_delta_buf);
+      |                   ~^     ~~~~~~~~~~~~~~~~~~
+      |                    |         |
+      |                    char *    int *
+      |                   %ls
+drivers/devkit/tpkit/huawei_ts_kit_core.c:503:20: warning: format '%s' expects argument of type 'char *', but argument 3 has type 'int *' [-Wformat=]
+  503 |    seq_printf(m, "%s\n", info->td43xx_rt95_part_one);
+      |                   ~^     ~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |                    |         |
+      |                    char *    int *
+      |                   %ls
+drivers/devkit/tpkit/huawei_ts_kit_core.c:504:20: warning: format '%s' expects argument of type 'char *', but argument 3 has type 'int *' [-Wformat=]
+  504 |    seq_printf(m, "%s\n", info->td43xx_rt95_part_two);
+      |                   ~^     ~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |                    |         |
+      |                    char *    int *
+      |                   %ls
+In file included from /home/ubuntu/kirin970/include/linux/printk.h:6,
+                 from /home/ubuntu/kirin970/include/linux/kernel.h:13,
+                 from /home/ubuntu/kirin970/include/linux/list.h:8,
+                 from /home/ubuntu/kirin970/include/linux/module.h:9,
+                 from drivers/devkit/tpkit/huawei_ts_kit_core.c:8:
+drivers/devkit/tpkit/huawei_ts_kit_core.c: In function 'rawdata_proc_newformat_printf':
+/home/ubuntu/kirin970/include/linux/kern_levels.h:4:18: warning: format '%d' expects a matching 'int' argument [-Wformat=]
+    4 | #define KERN_SOH "\001"  /* ASCII Start Of Header */
+      |                  ^~~~~~
+/home/ubuntu/kirin970/include/linux/kern_levels.h:13:19: note: in expansion of macro 'KERN_SOH'
+   13 | #define KERN_INFO KERN_SOH "6" /* informational */
+      |                   ^~~~~~~~
+/home/ubuntu/kirin970/include/linux/printk.h:290:9: note: in expansion of macro 'KERN_INFO'
+  290 |  printk(KERN_INFO pr_fmt(fmt), ##__VA_ARGS__)
+      |         ^~~~~~~~~
+/home/ubuntu/kirin970/include/huawei_platform/log/hw_log.h:77:13: note: in expansion of macro 'pr_info'
+   77 |             pr_info(hw_fmt_tag(TAG,I) fmt,##__VA_ARGS__);    \
+      |             ^~~~~~~
+/home/ubuntu/kirin970/include/huawei_platform/log/hw_log.h:72:9: note: in expansion of macro '__hwlog_info'
+   72 |         __hwlog_info(TAG,##x)
+      |         ^~~~~~~~~~~~
+drivers/devkit/tpkit/huawei_ts_kit.h:286:28: note: in expansion of macro '_hwlog_info'
+  286 | #define TS_LOG_INFO(x...)  _hwlog_info(HWLOG_TAG, ##x)
+      |                            ^~~~~~~~~~~
+drivers/devkit/tpkit/huawei_ts_kit_core.c:685:2: note: in expansion of macro 'TS_LOG_INFO'
+  685 |  TS_LOG_INFO("%s : devinfo:%s,nodenum:%d,alllength:%d\n",__func__,info->deviceinfo,info->listnodenum);
+      |  ^~~~~~~~~~~
+drivers/devkit/tpkit/huawei_ts_kit_core.c: In function 'ts_change_spi_mode':
+/home/ubuntu/kirin970/include/linux/kern_levels.h:4:18: warning: format '%s' expects a matching 'char *' argument [-Wformat=]
+    4 | #define KERN_SOH "\001"  /* ASCII Start Of Header */
+      |                  ^~~~~~
+/home/ubuntu/kirin970/include/linux/kern_levels.h:10:18: note: in expansion of macro 'KERN_SOH'
+   10 | #define KERN_ERR KERN_SOH "3" /* error conditions */
+      |                  ^~~~~~~~
+/home/ubuntu/kirin970/include/linux/printk.h:283:9: note: in expansion of macro 'KERN_ERR'
+  283 |  printk(KERN_ERR pr_fmt(fmt), ##__VA_ARGS__)
+      |         ^~~~~~~~
+/home/ubuntu/kirin970/include/huawei_platform/log/hw_log.h:53:13: note: in expansion of macro 'pr_err'
+   53 |             pr_err(hw_fmt_tag(TAG,E) fmt,##__VA_ARGS__);    \
+      |             ^~~~~~
+/home/ubuntu/kirin970/include/huawei_platform/log/hw_log.h:48:9: note: in expansion of macro '__hwlog_err'
+   48 |         __hwlog_err(TAG,##x)
+      |         ^~~~~~~~~~~
+drivers/devkit/tpkit/huawei_ts_kit.h:287:27: note: in expansion of macro '_hwlog_err'
+  287 | #define TS_LOG_ERR(x...)  _hwlog_err(HWLOG_TAG, ##x)
+      |                           ^~~~~~~~~~
+drivers/devkit/tpkit/huawei_ts_kit_core.c:1273:4: note: in expansion of macro 'TS_LOG_ERR'
+ 1273 |    TS_LOG_ERR("%s setup spi failed.\n");
+      |    ^~~~~~~~~~
+  LD      drivers/gpu/drm/i2c/built-in.o
+drivers/devkit/tpkit/huawei_ts_kit_core.c: In function 'fb_notifier_callback':
+/home/ubuntu/kirin970/include/linux/kern_levels.h:4:18: warning: format '%ld' expects argument of type 'long int', but argument 3 has type 'int' [-Wformat=]
+    4 | #define KERN_SOH "\001"  /* ASCII Start Of Header */
+      |                  ^~~~~~
+/home/ubuntu/kirin970/include/linux/kern_levels.h:13:19: note: in expansion of macro 'KERN_SOH'
+   13 | #define KERN_INFO KERN_SOH "6" /* informational */
+      |                   ^~~~~~~~
+/home/ubuntu/kirin970/include/linux/printk.h:290:9: note: in expansion of macro 'KERN_INFO'
+  290 |  printk(KERN_INFO pr_fmt(fmt), ##__VA_ARGS__)
+      |         ^~~~~~~~~
+/home/ubuntu/kirin970/include/huawei_platform/log/hw_log.h:77:13: note: in expansion of macro 'pr_info'
+   77 |             pr_info(hw_fmt_tag(TAG,I) fmt,##__VA_ARGS__);    \
+      |             ^~~~~~~
+/home/ubuntu/kirin970/include/huawei_platform/log/hw_log.h:72:9: note: in expansion of macro '__hwlog_info'
+   72 |         __hwlog_info(TAG,##x)
+      |         ^~~~~~~~~~~~
+drivers/devkit/tpkit/huawei_ts_kit.h:286:28: note: in expansion of macro '_hwlog_info'
+  286 | #define TS_LOG_INFO(x...)  _hwlog_info(HWLOG_TAG, ##x)
+      |                            ^~~~~~~~~~~
+drivers/devkit/tpkit/huawei_ts_kit_core.c:2129:5: note: in expansion of macro 'TS_LOG_INFO'
+ 2129 |     TS_LOG_INFO("tpkit fb_callback called,ic_type is %d,pt_flag is %ld,event is %d\n",g_tskit_ic_type,g_tskit_pt_station_flag,event);
+      |     ^~~~~~~~~~~
+/home/ubuntu/kirin970/include/linux/kern_levels.h:4:18: warning: format '%d' expects argument of type 'int', but argument 4 has type 'long unsigned int' [-Wformat=]
+    4 | #define KERN_SOH "\001"  /* ASCII Start Of Header */
+      |                  ^~~~~~
+/home/ubuntu/kirin970/include/linux/kern_levels.h:13:19: note: in expansion of macro 'KERN_SOH'
+   13 | #define KERN_INFO KERN_SOH "6" /* informational */
+      |                   ^~~~~~~~
+/home/ubuntu/kirin970/include/linux/printk.h:290:9: note: in expansion of macro 'KERN_INFO'
+  290 |  printk(KERN_INFO pr_fmt(fmt), ##__VA_ARGS__)
+      |         ^~~~~~~~~
+/home/ubuntu/kirin970/include/huawei_platform/log/hw_log.h:77:13: note: in expansion of macro 'pr_info'
+   77 |             pr_info(hw_fmt_tag(TAG,I) fmt,##__VA_ARGS__);    \
+      |             ^~~~~~~
+/home/ubuntu/kirin970/include/huawei_platform/log/hw_log.h:72:9: note: in expansion of macro '__hwlog_info'
+   72 |         __hwlog_info(TAG,##x)
+      |         ^~~~~~~~~~~~
+drivers/devkit/tpkit/huawei_ts_kit.h:286:28: note: in expansion of macro '_hwlog_info'
+  286 | #define TS_LOG_INFO(x...)  _hwlog_info(HWLOG_TAG, ##x)
+      |                            ^~~~~~~~~~~
+drivers/devkit/tpkit/huawei_ts_kit_core.c:2129:5: note: in expansion of macro 'TS_LOG_INFO'
+ 2129 |     TS_LOG_INFO("tpkit fb_callback called,ic_type is %d,pt_flag is %ld,event is %d\n",g_tskit_ic_type,g_tskit_pt_station_flag,event);
+      |     ^~~~~~~~~~~
+/home/ubuntu/kirin970/include/linux/kern_levels.h:4:18: warning: format '%d' expects argument of type 'int', but argument 2 has type 'long unsigned int' [-Wformat=]
+    4 | #define KERN_SOH "\001"  /* ASCII Start Of Header */
+      |                  ^~~~~~
+/home/ubuntu/kirin970/include/linux/kern_levels.h:13:19: note: in expansion of macro 'KERN_SOH'
+   13 | #define KERN_INFO KERN_SOH "6" /* informational */
+      |                   ^~~~~~~~
+/home/ubuntu/kirin970/include/linux/printk.h:290:9: note: in expansion of macro 'KERN_INFO'
+  290 |  printk(KERN_INFO pr_fmt(fmt), ##__VA_ARGS__)
+      |         ^~~~~~~~~
+/home/ubuntu/kirin970/include/huawei_platform/log/hw_log.h:77:13: note: in expansion of macro 'pr_info'
+   77 |             pr_info(hw_fmt_tag(TAG,I) fmt,##__VA_ARGS__);    \
+      |             ^~~~~~~
+/home/ubuntu/kirin970/include/huawei_platform/log/hw_log.h:72:9: note: in expansion of macro '__hwlog_info'
+   72 |         __hwlog_info(TAG,##x)
+      |         ^~~~~~~~~~~~
+drivers/devkit/tpkit/huawei_ts_kit.h:291:13: note: in expansion of macro '_hwlog_info'
+  291 |             _hwlog_info(HWLOG_TAG, ##x); \
+      |             ^~~~~~~~~~~
+drivers/devkit/tpkit/huawei_ts_kit_core.c:2139:9: note: in expansion of macro 'TS_LOG_DEBUG'
+ 2139 |         TS_LOG_DEBUG("event(%d) do not need process\n", event);
+      |         ^~~~~~~~~~~~
+/home/ubuntu/kirin970/include/linux/kern_levels.h:4:18: warning: format '%d' expects argument of type 'int', but argument 2 has type 'long unsigned int' [-Wformat=]
+    4 | #define KERN_SOH "\001"  /* ASCII Start Of Header */
+      |                  ^~~~~~
+/home/ubuntu/kirin970/include/linux/kern_levels.h:13:19: note: in expansion of macro 'KERN_SOH'
+   13 | #define KERN_INFO KERN_SOH "6" /* informational */
+      |                   ^~~~~~~~
+/home/ubuntu/kirin970/include/linux/printk.h:290:9: note: in expansion of macro 'KERN_INFO'
+  290 |  printk(KERN_INFO pr_fmt(fmt), ##__VA_ARGS__)
+      |         ^~~~~~~~~
+/home/ubuntu/kirin970/include/huawei_platform/log/hw_log.h:77:13: note: in expansion of macro 'pr_info'
+   77 |             pr_info(hw_fmt_tag(TAG,I) fmt,##__VA_ARGS__);    \
+      |             ^~~~~~~
+/home/ubuntu/kirin970/include/huawei_platform/log/hw_log.h:72:9: note: in expansion of macro '__hwlog_info'
+   72 |         __hwlog_info(TAG,##x)
+      |         ^~~~~~~~~~~~
+drivers/devkit/tpkit/huawei_ts_kit.h:291:13: note: in expansion of macro '_hwlog_info'
+  291 |             _hwlog_info(HWLOG_TAG, ##x); \
+      |             ^~~~~~~~~~~
+drivers/devkit/tpkit/huawei_ts_kit_core.c:2145:9: note: in expansion of macro 'TS_LOG_DEBUG'
+ 2145 |         TS_LOG_DEBUG("event = %d, blank is NULL, not do fb_notifier_callback\n", event);
+      |         ^~~~~~~~~~~~
+drivers/devkit/tpkit/huawei_ts_kit_core.c: In function 'ts_ioctl_get_fingers_info':
+drivers/devkit/tpkit/huawei_ts_kit_core.c:2856:9: warning: unused variable 'frame_size' [-Wunused-variable]
+ 2856 |     u32 frame_size;
+      |         ^~~~~~~~~~
+drivers/devkit/tpkit/huawei_ts_kit_core.c:2855:23: warning: unused variable 'data' [-Wunused-variable]
+ 2855 |     struct ts_fingers data;
+      |                       ^~~~
+drivers/devkit/tpkit/huawei_ts_kit_core.c: In function 'ts_ioctl_get_aft_param_info':
+drivers/devkit/tpkit/huawei_ts_kit_core.c:2894:22: warning: passing argument 1 of 'copy_to_user' makes pointer from integer without a cast [-Wint-conversion]
+ 2894 |     if (copy_to_user(arg, &g_ts_kit_platform_data.aft_param,
+      |                      ^~~
+      |                      |
+      |                      long unsigned int
+In file included from /home/ubuntu/kirin970/include/linux/uaccess.h:5,
+                 from drivers/devkit/tpkit/huawei_ts_kit_core.c:23:
+./arch/arm64/include/asm/uaccess.h:454:68: note: expected 'void *' but argument is of type 'long unsigned int'
+  454 | static inline unsigned long __must_check copy_to_user(void __user *to, const void *from, unsigned long n)
+      |                                                       ~~~~~~~~~~~~~^~
+drivers/devkit/tpkit/huawei_ts_kit_core.c: In function 'ts_ioctl_set_coordinates':
+drivers/devkit/tpkit/huawei_ts_kit_core.c:2935:2: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+ 2935 |  struct aft_abs_param_major aft_abs_major;
+      |  ^~~~~~
+drivers/devkit/tpkit/huawei_ts_kit_core.c:2912:19: warning: unused variable 'flags' [-Wunused-variable]
+ 2912 |     unsigned long flags;
+      |                   ^~~~~
+drivers/devkit/tpkit/huawei_ts_kit_core.c: In function 'ts_send_init_cmd':
+drivers/devkit/tpkit/huawei_ts_kit_core.c:3449:3: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+ 3449 |   struct ts_cmd_node cmd;
+      |   ^~~~~~
+drivers/devkit/tpkit/huawei_ts_kit_core.c: In function 'tp_init_work_fn':
+drivers/devkit/tpkit/huawei_ts_kit_core.c:3475:2: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+ 3475 |  int error = NO_ERR;
+      |  ^~~
+drivers/devkit/tpkit/huawei_ts_kit_core.c: In function 'ts_kit_proc_command_directly':
+drivers/devkit/tpkit/huawei_ts_kit_core.c:3888:2: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+ 3888 |  struct ts_cmd_node outcmd;
+      |  ^~~~~~
+drivers/devkit/tpkit/huawei_ts_kit_core.c: In function 'ts_dmd_report':
+drivers/devkit/tpkit/huawei_ts_kit_core.c:4012:5: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+ 4012 |     char input_buf[TS_CHIP_DMD_REPORT_SIZE] = {0};
+      |     ^~~~
+drivers/devkit/tpkit/huawei_ts_kit_core.c: In function 'ts_thread':
+drivers/devkit/tpkit/huawei_ts_kit_core.c:4291:1: warning: label 'err_out' defined but not used [-Wunused-label]
+ 4291 | err_out:
+      | ^~~~~~~
+drivers/devkit/tpkit/huawei_ts_kit_core.c: In function 'huawei_ts_chip_register':
+drivers/devkit/tpkit/huawei_ts_kit_core.c:4347:1: warning: label 'out' defined but not used [-Wunused-label]
+ 4347 | out:
+      | ^~~
+In file included from drivers/devkit/tpkit/huawei_ts_kit_core.c:22:
+drivers/devkit/tpkit/huawei_ts_kit_core.c: In function 'huawei_ts_module_init':
+drivers/devkit/tpkit/huawei_ts_kit_core.c:4427:58: error: passing argument 1 of 'kthread_create_on_node' from incompatible pointer type [-Werror=incompatible-pointer-types]
+ 4427 |     g_ts_kit_platform_data.ts_init_task = kthread_create(&g_ts_kit_platform_data, "ts_init_thread:%d", 0);
+      |                                                          ^~~~~~~~~~~~~~~~~~~~~~~
+      |                                                          |
+      |                                                          struct ts_kit_platform_data *
+/home/ubuntu/kirin970/include/linux/kthread.h:25:25: note: in definition of macro 'kthread_create'
+   25 |  kthread_create_on_node(threadfn, data, NUMA_NO_NODE, namefmt, ##arg)
+      |                         ^~~~~~~~
+/home/ubuntu/kirin970/include/linux/kthread.h:8:50: note: expected 'int (*)(void *)' but argument is of type 'struct ts_kit_platform_data *'
+    8 | struct task_struct *kthread_create_on_node(int (*threadfn)(void *data),
+      |                                            ~~~~~~^~~~~~~~~~~~~~~~~~~~~
+  LD      drivers/gpu/drm/omapdrm/displays/built-in.o
+drivers/devkit/tpkit/huawei_ts_kit_core.c: In function 'ts_ioctl_get_fingers_info':
+drivers/devkit/tpkit/huawei_ts_kit_core.c:2866:2: warning: ignoring return value of 'down_interruptible' declared with attribute 'warn_unused_result' [-Wunused-result]
+ 2866 |  down_interruptible(&g_ts_kit_platform_data.fingers_aft_send);
+      |  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+At top level:
+drivers/devkit/tpkit/huawei_ts_kit_core.c:4029:12: warning: 'ts_kit_init' defined but not used [-Wunused-function]
+ 4029 | static int ts_kit_init(void)
+      |            ^~~~~~~~~~~
+  LD      drivers/gpu/drm/omapdrm/dss/built-in.o
+  LD      drivers/gpu/drm/omapdrm/built-in.o
+In file included from drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_fb_util_hs.c:2:
+drivers/devkit/lcdkit/lcdkit1.0/include/lcdkit_panel.h:160:48: warning: 'struct lcdkit_dsi_panel_cmds' declared inside parameter list will not be visible outside of this definition or declaration
+  160 | typedef void (* dcs_level_trans_func_t)(struct lcdkit_dsi_panel_cmds *, int, int);
+      |                                                ^~~~~~~~~~~~~~~~~~~~~
+drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_fb_util_hs.c: In function 'get_lcdkit_support':
+drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_fb_util_hs.c:24:66: error: passing argument 3 of 'of_property_read_string' from incompatible pointer type [-Werror=incompatible-pointer-types]
+   24 |     ret = of_property_read_string(lcdkit_np, "support_lcd_type", support_type);
+      |                                                                  ^~~~~~~~~~~~
+      |                                                                  |
+      |                                                                  char *
+In file included from /home/ubuntu/kirin970/include/linux/i2c.h:33,
+                 from /home/ubuntu/kirin970/include/uapi/linux/fb.h:5,
+                 from /home/ubuntu/kirin970/include/linux/fb.h:5,
+                 from drivers/video/fbdev/hisi/dss/hisi_fb.h:22,
+                 from drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_fb_util_hs.c:1:
+/home/ubuntu/kirin970/include/linux/of.h:316:21: note: expected 'const char **' but argument is of type 'char *'
+  316 |        const char **out_string);
+      |        ~~~~~~~~~~~~~^~~~~~~~~~
+drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_fb_util_hs.c: In function 'lcd_ic_color_enhancement_mode_show':
+drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_fb_util_hs.c:417:66: warning: passing argument 1 of 'lcdkit_info->lcdkit_ic_color_enhancement_mode_show' discards 'const' qualifier from pointer target type [-Wdiscarded-qualifiers]
+  417 |         ret = lcdkit_info->lcdkit_ic_color_enhancement_mode_show(buf);
+      |                                                                  ^~~
+drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_fb_util_hs.c:417:66: note: expected 'char *' but argument is of type 'const char *'
+drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_fb_util_hs.c: In function 'lcd_voltage_mode_enable_store':
+drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_fb_util_hs.c:713:1: warning: label 'err_out' defined but not used [-Wunused-label]
+  713 | err_out:
+      | ^~~~~~~
+drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_fb_util_hs.c: In function 'lcd_support_mode_show':
+drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_fb_util_hs.c:905:10: warning: unused variable 'lcd_bist_check_result' [-Wunused-variable]
+  905 |     char lcd_bist_check_result[BIS_CHECK_COUNT] = {0};
+      |          ^~~~~~~~~~~~~~~~~~~~~
+drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_fb_util_hs.c: In function 'lcd_support_checkmode_show':
+drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_fb_util_hs.c:1216:10: warning: unused variable 'lcd_bist_check_result' [-Wunused-variable]
+ 1216 |     char lcd_bist_check_result[BIS_CHECK_COUNT] = {0};
+      |          ^~~~~~~~~~~~~~~~~~~~~
+  LD      drivers/gpu/drm/panel/built-in.o
+In file included from /home/ubuntu/kirin970/include/linux/printk.h:6,
+                 from /home/ubuntu/kirin970/include/linux/kernel.h:13,
+                 from /home/ubuntu/kirin970/include/linux/sched.h:17,
+                 from /home/ubuntu/kirin970/include/linux/uaccess.h:4,
+                 from drivers/video/fbdev/hisi/dss/hisi_fb.h:18,
+                 from drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_fb_util_hs.c:1:
+drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_fb_util_hs.c: In function 'alpm_function_store':
+/home/ubuntu/kirin970/include/linux/kern_levels.h:4:18: warning: format '%d' expects argument of type 'int', but argument 3 has type 'ssize_t' {aka 'long int'} [-Wformat=]
+    4 | #define KERN_SOH "\001"  /* ASCII Start Of Header */
+      |                  ^~~~~~
+/home/ubuntu/kirin970/include/linux/kern_levels.h:10:18: note: in expansion of macro 'KERN_SOH'
+   10 | #define KERN_ERR KERN_SOH "3" /* error conditions */
+      |                  ^~~~~~~~
+/home/ubuntu/kirin970/include/linux/printk.h:283:9: note: in expansion of macro 'KERN_ERR'
+  283 |  printk(KERN_ERR pr_fmt(fmt), ##__VA_ARGS__)
+      |         ^~~~~~~~
+drivers/video/fbdev/hisi/dss/hisi_fb_def.h:89:3: note: in expansion of macro 'pr_err'
+   89 |   pr_err("[hisifb E]:%s: "msg, __func__, ## __VA_ARGS__); } while (0)
+      |   ^~~~~~
+drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_fb_util_hs.c:2856:3: note: in expansion of macro 'HISI_FB_ERR'
+ 2856 |   HISI_FB_ERR("sscanf return invaild:%d\n", ret);
+      |   ^~~~~~~~~~~
+drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_fb_util_hs.c: In function 'lcd_dynamic_porch_store':
+drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_fb_util_hs.c:3395:1: warning: label 'out' defined but not used [-Wunused-label]
+ 3395 | out:
+      | ^~~
+drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_fb_util_hs.c: In function 'lcd_dynamic_porch_show':
+drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_fb_util_hs.c:3451:11: warning: format '%d' expects argument of type 'int', but argument 10 has type 'uint64_t' {aka 'long long unsigned int'} [-Wformat=]
+ 3451 |           "h_back_porch=%d\n"
+      |           ^~~~~~~~~~~~~~~~~~~
+......
+ 3464 |           pinfo->pxl_clk_rate);
+      |           ~~~~~~~~~~~~~~~~~~~
+      |                |
+      |                uint64_t {aka long long unsigned int}
+drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_fb_util_hs.c:3457:25: note: format string is defined here
+ 3457 |           "pixel clk = %d\n",
+      |                        ~^
+      |                         |
+      |                         int
+      |                        %lld
+drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_fb_util_hs.c: In function 'lcd_mipi_config_store':
+drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_fb_util_hs.c:4087:2: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+ 4087 |  struct hisi_fb_data_type* hisifd = get_fb_data(dev);
+      |  ^~~~~~
+In file included from drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_fb_util_hs.c:5:
+At top level:
+drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:745:25: warning: 'lcdkit_vci_disable_cmds' defined but not used [-Wunused-variable]
+  745 | static struct gpio_desc lcdkit_vci_disable_cmds[] =
+      |                         ^~~~~~~~~~~~~~~~~~~~~~~
+drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:732:25: warning: 'lcdkit_vbat_disable_cmds' defined but not used [-Wunused-variable]
+  732 | static struct gpio_desc lcdkit_vbat_disable_cmds[] =
+      |                         ^~~~~~~~~~~~~~~~~~~~~~~~
+drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:719:25: warning: 'lcdkit_iovcc_disable_cmds' defined but not used [-Wunused-variable]
+  719 | static struct gpio_desc lcdkit_iovcc_disable_cmds[] =
+      |                         ^~~~~~~~~~~~~~~~~~~~~~~~~
+drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:711:25: warning: 'lcdkit_vci_free_cmds' defined but not used [-Wunused-variable]
+  711 | static struct gpio_desc lcdkit_vci_free_cmds[] =
+      |                         ^~~~~~~~~~~~~~~~~~~~
+drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:703:25: warning: 'lcdkit_vbat_free_cmds' defined but not used [-Wunused-variable]
+  703 | static struct gpio_desc lcdkit_vbat_free_cmds[] =
+      |                         ^~~~~~~~~~~~~~~~~~~~~
+drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:695:25: warning: 'lcdkit_iovcc_free_cmds' defined but not used [-Wunused-variable]
+  695 | static struct gpio_desc lcdkit_iovcc_free_cmds[] =
+      |                         ^~~~~~~~~~~~~~~~~~~~~~
+drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:687:25: warning: 'lcdkit_vci_enable_cmds' defined but not used [-Wunused-variable]
+  687 | static struct gpio_desc lcdkit_vci_enable_cmds[] =
+      |                         ^~~~~~~~~~~~~~~~~~~~~~
+drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:679:25: warning: 'lcdkit_vbat_enable_cmds' defined but not used [-Wunused-variable]
+  679 | static struct gpio_desc lcdkit_vbat_enable_cmds[] =
+      |                         ^~~~~~~~~~~~~~~~~~~~~~~
+drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:671:25: warning: 'lcdkit_iovcc_enable_cmds' defined but not used [-Wunused-variable]
+  671 | static struct gpio_desc lcdkit_iovcc_enable_cmds[] =
+      |                         ^~~~~~~~~~~~~~~~~~~~~~~~
+drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:663:25: warning: 'lcdkit_vci_request_cmds' defined but not used [-Wunused-variable]
+  663 | static struct gpio_desc lcdkit_vci_request_cmds[] =
+      |                         ^~~~~~~~~~~~~~~~~~~~~~~
+drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:655:25: warning: 'lcdkit_vbat_request_cmds' defined but not used [-Wunused-variable]
+  655 | static struct gpio_desc lcdkit_vbat_request_cmds[] =
+      |                         ^~~~~~~~~~~~~~~~~~~~~~~~
+drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:647:25: warning: 'lcdkit_iovcc_request_cmds' defined but not used [-Wunused-variable]
+  647 | static struct gpio_desc lcdkit_iovcc_request_cmds[] =
+      |                         ^~~~~~~~~~~~~~~~~~~~~~~~~
+drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:535:25: warning: 'lcdkit_bias_disable_cmds' defined but not used [-Wunused-variable]
+  535 | static struct gpio_desc lcdkit_bias_disable_cmds[] =
+      |                         ^~~~~~~~~~~~~~~~~~~~~~~~
+drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:521:25: warning: 'lcdkit_bias_free_cmds' defined but not used [-Wunused-variable]
+  521 | static struct gpio_desc lcdkit_bias_free_cmds[] =
+      |                         ^~~~~~~~~~~~~~~~~~~~~
+drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:507:25: warning: 'lcdkit_bias_enable_cmds' defined but not used [-Wunused-variable]
+  507 | static struct gpio_desc lcdkit_bias_enable_cmds[] =
+      |                         ^~~~~~~~~~~~~~~~~~~~~~~
+drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:493:25: warning: 'lcdkit_bias_request_cmds' defined but not used [-Wunused-variable]
+  493 | static struct gpio_desc lcdkit_bias_request_cmds[] =
+      |                         ^~~~~~~~~~~~~~~~~~~~~~~~
+drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:482:25: warning: 'lcdkit_gpio_id1_input_cmds' defined but not used [-Wunused-variable]
+  482 | static struct gpio_desc lcdkit_gpio_id1_input_cmds[] =
+      |                         ^~~~~~~~~~~~~~~~~~~~~~~~~~
+drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:474:25: warning: 'lcdkit_gpio_id0_input_cmds' defined but not used [-Wunused-variable]
+  474 | static struct gpio_desc lcdkit_gpio_id0_input_cmds[] =
+      |                         ^~~~~~~~~~~~~~~~~~~~~~~~~~
+drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:466:25: warning: 'lcdkit_gpio_id1_high_cmds' defined but not used [-Wunused-variable]
+  466 | static struct gpio_desc lcdkit_gpio_id1_high_cmds[] =
+      |                         ^~~~~~~~~~~~~~~~~~~~~~~~~
+drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:458:25: warning: 'lcdkit_gpio_id1_low_cmds' defined but not used [-Wunused-variable]
+  458 | static struct gpio_desc lcdkit_gpio_id1_low_cmds[] =
+      |                         ^~~~~~~~~~~~~~~~~~~~~~~~
+drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:450:25: warning: 'lcdkit_gpio_id0_high_cmds' defined but not used [-Wunused-variable]
+  450 | static struct gpio_desc lcdkit_gpio_id0_high_cmds[] =
+      |                         ^~~~~~~~~~~~~~~~~~~~~~~~~
+drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:442:25: warning: 'lcdkit_gpio_id0_low_cmds' defined but not used [-Wunused-variable]
+  442 | static struct gpio_desc lcdkit_gpio_id0_low_cmds[] =
+      |                         ^~~~~~~~~~~~~~~~~~~~~~~~
+drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:428:25: warning: 'lcdkit_gpio_id_request_cmds' defined but not used [-Wunused-variable]
+  428 | static struct gpio_desc lcdkit_gpio_id_request_cmds[] =
+      |                         ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:416:25: warning: 'lcdkit_gpio_reset_low_cmds' defined but not used [-Wunused-variable]
+  416 | static struct gpio_desc lcdkit_gpio_reset_low_cmds[] =
+      |                         ^~~~~~~~~~~~~~~~~~~~~~~~~~
+drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:407:25: warning: 'lcdkit_gpio_reset_high_cmds' defined but not used [-Wunused-variable]
+  407 | static struct gpio_desc lcdkit_gpio_reset_high_cmds[] =
+      |                         ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:390:25: warning: 'lcdkit_gpio_reset_normal_cmds' defined but not used [-Wunused-variable]
+  390 | static struct gpio_desc lcdkit_gpio_reset_normal_cmds[] =
+      |                         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:381:25: warning: 'lcdkit_gpio_reset_free_cmds' defined but not used [-Wunused-variable]
+  381 | static struct gpio_desc lcdkit_gpio_reset_free_cmds[] =
+      |                         ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:372:25: warning: 'lcdkit_gpio_reset_request_cmds' defined but not used [-Wunused-variable]
+  372 | static struct gpio_desc lcdkit_gpio_reset_request_cmds[] =
+      |                         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:342:32: warning: 'lcdkit_pinctrl_finit_cmds' defined but not used [-Wunused-variable]
+  342 | static struct pinctrl_cmd_desc lcdkit_pinctrl_finit_cmds[] =
+      |                                ^~~~~~~~~~~~~~~~~~~~~~~~~
+drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:337:32: warning: 'lcdkit_pinctrl_low_cmds' defined but not used [-Wunused-variable]
+  337 | static struct pinctrl_cmd_desc lcdkit_pinctrl_low_cmds[] =
+      |                                ^~~~~~~~~~~~~~~~~~~~~~~
+drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:332:32: warning: 'lcdkit_pinctrl_normal_cmds' defined but not used [-Wunused-variable]
+  332 | static struct pinctrl_cmd_desc lcdkit_pinctrl_normal_cmds[] =
+      |                                ^~~~~~~~~~~~~~~~~~~~~~~~~~
+drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:325:32: warning: 'lcdkit_pinctrl_init_cmds' defined but not used [-Wunused-variable]
+  325 | static struct pinctrl_cmd_desc lcdkit_pinctrl_init_cmds[] =
+      |                                ^~~~~~~~~~~~~~~~~~~~~~~~
+drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:314:24: warning: 'lcdkit_regulator_vci_disable_cmds' defined but not used [-Wunused-variable]
+  314 | static struct vcc_desc lcdkit_regulator_vci_disable_cmds[] =
+      |                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:308:24: warning: 'lcdkit_vdd_disable_cmds' defined but not used [-Wunused-variable]
+  308 | static struct vcc_desc lcdkit_vdd_disable_cmds[] =
+      |                        ^~~~~~~~~~~~~~~~~~~~~~~
+drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:302:24: warning: 'lcdkit_io_vcc_disable_cmds' defined but not used [-Wunused-variable]
+  302 | static struct vcc_desc lcdkit_io_vcc_disable_cmds[] =
+      |                        ^~~~~~~~~~~~~~~~~~~~~~~~~~
+drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:296:24: warning: 'lcdkit_regulator_vci_enable_cmds' defined but not used [-Wunused-variable]
+  296 | static struct vcc_desc lcdkit_regulator_vci_enable_cmds[] =
+      |                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:289:24: warning: 'lcdkit_vdd_enable_cmds' defined but not used [-Wunused-variable]
+  289 | static struct vcc_desc lcdkit_vdd_enable_cmds[] =
+      |                        ^~~~~~~~~~~~~~~~~~~~~~
+drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:283:24: warning: 'lcdkit_io_vcc_enable_cmds' defined but not used [-Wunused-variable]
+  283 | static struct vcc_desc lcdkit_io_vcc_enable_cmds[] =
+      |                        ^~~~~~~~~~~~~~~~~~~~~~~~~
+drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:275:24: warning: 'lcdkit_vcc_finit_cmds' defined but not used [-Wunused-variable]
+  275 | static struct vcc_desc lcdkit_vcc_finit_cmds[] =
+      |                        ^~~~~~~~~~~~~~~~~~~~~
+drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:267:24: warning: 'lcdkit_vci_init_cmds' defined but not used [-Wunused-variable]
+  267 | static struct vcc_desc lcdkit_vci_init_cmds[] =
+      |                        ^~~~~~~~~~~~~~~~~~~~
+drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:259:24: warning: 'lcdkit_vdd_init_cmds' defined but not used [-Wunused-variable]
+  259 | static struct vcc_desc lcdkit_vdd_init_cmds[] =
+      |                        ^~~~~~~~~~~~~~~~~~~~
+drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:251:24: warning: 'lcdkit_io_vcc_init_cmds' defined but not used [-Wunused-variable]
+  251 | static struct vcc_desc lcdkit_io_vcc_init_cmds[] =
+      |                        ^~~~~~~~~~~~~~~~~~~~~~~
+drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:234:24: warning: 'lcdkit_scharger_bl_disable_cmds' defined but not used [-Wunused-variable]
+  234 | static struct vcc_desc lcdkit_scharger_bl_disable_cmds[] =
+      |                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:228:24: warning: 'lcdkit_scharger_bl_enable_cmds' defined but not used [-Wunused-variable]
+  228 | static struct vcc_desc lcdkit_scharger_bl_enable_cmds[] =
+      |                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:220:24: warning: 'lcdkit_scharger_bias_disable_cmds' defined but not used [-Wunused-variable]
+  220 | static struct vcc_desc lcdkit_scharger_bias_disable_cmds[] =
+      |                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:212:24: warning: 'lcdkit_scharger_bias_enable_cmds' defined but not used [-Wunused-variable]
+  212 | static struct vcc_desc lcdkit_scharger_bias_enable_cmds[] =
+      |                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:203:24: warning: 'lcdkit_scharger_bias_put_cmds' defined but not used [-Wunused-variable]
+  203 | static struct vcc_desc lcdkit_scharger_bias_put_cmds[] =
+      |                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:195:24: warning: 'lcdkit_scharger_bias_set_cmds' defined but not used [-Wunused-variable]
+  195 | static struct vcc_desc lcdkit_scharger_bias_set_cmds[] =
+      |                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:186:24: warning: 'lcdkit_scharger_bias_get_cmds' defined but not used [-Wunused-variable]
+  186 | static struct vcc_desc lcdkit_scharger_bias_get_cmds[] =
+      |                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:166:25: warning: 'lcd_gpio_read_btb' defined but not used [-Wunused-variable]
+  166 | static struct gpio_desc lcd_gpio_read_btb =
+      |                         ^~~~~~~~~~~~~~~~~
+drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:162:25: warning: 'lcd_gpio_free_btb' defined but not used [-Wunused-variable]
+  162 | static struct gpio_desc lcd_gpio_free_btb =
+      |                         ^~~~~~~~~~~~~~~~~
+drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:158:25: warning: 'lcd_gpio_request_btb' defined but not used [-Wunused-variable]
+  158 | static struct gpio_desc lcd_gpio_request_btb =
+      |                         ^~~~~~~~~~~~~~~~~~~~
+drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:131:38: warning: 'voltage_table' defined but not used [-Wunused-variable]
+  131 | static struct lcdkit_vsp_vsn_voltage voltage_table[] = {
+      |                                      ^~~~~~~~~~~~~
+In file included from drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:37,
+                 from drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_fb_util_hs.c:5:
+drivers/video/fbdev/hisi/dss/voltage/tps65132.h:48:32: warning: 'vol_table' defined but not used [-Wunused-variable]
+   48 | static struct tps65132_voltage vol_table[] = {
+      |                                ^~~~~~~~~
+In file included from drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_fb_util_hs.c:2:
+drivers/devkit/lcdkit/lcdkit1.0/include/lcdkit_panel.h:269:14: warning: 'cmd_array' defined but not used [-Wunused-variable]
+  269 | static char* cmd_array[SENCE_ARRAY_SIZE] = {
+      |              ^~~~~~~~~
+drivers/devkit/lcdkit/lcdkit1.0/include/lcdkit_panel.h:244:14: warning: 'sence_array' defined but not used [-Wunused-variable]
+  244 | static char* sence_array[SENCE_ARRAY_SIZE] = {
+      |              ^~~~~~~~~~~
+  LD      drivers/gpu/drm/tilcdc/built-in.o
+cc1: all warnings being treated as errors
+make[5]: *** [scripts/Makefile.build:356: drivers/connectivity/hi11xx/hi1103/platform/oal/oal_sdio_host.o] Error 1
+make[4]: *** [scripts/Makefile.build:687: drivers/connectivity/hi11xx/hi1103/platform] Error 2
+make[4]: *** Waiting for unfinished jobs....
+  LD      drivers/gpu/drm/built-in.o
+  CC      drivers/gpu/arm/bifrost-r14p0-00cet0/mali_kbase_js.o
+drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_fb_util_hs.c: In function 'get_lcdkit_support':
+drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_fb_util_hs.c:33:10: warning: argument 1 null where non-null expected [-Wnonnull]
+   33 |     if (!strncmp(support_type, "LCDKIT", strlen("LCDKIT")))
+      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /home/ubuntu/kirin970/include/linux/string.h:18,
+                 from ./arch/arm64/include/asm/processor.h:37,
+                 from ./arch/arm64/include/asm/spinlock.h:21,
+                 from /home/ubuntu/kirin970/include/linux/spinlock.h:87,
+                 from /home/ubuntu/kirin970/include/linux/seqlock.h:35,
+                 from /home/ubuntu/kirin970/include/linux/time.h:5,
+                 from /home/ubuntu/kirin970/include/uapi/linux/timex.h:56,
+                 from /home/ubuntu/kirin970/include/linux/timex.h:56,
+                 from /home/ubuntu/kirin970/include/linux/sched.h:19,
+                 from /home/ubuntu/kirin970/include/linux/uaccess.h:4,
+                 from drivers/video/fbdev/hisi/dss/hisi_fb.h:18,
+                 from drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_fb_util_hs.c:1:
+./arch/arm64/include/asm/string.h:29:12: note: in a call to function 'strncmp' declared here
+   29 | extern int strncmp(const char *, const char *, __kernel_size_t);
+      |            ^~~~~~~
+drivers/devkit/tpkit/huawei_ts_kit_core.c: In function 'ts_dmd_report':
+drivers/devkit/tpkit/huawei_ts_kit_core.c:4025:1: warning: the frame size of 2128 bytes is larger than 2048 bytes [-Wframe-larger-than=]
+ 4025 | }
+      | ^
+  CC      drivers/devkit/tpkit/huawei_ts_kit_api.o
+In file included from /home/ubuntu/kirin970/include/linux/printk.h:6,
+                 from /home/ubuntu/kirin970/include/linux/kernel.h:13,
+                 from /home/ubuntu/kirin970/include/linux/list.h:8,
+                 from /home/ubuntu/kirin970/include/linux/module.h:9,
+                 from drivers/devkit/tpkit/huawei_ts_kit_api.c:8:
+drivers/devkit/tpkit/huawei_ts_kit_api.c: In function 'ts_report_pen':
+/home/ubuntu/kirin970/include/linux/kern_levels.h:4:18: warning: too many arguments for format [-Wformat-extra-args]
+    4 | #define KERN_SOH "\001"  /* ASCII Start Of Header */
+      |                  ^~~~~~
+/home/ubuntu/kirin970/include/linux/kern_levels.h:10:18: note: in expansion of macro 'KERN_SOH'
+   10 | #define KERN_ERR KERN_SOH "3" /* error conditions */
+      |                  ^~~~~~~~
+/home/ubuntu/kirin970/include/linux/printk.h:283:9: note: in expansion of macro 'KERN_ERR'
+  283 |  printk(KERN_ERR pr_fmt(fmt), ##__VA_ARGS__)
+      |         ^~~~~~~~
+/home/ubuntu/kirin970/include/huawei_platform/log/hw_log.h:53:13: note: in expansion of macro 'pr_err'
+   53 |             pr_err(hw_fmt_tag(TAG,E) fmt,##__VA_ARGS__);    \
+      |             ^~~~~~
+/home/ubuntu/kirin970/include/huawei_platform/log/hw_log.h:48:9: note: in expansion of macro '__hwlog_err'
+   48 |         __hwlog_err(TAG,##x)
+      |         ^~~~~~~~~~~
+drivers/devkit/tpkit/huawei_ts_kit.h:287:27: note: in expansion of macro '_hwlog_err'
+  287 | #define TS_LOG_ERR(x...)  _hwlog_err(HWLOG_TAG, ##x)
+      |                           ^~~~~~~~~~
+drivers/devkit/tpkit/huawei_ts_kit_api.c:272:3: note: in expansion of macro 'TS_LOG_ERR'
+  272 |   TS_LOG_ERR("parameters is null!\n", __func__);
+      |   ^~~~~~~~~~
+/home/ubuntu/kirin970/include/linux/kern_levels.h:4:18: warning: too many arguments for format [-Wformat-extra-args]
+    4 | #define KERN_SOH "\001"  /* ASCII Start Of Header */
+      |                  ^~~~~~
+/home/ubuntu/kirin970/include/linux/kern_levels.h:10:18: note: in expansion of macro 'KERN_SOH'
+   10 | #define KERN_ERR KERN_SOH "3" /* error conditions */
+      |                  ^~~~~~~~
+/home/ubuntu/kirin970/include/linux/printk.h:283:9: note: in expansion of macro 'KERN_ERR'
+  283 |  printk(KERN_ERR pr_fmt(fmt), ##__VA_ARGS__)
+      |         ^~~~~~~~
+/home/ubuntu/kirin970/include/huawei_platform/log/hw_log.h:53:13: note: in expansion of macro 'pr_err'
+   53 |             pr_err(hw_fmt_tag(TAG,E) fmt,##__VA_ARGS__);    \
+      |             ^~~~~~
+/home/ubuntu/kirin970/include/huawei_platform/log/hw_log.h:48:9: note: in expansion of macro '__hwlog_err'
+   48 |         __hwlog_err(TAG,##x)
+      |         ^~~~~~~~~~~
+drivers/devkit/tpkit/huawei_ts_kit.h:287:27: note: in expansion of macro '_hwlog_err'
+  287 | #define TS_LOG_ERR(x...)  _hwlog_err(HWLOG_TAG, ##x)
+      |                           ^~~~~~~~~~
+drivers/devkit/tpkit/huawei_ts_kit_api.c:277:3: note: in expansion of macro 'TS_LOG_ERR'
+  277 |   TS_LOG_ERR("pens is null!\n", __func__);
+      |   ^~~~~~~~~~
+drivers/devkit/tpkit/huawei_ts_kit_api.c:293:28: warning: comparison between pointer and integer
+  293 |   if(pens->buttons[id].key != NULL)
+      |                            ^~
+drivers/devkit/tpkit/huawei_ts_kit_api.c:267:6: warning: unused variable 'finger_num' [-Wunused-variable]
+  267 |  int finger_num = 0;
+      |      ^~~~~~~~~~
+drivers/devkit/tpkit/huawei_ts_kit_api.c:266:33: warning: unused variable 'local_param' [-Wunused-variable]
+  266 |  struct anti_false_touch_param *local_param = NULL;
+      |                                 ^~~~~~~~~~~
+drivers/devkit/tpkit/huawei_ts_kit_api.c: In function 'ts_report_input':
+drivers/devkit/tpkit/huawei_ts_kit_api.c:357:2: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+  357 |  struct aft_abs_param_major aft_abs_major;
+      |  ^~~~~~
+In file included from /home/ubuntu/kirin970/include/linux/printk.h:6,
+                 from /home/ubuntu/kirin970/include/linux/kernel.h:13,
+                 from /home/ubuntu/kirin970/include/linux/list.h:8,
+                 from /home/ubuntu/kirin970/include/linux/module.h:9,
+                 from drivers/devkit/tpkit/huawei_ts_kit_api.c:8:
+drivers/devkit/tpkit/huawei_ts_kit_api.c: In function 'ts_kit_power_notify_callback':
+/home/ubuntu/kirin970/include/linux/kern_levels.h:4:18: warning: format '%d' expects argument of type 'int', but argument 3 has type 'long unsigned int' [-Wformat=]
+    4 | #define KERN_SOH "\001"  /* ASCII Start Of Header */
+      |                  ^~~~~~
+/home/ubuntu/kirin970/include/linux/kern_levels.h:13:19: note: in expansion of macro 'KERN_SOH'
+   13 | #define KERN_INFO KERN_SOH "6" /* informational */
+      |                   ^~~~~~~~
+/home/ubuntu/kirin970/include/linux/printk.h:290:9: note: in expansion of macro 'KERN_INFO'
+  290 |  printk(KERN_INFO pr_fmt(fmt), ##__VA_ARGS__)
+      |         ^~~~~~~~~
+/home/ubuntu/kirin970/include/huawei_platform/log/hw_log.h:77:13: note: in expansion of macro 'pr_info'
+   77 |             pr_info(hw_fmt_tag(TAG,I) fmt,##__VA_ARGS__);    \
+      |             ^~~~~~~
+/home/ubuntu/kirin970/include/huawei_platform/log/hw_log.h:72:9: note: in expansion of macro '__hwlog_info'
+   72 |         __hwlog_info(TAG,##x)
+      |         ^~~~~~~~~~~~
+drivers/devkit/tpkit/huawei_ts_kit.h:286:28: note: in expansion of macro '_hwlog_info'
+  286 | #define TS_LOG_INFO(x...)  _hwlog_info(HWLOG_TAG, ##x)
+      |                            ^~~~~~~~~~~
+drivers/devkit/tpkit/huawei_ts_kit_api.c:841:5: note: in expansion of macro 'TS_LOG_INFO'
+  841 |     TS_LOG_INFO("%s called,pm_type=%d, timeout=%d\n", __func__, notify_pm_type, timeout);
+      |     ^~~~~~~~~~~
+drivers/devkit/tpkit/huawei_ts_kit_api.c: In function 'ts_read_rawdata_for_newformat':
+drivers/devkit/tpkit/huawei_ts_kit_api.c:934:29: warning: unused variable 'dev' [-Wunused-variable]
+  934 |  struct ts_kit_device_data* dev = g_ts_kit_platform_data.chip_data;
+      |                             ^~~
+drivers/devkit/tpkit/huawei_ts_kit_api.c: In function 'ts_special_hardware_test_switch':
+drivers/devkit/tpkit/huawei_ts_kit_api.c:1668:10: warning: 'return' with a value, in function returning void [-Wreturn-type]
+ 1668 |   return -EINVAL;
+      |          ^
+drivers/devkit/tpkit/huawei_ts_kit_api.c:1661:6: note: declared here
+ 1661 | void ts_special_hardware_test_switch(struct ts_cmd_node* in_cmd, struct ts_cmd_node* out_cmd)
+      |      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+cc1: some warnings being treated as errors
+make[2]: *** [scripts/Makefile.build:356: drivers/devkit/tpkit/huawei_ts_kit_core.o] Error 1
+make[2]: *** Waiting for unfinished jobs....
+  CC      drivers/gpu/arm/bifrost-r14p0-00cet0/mali_kbase_js_ctx_attr.o
+cc1: some warnings being treated as errors
+make[5]: *** [scripts/Makefile.build:356: drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_fb_util_hs.o] Error 1
+make[4]: *** [scripts/Makefile.build:687: drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi] Error 2
+make[3]: *** [scripts/Makefile.build:687: drivers/devkit/lcdkit/lcdkit1.0/core/common] Error 2
+make[2]: *** [scripts/Makefile.build:687: drivers/devkit/lcdkit/lcdkit1.0] Error 2
+make[1]: *** [scripts/Makefile.build:687: drivers/devkit/lcdkit] Error 2
+make[1]: *** Waiting for unfinished jobs....
+  CC      drivers/gpu/arm/bifrost-r14p0-00cet0/mali_kbase_event.o
+  CC      drivers/gpu/arm/bifrost-r14p0-00cet0/mali_kbase_context.o
+  CC      drivers/gpu/arm/bifrost-r14p0-00cet0/mali_kbase_pm.o
+  CC      drivers/gpu/arm/bifrost-r14p0-00cet0/mali_kbase_config.o
+  CC      drivers/gpu/arm/bifrost-r14p0-00cet0/mali_kbase_vinstr.o
+make[1]: *** [scripts/Makefile.build:687: drivers/devkit/tpkit] Error 2
+  CC      drivers/gpu/arm/bifrost-r14p0-00cet0/mali_kbase_softjobs.o
+  CC      drivers/gpu/arm/bifrost-r14p0-00cet0/mali_kbase_10969_workaround.o
+  CC      drivers/gpu/arm/bifrost-r14p0-00cet0/mali_kbase_hw.o
+  CC      drivers/gpu/arm/bifrost-r14p0-00cet0/mali_kbase_utility.o
+  CC      drivers/gpu/arm/bifrost-r14p0-00cet0/mali_kbase_debug.o
+  CC      drivers/gpu/arm/bifrost-r14p0-00cet0/mali_kbase_trace_timeline.o
+  CC      drivers/gpu/arm/bifrost-r14p0-00cet0/mali_kbase_gpu_memory_debugfs.o
+  CC      drivers/gpu/arm/bifrost-r14p0-00cet0/mali_kbase_mem_linux.o
+  CC      drivers/gpu/arm/bifrost-r14p0-00cet0/mali_kbase_core_linux.o
+  CC      drivers/gpu/arm/bifrost-r14p0-00cet0/mali_kbase_replay.o
+  CC      drivers/gpu/arm/bifrost-r14p0-00cet0/mali_kbase_mem_profile_debugfs.o
+  CC      drivers/gpu/arm/bifrost-r14p0-00cet0/mali_kbase_mmu_mode_lpae.o
+drivers/gpu/arm/bifrost-r14p0-00cet0/mali_kbase_core_linux.c: In function 'show_gpu_error_info':
+drivers/gpu/arm/bifrost-r14p0-00cet0/mali_kbase_core_linux.c:2900:16: warning: format '%d' expects argument of type 'int', but argument 4 has type 'u64' {aka 'long long unsigned int'} [-Wformat=]
+ 2900 |    "last_time:%d\n",
+      |               ~^
+      |                |
+      |                int
+      |               %lld
+ 2901 |    kbdev->error_num.ts/1000000000 + 1);
+      |    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |                                   |
+      |                                   u64 {aka long long unsigned int}
+drivers/gpu/arm/bifrost-r14p0-00cet0/mali_kbase_core_linux.c: In function 'kbase_platform_device_probe':
+drivers/gpu/arm/bifrost-r14p0-00cet0/mali_kbase_core_linux.c:3948:2: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+ 3948 |  const void *fpga_gpu_exist_override_dts;
+      |  ^~~~~
+  CC      drivers/gpu/arm/bifrost-r14p0-00cet0/mali_kbase_mmu_mode_aarch64.o
+  CC      drivers/gpu/arm/bifrost-r14p0-00cet0/mali_kbase_disjoint_events.o
+  CC      drivers/gpu/arm/bifrost-r14p0-00cet0/mali_kbase_gator_api.o
+cc1: all warnings being treated as errors
+make[6]: *** [scripts/Makefile.build:356: drivers/connectivity/hi11xx/hi1103/wifi/1103/wal/wal_linux_ioctl.o] Error 1
+make[5]: *** [scripts/Makefile.build:687: drivers/connectivity/hi11xx/hi1103/wifi/1103] Error 2
+make[4]: *** [scripts/Makefile.build:687: drivers/connectivity/hi11xx/hi1103/wifi] Error 2
+make[3]: *** [scripts/Makefile.build:687: drivers/connectivity/hi11xx/hi1103] Error 2
+make[2]: *** [scripts/Makefile.build:687: drivers/connectivity/hi11xx] Error 2
+make[1]: *** [scripts/Makefile.build:687: drivers/connectivity] Error 2
+  CC      drivers/gpu/arm/bifrost-r14p0-00cet0/mali_kbase_debug_mem_view.o
+  CC      drivers/gpu/arm/bifrost-r14p0-00cet0/mali_kbase_debug_job_fault.o
+  CC      drivers/gpu/arm/bifrost-r14p0-00cet0/mali_kbase_smc.o
+  CC      drivers/gpu/arm/bifrost-r14p0-00cet0/mali_kbase_mem_pool.o
+  CC      drivers/gpu/arm/bifrost-r14p0-00cet0/mali_kbase_mem_pool_debugfs.o
+  CC      drivers/gpu/arm/bifrost-r14p0-00cet0/mali_kbase_tlstream.o
+  CC      drivers/gpu/arm/bifrost-r14p0-00cet0/mali_kbase_strings.o
+  CC      drivers/gpu/arm/bifrost-r14p0-00cet0/mali_kbase_as_fault_debugfs.o
+  CC      drivers/gpu/arm/bifrost-r14p0-00cet0/mali_kbase_regs_history_debugfs.o
+  CC      drivers/gpu/arm/bifrost-r14p0-00cet0/thirdparty/mali_kbase_mmap.o
+  CC      drivers/gpu/arm/bifrost-r14p0-00cet0/mali_kbase_gmc.o
+  CC      drivers/gpu/arm/bifrost-r14p0-00cet0/platform/hisilicon/mali_kbase_config_hisilicon.o
+  CC      drivers/gpu/arm/bifrost-r14p0-00cet0/platform/hisilicon/mali_kbase_hisi_callback.o
+  CC      drivers/gpu/arm/bifrost-r14p0-00cet0/hisi_ipa/mali_kbase_ipa_ctx.o
+  CC      drivers/gpu/arm/bifrost-r14p0-00cet0/mali_kbase_sync_file.o
+  CC      drivers/gpu/arm/bifrost-r14p0-00cet0/mali_kbase_sync_common.o
+drivers/gpu/arm/bifrost-r14p0-00cet0/mali_kbase_gmc.c: In function 'kbase_gmc_compress_region':
+drivers/gpu/arm/bifrost-r14p0-00cet0/mali_kbase_gmc.c:529:2: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+  529 |  struct kbase_context *kctx = kbase_reg_flags_to_kctx(reg);
+      |  ^~~~~~
+  CC      drivers/gpu/arm/bifrost-r14p0-00cet0/mali_kbase_fence.o
+drivers/gpu/arm/bifrost-r14p0-00cet0/platform/hisilicon/mali_kbase_config_hisilicon.c: In function 'kbase_platform_init':
+drivers/gpu/arm/bifrost-r14p0-00cet0/platform/hisilicon/mali_kbase_config_hisilicon.c:653:5: error: passing argument 3 of 'of_devfreq_cooling_register_power' from incompatible pointer type [-Werror=incompatible-pointer-types]
+  653 |     callbacks);
+      |     ^~~~~~~~~
+      |     |
+      |     struct devfreq_cooling_ops *
+In file included from drivers/gpu/arm/bifrost-r14p0-00cet0/platform/hisilicon/mali_kbase_config_hisilicon.c:25:
+/home/ubuntu/kirin970/include/linux/devfreq_cooling.h:48:37: note: expected 'struct devfreq_cooling_power *' but argument is of type 'struct devfreq_cooling_ops *'
+   48 |       struct devfreq_cooling_power *dfc_power);
+      |       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~
+cc1: some warnings being treated as errors
+make[3]: *** [scripts/Makefile.build:356: drivers/gpu/arm/bifrost-r14p0-00cet0/platform/hisilicon/mali_kbase_config_hisilicon.o] Error 1
+make[3]: *** Waiting for unfinished jobs....
+drivers/gpu/arm/bifrost-r14p0-00cet0/hisi_ipa/mali_kbase_ipa_ctx.c: In function 'kbase_ipa_dynamic_bound_detect':
+drivers/gpu/arm/bifrost-r14p0-00cet0/hisi_ipa/mali_kbase_ipa_ctx.c:622:2: warning: this 'if' clause does not guard... [-Wmisleading-indentation]
+  622 |  if (ctx->idle_beats > HWC_IDLE_COUNT && ctx->vinstr_cli)
+      |  ^~
+drivers/gpu/arm/bifrost-r14p0-00cet0/hisi_ipa/mali_kbase_ipa_ctx.c:625:3: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the 'if'
+  625 |   return false;
+      |   ^~~~~~
+make[2]: *** [scripts/Makefile.build:687: drivers/gpu/arm/bifrost-r14p0-00cet0] Error 2
+make[1]: *** [scripts/Makefile.build:687: drivers/gpu/arm] Error 2
+make: *** [Makefile:1221: drivers] Error 2

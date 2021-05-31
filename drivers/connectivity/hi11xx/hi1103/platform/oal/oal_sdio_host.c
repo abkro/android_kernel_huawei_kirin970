@@ -3183,7 +3183,7 @@ void oal_sdio_tc_buf_tx_001_etc(void)
        oal_print_hi11xx_log(HI11XX_LOG_ERR, "oal_sdio_tc_buf_tx_001_etc memmalloc buf error");
        return;
     }
-    oal_memcmp(buf, 0xff, 512*3);
+//    oal_memcmp(buf, 0xff, 512*3);
     ret = oal_sdio_single_transfer(hi_sdio_debug,SDIO_WRITE,buf , 512*3);
     if(ret)
     {
