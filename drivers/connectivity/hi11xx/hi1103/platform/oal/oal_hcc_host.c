@@ -164,7 +164,7 @@ oal_void hcc_clear_next_assem_descr_etc(struct hcc_handler *hcc,
 {
     OAL_REFERENCE(hcc);
     /*Just need clear the first bytes*/
-    oal_memset(OAL_NETBUF_DATA(descr_netbuf),0,1);
+    oal_memcmp(OAL_NETBUF_DATA(descr_netbuf),0,1);
 }
 
 #ifdef CONFIG_MMC
@@ -1755,7 +1755,7 @@ oal_int32 hcc_rx_unregister_etc(struct hcc_handler *hcc, oal_uint8 mtype)
 
     rx_action = &hcc->hcc_transer_info.rx_action_info.action[mtype];
 
-    oal_memset((oal_void*)rx_action,0,OAL_SIZEOF(hcc_rx_action));
+    oal_memcmp((oal_void*)rx_action,0,OAL_SIZEOF(hcc_rx_action));
 
     return OAL_SUCC;
 }
@@ -2378,7 +2378,7 @@ oal_int32 hcc_tx_assem_descr_init_etc(struct hcc_handler *hcc)
         }
 
         oal_netbuf_put(netbuf, HISDIO_HOST2DEV_SCATT_SIZE);
-        oal_memset(OAL_NETBUF_DATA(netbuf),0,OAL_NETBUF_LEN(netbuf));
+        oal_memcmp(OAL_NETBUF_DATA(netbuf),0,OAL_NETBUF_LEN(netbuf));
         oal_netbuf_list_tail(&hcc->tx_descr_info.tx_assem_descr_hdr, netbuf);
         if (OAL_WARN_ON(!OAL_IS_ALIGNED(((oal_uint)OAL_NETBUF_DATA(netbuf)),4)))
         {
@@ -2402,12 +2402,12 @@ oal_void hcc_tx_assem_descr_exit_etc(struct hcc_handler *hcc)
 
 oal_void hcc_tx_assem_info_reset_etc(struct hcc_handler *hcc)
 {
-    oal_memset(hcc->hcc_transer_info.tx_assem_info.info, 0, OAL_SIZEOF(hcc->hcc_transer_info.tx_assem_info.info));
+    oal_memcmp(hcc->hcc_transer_info.tx_assem_info.info, 0, OAL_SIZEOF(hcc->hcc_transer_info.tx_assem_info.info));
 }
 
 oal_void oal_sdio_rx_assem_info_reset(struct hcc_handler *hcc)
 {
-    oal_memset(hcc->hcc_transer_info.rx_assem_info.info, 0, OAL_SIZEOF(hcc->hcc_transer_info.rx_assem_info.info));
+    oal_memcmp(hcc->hcc_transer_info.rx_assem_info.info, 0, OAL_SIZEOF(hcc->hcc_transer_info.rx_assem_info.info));
 }
 
 oal_void hcc_assem_info_init_etc(struct hcc_handler *hcc)
@@ -2674,7 +2674,7 @@ struct hcc_handler* hcc_module_init_etc(hcc_bus_dev* pst_bus_dev)
         return NULL;
     }
 
-    oal_memset((oal_void*)hcc, 0, OAL_SIZEOF(struct hcc_handler));
+    oal_memcmp((oal_void*)hcc, 0, OAL_SIZEOF(struct hcc_handler));
 
     hcc->bus_dev = pst_bus_dev;
 

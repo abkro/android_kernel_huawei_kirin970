@@ -466,13 +466,12 @@ oal_uint32  wal_disasoc_comp_proc_sta_etc(frw_event_mem_stru *pst_event_mem)
 {
     frw_event_stru              *pst_event;
     oal_disconnect_result_stru    st_disconnect_result;
-    oal_net_device_stru         *pst_net_device;
-    oal_uint16                  *pus_disasoc_reason_code;
+//    oal_net_device_stru         *pst_net_device;
+//    oal_uint16                  *pus_disasoc_reason_code;
 #if (LINUX_VERSION_CODE < KERNEL_VERSION(2,6,34))
     oal_uint32                   ul_ret;
 #endif
 
-#if
     if (OAL_UNLIKELY(OAL_PTR_NULL == pst_event_mem))
     {
         OAM_ERROR_LOG0(0, OAM_SF_ASSOC, "{wal_disasoc_comp_proc_sta_etc::pst_event_mem is null!}\r\n");
@@ -498,18 +497,18 @@ oal_uint32  wal_disasoc_comp_proc_sta_etc(frw_event_mem_stru *pst_event_mem)
     st_disconnect_result.us_reason_code = *pus_disasoc_reason_code;
 
     /* 调用内核接口，上报去关联结果 */
-//#if (LINUX_VERSION_CODE >= KERNEL_VERSION(2,6,34))
-//    oal_cfg80211_disconnected_etc(pst_net_device,
-//                              st_disconnect_result.us_reason_code,
-//                              st_disconnect_result.pus_disconn_ie,
-//                              st_disconnect_result.us_disconn_ie_len,
-//                              GFP_ATOMIC);
-//#else
-//   ul_ret = oal_cfg80211_disconnected_etc(pst_net_device,
-//                              st_disconnect_result.us_reason_code,
-//                              st_disconnect_result.pus_disconn_ie,
-//                              st_disconnect_result.us_disconn_ie_len,
-//                              GFP_ATOMIC);
+#if (LINUX_VERSION_CODE >= KERNEL_VERSION(2,6,34))
+    oal_cfg80211_disconnected_etc(pst_net_device,
+                              st_disconnect_result.us_reason_code,
+                              st_disconnect_result.pus_disconn_ie,
+                              st_disconnect_result.us_disconn_ie_len,
+                              GFP_ATOMIC);
+#else
+   ul_ret = oal_cfg80211_disconnected_etc(pst_net_device,
+                              st_disconnect_result.us_reason_code,
+                              st_disconnect_result.pus_disconn_ie,
+                              st_disconnect_result.us_disconn_ie_len,
+                              GFP_ATOMIC);
     if (OAL_SUCC != ul_ret)
     {
         OAM_WARNING_LOG1(pst_event->st_event_hdr.uc_vap_id, OAM_SF_ASSOC, "{wal_disasoc_comp_proc_sta_etc::oal_cfg80211_disconnected_etc fail[%d]!}\r\n", ul_ret);
