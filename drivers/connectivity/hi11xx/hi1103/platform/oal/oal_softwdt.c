@@ -106,7 +106,7 @@ oal_int32 oal_softwdt_init_etc(oal_void)
     if(disable_wdt_flag)
         return OAL_SUCC;
 
-    oal_memset((oal_void*)&g_hisi_softwdt,0,OAL_SIZEOF(g_hisi_softwdt));
+    oal_memcmp((oal_void*)&g_hisi_softwdt,0,OAL_SIZEOF(g_hisi_softwdt));
     oal_timer_init(&g_hisi_softwdt.wdt_timer,OAL_SOFTWDT_DEFAULT_TIMEOUT,oal_softwdt_timeout, 0);
     g_hisi_softwdt.kick_time = OAL_SOFTWDT_DEFAULT_TIMEOUT/2;
     OAL_INIT_DELAYED_WORK(&g_hisi_softwdt.wdt_delayed_work, oal_softwdt_feed_task);

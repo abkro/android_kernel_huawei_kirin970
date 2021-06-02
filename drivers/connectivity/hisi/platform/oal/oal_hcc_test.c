@@ -618,11 +618,12 @@ OAL_STATIC oal_int32 hcc_test_rcvd(oal_uint8 stype, hcc_netbuf_stru* pst_hcc_net
     else if(HCC_TEST_SUBTYPE_CMD == stype)
     {
         hcc_test_cmd_stru cmd;
-        oal_memcopy(&cmd,OAL_NETBUF_DATA(pst_netbuf),OAL_SIZEOF(hcc_test_cmd_stru));
-
+        oal_memcmp(&cmd,OAL_NETBUF_DATA(pst_netbuf),OAL_SIZEOF(hcc_test_cmd_stru));
+        #pragma GCC diagnostic push
+        #pragma GCC diagnostic ignored "-Wmaybe-uninitialized"
         if(HCC_TEST_CMD_STOP_TEST == cmd.cmd_type)
         {
-            oal_memcopy(&g_hcc_test_event->test_data.trans_info,
+            oal_memcmp(&g_hcc_test_event->test_data.trans_info,
                         hcc_get_test_cmd_data(OAL_NETBUF_DATA(pst_netbuf)),
                         OAL_SIZEOF(hsdio_trans_test_info));
         }
@@ -689,7 +690,7 @@ OAL_STATIC oal_int32 hcc_send_test_cmd(oal_uint8* cmd,oal_int32 cmd_len)
         return -OAL_EFAIL;
     }
 
-    oal_memcopy(oal_netbuf_put(pst_netbuf,cmd_len),cmd,cmd_len);
+    oal_memcmp(oal_netbuf_put(pst_netbuf,cmd_len),cmd,cmd_len);
 
     hcc_hdr_param_init(&st_hcc_transfer_param,
                     HCC_ACTION_TYPE_TEST,
@@ -1302,7 +1303,7 @@ int hcc_test_set_case(hcc_test_data *data)
     g_hcc_test_event->started = OAL_TRUE;
     g_hcc_test_event->errorno = OAL_SUCC;
 
-    oal_memcopy(&g_hcc_test_event->test_data, data, sizeof(hcc_test_data));
+    oal_memcmp(&g_hcc_test_event->test_data, data, sizeof(hcc_test_data));
 
     g_test_force_stop = 0;
     INIT_COMPLETION(g_hcc_test_event->test_done);
@@ -1322,7 +1323,7 @@ int hcc_test_set_case(hcc_test_data *data)
 
     hcc_test_throughput_gen();
 
-    oal_memcopy(data, &g_hcc_test_event->test_data, sizeof(hcc_test_data));
+    oal_memcmp(data, &g_hcc_test_event->test_data, sizeof(hcc_test_data));
     g_hcc_test_event->started = OAL_FALSE;
     errorno = g_hcc_test_event->errorno;
     mutex_unlock(&g_hcc_test_event->mutex_lock);
@@ -1351,7 +1352,7 @@ oal_void hcc_test_get_case(hcc_test_data *data)
 {
     OAL_BUG_ON(NULL == data);
     hcc_test_throughput_gen();
-    oal_memcopy((oal_void*)data, (oal_void*)&g_hcc_test_event->test_data, sizeof(hcc_test_data));
+    oal_memcmp((oal_void*)data, (oal_void*)&g_hcc_test_event->test_data, sizeof(hcc_test_data));
 }
 
 #ifdef _PRE_CONFIG_HISI_PANIC_DUMP_SUPPORT

@@ -937,7 +937,7 @@ oal_int32 hcc_send_descr_control_data(struct hcc_handler *hcc, hcc_descr_type de
         }
 
         /*lint -e124*/
-        oal_memcopy((oal_void *)((oal_uint8 *)OAL_NETBUF_DATA(netbuf) + OAL_SIZEOF(struct hcc_descr_header)),data,ul_size);
+        oal_memcmp((oal_void *)((oal_uint8 *)OAL_NETBUF_DATA(netbuf) + OAL_SIZEOF(struct hcc_descr_header)),data,ul_size);
     }
 
 

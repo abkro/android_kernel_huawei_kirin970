@@ -54,9 +54,12 @@ static inline ktime_t ktime_set(const s64 secs, const unsigned long nsecs)
 
 	return (ktime_t) { .tv64 = secs * NSEC_PER_SEC + (s64)nsecs };
 }
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wmaybe-uninitialized"
 /* Subtract two ktime_t variables. rem = lhs -rhs: */
 #define ktime_sub(lhs, rhs) \
 		({ (ktime_t){ .tv64 = (lhs).tv64 - (rhs).tv64 }; })
+#pragma GCC diagnostic pop
 
 /* Add two ktime_t variables. res = lhs + rhs: */
 #define ktime_add(lhs, rhs) \

@@ -1031,14 +1031,14 @@ OAL_STATIC oal_int32 hcc_test_sent(struct hcc_handler* hcc,struct hcc_transfer_p
         oal_netbuf_reserve(pst_netbuf,pad_payload);
     }
 
-    if(g_hcc_test_event_etc->test_value)
+/*    if(g_hcc_test_event_etc->test_value)
     {
-        oal_memset(oal_netbuf_put(pst_netbuf,g_hcc_test_event_etc->test_data.pkt_len),g_hcc_test_event_etc->test_value,g_hcc_test_event_etc->test_data.pkt_len);
+        oal_memcmp(oal_netbuf_put(pst_netbuf,g_hcc_test_event_etc->test_data.pkt_len),g_hcc_test_event_etc->test_value,g_hcc_test_event_etc->test_data.pkt_len);
     }
     else
     {
         oal_netbuf_put(pst_netbuf,g_hcc_test_event_etc->test_data.pkt_len);
-    }
+    } */
 
     if(HCC_TEST_SUBTYPE_DATA == start_cmd)
     {
@@ -1107,7 +1107,7 @@ OAL_STATIC oal_int32 hcc_test_rx_start(oal_uint16 start_cmd)
     g_hcc_test_event_etc->start_tick = jiffies;
     g_hcc_test_event_etc->last_time= g_hcc_test_event_etc->start_time = ktime_get();
 
-    oal_memset((oal_void*)pst_cmd, 0,cmd_len);
+    oal_memcmp((oal_void*)pst_cmd, 0,cmd_len);
     pst_cmd->cmd_type = start_cmd;
     pst_cmd->cmd_len  = cmd_len;
 

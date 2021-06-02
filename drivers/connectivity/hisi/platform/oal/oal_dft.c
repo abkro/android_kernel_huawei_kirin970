@@ -54,12 +54,12 @@ OAL_STATIC oal_int32 oal_dft_dump_key_info(char* buf,oal_int32 key_type, oal_uin
         }
 
         oal_memset(&first_tm,0,OAL_SIZEOF(first_tm));
-        oal_memcopy(&first_tv,&pst_dft_item->first_timestamp, OAL_SIZEOF(first_tv));
+        oal_memcmp(&first_tv,&pst_dft_item->first_timestamp, OAL_SIZEOF(first_tv));
         first_tv.tv_sec -= sys_tz.tz_minuteswest * 60;
         rtc_time_to_tm(first_tv.tv_sec, &first_tm);
 
         oal_memset(&last_tm,0,OAL_SIZEOF(last_tm));
-        oal_memcopy(&last_tv,&pst_dft_item->last_timestamp, OAL_SIZEOF(last_tv));
+        oal_memcmp(&last_tv,&pst_dft_item->last_timestamp, OAL_SIZEOF(last_tv));
         if(last_tv.tv_sec)
         {
             last_tv.tv_sec -= sys_tz.tz_minuteswest * 60;

@@ -424,7 +424,7 @@ OAL_STATIC oal_void wal_set_scan_ssid(oal_cfg80211_scan_request_stru *pst_reques
                 pst_scan_param->st_ssids[l_loop].uc_ssid_len = OAL_IEEE80211_MAX_SSID_LEN;
             }
 
-            oal_memcopy(pst_scan_param->st_ssids[l_loop].auc_ssid, pst_request->ssids[l_loop].ssid,
+            oal_memcmp(pst_scan_param->st_ssids[l_loop].auc_ssid, pst_request->ssids[l_loop].ssid,
               pst_scan_param->st_ssids[l_loop].uc_ssid_len);
         }
 	}
@@ -611,7 +611,7 @@ oal_int32 wal_send_scan_abort_msg(oal_net_device_stru   *pst_net_dev)
     /* 拋事件通知device侧终止扫描 */
     WAL_WRITE_MSG_HDR_INIT(&st_write_msg, WLAN_CFGID_SCAN_ABORT, OAL_SIZEOF(ul_pedding_data));
 
-    oal_memcopy(st_write_msg.auc_value, (oal_int8 *)&ul_pedding_data, OAL_SIZEOF(ul_pedding_data));
+    oal_memcmp(st_write_msg.auc_value, (oal_int8 *)&ul_pedding_data, OAL_SIZEOF(ul_pedding_data));
 
     l_ret = wal_send_cfg_event(pst_net_dev,
                                WAL_MSG_TYPE_WRITE,
@@ -784,7 +784,7 @@ oal_int32 wal_stop_sched_scan(oal_net_device_stru *pst_netdev)
         /* 拋事件通知device侧停止PNO调度扫描 */
         WAL_WRITE_MSG_HDR_INIT(&st_write_msg, WLAN_CFGID_CFG80211_STOP_SCHED_SCAN, OAL_SIZEOF(ul_pedding_data));
 
-        oal_memcopy(st_write_msg.auc_value, (oal_int8 *)&ul_pedding_data, OAL_SIZEOF(ul_pedding_data));
+        oal_memcmp(st_write_msg.auc_value, (oal_int8 *)&ul_pedding_data, OAL_SIZEOF(ul_pedding_data));
 
         l_ret = wal_send_cfg_event(pst_netdev,
                                    WAL_MSG_TYPE_WRITE,

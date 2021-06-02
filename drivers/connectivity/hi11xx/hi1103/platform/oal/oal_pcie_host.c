@@ -4374,7 +4374,7 @@ oal_int32 oal_pcie_device_mem_check_burst(oal_pcie_res* pst_pci_res, oal_uint32 
         return -OAL_ENOMEM;
     }
 
-    oal_memset(pst_ddr_buf, test_value, burst_size);
+    oal_memcmp(pst_ddr_buf, test_value, burst_size);
 
     /*先连续写再连续读，连续写性能最优*/
     remain_size = length;
@@ -6998,10 +6998,10 @@ oal_void oal_pcie_reset_transfer_info(oal_pcie_res* pst_pci_res)
     {
         pst_pci_res->st_tx_res[i].stat.tx_count = 0;
         pst_pci_res->st_tx_res[i].stat.tx_done_count = 0;
-        oal_memset((oal_void*)pst_pci_res->st_tx_res[i].stat.tx_burst_cnt, 0, sizeof(pst_pci_res->st_tx_res[i].stat.tx_burst_cnt));
+        oal_memcmp((oal_void*)pst_pci_res->st_tx_res[i].stat.tx_burst_cnt, 0, sizeof(pst_pci_res->st_tx_res[i].stat.tx_burst_cnt));
     }
 
-    oal_memset((oal_void*)pst_pci_res->st_rx_res.stat.rx_burst_cnt, 0, sizeof(pst_pci_res->st_rx_res.stat.rx_burst_cnt));
+    oal_memcmp((oal_void*)pst_pci_res->st_rx_res.stat.rx_burst_cnt, 0, sizeof(pst_pci_res->st_rx_res.stat.rx_burst_cnt));
 }
 
 oal_int32 oal_pcie_host_pending_signal_check(oal_pcie_res* pst_pci_res)
@@ -7859,7 +7859,7 @@ oal_int32 oal_pcie_send_test_pkt(oal_int32 num)
             return -OAL_EFAIL;
         }
 
-        oal_memset(oal_netbuf_put(pst_netbuf,cmd_len),0x5a,cmd_len);
+        oal_memcmp(oal_netbuf_put(pst_netbuf,cmd_len),0x5a,cmd_len);
 
         hcc_hdr_param_init(&st_hcc_transfer_param,
                         HCC_ACTION_TYPE_TEST,
@@ -9412,7 +9412,7 @@ oal_int32 oal_pcie_performance_write(oal_pcie_res* pst_pcie_res, oal_uint32 cpu_
         return -OAL_ENOMEM;
     }
 
-    oal_memset(pst_burst_buf, (oal_int32)value, length);
+    oal_memcmp(pst_burst_buf, (oal_int32)value, length);
 
     trans_size = 0;
     start_time= ktime_get();

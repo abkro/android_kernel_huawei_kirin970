@@ -1,0 +1,1529 @@
+make[1]: Entering directory '/home/ubuntu/out'
+  CHK     include/config/kernel.release
+  GEN     /home/ubuntu/out/Makefile
+  CHK     include/generated/uapi/linux/version.h
+  CHK     scripts/mod/devicetable-offsets.h
+  Using /home/ubuntu/kirin970 as source for kernel
+  CHK     include/generated/utsrelease.h
+  CHK     include/generated/timeconst.h
+  CHK     include/generated/bounds.h
+  CHK     include/generated/asm-offsets.h
+  CALL    /home/ubuntu/kirin970/scripts/checksyscalls.sh
+  CHK     include/generated/compile.h
+/home/ubuntu/kirin970/drivers/connectivity/hi11xx/hi1103/platform/hi1103_comm_defconfig:44: hisi built-in no
+/home/ubuntu/kirin970/drivers/connectivity/hi11xx/hi1103/platform/Makefile:24: defconfig: /home/ubuntu/kirin970/drivers/connectivity/hi11xx/hi1103/platform/plat_1103_default_defconfig
+/home/ubuntu/kirin970/drivers/connectivity/hisi/platform/hi1102_comm_defconfig:42: hisi built-in no
+/home/ubuntu/kirin970/drivers/connectivity/hisi/platform/Makefile:24: defconfig: /home/ubuntu/kirin970/drivers/connectivity/hisi/platform/plat_1102_v8r2_defconfig
+/home/ubuntu/kirin970/drivers/connectivity/hi11xx/hi1103/platform/Makefile:193: HI110X_VER_COMMIT_ID: 
+/home/ubuntu/kirin970/drivers/connectivity/hi11xx/hi1103/platform/Makefile:194: HI110X_VER_COMMIT_TIME: 
+/home/ubuntu/kirin970/drivers/connectivity/hi11xx/hi1103/platform/Makefile:195: HI110X_VERSION: 
+/home/ubuntu/kirin970/drivers/connectivity/hisi/platform/Makefile:159: HI110X_VER_COMMIT_ID: 
+/home/ubuntu/kirin970/drivers/connectivity/hisi/platform/Makefile:160: HI110X_VER_COMMIT_TIME: 
+/home/ubuntu/kirin970/drivers/connectivity/hisi/platform/Makefile:161: HI110X_VERSION: 
+  CC      drivers/connectivity/hisi/platform/oal/oal_hcc_test.o
+  CC      drivers/connectivity/hi11xx/hi1103/platform/oal/oal_hcc_test.o
+  CHK     kernel/config_data.h
+/home/ubuntu/kirin970/drivers/connectivity/hisi/wifi/Makefile:3: HI1102_DRIVER_BUILTIN_PATH drivers/connectivity/hisi
+/home/ubuntu/kirin970/drivers/connectivity/hisi/platform/hi1102_comm_defconfig:42: hisi built-in no
+/home/ubuntu/kirin970/drivers/connectivity/hisi/wifi/Makefile:25: defconfig: /home/ubuntu/kirin970/drivers/connectivity/hisi/wifi/wifi_1102_v8r2_defconfig
+  CC      drivers/connectivity/hisi/wifi/wal/wal_config.o
+/home/ubuntu/kirin970/drivers/connectivity/hi11xx/hi1103/wifi/1103/Makefile:3: HI110X_DRIVER_BUILTIN_PATH drivers/connectivity/hi11xx
+/home/ubuntu/kirin970/drivers/connectivity/hi11xx/hi1103/platform/hi1103_comm_defconfig:44: hisi built-in no
+/home/ubuntu/kirin970/drivers/connectivity/hi11xx/hi1103/wifi/1103/Makefile:25: defconfig: /home/ubuntu/kirin970/drivers/connectivity/hi11xx/hi1103/wifi/1103/wifi_1103_default_defconfig
+  CC      drivers/connectivity/hisi/wifi/wal/wal_linux_scan.o
+  CC      drivers/connectivity/hisi/wifi/wal/wal_linux_rx_rsp.o
+/home/ubuntu/kirin970/drivers/connectivity/hisi/platform/oal/oal_hcc_test.c: In function ‘hcc_test_rcvd’:
+/home/ubuntu/kirin970/drivers/connectivity/hisi/platform/oal/oal_hcc_test.c:621:9: error: implicit declaration of function ‘oal_memcopy’; did you mean ‘oal_memcmp’? [-Werror=implicit-function-declaration]
+  621 |         oal_memcopy(&cmd,OAL_NETBUF_DATA(pst_netbuf),OAL_SIZEOF(hcc_test_cmd_stru));
+      |         ^~~~~~~~~~~
+      |         oal_memcmp
+/home/ubuntu/kirin970/drivers/connectivity/hi11xx/hi1103/platform/oal/oal_hcc_test.c: In function ‘hcc_test_sent’:
+/home/ubuntu/kirin970/drivers/connectivity/hi11xx/hi1103/platform/oal/oal_hcc_test.c:1036:107: error: passing argument 2 of ‘oal_memcmp’ makes pointer from integer without a cast [-Werror=int-conversion]
+ 1036 |         oal_memcmp(oal_netbuf_put(pst_netbuf,g_hcc_test_event_etc->test_data.pkt_len),g_hcc_test_event_etc->test_value,g_hcc_test_event_etc->test_data.pkt_len);
+      |                                                                                       ~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~
+      |                                                                                                           |
+      |                                                                                                           oal_uint8 {aka unsigned char}
+In file included from /home/ubuntu/kirin970/drivers/connectivity/hi11xx/hi1103/platform/inc/oal/oal_ext_if.h:17,
+                 from /home/ubuntu/kirin970/drivers/connectivity/hi11xx/hi1103/platform/inc/oal/oal_hcc_host_if.h:11,
+                 from /home/ubuntu/kirin970/drivers/connectivity/hi11xx/hi1103/platform/oal/oal_hcc_test.c:3:
+/home/ubuntu/kirin970/drivers/connectivity/hi11xx/hi1103/platform/inc/oal/oal_util.h:472:91: note: expected ‘const oal_void *’ {aka ‘const void *’} but argument is of type ‘oal_uint8’ {aka ‘unsigned char’}
+  472 | OAL_STATIC OAL_INLINE oal_int  oal_memcmp(OAL_CONST oal_void *p_buf1, OAL_CONST oal_void *p_buf2, oal_uint32 ul_count)
+  CC      drivers/connectivity/hisi/wifi/wal/wal_linux_event.o
+cc1: all warnings being treated as errors
+make[5]: *** [/home/ubuntu/kirin970/scripts/Makefile.build:356: drivers/connectivity/hisi/platform/oal/oal_hcc_test.o] Error 1
+make[4]: *** [/home/ubuntu/kirin970/scripts/Makefile.build:687: drivers/connectivity/hisi/platform] Error 2
+make[4]: *** Waiting for unfinished jobs....
+  CC      drivers/connectivity/hisi/wifi/wal/wal_regdb.o
+/home/ubuntu/kirin970/drivers/connectivity/hisi/wifi/wal/wal_linux_scan.c: In function ‘wal_set_scan_ssid’:
+/home/ubuntu/kirin970/drivers/connectivity/hisi/wifi/wal/wal_linux_scan.c:427:13: error: implicit declaration of function ‘oal_memcopy’; did you mean ‘oal_memcmp’? [-Werror=implicit-function-declaration]
+  427 |             oal_memcopy(pst_scan_param->st_ssids[l_loop].auc_ssid, pst_request->ssids[l_loop].ssid,
+      |             ^~~~~~~~~~~
+      |             oal_memcmp
+  CC      drivers/connectivity/hi11xx/hi1103/wifi/1103/wal/wal_linux_rx_rsp.o
+/home/ubuntu/kirin970/drivers/connectivity/hisi/wifi/wal/wal_linux_rx_rsp.c: In function ‘wal_asoc_comp_proc_sta’:
+/home/ubuntu/kirin970/drivers/connectivity/hisi/wifi/wal/wal_linux_rx_rsp.c:227:5: error: implicit declaration of function ‘oal_memcopy’; did you mean ‘oal_memcmp’? [-Werror=implicit-function-declaration]
+  227 |     oal_memcopy(st_connet_result.auc_bssid, pst_asoc_rsp->auc_addr_ap, WLAN_MAC_ADDR_LEN);
+      |     ^~~~~~~~~~~
+      |     oal_memcmp
+cc1: all warnings being treated as errors
+make[5]: *** [/home/ubuntu/kirin970/scripts/Makefile.build:356: drivers/connectivity/hisi/wifi/wal/wal_linux_scan.o] Error 1
+make[5]: *** Waiting for unfinished jobs....
+cc1: all warnings being treated as errors
+make[6]: *** [/home/ubuntu/kirin970/scripts/Makefile.build:356: drivers/connectivity/hi11xx/hi1103/platform/oal/oal_hcc_test.o] Error 1
+make[5]: *** [/home/ubuntu/kirin970/scripts/Makefile.build:687: drivers/connectivity/hi11xx/hi1103/platform] Error 2
+make[5]: *** Waiting for unfinished jobs....
+cc1: all warnings being treated as errors
+make[5]: *** [/home/ubuntu/kirin970/scripts/Makefile.build:356: drivers/connectivity/hisi/wifi/wal/wal_linux_rx_rsp.o] Error 1
+find lcdkit hisi folder, include it now!
+/home/ubuntu/kirin970/drivers/connectivity/hisi/wifi/wal/wal_linux_event.c: In function ‘wal_cfg80211_start_req’:
+/home/ubuntu/kirin970/drivers/connectivity/hisi/wifi/wal/wal_linux_event.c:63:5: error: implicit declaration of function ‘oal_memcopy’; did you mean ‘oal_memcmp’? [-Werror=implicit-function-declaration]
+   63 |     oal_memcopy(st_write_msg.auc_value, ps_param, us_len);
+      |     ^~~~~~~~~~~
+      |     oal_memcmp
+  CC      drivers/devkit/tpkit/huawei_ts_kit_core.o
+cc1: all warnings being treated as errors
+make[5]: *** [/home/ubuntu/kirin970/scripts/Makefile.build:356: drivers/connectivity/hisi/wifi/wal/wal_linux_event.o] Error 1
+  CC      drivers/dsm/dsm_core.o
+  CC      drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_fb_util_hs.o
+  LD      drivers/firewire/built-in.o
+  CC      drivers/dubai/dubai.o
+  CC      drivers/firmware/psci.o
+/home/ubuntu/kirin970/drivers/devkit/tpkit/huawei_ts_kit_core.c: In function ‘rawdata_proc_printf’:
+/home/ubuntu/kirin970/drivers/devkit/tpkit/huawei_ts_kit_core.c:499:20: warning: format ‘%s’ expects argument of type ‘char *’, but argument 3 has type ‘int *’ [-Wformat=]
+  499 |    seq_printf(m, "%s\n", info->tx_delta_buf);
+      |                   ~^     ~~~~~~~~~~~~~~~~~~
+      |                    |         |
+      |                    char *    int *
+      |                   %ls
+/home/ubuntu/kirin970/drivers/devkit/tpkit/huawei_ts_kit_core.c:500:20: warning: format ‘%s’ expects argument of type ‘char *’, but argument 3 has type ‘int *’ [-Wformat=]
+  500 |    seq_printf(m, "%s\n", info->rx_delta_buf);
+      |                   ~^     ~~~~~~~~~~~~~~~~~~
+      |                    |         |
+      |                    char *    int *
+      |                   %ls
+/home/ubuntu/kirin970/drivers/devkit/tpkit/huawei_ts_kit_core.c:503:20: warning: format ‘%s’ expects argument of type ‘char *’, but argument 3 has type ‘int *’ [-Wformat=]
+  503 |    seq_printf(m, "%s\n", info->td43xx_rt95_part_one);
+      |                   ~^     ~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |                    |         |
+      |                    char *    int *
+      |                   %ls
+/home/ubuntu/kirin970/drivers/devkit/tpkit/huawei_ts_kit_core.c:504:20: warning: format ‘%s’ expects argument of type ‘char *’, but argument 3 has type ‘int *’ [-Wformat=]
+  504 |    seq_printf(m, "%s\n", info->td43xx_rt95_part_two);
+      |                   ~^     ~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |                    |         |
+      |                    char *    int *
+      |                   %ls
+In file included from /home/ubuntu/kirin970/include/linux/printk.h:6,
+                 from /home/ubuntu/kirin970/include/linux/kernel.h:13,
+                 from /home/ubuntu/kirin970/include/linux/list.h:8,
+                 from /home/ubuntu/kirin970/include/linux/module.h:9,
+                 from /home/ubuntu/kirin970/drivers/devkit/tpkit/huawei_ts_kit_core.c:8:
+/home/ubuntu/kirin970/drivers/devkit/tpkit/huawei_ts_kit_core.c: In function ‘rawdata_proc_newformat_printf’:
+/home/ubuntu/kirin970/include/linux/kern_levels.h:4:18: warning: format ‘%d’ expects a matching ‘int’ argument [-Wformat=]
+    4 | #define KERN_SOH "\001"  /* ASCII Start Of Header */
+      |                  ^~~~~~
+/home/ubuntu/kirin970/include/linux/kern_levels.h:13:19: note: in expansion of macro ‘KERN_SOH’
+   13 | #define KERN_INFO KERN_SOH "6" /* informational */
+      |                   ^~~~~~~~
+/home/ubuntu/kirin970/include/linux/printk.h:290:9: note: in expansion of macro ‘KERN_INFO’
+  290 |  printk(KERN_INFO pr_fmt(fmt), ##__VA_ARGS__)
+      |         ^~~~~~~~~
+/home/ubuntu/kirin970/include/huawei_platform/log/hw_log.h:77:13: note: in expansion of macro ‘pr_info’
+   77 |             pr_info(hw_fmt_tag(TAG,I) fmt,##__VA_ARGS__);    \
+      |             ^~~~~~~
+/home/ubuntu/kirin970/include/huawei_platform/log/hw_log.h:72:9: note: in expansion of macro ‘__hwlog_info’
+   72 |         __hwlog_info(TAG,##x)
+      |         ^~~~~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/tpkit/huawei_ts_kit.h:286:28: note: in expansion of macro ‘_hwlog_info’
+  286 | #define TS_LOG_INFO(x...)  _hwlog_info(HWLOG_TAG, ##x)
+      |                            ^~~~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/tpkit/huawei_ts_kit_core.c:685:2: note: in expansion of macro ‘TS_LOG_INFO’
+  685 |  TS_LOG_INFO("%s : devinfo:%s,nodenum:%d,alllength:%d\n",__func__,info->deviceinfo,info->listnodenum);
+      |  ^~~~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/tpkit/huawei_ts_kit_core.c: In function ‘ts_change_spi_mode’:
+/home/ubuntu/kirin970/include/linux/kern_levels.h:4:18: warning: format ‘%s’ expects a matching ‘char *’ argument [-Wformat=]
+    4 | #define KERN_SOH "\001"  /* ASCII Start Of Header */
+      |                  ^~~~~~
+/home/ubuntu/kirin970/include/linux/kern_levels.h:10:18: note: in expansion of macro ‘KERN_SOH’
+   10 | #define KERN_ERR KERN_SOH "3" /* error conditions */
+      |                  ^~~~~~~~
+/home/ubuntu/kirin970/include/linux/printk.h:283:9: note: in expansion of macro ‘KERN_ERR’
+  283 |  printk(KERN_ERR pr_fmt(fmt), ##__VA_ARGS__)
+      |         ^~~~~~~~
+/home/ubuntu/kirin970/include/huawei_platform/log/hw_log.h:53:13: note: in expansion of macro ‘pr_err’
+   53 |             pr_err(hw_fmt_tag(TAG,E) fmt,##__VA_ARGS__);    \
+      |             ^~~~~~
+/home/ubuntu/kirin970/include/huawei_platform/log/hw_log.h:48:9: note: in expansion of macro ‘__hwlog_err’
+   48 |         __hwlog_err(TAG,##x)
+      |         ^~~~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/tpkit/huawei_ts_kit.h:287:27: note: in expansion of macro ‘_hwlog_err’
+  287 | #define TS_LOG_ERR(x...)  _hwlog_err(HWLOG_TAG, ##x)
+      |                           ^~~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/tpkit/huawei_ts_kit_core.c:1273:4: note: in expansion of macro ‘TS_LOG_ERR’
+ 1273 |    TS_LOG_ERR("%s setup spi failed.\n");
+      |    ^~~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/tpkit/huawei_ts_kit_core.c: In function ‘fb_notifier_callback’:
+/home/ubuntu/kirin970/include/linux/kern_levels.h:4:18: warning: format ‘%ld’ expects argument of type ‘long int’, but argument 3 has type ‘int’ [-Wformat=]
+    4 | #define KERN_SOH "\001"  /* ASCII Start Of Header */
+      |                  ^~~~~~
+/home/ubuntu/kirin970/include/linux/kern_levels.h:13:19: note: in expansion of macro ‘KERN_SOH’
+   13 | #define KERN_INFO KERN_SOH "6" /* informational */
+      |                   ^~~~~~~~
+/home/ubuntu/kirin970/include/linux/printk.h:290:9: note: in expansion of macro ‘KERN_INFO’
+  290 |  printk(KERN_INFO pr_fmt(fmt), ##__VA_ARGS__)
+      |         ^~~~~~~~~
+/home/ubuntu/kirin970/include/huawei_platform/log/hw_log.h:77:13: note: in expansion of macro ‘pr_info’
+   77 |             pr_info(hw_fmt_tag(TAG,I) fmt,##__VA_ARGS__);    \
+      |             ^~~~~~~
+/home/ubuntu/kirin970/include/huawei_platform/log/hw_log.h:72:9: note: in expansion of macro ‘__hwlog_info’
+   72 |         __hwlog_info(TAG,##x)
+      |         ^~~~~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/tpkit/huawei_ts_kit.h:286:28: note: in expansion of macro ‘_hwlog_info’
+  286 | #define TS_LOG_INFO(x...)  _hwlog_info(HWLOG_TAG, ##x)
+      |                            ^~~~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/tpkit/huawei_ts_kit_core.c:2129:5: note: in expansion of macro ‘TS_LOG_INFO’
+ 2129 |     TS_LOG_INFO("tpkit fb_callback called,ic_type is %d,pt_flag is %ld,event is %d\n",g_tskit_ic_type,g_tskit_pt_station_flag,event);
+      |     ^~~~~~~~~~~
+/home/ubuntu/kirin970/include/linux/kern_levels.h:4:18: warning: format ‘%d’ expects argument of type ‘int’, but argument 4 has type ‘long unsigned int’ [-Wformat=]
+    4 | #define KERN_SOH "\001"  /* ASCII Start Of Header */
+      |                  ^~~~~~
+/home/ubuntu/kirin970/include/linux/kern_levels.h:13:19: note: in expansion of macro ‘KERN_SOH’
+   13 | #define KERN_INFO KERN_SOH "6" /* informational */
+      |                   ^~~~~~~~
+/home/ubuntu/kirin970/include/linux/printk.h:290:9: note: in expansion of macro ‘KERN_INFO’
+  290 |  printk(KERN_INFO pr_fmt(fmt), ##__VA_ARGS__)
+      |         ^~~~~~~~~
+/home/ubuntu/kirin970/include/huawei_platform/log/hw_log.h:77:13: note: in expansion of macro ‘pr_info’
+   77 |             pr_info(hw_fmt_tag(TAG,I) fmt,##__VA_ARGS__);    \
+      |             ^~~~~~~
+/home/ubuntu/kirin970/include/huawei_platform/log/hw_log.h:72:9: note: in expansion of macro ‘__hwlog_info’
+   72 |         __hwlog_info(TAG,##x)
+      |         ^~~~~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/tpkit/huawei_ts_kit.h:286:28: note: in expansion of macro ‘_hwlog_info’
+  286 | #define TS_LOG_INFO(x...)  _hwlog_info(HWLOG_TAG, ##x)
+      |                            ^~~~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/tpkit/huawei_ts_kit_core.c:2129:5: note: in expansion of macro ‘TS_LOG_INFO’
+ 2129 |     TS_LOG_INFO("tpkit fb_callback called,ic_type is %d,pt_flag is %ld,event is %d\n",g_tskit_ic_type,g_tskit_pt_station_flag,event);
+      |     ^~~~~~~~~~~
+/home/ubuntu/kirin970/include/linux/kern_levels.h:4:18: warning: format ‘%d’ expects argument of type ‘int’, but argument 2 has type ‘long unsigned int’ [-Wformat=]
+    4 | #define KERN_SOH "\001"  /* ASCII Start Of Header */
+      |                  ^~~~~~
+/home/ubuntu/kirin970/include/linux/kern_levels.h:13:19: note: in expansion of macro ‘KERN_SOH’
+   13 | #define KERN_INFO KERN_SOH "6" /* informational */
+      |                   ^~~~~~~~
+/home/ubuntu/kirin970/include/linux/printk.h:290:9: note: in expansion of macro ‘KERN_INFO’
+  290 |  printk(KERN_INFO pr_fmt(fmt), ##__VA_ARGS__)
+      |         ^~~~~~~~~
+/home/ubuntu/kirin970/include/huawei_platform/log/hw_log.h:77:13: note: in expansion of macro ‘pr_info’
+   77 |             pr_info(hw_fmt_tag(TAG,I) fmt,##__VA_ARGS__);    \
+      |             ^~~~~~~
+/home/ubuntu/kirin970/include/huawei_platform/log/hw_log.h:72:9: note: in expansion of macro ‘__hwlog_info’
+   72 |         __hwlog_info(TAG,##x)
+      |         ^~~~~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/tpkit/huawei_ts_kit.h:291:13: note: in expansion of macro ‘_hwlog_info’
+  291 |             _hwlog_info(HWLOG_TAG, ##x); \
+      |             ^~~~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/tpkit/huawei_ts_kit_core.c:2139:9: note: in expansion of macro ‘TS_LOG_DEBUG’
+ 2139 |         TS_LOG_DEBUG("event(%d) do not need process\n", event);
+      |         ^~~~~~~~~~~~
+/home/ubuntu/kirin970/include/linux/kern_levels.h:4:18: warning: format ‘%d’ expects argument of type ‘int’, but argument 2 has type ‘long unsigned int’ [-Wformat=]
+    4 | #define KERN_SOH "\001"  /* ASCII Start Of Header */
+      |                  ^~~~~~
+/home/ubuntu/kirin970/include/linux/kern_levels.h:13:19: note: in expansion of macro ‘KERN_SOH’
+   13 | #define KERN_INFO KERN_SOH "6" /* informational */
+      |                   ^~~~~~~~
+/home/ubuntu/kirin970/include/linux/printk.h:290:9: note: in expansion of macro ‘KERN_INFO’
+  290 |  printk(KERN_INFO pr_fmt(fmt), ##__VA_ARGS__)
+      |         ^~~~~~~~~
+/home/ubuntu/kirin970/include/huawei_platform/log/hw_log.h:77:13: note: in expansion of macro ‘pr_info’
+   77 |             pr_info(hw_fmt_tag(TAG,I) fmt,##__VA_ARGS__);    \
+      |             ^~~~~~~
+/home/ubuntu/kirin970/include/huawei_platform/log/hw_log.h:72:9: note: in expansion of macro ‘__hwlog_info’
+   72 |         __hwlog_info(TAG,##x)
+      |         ^~~~~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/tpkit/huawei_ts_kit.h:291:13: note: in expansion of macro ‘_hwlog_info’
+  291 |             _hwlog_info(HWLOG_TAG, ##x); \
+      |             ^~~~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/tpkit/huawei_ts_kit_core.c:2145:9: note: in expansion of macro ‘TS_LOG_DEBUG’
+ 2145 |         TS_LOG_DEBUG("event = %d, blank is NULL, not do fb_notifier_callback\n", event);
+      |         ^~~~~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/tpkit/huawei_ts_kit_core.c: In function ‘ts_ioctl_get_fingers_info’:
+/home/ubuntu/kirin970/drivers/devkit/tpkit/huawei_ts_kit_core.c:2856:9: warning: unused variable ‘frame_size’ [-Wunused-variable]
+ 2856 |     u32 frame_size;
+      |         ^~~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/tpkit/huawei_ts_kit_core.c:2855:23: warning: unused variable ‘data’ [-Wunused-variable]
+ 2855 |     struct ts_fingers data;
+      |                       ^~~~
+/home/ubuntu/kirin970/drivers/devkit/tpkit/huawei_ts_kit_core.c: In function ‘ts_ioctl_get_aft_param_info’:
+/home/ubuntu/kirin970/drivers/devkit/tpkit/huawei_ts_kit_core.c:2894:22: warning: passing argument 1 of ‘copy_to_user’ makes pointer from integer without a cast [-Wint-conversion]
+ 2894 |     if (copy_to_user(arg, &g_ts_kit_platform_data.aft_param,
+      |                      ^~~
+      |                      |
+      |                      long unsigned int
+In file included from /home/ubuntu/kirin970/include/linux/uaccess.h:5,
+                 from /home/ubuntu/kirin970/drivers/devkit/tpkit/huawei_ts_kit_core.c:23:
+/home/ubuntu/kirin970/arch/arm64/include/asm/uaccess.h:454:68: note: expected ‘void *’ but argument is of type ‘long unsigned int’
+  454 | static inline unsigned long __must_check copy_to_user(void __user *to, const void *from, unsigned long n)
+      |                                                       ~~~~~~~~~~~~~^~
+/home/ubuntu/kirin970/drivers/devkit/tpkit/huawei_ts_kit_core.c: In function ‘ts_ioctl_set_coordinates’:
+/home/ubuntu/kirin970/drivers/devkit/tpkit/huawei_ts_kit_core.c:2935:2: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+ 2935 |  struct aft_abs_param_major aft_abs_major;
+      |  ^~~~~~
+/home/ubuntu/kirin970/drivers/devkit/tpkit/huawei_ts_kit_core.c:2912:19: warning: unused variable ‘flags’ [-Wunused-variable]
+ 2912 |     unsigned long flags;
+      |                   ^~~~~
+/home/ubuntu/kirin970/drivers/devkit/tpkit/huawei_ts_kit_core.c: In function ‘ts_send_init_cmd’:
+/home/ubuntu/kirin970/drivers/devkit/tpkit/huawei_ts_kit_core.c:3449:3: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+ 3449 |   struct ts_cmd_node cmd;
+      |   ^~~~~~
+/home/ubuntu/kirin970/drivers/devkit/tpkit/huawei_ts_kit_core.c: In function ‘tp_init_work_fn’:
+/home/ubuntu/kirin970/drivers/devkit/tpkit/huawei_ts_kit_core.c:3475:2: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+ 3475 |  int error = NO_ERR;
+      |  ^~~
+/home/ubuntu/kirin970/drivers/devkit/tpkit/huawei_ts_kit_core.c: In function ‘ts_kit_proc_command_directly’:
+/home/ubuntu/kirin970/drivers/devkit/tpkit/huawei_ts_kit_core.c:3888:2: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+ 3888 |  struct ts_cmd_node outcmd;
+      |  ^~~~~~
+/home/ubuntu/kirin970/drivers/devkit/tpkit/huawei_ts_kit_core.c: In function ‘ts_dmd_report’:
+/home/ubuntu/kirin970/drivers/devkit/tpkit/huawei_ts_kit_core.c:4012:5: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+ 4012 |     char input_buf[TS_CHIP_DMD_REPORT_SIZE] = {0};
+      |     ^~~~
+/home/ubuntu/kirin970/drivers/devkit/tpkit/huawei_ts_kit_core.c: In function ‘ts_thread’:
+/home/ubuntu/kirin970/drivers/devkit/tpkit/huawei_ts_kit_core.c:4291:1: warning: label ‘err_out’ defined but not used [-Wunused-label]
+ 4291 | err_out:
+      | ^~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/tpkit/huawei_ts_kit_core.c: In function ‘huawei_ts_chip_register’:
+/home/ubuntu/kirin970/drivers/devkit/tpkit/huawei_ts_kit_core.c:4347:1: warning: label ‘out’ defined but not used [-Wunused-label]
+ 4347 | out:
+      | ^~~
+In file included from /home/ubuntu/kirin970/drivers/devkit/tpkit/huawei_ts_kit_core.c:22:
+/home/ubuntu/kirin970/drivers/devkit/tpkit/huawei_ts_kit_core.c: In function ‘huawei_ts_module_init’:
+/home/ubuntu/kirin970/drivers/devkit/tpkit/huawei_ts_kit_core.c:4427:58: error: passing argument 1 of ‘kthread_create_on_node’ from incompatible pointer type [-Werror=incompatible-pointer-types]
+ 4427 |     g_ts_kit_platform_data.ts_init_task = kthread_create(&g_ts_kit_platform_data, "ts_init_thread:%d", 0);
+      |                                                          ^~~~~~~~~~~~~~~~~~~~~~~
+      |                                                          |
+      |                                                          struct ts_kit_platform_data *
+/home/ubuntu/kirin970/include/linux/kthread.h:25:25: note: in definition of macro ‘kthread_create’
+   25 |  kthread_create_on_node(threadfn, data, NUMA_NO_NODE, namefmt, ##arg)
+      |                         ^~~~~~~~
+/home/ubuntu/kirin970/include/linux/kthread.h:8:50: note: expected ‘int (*)(void *)’ but argument is of type ‘struct ts_kit_platform_data *’
+    8 | struct task_struct *kthread_create_on_node(int (*threadfn)(void *data),
+      |                                            ~~~~~~^~~~~~~~~~~~~~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/tpkit/huawei_ts_kit_core.c: In function ‘ts_ioctl_get_fingers_info’:
+/home/ubuntu/kirin970/drivers/devkit/tpkit/huawei_ts_kit_core.c:2866:2: warning: ignoring return value of ‘down_interruptible’ declared with attribute ‘warn_unused_result’ [-Wunused-result]
+ 2866 |  down_interruptible(&g_ts_kit_platform_data.fingers_aft_send);
+      |  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+At top level:
+/home/ubuntu/kirin970/drivers/devkit/tpkit/huawei_ts_kit_core.c:4029:12: warning: ‘ts_kit_init’ defined but not used [-Wunused-function]
+ 4029 | static int ts_kit_init(void)
+      |            ^~~~~~~~~~~
+  CC      drivers/dubai/dubai_gpu.o
+/home/ubuntu/kirin970/drivers/connectivity/hi11xx/hi1103/wifi/1103/wal/wal_linux_rx_rsp.c: In function ‘wal_disasoc_comp_proc_sta_etc’:
+/home/ubuntu/kirin970/drivers/connectivity/hi11xx/hi1103/wifi/1103/wal/wal_linux_rx_rsp.c:485:22: error: the comparison will always evaluate as ‘false’ for the address of ‘pci_get_device’ will never be NULL [-Werror=address]
+  485 |     if (OAL_PTR_NULL == pci_get_device)
+      |                      ^~
+/home/ubuntu/kirin970/drivers/connectivity/hi11xx/hi1103/wifi/1103/wal/wal_linux_rx_rsp.c:501:35: error: passing argument 1 of ‘oal_cfg80211_disconnected_etc’ from incompatible pointer type [-Werror=incompatible-pointer-types]
+  501 |     oal_cfg80211_disconnected_etc(pci_get_device,
+      |                                   ^~~~~~~~~~~~~~
+      |                                   |
+      |                                   struct pci_dev * (*)(unsigned int,  unsigned int,  struct pci_dev *)
+In file included from /home/ubuntu/kirin970/drivers/connectivity/hi11xx/hi1103/wifi/1103/wal/wal_linux_rx_rsp.c:29:
+/home/ubuntu/kirin970/drivers/connectivity/hi11xx/hi1103/platform/inc/oal/oal_cfg80211.h:726:49: note: expected ‘oal_net_device_stru *’ {aka ‘struct net_device *’} but argument is of type ‘struct pci_dev * (*)(unsigned int,  unsigned int,  struct pci_dev *)’
+  726 |                     oal_net_device_stru        *pst_net_device,
+      |                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~
+In file included from /home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_fb_util_hs.c:2:
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/include/lcdkit_panel.h:160:48: warning: ‘struct lcdkit_dsi_panel_cmds’ declared inside parameter list will not be visible outside of this definition or declaration
+  160 | typedef void (* dcs_level_trans_func_t)(struct lcdkit_dsi_panel_cmds *, int, int);
+      |                                                ^~~~~~~~~~~~~~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_fb_util_hs.c: In function ‘get_lcdkit_support’:
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_fb_util_hs.c:24:66: error: passing argument 3 of ‘of_property_read_string’ from incompatible pointer type [-Werror=incompatible-pointer-types]
+   24 |     ret = of_property_read_string(lcdkit_np, "support_lcd_type", support_type);
+      |                                                                  ^~~~~~~~~~~~
+      |                                                                  |
+      |                                                                  char *
+In file included from /home/ubuntu/kirin970/include/linux/i2c.h:33,
+                 from /home/ubuntu/kirin970/include/uapi/linux/fb.h:5,
+                 from /home/ubuntu/kirin970/include/linux/fb.h:5,
+                 from /home/ubuntu/kirin970/drivers/video/fbdev/hisi/dss/hisi_fb.h:22,
+                 from /home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_fb_util_hs.c:1:
+/home/ubuntu/kirin970/include/linux/of.h:316:21: note: expected ‘const char **’ but argument is of type ‘char *’
+  316 |        const char **out_string);
+      |        ~~~~~~~~~~~~~^~~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_fb_util_hs.c: In function ‘lcd_ic_color_enhancement_mode_show’:
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_fb_util_hs.c:417:66: warning: passing argument 1 of ‘lcdkit_info->lcdkit_ic_color_enhancement_mode_show’ discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
+  417 |         ret = lcdkit_info->lcdkit_ic_color_enhancement_mode_show(buf);
+      |                                                                  ^~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_fb_util_hs.c:417:66: note: expected ‘char *’ but argument is of type ‘const char *’
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_fb_util_hs.c: In function ‘lcd_voltage_mode_enable_store’:
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_fb_util_hs.c:713:1: warning: label ‘err_out’ defined but not used [-Wunused-label]
+  713 | err_out:
+      | ^~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_fb_util_hs.c: In function ‘lcd_support_mode_show’:
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_fb_util_hs.c:905:10: warning: unused variable ‘lcd_bist_check_result’ [-Wunused-variable]
+  905 |     char lcd_bist_check_result[BIS_CHECK_COUNT] = {0};
+      |          ^~~~~~~~~~~~~~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_fb_util_hs.c: In function ‘lcd_support_checkmode_show’:
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_fb_util_hs.c:1216:10: warning: unused variable ‘lcd_bist_check_result’ [-Wunused-variable]
+ 1216 |     char lcd_bist_check_result[BIS_CHECK_COUNT] = {0};
+      |          ^~~~~~~~~~~~~~~~~~~~~
+In file included from /home/ubuntu/kirin970/include/linux/printk.h:6,
+                 from /home/ubuntu/kirin970/include/linux/kernel.h:13,
+                 from /home/ubuntu/kirin970/include/linux/sched.h:17,
+                 from /home/ubuntu/kirin970/include/linux/uaccess.h:4,
+                 from /home/ubuntu/kirin970/drivers/video/fbdev/hisi/dss/hisi_fb.h:18,
+                 from /home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_fb_util_hs.c:1:
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_fb_util_hs.c: In function ‘alpm_function_store’:
+/home/ubuntu/kirin970/include/linux/kern_levels.h:4:18: warning: format ‘%d’ expects argument of type ‘int’, but argument 3 has type ‘ssize_t’ {aka ‘long int’} [-Wformat=]
+    4 | #define KERN_SOH "\001"  /* ASCII Start Of Header */
+      |                  ^~~~~~
+/home/ubuntu/kirin970/include/linux/kern_levels.h:10:18: note: in expansion of macro ‘KERN_SOH’
+   10 | #define KERN_ERR KERN_SOH "3" /* error conditions */
+      |                  ^~~~~~~~
+/home/ubuntu/kirin970/include/linux/printk.h:283:9: note: in expansion of macro ‘KERN_ERR’
+  283 |  printk(KERN_ERR pr_fmt(fmt), ##__VA_ARGS__)
+      |         ^~~~~~~~
+/home/ubuntu/kirin970/drivers/video/fbdev/hisi/dss/hisi_fb_def.h:89:3: note: in expansion of macro ‘pr_err’
+   89 |   pr_err("[hisifb E]:%s: "msg, __func__, ## __VA_ARGS__); } while (0)
+      |   ^~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_fb_util_hs.c:2856:3: note: in expansion of macro ‘HISI_FB_ERR’
+ 2856 |   HISI_FB_ERR("sscanf return invaild:%d\n", ret);
+      |   ^~~~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_fb_util_hs.c: In function ‘lcd_dynamic_porch_store’:
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_fb_util_hs.c:3395:1: warning: label ‘out’ defined but not used [-Wunused-label]
+ 3395 | out:
+      | ^~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_fb_util_hs.c: In function ‘lcd_dynamic_porch_show’:
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_fb_util_hs.c:3451:11: warning: format ‘%d’ expects argument of type ‘int’, but argument 10 has type ‘uint64_t’ {aka ‘long long unsigned int’} [-Wformat=]
+ 3451 |           "h_back_porch=%d\n"
+      |           ^~~~~~~~~~~~~~~~~~~
+......
+ 3464 |           pinfo->pxl_clk_rate);
+      |           ~~~~~~~~~~~~~~~~~~~
+      |                |
+      |                uint64_t {aka long long unsigned int}
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_fb_util_hs.c:3457:25: note: format string is defined here
+ 3457 |           "pixel clk = %d\n",
+      |                        ~^
+      |                         |
+      |                         int
+      |                        %lld
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_fb_util_hs.c: In function ‘lcd_mipi_config_store’:
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_fb_util_hs.c:4087:2: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+ 4087 |  struct hisi_fb_data_type* hisifd = get_fb_data(dev);
+      |  ^~~~~~
+In file included from /home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_fb_util_hs.c:5:
+At top level:
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:745:25: warning: ‘lcdkit_vci_disable_cmds’ defined but not used [-Wunused-variable]
+  745 | static struct gpio_desc lcdkit_vci_disable_cmds[] =
+      |                         ^~~~~~~~~~~~~~~~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:732:25: warning: ‘lcdkit_vbat_disable_cmds’ defined but not used [-Wunused-variable]
+  732 | static struct gpio_desc lcdkit_vbat_disable_cmds[] =
+      |                         ^~~~~~~~~~~~~~~~~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:719:25: warning: ‘lcdkit_iovcc_disable_cmds’ defined but not used [-Wunused-variable]
+  719 | static struct gpio_desc lcdkit_iovcc_disable_cmds[] =
+      |                         ^~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:711:25: warning: ‘lcdkit_vci_free_cmds’ defined but not used [-Wunused-variable]
+  711 | static struct gpio_desc lcdkit_vci_free_cmds[] =
+      |                         ^~~~~~~~~~~~~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:703:25: warning: ‘lcdkit_vbat_free_cmds’ defined but not used [-Wunused-variable]
+  703 | static struct gpio_desc lcdkit_vbat_free_cmds[] =
+      |                         ^~~~~~~~~~~~~~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:695:25: warning: ‘lcdkit_iovcc_free_cmds’ defined but not used [-Wunused-variable]
+  695 | static struct gpio_desc lcdkit_iovcc_free_cmds[] =
+      |                         ^~~~~~~~~~~~~~~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:687:25: warning: ‘lcdkit_vci_enable_cmds’ defined but not used [-Wunused-variable]
+  687 | static struct gpio_desc lcdkit_vci_enable_cmds[] =
+      |                         ^~~~~~~~~~~~~~~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:679:25: warning: ‘lcdkit_vbat_enable_cmds’ defined but not used [-Wunused-variable]
+  679 | static struct gpio_desc lcdkit_vbat_enable_cmds[] =
+      |                         ^~~~~~~~~~~~~~~~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:671:25: warning: ‘lcdkit_iovcc_enable_cmds’ defined but not used [-Wunused-variable]
+  671 | static struct gpio_desc lcdkit_iovcc_enable_cmds[] =
+      |                         ^~~~~~~~~~~~~~~~~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:663:25: warning: ‘lcdkit_vci_request_cmds’ defined but not used [-Wunused-variable]
+  663 | static struct gpio_desc lcdkit_vci_request_cmds[] =
+      |                         ^~~~~~~~~~~~~~~~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:655:25: warning: ‘lcdkit_vbat_request_cmds’ defined but not used [-Wunused-variable]
+  655 | static struct gpio_desc lcdkit_vbat_request_cmds[] =
+      |                         ^~~~~~~~~~~~~~~~~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:647:25: warning: ‘lcdkit_iovcc_request_cmds’ defined but not used [-Wunused-variable]
+  647 | static struct gpio_desc lcdkit_iovcc_request_cmds[] =
+      |                         ^~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:535:25: warning: ‘lcdkit_bias_disable_cmds’ defined but not used [-Wunused-variable]
+  535 | static struct gpio_desc lcdkit_bias_disable_cmds[] =
+      |                         ^~~~~~~~~~~~~~~~~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:521:25: warning: ‘lcdkit_bias_free_cmds’ defined but not used [-Wunused-variable]
+  521 | static struct gpio_desc lcdkit_bias_free_cmds[] =
+      |                         ^~~~~~~~~~~~~~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:507:25: warning: ‘lcdkit_bias_enable_cmds’ defined but not used [-Wunused-variable]
+  507 | static struct gpio_desc lcdkit_bias_enable_cmds[] =
+      |                         ^~~~~~~~~~~~~~~~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:493:25: warning: ‘lcdkit_bias_request_cmds’ defined but not used [-Wunused-variable]
+  493 | static struct gpio_desc lcdkit_bias_request_cmds[] =
+      |                         ^~~~~~~~~~~~~~~~~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:482:25: warning: ‘lcdkit_gpio_id1_input_cmds’ defined but not used [-Wunused-variable]
+  482 | static struct gpio_desc lcdkit_gpio_id1_input_cmds[] =
+      |                         ^~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:474:25: warning: ‘lcdkit_gpio_id0_input_cmds’ defined but not used [-Wunused-variable]
+  474 | static struct gpio_desc lcdkit_gpio_id0_input_cmds[] =
+      |                         ^~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:466:25: warning: ‘lcdkit_gpio_id1_high_cmds’ defined but not used [-Wunused-variable]
+  466 | static struct gpio_desc lcdkit_gpio_id1_high_cmds[] =
+      |                         ^~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:458:25: warning: ‘lcdkit_gpio_id1_low_cmds’ defined but not used [-Wunused-variable]
+  458 | static struct gpio_desc lcdkit_gpio_id1_low_cmds[] =
+      |                         ^~~~~~~~~~~~~~~~~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:450:25: warning: ‘lcdkit_gpio_id0_high_cmds’ defined but not used [-Wunused-variable]
+  450 | static struct gpio_desc lcdkit_gpio_id0_high_cmds[] =
+      |                         ^~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:442:25: warning: ‘lcdkit_gpio_id0_low_cmds’ defined but not used [-Wunused-variable]
+  442 | static struct gpio_desc lcdkit_gpio_id0_low_cmds[] =
+      |                         ^~~~~~~~~~~~~~~~~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:428:25: warning: ‘lcdkit_gpio_id_request_cmds’ defined but not used [-Wunused-variable]
+  428 | static struct gpio_desc lcdkit_gpio_id_request_cmds[] =
+      |                         ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:416:25: warning: ‘lcdkit_gpio_reset_low_cmds’ defined but not used [-Wunused-variable]
+  416 | static struct gpio_desc lcdkit_gpio_reset_low_cmds[] =
+      |                         ^~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:407:25: warning: ‘lcdkit_gpio_reset_high_cmds’ defined but not used [-Wunused-variable]
+  407 | static struct gpio_desc lcdkit_gpio_reset_high_cmds[] =
+      |                         ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:390:25: warning: ‘lcdkit_gpio_reset_normal_cmds’ defined but not used [-Wunused-variable]
+  390 | static struct gpio_desc lcdkit_gpio_reset_normal_cmds[] =
+      |                         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:381:25: warning: ‘lcdkit_gpio_reset_free_cmds’ defined but not used [-Wunused-variable]
+  381 | static struct gpio_desc lcdkit_gpio_reset_free_cmds[] =
+      |                         ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:372:25: warning: ‘lcdkit_gpio_reset_request_cmds’ defined but not used [-Wunused-variable]
+  372 | static struct gpio_desc lcdkit_gpio_reset_request_cmds[] =
+      |                         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:342:32: warning: ‘lcdkit_pinctrl_finit_cmds’ defined but not used [-Wunused-variable]
+  342 | static struct pinctrl_cmd_desc lcdkit_pinctrl_finit_cmds[] =
+      |                                ^~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:337:32: warning: ‘lcdkit_pinctrl_low_cmds’ defined but not used [-Wunused-variable]
+  337 | static struct pinctrl_cmd_desc lcdkit_pinctrl_low_cmds[] =
+      |                                ^~~~~~~~~~~~~~~~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:332:32: warning: ‘lcdkit_pinctrl_normal_cmds’ defined but not used [-Wunused-variable]
+  332 | static struct pinctrl_cmd_desc lcdkit_pinctrl_normal_cmds[] =
+      |                                ^~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:325:32: warning: ‘lcdkit_pinctrl_init_cmds’ defined but not used [-Wunused-variable]
+  325 | static struct pinctrl_cmd_desc lcdkit_pinctrl_init_cmds[] =
+      |                                ^~~~~~~~~~~~~~~~~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:314:24: warning: ‘lcdkit_regulator_vci_disable_cmds’ defined but not used [-Wunused-variable]
+  314 | static struct vcc_desc lcdkit_regulator_vci_disable_cmds[] =
+      |                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:308:24: warning: ‘lcdkit_vdd_disable_cmds’ defined but not used [-Wunused-variable]
+  308 | static struct vcc_desc lcdkit_vdd_disable_cmds[] =
+      |                        ^~~~~~~~~~~~~~~~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:302:24: warning: ‘lcdkit_io_vcc_disable_cmds’ defined but not used [-Wunused-variable]
+  302 | static struct vcc_desc lcdkit_io_vcc_disable_cmds[] =
+      |                        ^~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:296:24: warning: ‘lcdkit_regulator_vci_enable_cmds’ defined but not used [-Wunused-variable]
+  296 | static struct vcc_desc lcdkit_regulator_vci_enable_cmds[] =
+      |                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:289:24: warning: ‘lcdkit_vdd_enable_cmds’ defined but not used [-Wunused-variable]
+  289 | static struct vcc_desc lcdkit_vdd_enable_cmds[] =
+      |                        ^~~~~~~~~~~~~~~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:283:24: warning: ‘lcdkit_io_vcc_enable_cmds’ defined but not used [-Wunused-variable]
+  283 | static struct vcc_desc lcdkit_io_vcc_enable_cmds[] =
+      |                        ^~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:275:24: warning: ‘lcdkit_vcc_finit_cmds’ defined but not used [-Wunused-variable]
+  275 | static struct vcc_desc lcdkit_vcc_finit_cmds[] =
+      |                        ^~~~~~~~~~~~~~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:267:24: warning: ‘lcdkit_vci_init_cmds’ defined but not used [-Wunused-variable]
+  267 | static struct vcc_desc lcdkit_vci_init_cmds[] =
+      |                        ^~~~~~~~~~~~~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:259:24: warning: ‘lcdkit_vdd_init_cmds’ defined but not used [-Wunused-variable]
+  259 | static struct vcc_desc lcdkit_vdd_init_cmds[] =
+      |                        ^~~~~~~~~~~~~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:251:24: warning: ‘lcdkit_io_vcc_init_cmds’ defined but not used [-Wunused-variable]
+  251 | static struct vcc_desc lcdkit_io_vcc_init_cmds[] =
+      |                        ^~~~~~~~~~~~~~~~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:234:24: warning: ‘lcdkit_scharger_bl_disable_cmds’ defined but not used [-Wunused-variable]
+  234 | static struct vcc_desc lcdkit_scharger_bl_disable_cmds[] =
+      |                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:228:24: warning: ‘lcdkit_scharger_bl_enable_cmds’ defined but not used [-Wunused-variable]
+  228 | static struct vcc_desc lcdkit_scharger_bl_enable_cmds[] =
+      |                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:220:24: warning: ‘lcdkit_scharger_bias_disable_cmds’ defined but not used [-Wunused-variable]
+  220 | static struct vcc_desc lcdkit_scharger_bias_disable_cmds[] =
+      |                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:212:24: warning: ‘lcdkit_scharger_bias_enable_cmds’ defined but not used [-Wunused-variable]
+  212 | static struct vcc_desc lcdkit_scharger_bias_enable_cmds[] =
+      |                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:203:24: warning: ‘lcdkit_scharger_bias_put_cmds’ defined but not used [-Wunused-variable]
+  203 | static struct vcc_desc lcdkit_scharger_bias_put_cmds[] =
+      |                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:195:24: warning: ‘lcdkit_scharger_bias_set_cmds’ defined but not used [-Wunused-variable]
+  195 | static struct vcc_desc lcdkit_scharger_bias_set_cmds[] =
+      |                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:186:24: warning: ‘lcdkit_scharger_bias_get_cmds’ defined but not used [-Wunused-variable]
+  186 | static struct vcc_desc lcdkit_scharger_bias_get_cmds[] =
+      |                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:166:25: warning: ‘lcd_gpio_read_btb’ defined but not used [-Wunused-variable]
+  166 | static struct gpio_desc lcd_gpio_read_btb =
+      |                         ^~~~~~~~~~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:162:25: warning: ‘lcd_gpio_free_btb’ defined but not used [-Wunused-variable]
+  162 | static struct gpio_desc lcd_gpio_free_btb =
+      |                         ^~~~~~~~~~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:158:25: warning: ‘lcd_gpio_request_btb’ defined but not used [-Wunused-variable]
+  158 | static struct gpio_desc lcd_gpio_request_btb =
+      |                         ^~~~~~~~~~~~~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:131:38: warning: ‘voltage_table’ defined but not used [-Wunused-variable]
+  131 | static struct lcdkit_vsp_vsn_voltage voltage_table[] = {
+      |                                      ^~~~~~~~~~~~~
+In file included from /home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:37,
+                 from /home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_fb_util_hs.c:5:
+/home/ubuntu/kirin970/drivers/video/fbdev/hisi/dss/voltage/tps65132.h:48:32: warning: ‘vol_table’ defined but not used [-Wunused-variable]
+   48 | static struct tps65132_voltage vol_table[] = {
+      |                                ^~~~~~~~~
+In file included from /home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_fb_util_hs.c:2:
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/include/lcdkit_panel.h:269:14: warning: ‘cmd_array’ defined but not used [-Wunused-variable]
+  269 | static char* cmd_array[SENCE_ARRAY_SIZE] = {
+      |              ^~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/include/lcdkit_panel.h:244:14: warning: ‘sence_array’ defined but not used [-Wunused-variable]
+  244 | static char* sence_array[SENCE_ARRAY_SIZE] = {
+      |              ^~~~~~~~~~~
+/home/ubuntu/kirin970/drivers/connectivity/hi11xx/hi1103/wifi/1103/wal/wal_linux_rx_rsp.c:501:5: error: ‘st_disconnect_result.us_reason_code’ may be used uninitialized in this function [-Werror=maybe-uninitialized]
+  501 |     oal_cfg80211_disconnected_etc(pci_get_device,
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  502 |                               st_disconnect_result.us_reason_code,
+      |                               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  503 |                               st_disconnect_result.pus_disconn_ie,
+      |                               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  504 |                               st_disconnect_result.us_disconn_ie_len,
+      |                               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  505 |                               GFP_ATOMIC);
+      |                               ~~~~~~~~~~~
+/home/ubuntu/kirin970/drivers/connectivity/hi11xx/hi1103/wifi/1103/wal/wal_linux_rx_rsp.c:501:5: error: ‘st_disconnect_result.pus_disconn_ie’ may be used uninitialized in this function [-Werror=maybe-uninitialized]
+/home/ubuntu/kirin970/drivers/connectivity/hi11xx/hi1103/wifi/1103/wal/wal_linux_rx_rsp.c:501:5: error: ‘st_disconnect_result.us_disconn_ie_len’ may be used uninitialized in this function [-Werror=maybe-uninitialized]
+/home/ubuntu/kirin970/drivers/devkit/tpkit/huawei_ts_kit_core.c: In function ‘ts_dmd_report’:
+/home/ubuntu/kirin970/drivers/devkit/tpkit/huawei_ts_kit_core.c:4025:1: warning: the frame size of 2128 bytes is larger than 2048 bytes [-Wframe-larger-than=]
+ 4025 | }
+      | ^
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_fb_util_hs.c: In function ‘get_lcdkit_support’:
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_fb_util_hs.c:33:10: warning: argument 1 null where non-null expected [-Wnonnull]
+   33 |     if (!strncmp(support_type, "LCDKIT", strlen("LCDKIT")))
+      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /home/ubuntu/kirin970/include/linux/string.h:18,
+                 from /home/ubuntu/kirin970/arch/arm64/include/asm/processor.h:37,
+                 from /home/ubuntu/kirin970/arch/arm64/include/asm/spinlock.h:21,
+                 from /home/ubuntu/kirin970/include/linux/spinlock.h:87,
+                 from /home/ubuntu/kirin970/include/linux/seqlock.h:35,
+                 from /home/ubuntu/kirin970/include/linux/time.h:5,
+                 from /home/ubuntu/kirin970/include/uapi/linux/timex.h:56,
+                 from /home/ubuntu/kirin970/include/linux/timex.h:56,
+                 from /home/ubuntu/kirin970/include/linux/sched.h:19,
+                 from /home/ubuntu/kirin970/include/linux/uaccess.h:4,
+                 from /home/ubuntu/kirin970/drivers/video/fbdev/hisi/dss/hisi_fb.h:18,
+                 from /home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_fb_util_hs.c:1:
+/home/ubuntu/kirin970/arch/arm64/include/asm/string.h:29:12: note: in a call to function ‘strncmp’ declared here
+   29 | extern int strncmp(const char *, const char *, __kernel_size_t);
+      |            ^~~~~~~
+cc1: all warnings being treated as errors
+make[7]: *** [/home/ubuntu/kirin970/scripts/Makefile.build:356: drivers/connectivity/hi11xx/hi1103/wifi/1103/wal/wal_linux_rx_rsp.o] Error 1
+make[6]: *** [/home/ubuntu/kirin970/scripts/Makefile.build:687: drivers/connectivity/hi11xx/hi1103/wifi/1103] Error 2
+make[5]: *** [/home/ubuntu/kirin970/scripts/Makefile.build:687: drivers/connectivity/hi11xx/hi1103/wifi] Error 2
+make[4]: *** [/home/ubuntu/kirin970/scripts/Makefile.build:687: drivers/connectivity/hi11xx/hi1103] Error 2
+make[3]: *** [/home/ubuntu/kirin970/scripts/Makefile.build:687: drivers/connectivity/hi11xx] Error 2
+make[3]: *** Waiting for unfinished jobs....
+make[4]: *** [/home/ubuntu/kirin970/scripts/Makefile.build:687: drivers/connectivity/hisi/wifi] Error 2
+make[3]: *** [/home/ubuntu/kirin970/scripts/Makefile.build:687: drivers/connectivity/hisi] Error 2
+make[2]: *** [/home/ubuntu/kirin970/scripts/Makefile.build:687: drivers/connectivity] Error 2
+make[2]: *** Waiting for unfinished jobs....
+  CC      drivers/dubai/dubai_stats.o
+  CC      drivers/dubai/dubai_process_cputime.o
+  LD      drivers/firmware/broadcom/built-in.o
+  CC      drivers/dubai/buffered_log_sender.o
+  LD      drivers/firmware/meson/built-in.o
+  CC      drivers/dsm/dsm_earlyboot_client/dsm_earlyboot_client.o
+/home/ubuntu/kirin970/drivers/dubai/dubai_process_cputime.c:99:1: warning: useless storage class specifier in empty declaration
+   99 | };
+      | ^
+/home/ubuntu/kirin970/drivers/dubai/dubai_process_cputime.c:117:1: warning: useless storage class specifier in empty declaration
+  117 | };
+      | ^
+/home/ubuntu/kirin970/drivers/dubai/dubai_process_cputime.c:124:1: warning: useless storage class specifier in empty declaration
+  124 | } __packed;
+      | ^
+  LD      drivers/firmware/built-in.o
+  CC      drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_parse_hs.o
+/home/ubuntu/kirin970/drivers/dubai/dubai_process_cputime.c: In function ‘dubai_find_or_register_proc’:
+/home/ubuntu/kirin970/drivers/dubai/dubai_process_cputime.c:34:30: warning: ‘strncpy’ output may be truncated copying 15 bytes from a string of length 15 [-Wstringop-truncation]
+   34 | #define COPY_TASK_COMM(p, q) strncpy(p, q, TASK_COMM_LEN - 1)/* unsafe_function_ignore: strncpy */
+      |                              ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ubuntu/kirin970/drivers/dubai/dubai_process_cputime.c:425:4: note: in expansion of macro ‘COPY_TASK_COMM’
+  425 |    COPY_TASK_COMM(comm, task->comm);
+      |    ^~~~~~~~~~~~~~
+/home/ubuntu/kirin970/drivers/dubai/dubai_process_cputime.c:34:30: warning: ‘strncpy’ output may be truncated copying 15 bytes from a string of length 15 [-Wstringop-truncation]
+   34 | #define COPY_TASK_COMM(p, q) strncpy(p, q, TASK_COMM_LEN - 1)/* unsafe_function_ignore: strncpy */
+      |                              ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ubuntu/kirin970/drivers/dubai/dubai_process_cputime.c:423:4: note: in expansion of macro ‘COPY_TASK_COMM’
+  423 |    COPY_TASK_COMM(comm, leader->comm);
+      |    ^~~~~~~~~~~~~~
+cc1: some warnings being treated as errors
+make[3]: *** [/home/ubuntu/kirin970/scripts/Makefile.build:356: drivers/devkit/tpkit/huawei_ts_kit_core.o] Error 1
+make[2]: *** [/home/ubuntu/kirin970/scripts/Makefile.build:687: drivers/devkit/tpkit] Error 2
+/home/ubuntu/kirin970/drivers/dubai/dubai_stats.c: In function ‘dubai_get_binder_proc_name’:
+/home/ubuntu/kirin970/drivers/dubai/dubai_stats.c:674:3: warning: ‘strncpy’ output may be truncated copying 47 bytes from a string of length 47 [-Wstringop-truncation]
+  674 |   strncpy(service->name, stats->proc.name, NAME_LEN - 1);/* unsafe_function_ignore: strncpy */
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ubuntu/kirin970/drivers/dubai/dubai_stats.c:688:4: warning: ‘strncpy’ output may be truncated copying 47 bytes from a string of length 47 [-Wstringop-truncation]
+  688 |    strncpy(client->name, entry->proc.name, NAME_LEN - 1);/* unsafe_function_ignore: strncpy */
+      |    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ubuntu/kirin970/drivers/dubai/dubai_stats.c:686:4: warning: ‘strncpy’ output may be truncated copying 47 bytes from a string of length 47 [-Wstringop-truncation]
+  686 |    strncpy(client->name, c.name, NAME_LEN - 1);/* unsafe_function_ignore: strncpy */
+      |    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ubuntu/kirin970/drivers/dubai/dubai_stats.c:671:3: warning: ‘strncpy’ output may be truncated copying 47 bytes from a string of length 47 [-Wstringop-truncation]
+  671 |   strncpy(service->name, s.name, NAME_LEN - 1);/* unsafe_function_ignore: strncpy */
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ubuntu/kirin970/drivers/dubai/dubai_stats.c:672:3: warning: ‘strncpy’ output may be truncated copying 47 bytes from a string of length 47 [-Wstringop-truncation]
+  672 |   strncpy(client->name, c.name, NAME_LEN - 1);/* unsafe_function_ignore: strncpy */
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  CC      drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_panel_adaptor_hs.o
+  CC      drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.o
+/home/ubuntu/kirin970/drivers/dubai/dubai_stats.c: In function ‘dubai_get_kworker_info’:
+/home/ubuntu/kirin970/drivers/dubai/dubai_stats.c:260:4: warning: ‘strncpy’ output may be truncated copying 47 bytes from a string of length 238 [-Wstringop-truncation]
+  260 |    strncpy(entry->info.symbol, buffer, MAX_SYMBOL_LEN - 1);/* unsafe_function_ignore: strncpy */
+      |    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  LD      drivers/dsm/dsm_earlyboot_client/built-in.o
+  LD      drivers/dsm/built-in.o
+  LD      drivers/dubai/built-in.o
+In file included from /home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_parse_hs.c:2:
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/include/lcdkit_panel.h:160:48: warning: ‘struct lcdkit_dsi_panel_cmds’ declared inside parameter list will not be visible outside of this definition or declaration
+  160 | typedef void (* dcs_level_trans_func_t)(struct lcdkit_dsi_panel_cmds *, int, int);
+      |                                                ^~~~~~~~~~~~~~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_parse_hs.c: In function ‘get_lcd_ldo_info_for_rt’:
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_parse_hs.c:28:63: error: passing argument 3 of ‘of_property_read_u32_array’ from incompatible pointer type [-Werror=incompatible-pointer-types]
+   28 |   ret = of_property_read_u32_array(of_node, "lcd_ldo_channel",&g_lcd_ldo_info.lcd_ldo_channel,g_lcd_ldo_info.lcd_ldo_num);
+      |                                                               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |                                                               |
+      |                                                               int (*)[3]
+In file included from /home/ubuntu/kirin970/include/linux/i2c.h:33,
+                 from /home/ubuntu/kirin970/include/uapi/linux/fb.h:5,
+                 from /home/ubuntu/kirin970/include/linux/fb.h:5,
+                 from /home/ubuntu/kirin970/drivers/video/fbdev/hisi/dss/hisi_fb.h:22,
+                 from /home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_parse_hs.c:1:
+/home/ubuntu/kirin970/include/linux/of.h:466:16: note: expected ‘u32 *’ {aka ‘unsigned int *’} but argument is of type ‘int (*)[3]’
+  466 |           u32 *out_values, size_t sz)
+      |           ~~~~~^~~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_parse_hs.c:34:65: error: passing argument 3 of ‘of_property_read_u32_array’ from incompatible pointer type [-Werror=incompatible-pointer-types]
+   34 |   ret = of_property_read_u32_array(of_node, "lcd_ldo_threshold",&g_lcd_ldo_info.lcd_ldo_threshold,g_lcd_ldo_info.lcd_ldo_num);
+      |                                                                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |                                                                 |
+      |                                                                 int (*)[3]
+In file included from /home/ubuntu/kirin970/include/linux/i2c.h:33,
+                 from /home/ubuntu/kirin970/include/uapi/linux/fb.h:5,
+                 from /home/ubuntu/kirin970/include/linux/fb.h:5,
+                 from /home/ubuntu/kirin970/drivers/video/fbdev/hisi/dss/hisi_fb.h:22,
+                 from /home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_parse_hs.c:1:
+/home/ubuntu/kirin970/include/linux/of.h:466:16: note: expected ‘u32 *’ {aka ‘unsigned int *’} but argument is of type ‘int (*)[3]’
+  466 |           u32 *out_values, size_t sz)
+      |           ~~~~~^~~~~~~~~~
+cc1: some warnings being treated as errors
+make[6]: *** [/home/ubuntu/kirin970/scripts/Makefile.build:356: drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_fb_util_hs.o] Error 1
+make[6]: *** Waiting for unfinished jobs....
+In file included from /home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_parse_hs.c:4:
+At top level:
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:745:25: warning: ‘lcdkit_vci_disable_cmds’ defined but not used [-Wunused-variable]
+  745 | static struct gpio_desc lcdkit_vci_disable_cmds[] =
+      |                         ^~~~~~~~~~~~~~~~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:732:25: warning: ‘lcdkit_vbat_disable_cmds’ defined but not used [-Wunused-variable]
+  732 | static struct gpio_desc lcdkit_vbat_disable_cmds[] =
+      |                         ^~~~~~~~~~~~~~~~~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:719:25: warning: ‘lcdkit_iovcc_disable_cmds’ defined but not used [-Wunused-variable]
+  719 | static struct gpio_desc lcdkit_iovcc_disable_cmds[] =
+      |                         ^~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:711:25: warning: ‘lcdkit_vci_free_cmds’ defined but not used [-Wunused-variable]
+  711 | static struct gpio_desc lcdkit_vci_free_cmds[] =
+      |                         ^~~~~~~~~~~~~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:703:25: warning: ‘lcdkit_vbat_free_cmds’ defined but not used [-Wunused-variable]
+  703 | static struct gpio_desc lcdkit_vbat_free_cmds[] =
+      |                         ^~~~~~~~~~~~~~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:695:25: warning: ‘lcdkit_iovcc_free_cmds’ defined but not used [-Wunused-variable]
+  695 | static struct gpio_desc lcdkit_iovcc_free_cmds[] =
+      |                         ^~~~~~~~~~~~~~~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:687:25: warning: ‘lcdkit_vci_enable_cmds’ defined but not used [-Wunused-variable]
+  687 | static struct gpio_desc lcdkit_vci_enable_cmds[] =
+      |                         ^~~~~~~~~~~~~~~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:679:25: warning: ‘lcdkit_vbat_enable_cmds’ defined but not used [-Wunused-variable]
+  679 | static struct gpio_desc lcdkit_vbat_enable_cmds[] =
+      |                         ^~~~~~~~~~~~~~~~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:671:25: warning: ‘lcdkit_iovcc_enable_cmds’ defined but not used [-Wunused-variable]
+  671 | static struct gpio_desc lcdkit_iovcc_enable_cmds[] =
+      |                         ^~~~~~~~~~~~~~~~~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:663:25: warning: ‘lcdkit_vci_request_cmds’ defined but not used [-Wunused-variable]
+  663 | static struct gpio_desc lcdkit_vci_request_cmds[] =
+      |                         ^~~~~~~~~~~~~~~~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:655:25: warning: ‘lcdkit_vbat_request_cmds’ defined but not used [-Wunused-variable]
+  655 | static struct gpio_desc lcdkit_vbat_request_cmds[] =
+      |                         ^~~~~~~~~~~~~~~~~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:647:25: warning: ‘lcdkit_iovcc_request_cmds’ defined but not used [-Wunused-variable]
+  647 | static struct gpio_desc lcdkit_iovcc_request_cmds[] =
+      |                         ^~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:535:25: warning: ‘lcdkit_bias_disable_cmds’ defined but not used [-Wunused-variable]
+  535 | static struct gpio_desc lcdkit_bias_disable_cmds[] =
+      |                         ^~~~~~~~~~~~~~~~~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:521:25: warning: ‘lcdkit_bias_free_cmds’ defined but not used [-Wunused-variable]
+  521 | static struct gpio_desc lcdkit_bias_free_cmds[] =
+      |                         ^~~~~~~~~~~~~~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:507:25: warning: ‘lcdkit_bias_enable_cmds’ defined but not used [-Wunused-variable]
+  507 | static struct gpio_desc lcdkit_bias_enable_cmds[] =
+      |                         ^~~~~~~~~~~~~~~~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:493:25: warning: ‘lcdkit_bias_request_cmds’ defined but not used [-Wunused-variable]
+  493 | static struct gpio_desc lcdkit_bias_request_cmds[] =
+      |                         ^~~~~~~~~~~~~~~~~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:482:25: warning: ‘lcdkit_gpio_id1_input_cmds’ defined but not used [-Wunused-variable]
+  482 | static struct gpio_desc lcdkit_gpio_id1_input_cmds[] =
+      |                         ^~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:474:25: warning: ‘lcdkit_gpio_id0_input_cmds’ defined but not used [-Wunused-variable]
+  474 | static struct gpio_desc lcdkit_gpio_id0_input_cmds[] =
+      |                         ^~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:466:25: warning: ‘lcdkit_gpio_id1_high_cmds’ defined but not used [-Wunused-variable]
+  466 | static struct gpio_desc lcdkit_gpio_id1_high_cmds[] =
+      |                         ^~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:458:25: warning: ‘lcdkit_gpio_id1_low_cmds’ defined but not used [-Wunused-variable]
+  458 | static struct gpio_desc lcdkit_gpio_id1_low_cmds[] =
+      |                         ^~~~~~~~~~~~~~~~~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:450:25: warning: ‘lcdkit_gpio_id0_high_cmds’ defined but not used [-Wunused-variable]
+  450 | static struct gpio_desc lcdkit_gpio_id0_high_cmds[] =
+      |                         ^~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:442:25: warning: ‘lcdkit_gpio_id0_low_cmds’ defined but not used [-Wunused-variable]
+  442 | static struct gpio_desc lcdkit_gpio_id0_low_cmds[] =
+      |                         ^~~~~~~~~~~~~~~~~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:428:25: warning: ‘lcdkit_gpio_id_request_cmds’ defined but not used [-Wunused-variable]
+  428 | static struct gpio_desc lcdkit_gpio_id_request_cmds[] =
+      |                         ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:416:25: warning: ‘lcdkit_gpio_reset_low_cmds’ defined but not used [-Wunused-variable]
+  416 | static struct gpio_desc lcdkit_gpio_reset_low_cmds[] =
+      |                         ^~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:407:25: warning: ‘lcdkit_gpio_reset_high_cmds’ defined but not used [-Wunused-variable]
+  407 | static struct gpio_desc lcdkit_gpio_reset_high_cmds[] =
+      |                         ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:390:25: warning: ‘lcdkit_gpio_reset_normal_cmds’ defined but not used [-Wunused-variable]
+  390 | static struct gpio_desc lcdkit_gpio_reset_normal_cmds[] =
+      |                         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:381:25: warning: ‘lcdkit_gpio_reset_free_cmds’ defined but not used [-Wunused-variable]
+  381 | static struct gpio_desc lcdkit_gpio_reset_free_cmds[] =
+      |                         ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:372:25: warning: ‘lcdkit_gpio_reset_request_cmds’ defined but not used [-Wunused-variable]
+  372 | static struct gpio_desc lcdkit_gpio_reset_request_cmds[] =
+      |                         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:342:32: warning: ‘lcdkit_pinctrl_finit_cmds’ defined but not used [-Wunused-variable]
+  342 | static struct pinctrl_cmd_desc lcdkit_pinctrl_finit_cmds[] =
+      |                                ^~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:337:32: warning: ‘lcdkit_pinctrl_low_cmds’ defined but not used [-Wunused-variable]
+  337 | static struct pinctrl_cmd_desc lcdkit_pinctrl_low_cmds[] =
+      |                                ^~~~~~~~~~~~~~~~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:332:32: warning: ‘lcdkit_pinctrl_normal_cmds’ defined but not used [-Wunused-variable]
+  332 | static struct pinctrl_cmd_desc lcdkit_pinctrl_normal_cmds[] =
+      |                                ^~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:325:32: warning: ‘lcdkit_pinctrl_init_cmds’ defined but not used [-Wunused-variable]
+  325 | static struct pinctrl_cmd_desc lcdkit_pinctrl_init_cmds[] =
+      |                                ^~~~~~~~~~~~~~~~~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:314:24: warning: ‘lcdkit_regulator_vci_disable_cmds’ defined but not used [-Wunused-variable]
+  314 | static struct vcc_desc lcdkit_regulator_vci_disable_cmds[] =
+      |                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:308:24: warning: ‘lcdkit_vdd_disable_cmds’ defined but not used [-Wunused-variable]
+  308 | static struct vcc_desc lcdkit_vdd_disable_cmds[] =
+      |                        ^~~~~~~~~~~~~~~~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:302:24: warning: ‘lcdkit_io_vcc_disable_cmds’ defined but not used [-Wunused-variable]
+  302 | static struct vcc_desc lcdkit_io_vcc_disable_cmds[] =
+      |                        ^~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:296:24: warning: ‘lcdkit_regulator_vci_enable_cmds’ defined but not used [-Wunused-variable]
+  296 | static struct vcc_desc lcdkit_regulator_vci_enable_cmds[] =
+      |                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:289:24: warning: ‘lcdkit_vdd_enable_cmds’ defined but not used [-Wunused-variable]
+  289 | static struct vcc_desc lcdkit_vdd_enable_cmds[] =
+      |                        ^~~~~~~~~~~~~~~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:283:24: warning: ‘lcdkit_io_vcc_enable_cmds’ defined but not used [-Wunused-variable]
+  283 | static struct vcc_desc lcdkit_io_vcc_enable_cmds[] =
+      |                        ^~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:275:24: warning: ‘lcdkit_vcc_finit_cmds’ defined but not used [-Wunused-variable]
+  275 | static struct vcc_desc lcdkit_vcc_finit_cmds[] =
+      |                        ^~~~~~~~~~~~~~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:267:24: warning: ‘lcdkit_vci_init_cmds’ defined but not used [-Wunused-variable]
+  267 | static struct vcc_desc lcdkit_vci_init_cmds[] =
+      |                        ^~~~~~~~~~~~~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:259:24: warning: ‘lcdkit_vdd_init_cmds’ defined but not used [-Wunused-variable]
+  259 | static struct vcc_desc lcdkit_vdd_init_cmds[] =
+      |                        ^~~~~~~~~~~~~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:251:24: warning: ‘lcdkit_io_vcc_init_cmds’ defined but not used [-Wunused-variable]
+  251 | static struct vcc_desc lcdkit_io_vcc_init_cmds[] =
+      |                        ^~~~~~~~~~~~~~~~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:234:24: warning: ‘lcdkit_scharger_bl_disable_cmds’ defined but not used [-Wunused-variable]
+  234 | static struct vcc_desc lcdkit_scharger_bl_disable_cmds[] =
+      |                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:228:24: warning: ‘lcdkit_scharger_bl_enable_cmds’ defined but not used [-Wunused-variable]
+  228 | static struct vcc_desc lcdkit_scharger_bl_enable_cmds[] =
+      |                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:220:24: warning: ‘lcdkit_scharger_bias_disable_cmds’ defined but not used [-Wunused-variable]
+  220 | static struct vcc_desc lcdkit_scharger_bias_disable_cmds[] =
+      |                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:212:24: warning: ‘lcdkit_scharger_bias_enable_cmds’ defined but not used [-Wunused-variable]
+  212 | static struct vcc_desc lcdkit_scharger_bias_enable_cmds[] =
+      |                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:203:24: warning: ‘lcdkit_scharger_bias_put_cmds’ defined but not used [-Wunused-variable]
+  203 | static struct vcc_desc lcdkit_scharger_bias_put_cmds[] =
+      |                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:195:24: warning: ‘lcdkit_scharger_bias_set_cmds’ defined but not used [-Wunused-variable]
+  195 | static struct vcc_desc lcdkit_scharger_bias_set_cmds[] =
+      |                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:186:24: warning: ‘lcdkit_scharger_bias_get_cmds’ defined but not used [-Wunused-variable]
+  186 | static struct vcc_desc lcdkit_scharger_bias_get_cmds[] =
+      |                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:166:25: warning: ‘lcd_gpio_read_btb’ defined but not used [-Wunused-variable]
+  166 | static struct gpio_desc lcd_gpio_read_btb =
+      |                         ^~~~~~~~~~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:162:25: warning: ‘lcd_gpio_free_btb’ defined but not used [-Wunused-variable]
+  162 | static struct gpio_desc lcd_gpio_free_btb =
+      |                         ^~~~~~~~~~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:158:25: warning: ‘lcd_gpio_request_btb’ defined but not used [-Wunused-variable]
+  158 | static struct gpio_desc lcd_gpio_request_btb =
+      |                         ^~~~~~~~~~~~~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:131:38: warning: ‘voltage_table’ defined but not used [-Wunused-variable]
+  131 | static struct lcdkit_vsp_vsn_voltage voltage_table[] = {
+      |                                      ^~~~~~~~~~~~~
+In file included from /home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:37,
+                 from /home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_parse_hs.c:4:
+/home/ubuntu/kirin970/drivers/video/fbdev/hisi/dss/voltage/tps65132.h:48:32: warning: ‘vol_table’ defined but not used [-Wunused-variable]
+   48 | static struct tps65132_voltage vol_table[] = {
+      |                                ^~~~~~~~~
+In file included from /home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_parse_hs.c:2:
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/include/lcdkit_panel.h:269:14: warning: ‘cmd_array’ defined but not used [-Wunused-variable]
+  269 | static char* cmd_array[SENCE_ARRAY_SIZE] = {
+      |              ^~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/include/lcdkit_panel.h:244:14: warning: ‘sence_array’ defined but not used [-Wunused-variable]
+  244 | static char* sence_array[SENCE_ARRAY_SIZE] = {
+      |              ^~~~~~~~~~~
+In file included from /home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_panel_adaptor_hs.c:2:
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/include/lcdkit_panel.h:160:48: warning: ‘struct lcdkit_dsi_panel_cmds’ declared inside parameter list will not be visible outside of this definition or declaration
+  160 | typedef void (* dcs_level_trans_func_t)(struct lcdkit_dsi_panel_cmds *, int, int);
+      |                                                ^~~~~~~~~~~~~~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_panel_adaptor_hs.c: In function ‘lcdkit_mipi_dsi_read_compare’:
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_panel_adaptor_hs.c:637:10: error: assignment to ‘struct lcdkit_dsi_cmd_desc *’ from incompatible pointer type ‘struct dsi_cmd_desc *’ [-Werror=incompatible-pointer-types]
+  637 |     cmds = data->cmds;
+      |          ^
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_panel_adaptor_hs.c:640:41: error: passing argument 4 of ‘lcdkit_dsi_rx’ from incompatible pointer type [-Werror=incompatible-pointer-types]
+  640 |     lcdkit_dsi_rx(pdata, read_value, 1, cmds);
+      |                                         ^~~~
+      |                                         |
+      |                                         struct lcdkit_dsi_cmd_desc *
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_panel_adaptor_hs.c:506:86: note: expected ‘struct lcdkit_dsi_panel_cmds *’ but argument is of type ‘struct lcdkit_dsi_cmd_desc *’
+  506 | int lcdkit_dsi_rx(void* pdata, uint32_t* out, int len, struct lcdkit_dsi_panel_cmds* cmds)
+      |                                                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_panel_adaptor_hs.c:640:5: warning: converting a packed ‘struct lcdkit_dsi_cmd_desc’ pointer (alignment 1) to a ‘struct lcdkit_dsi_panel_cmds’ pointer (alignment 8) may result in an unaligned pointer value [-Waddress-of-packed-member]
+  640 |     lcdkit_dsi_rx(pdata, read_value, 1, cmds);
+      |     ^~~~~~~~~~~~~
+In file included from /home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_panel_adaptor_hs.c:2:
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/include/lcdkit_panel.h:345:8: note: defined here
+  345 | struct lcdkit_dsi_cmd_desc
+      |        ^~~~~~~~~~~~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/include/lcdkit_panel.h:371:8: note: defined here
+  371 | struct lcdkit_dsi_panel_cmds
+      |        ^~~~~~~~~~~~~~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_panel_adaptor_hs.c:626:9: warning: unused variable ‘ret’ [-Wunused-variable]
+  626 |     int ret = 0;
+      |         ^~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_panel_adaptor_hs.c: In function ‘lcdkit_lp2hs_mipi_test’:
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_panel_adaptor_hs.c:741:27: warning: initialization of ‘uint32_t *’ {aka ‘unsigned int *’} from ‘int’ makes pointer from integer without a cast [-Wint-conversion]
+  741 |         .expected_value = lcdkit_info.panel_infos.lp2hs_mipi_check_expected_value,
+      |                           ^~~~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_panel_adaptor_hs.c:741:27: note: (near initialization for ‘g_lp2hs_mipi_check_data.expected_value’)
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_panel_adaptor_hs.c:742:22: warning: initialization of ‘uint32_t *’ {aka ‘unsigned int *’} from ‘int’ makes pointer from integer without a cast [-Wint-conversion]
+  742 |         .read_mask = lcdkit_info.panel_infos.lp2hs_mipi_check_read_mask,
+      |                      ^~~~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_panel_adaptor_hs.c:742:22: note: (near initialization for ‘g_lp2hs_mipi_check_data.read_mask’)
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_panel_adaptor_hs.c:743:21: error: initialization of ‘char **’ from incompatible pointer type ‘char *’ [-Werror=incompatible-pointer-types]
+  743 |         .reg_name = "power mode",
+      |                     ^~~~~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_panel_adaptor_hs.c:743:21: note: (near initialization for ‘g_lp2hs_mipi_check_data.reg_name’)
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_panel_adaptor_hs.c:745:17: error: initialization of ‘struct lcdkit_dsi_cmd_desc *’ from incompatible pointer type ‘struct lcdkit_dsi_panel_cmds *’ [-Werror=incompatible-pointer-types]
+  745 |         .cmds = &lcdkit_info.panel_infos.lp2hs_mipi_check_read_cmds,
+      |                 ^
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_panel_adaptor_hs.c:745:17: note: (near initialization for ‘g_lp2hs_mipi_check_data.cmds’)
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_panel_adaptor_hs.c:753:43: error: passing argument 1 of ‘lcdkit_mipi_dsi_read_compare’ from incompatible pointer type [-Werror=incompatible-pointer-types]
+  753 |         if (!lcdkit_mipi_dsi_read_compare(&g_lp2hs_mipi_check_data, pdata))
+      |                                           ^~~~~~~~~~~~~~~~~~~~~~~~
+      |                                           |
+      |                                           struct lcdkit_dsi_read_compare_data *
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_panel_adaptor_hs.c:615:69: note: expected ‘struct mipi_dsi_read_compare_data *’ but argument is of type ‘struct lcdkit_dsi_read_compare_data *’
+  615 | int lcdkit_mipi_dsi_read_compare(struct mipi_dsi_read_compare_data* data,
+      |                                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_panel_adaptor_hs.c: In function ‘read_ddic_reg_interface’:
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_panel_adaptor_hs.c:1730:9: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+ 1730 |         return;
+      |         ^~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_panel_adaptor_hs.c:1721:5: note: declared here
+ 1721 | int read_ddic_reg_interface(uint8_t *out, struct lcdkit_dsi_panel_cmds *cmds, struct hisi_fb_data_type *hisifd, int max_out_size)
+      |     ^~~~~~~~~~~~~~~~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_panel_adaptor_hs.c: In function ‘hostprocessing_read_ddic_2d_barcode_hx83112’:
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_panel_adaptor_hs.c:1944:2: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+ 1944 |  struct dsi_cmd_desc otp_poweron1_cmds[] =
+      |  ^~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_panel_adaptor_hs.c: In function ‘hostprocessing_read_wc’:
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_panel_adaptor_hs.c:2163:2: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+ 2163 |  static char color_white_a1[] = {0xa1};
+      |  ^~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_panel_adaptor_hs.c: In function ‘hostprocessing_read_brightness_colorpoint_hx83112’:
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_panel_adaptor_hs.c:2286:2: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+ 2286 |  struct dsi_cmd_desc otp_poweron1_cmds[] =
+      |  ^~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_panel_adaptor_hs.c: At top level:
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_panel_adaptor_hs.c:2348:1: warning: return type defaults to ‘int’ [-Wreturn-type]
+ 2348 | hostprocessing_read_brightness_colorpoint_td4336(uint8_t color_point_id[],uint8_t start_position,uint8_t length)
+      | ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_panel_adaptor_hs.c: In function ‘hostprocessing_read_brightness_colorpoint_td4336’:
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_panel_adaptor_hs.c:2354:3: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+ 2354 |   return ;
+      |   ^~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_panel_adaptor_hs.c:2348:1: note: declared here
+ 2348 | hostprocessing_read_brightness_colorpoint_td4336(uint8_t color_point_id[],uint8_t start_position,uint8_t length)
+      | ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_panel_adaptor_hs.c:2357:2: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+ 2357 |  return;
+      |  ^~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_panel_adaptor_hs.c:2348:1: note: declared here
+ 2348 | hostprocessing_read_brightness_colorpoint_td4336(uint8_t color_point_id[],uint8_t start_position,uint8_t length)
+      | ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_panel_adaptor_hs.c: In function ‘hostprocessing_set_bright_colorpoint_of_white’:
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_panel_adaptor_hs.c:2465:2: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+ 2465 |  uint32_t read_value[1] = {0};
+      |  ^~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_panel_adaptor_hs.c:2473:2: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+ 2473 |  char lcd_manu_protect_off[] = {0xff,0x20};//manufacture command access
+      |  ^~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_panel_adaptor_hs.c:2529:2: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+ 2529 |  char lcd_brightness_h[2] = {0x24,0x00};//brightness
+      |  ^~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_panel_adaptor_hs.c:2533:2: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+ 2533 |  char lcd_color_of_white_xl[2] = {0x25,0x00};
+      |  ^~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_panel_adaptor_hs.c:2535:2: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+ 2535 |  char lcd_color_of_white_xh[2] = {0x26,0x00};
+      |  ^~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_panel_adaptor_hs.c:2537:2: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+ 2537 |  char lcd_color_of_white_y_l[2] = {0x27,0x00};//brightness
+      |  ^~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_panel_adaptor_hs.c:2539:2: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+ 2539 |  char lcd_color_of_white_y_h[2] = {0x28,0x00};//brightness
+      |  ^~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_panel_adaptor_hs.c:2542:2: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+ 2542 |  struct dsi_cmd_desc lcd_write_bright_cmd1[] = {
+      |  ^~~~~~
+In file included from /home/ubuntu/kirin970/include/linux/printk.h:6,
+                 from /home/ubuntu/kirin970/include/linux/kernel.h:13,
+                 from /home/ubuntu/kirin970/include/linux/sched.h:17,
+                 from /home/ubuntu/kirin970/include/linux/uaccess.h:4,
+                 from /home/ubuntu/kirin970/drivers/video/fbdev/hisi/dss/hisi_fb.h:18,
+                 from /home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_panel_adaptor_hs.c:1:
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_panel_adaptor_hs.c: In function ‘host_panel_oem_info_store’:
+/home/ubuntu/kirin970/include/linux/kern_levels.h:4:18: warning: format ‘%d’ expects argument of type ‘int’, but argument 3 has type ‘__kernel_size_t’ {aka ‘long unsigned int’} [-Wformat=]
+    4 | #define KERN_SOH "\001"  /* ASCII Start Of Header */
+      |                  ^~~~~~
+/home/ubuntu/kirin970/include/linux/kern_levels.h:10:18: note: in expansion of macro ‘KERN_SOH’
+   10 | #define KERN_ERR KERN_SOH "3" /* error conditions */
+      |                  ^~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/include/lcdkit_dbg.h:57:20: note: in expansion of macro ‘KERN_ERR’
+   57 |             printk(KERN_ERR "[lcdkit]%s: "msg, __func__, ## __VA_ARGS__); } while (0)
+      |                    ^~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_panel_adaptor_hs.c:2835:3: note: in expansion of macro ‘LCDKIT_ERR’
+ 2835 |   LCDKIT_ERR("invalid cmd buf len is %d\n", strlen(buf));
+      |   ^~~~~~~~~~
+In file included from /home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_panel_adaptor_hs.c:2910:
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/include/lcdkit_btb_check.h: At top level:
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/include/lcdkit_btb_check.h:10: warning: "GPIO_LCD_BTB_NAME" redefined
+   10 | #define GPIO_LCD_BTB_NAME           "gpio_lcdkit_btb"
+      | 
+In file included from /home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_panel_adaptor_hs.c:4:
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:156: note: this is the location of the previous definition
+  156 | #define GPIO_LCD_BTB_NAME           "gpio_lcd_btb"
+      | 
+In file included from /home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_panel_adaptor_hs.c:2910:
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/include/lcdkit_btb_check.h:16:1: warning: useless storage class specifier in empty declaration
+   16 | };
+      | ^
+In file included from /home/ubuntu/kirin970/include/linux/printk.h:6,
+                 from /home/ubuntu/kirin970/include/linux/kernel.h:13,
+                 from /home/ubuntu/kirin970/include/linux/sched.h:17,
+                 from /home/ubuntu/kirin970/include/linux/uaccess.h:4,
+                 from /home/ubuntu/kirin970/drivers/video/fbdev/hisi/dss/hisi_fb.h:18,
+                 from /home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_panel_adaptor_hs.c:1:
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_panel_adaptor_hs.c: In function ‘lcdkit_get_bl_resume_timmer’:
+/home/ubuntu/kirin970/include/linux/kern_levels.h:4:18: warning: format ‘%d’ expects argument of type ‘int’, but argument 3 has type ‘ssize_t’ {aka ‘long int’} [-Wformat=]
+    4 | #define KERN_SOH "\001"  /* ASCII Start Of Header */
+      |                  ^~~~~~
+/home/ubuntu/kirin970/include/linux/kern_levels.h:13:19: note: in expansion of macro ‘KERN_SOH’
+   13 | #define KERN_INFO KERN_SOH "6" /* informational */
+      |                   ^~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/include/lcdkit_dbg.h:66:20: note: in expansion of macro ‘KERN_INFO’
+   66 |             printk(KERN_INFO "[lcdkit]%s: "msg, __func__, ## __VA_ARGS__); } while (0)
+      |                    ^~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_panel_adaptor_hs.c:3042:6: note: in expansion of macro ‘LCDKIT_INFO’
+ 3042 |      LCDKIT_INFO("End error %d, data=%ums \n", error, *buf);
+      |      ^~~~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_panel_adaptor_hs.c: In function ‘lcdkit_set_bl_normal_mode_reg’:
+/home/ubuntu/kirin970/include/linux/kern_levels.h:4:18: warning: format ‘%d’ expects argument of type ‘int’, but argument 3 has type ‘ssize_t’ {aka ‘long int’} [-Wformat=]
+    4 | #define KERN_SOH "\001"  /* ASCII Start Of Header */
+      |                  ^~~~~~
+/home/ubuntu/kirin970/include/linux/kern_levels.h:10:18: note: in expansion of macro ‘KERN_SOH’
+   10 | #define KERN_ERR KERN_SOH "3" /* error conditions */
+      |                  ^~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/include/lcdkit_dbg.h:57:20: note: in expansion of macro ‘KERN_ERR’
+   57 |             printk(KERN_ERR "[lcdkit]%s: "msg, __func__, ## __VA_ARGS__); } while (0)
+      |                    ^~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_panel_adaptor_hs.c:3059:13: note: in expansion of macro ‘LCDKIT_ERR’
+ 3059 |             LCDKIT_ERR("blkit_set_normal_work_mode return error: %d \n", error);
+      |             ^~~~~~~~~~
+/home/ubuntu/kirin970/include/linux/kern_levels.h:4:18: warning: format ‘%d’ expects argument of type ‘int’, but argument 3 has type ‘ssize_t’ {aka ‘long int’} [-Wformat=]
+    4 | #define KERN_SOH "\001"  /* ASCII Start Of Header */
+      |                  ^~~~~~
+/home/ubuntu/kirin970/include/linux/kern_levels.h:10:18: note: in expansion of macro ‘KERN_SOH’
+   10 | #define KERN_ERR KERN_SOH "3" /* error conditions */
+      |                  ^~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/include/lcdkit_dbg.h:57:20: note: in expansion of macro ‘KERN_ERR’
+   57 |             printk(KERN_ERR "[lcdkit]%s: "msg, __func__, ## __VA_ARGS__); } while (0)
+      |                    ^~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_panel_adaptor_hs.c:3072:13: note: in expansion of macro ‘LCDKIT_ERR’
+ 3072 |             LCDKIT_ERR("lcdkit_backlight_set_normal_mode return error: %d \n", error);
+      |             ^~~~~~~~~~
+/home/ubuntu/kirin970/include/linux/kern_levels.h:4:18: warning: format ‘%d’ expects argument of type ‘int’, but argument 3 has type ‘ssize_t’ {aka ‘long int’} [-Wformat=]
+    4 | #define KERN_SOH "\001"  /* ASCII Start Of Header */
+      |                  ^~~~~~
+/home/ubuntu/kirin970/include/linux/kern_levels.h:13:19: note: in expansion of macro ‘KERN_SOH’
+   13 | #define KERN_INFO KERN_SOH "6" /* informational */
+      |                   ^~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/include/lcdkit_dbg.h:66:20: note: in expansion of macro ‘KERN_INFO’
+   66 |             printk(KERN_INFO "[lcdkit]%s: "msg, __func__, ## __VA_ARGS__); } while (0)
+      |                    ^~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_panel_adaptor_hs.c:3080:5: note: in expansion of macro ‘LCDKIT_INFO’
+ 3080 |     LCDKIT_INFO("End error %d \n", error);
+      |     ^~~~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_panel_adaptor_hs.c: In function ‘lcdkit_set_bl_enhance_mode_reg’:
+/home/ubuntu/kirin970/include/linux/kern_levels.h:4:18: warning: format ‘%d’ expects argument of type ‘int’, but argument 3 has type ‘ssize_t’ {aka ‘long int’} [-Wformat=]
+    4 | #define KERN_SOH "\001"  /* ASCII Start Of Header */
+      |                  ^~~~~~
+/home/ubuntu/kirin970/include/linux/kern_levels.h:10:18: note: in expansion of macro ‘KERN_SOH’
+   10 | #define KERN_ERR KERN_SOH "3" /* error conditions */
+      |                  ^~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/include/lcdkit_dbg.h:57:20: note: in expansion of macro ‘KERN_ERR’
+   57 |             printk(KERN_ERR "[lcdkit]%s: "msg, __func__, ## __VA_ARGS__); } while (0)
+      |                    ^~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_panel_adaptor_hs.c:3097:13: note: in expansion of macro ‘LCDKIT_ERR’
+ 3097 |             LCDKIT_ERR("blkit_set_normal_work_mode return error: %d \n", error);
+      |             ^~~~~~~~~~
+/home/ubuntu/kirin970/include/linux/kern_levels.h:4:18: warning: format ‘%d’ expects argument of type ‘int’, but argument 3 has type ‘ssize_t’ {aka ‘long int’} [-Wformat=]
+    4 | #define KERN_SOH "\001"  /* ASCII Start Of Header */
+      |                  ^~~~~~
+/home/ubuntu/kirin970/include/linux/kern_levels.h:10:18: note: in expansion of macro ‘KERN_SOH’
+   10 | #define KERN_ERR KERN_SOH "3" /* error conditions */
+      |                  ^~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/include/lcdkit_dbg.h:57:20: note: in expansion of macro ‘KERN_ERR’
+   57 |             printk(KERN_ERR "[lcdkit]%s: "msg, __func__, ## __VA_ARGS__); } while (0)
+      |                    ^~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_panel_adaptor_hs.c:3110:13: note: in expansion of macro ‘LCDKIT_ERR’
+ 3110 |             LCDKIT_ERR("lcdkit_backlight_set_enhance_mode return error: %d \n", error);
+      |             ^~~~~~~~~~
+/home/ubuntu/kirin970/include/linux/kern_levels.h:4:18: warning: format ‘%d’ expects argument of type ‘int’, but argument 3 has type ‘ssize_t’ {aka ‘long int’} [-Wformat=]
+    4 | #define KERN_SOH "\001"  /* ASCII Start Of Header */
+      |                  ^~~~~~
+/home/ubuntu/kirin970/include/linux/kern_levels.h:13:19: note: in expansion of macro ‘KERN_SOH’
+   13 | #define KERN_INFO KERN_SOH "6" /* informational */
+      |                   ^~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/include/lcdkit_dbg.h:66:20: note: in expansion of macro ‘KERN_INFO’
+   66 |             printk(KERN_INFO "[lcdkit]%s: "msg, __func__, ## __VA_ARGS__); } while (0)
+      |                    ^~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_panel_adaptor_hs.c:3118:5: note: in expansion of macro ‘LCDKIT_INFO’
+ 3118 |     LCDKIT_INFO("End error %d \n", error);
+      |     ^~~~~~~~~~~
+In file included from /home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_panel_adaptor_hs.c:4:
+At top level:
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:745:25: warning: ‘lcdkit_vci_disable_cmds’ defined but not used [-Wunused-variable]
+  745 | static struct gpio_desc lcdkit_vci_disable_cmds[] =
+      |                         ^~~~~~~~~~~~~~~~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:732:25: warning: ‘lcdkit_vbat_disable_cmds’ defined but not used [-Wunused-variable]
+  732 | static struct gpio_desc lcdkit_vbat_disable_cmds[] =
+      |                         ^~~~~~~~~~~~~~~~~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:719:25: warning: ‘lcdkit_iovcc_disable_cmds’ defined but not used [-Wunused-variable]
+  719 | static struct gpio_desc lcdkit_iovcc_disable_cmds[] =
+      |                         ^~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:711:25: warning: ‘lcdkit_vci_free_cmds’ defined but not used [-Wunused-variable]
+  711 | static struct gpio_desc lcdkit_vci_free_cmds[] =
+      |                         ^~~~~~~~~~~~~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:703:25: warning: ‘lcdkit_vbat_free_cmds’ defined but not used [-Wunused-variable]
+  703 | static struct gpio_desc lcdkit_vbat_free_cmds[] =
+      |                         ^~~~~~~~~~~~~~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:695:25: warning: ‘lcdkit_iovcc_free_cmds’ defined but not used [-Wunused-variable]
+  695 | static struct gpio_desc lcdkit_iovcc_free_cmds[] =
+      |                         ^~~~~~~~~~~~~~~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:687:25: warning: ‘lcdkit_vci_enable_cmds’ defined but not used [-Wunused-variable]
+  687 | static struct gpio_desc lcdkit_vci_enable_cmds[] =
+      |                         ^~~~~~~~~~~~~~~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:679:25: warning: ‘lcdkit_vbat_enable_cmds’ defined but not used [-Wunused-variable]
+  679 | static struct gpio_desc lcdkit_vbat_enable_cmds[] =
+      |                         ^~~~~~~~~~~~~~~~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:671:25: warning: ‘lcdkit_iovcc_enable_cmds’ defined but not used [-Wunused-variable]
+  671 | static struct gpio_desc lcdkit_iovcc_enable_cmds[] =
+      |                         ^~~~~~~~~~~~~~~~~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:663:25: warning: ‘lcdkit_vci_request_cmds’ defined but not used [-Wunused-variable]
+  663 | static struct gpio_desc lcdkit_vci_request_cmds[] =
+      |                         ^~~~~~~~~~~~~~~~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:655:25: warning: ‘lcdkit_vbat_request_cmds’ defined but not used [-Wunused-variable]
+  655 | static struct gpio_desc lcdkit_vbat_request_cmds[] =
+      |                         ^~~~~~~~~~~~~~~~~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:647:25: warning: ‘lcdkit_iovcc_request_cmds’ defined but not used [-Wunused-variable]
+  647 | static struct gpio_desc lcdkit_iovcc_request_cmds[] =
+      |                         ^~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:535:25: warning: ‘lcdkit_bias_disable_cmds’ defined but not used [-Wunused-variable]
+  535 | static struct gpio_desc lcdkit_bias_disable_cmds[] =
+      |                         ^~~~~~~~~~~~~~~~~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:521:25: warning: ‘lcdkit_bias_free_cmds’ defined but not used [-Wunused-variable]
+  521 | static struct gpio_desc lcdkit_bias_free_cmds[] =
+      |                         ^~~~~~~~~~~~~~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:507:25: warning: ‘lcdkit_bias_enable_cmds’ defined but not used [-Wunused-variable]
+  507 | static struct gpio_desc lcdkit_bias_enable_cmds[] =
+      |                         ^~~~~~~~~~~~~~~~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:493:25: warning: ‘lcdkit_bias_request_cmds’ defined but not used [-Wunused-variable]
+  493 | static struct gpio_desc lcdkit_bias_request_cmds[] =
+      |                         ^~~~~~~~~~~~~~~~~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:482:25: warning: ‘lcdkit_gpio_id1_input_cmds’ defined but not used [-Wunused-variable]
+  482 | static struct gpio_desc lcdkit_gpio_id1_input_cmds[] =
+      |                         ^~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:474:25: warning: ‘lcdkit_gpio_id0_input_cmds’ defined but not used [-Wunused-variable]
+  474 | static struct gpio_desc lcdkit_gpio_id0_input_cmds[] =
+      |                         ^~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:466:25: warning: ‘lcdkit_gpio_id1_high_cmds’ defined but not used [-Wunused-variable]
+  466 | static struct gpio_desc lcdkit_gpio_id1_high_cmds[] =
+      |                         ^~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:458:25: warning: ‘lcdkit_gpio_id1_low_cmds’ defined but not used [-Wunused-variable]
+  458 | static struct gpio_desc lcdkit_gpio_id1_low_cmds[] =
+      |                         ^~~~~~~~~~~~~~~~~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:450:25: warning: ‘lcdkit_gpio_id0_high_cmds’ defined but not used [-Wunused-variable]
+  450 | static struct gpio_desc lcdkit_gpio_id0_high_cmds[] =
+      |                         ^~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:442:25: warning: ‘lcdkit_gpio_id0_low_cmds’ defined but not used [-Wunused-variable]
+  442 | static struct gpio_desc lcdkit_gpio_id0_low_cmds[] =
+      |                         ^~~~~~~~~~~~~~~~~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:428:25: warning: ‘lcdkit_gpio_id_request_cmds’ defined but not used [-Wunused-variable]
+  428 | static struct gpio_desc lcdkit_gpio_id_request_cmds[] =
+      |                         ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:416:25: warning: ‘lcdkit_gpio_reset_low_cmds’ defined but not used [-Wunused-variable]
+  416 | static struct gpio_desc lcdkit_gpio_reset_low_cmds[] =
+      |                         ^~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:407:25: warning: ‘lcdkit_gpio_reset_high_cmds’ defined but not used [-Wunused-variable]
+  407 | static struct gpio_desc lcdkit_gpio_reset_high_cmds[] =
+      |                         ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:390:25: warning: ‘lcdkit_gpio_reset_normal_cmds’ defined but not used [-Wunused-variable]
+  390 | static struct gpio_desc lcdkit_gpio_reset_normal_cmds[] =
+      |                         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:381:25: warning: ‘lcdkit_gpio_reset_free_cmds’ defined but not used [-Wunused-variable]
+  381 | static struct gpio_desc lcdkit_gpio_reset_free_cmds[] =
+      |                         ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:372:25: warning: ‘lcdkit_gpio_reset_request_cmds’ defined but not used [-Wunused-variable]
+  372 | static struct gpio_desc lcdkit_gpio_reset_request_cmds[] =
+      |                         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:342:32: warning: ‘lcdkit_pinctrl_finit_cmds’ defined but not used [-Wunused-variable]
+  342 | static struct pinctrl_cmd_desc lcdkit_pinctrl_finit_cmds[] =
+      |                                ^~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:337:32: warning: ‘lcdkit_pinctrl_low_cmds’ defined but not used [-Wunused-variable]
+  337 | static struct pinctrl_cmd_desc lcdkit_pinctrl_low_cmds[] =
+      |                                ^~~~~~~~~~~~~~~~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:332:32: warning: ‘lcdkit_pinctrl_normal_cmds’ defined but not used [-Wunused-variable]
+  332 | static struct pinctrl_cmd_desc lcdkit_pinctrl_normal_cmds[] =
+      |                                ^~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:325:32: warning: ‘lcdkit_pinctrl_init_cmds’ defined but not used [-Wunused-variable]
+  325 | static struct pinctrl_cmd_desc lcdkit_pinctrl_init_cmds[] =
+      |                                ^~~~~~~~~~~~~~~~~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:314:24: warning: ‘lcdkit_regulator_vci_disable_cmds’ defined but not used [-Wunused-variable]
+  314 | static struct vcc_desc lcdkit_regulator_vci_disable_cmds[] =
+      |                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:308:24: warning: ‘lcdkit_vdd_disable_cmds’ defined but not used [-Wunused-variable]
+  308 | static struct vcc_desc lcdkit_vdd_disable_cmds[] =
+      |                        ^~~~~~~~~~~~~~~~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:302:24: warning: ‘lcdkit_io_vcc_disable_cmds’ defined but not used [-Wunused-variable]
+  302 | static struct vcc_desc lcdkit_io_vcc_disable_cmds[] =
+      |                        ^~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:296:24: warning: ‘lcdkit_regulator_vci_enable_cmds’ defined but not used [-Wunused-variable]
+  296 | static struct vcc_desc lcdkit_regulator_vci_enable_cmds[] =
+      |                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:289:24: warning: ‘lcdkit_vdd_enable_cmds’ defined but not used [-Wunused-variable]
+  289 | static struct vcc_desc lcdkit_vdd_enable_cmds[] =
+      |                        ^~~~~~~~~~~~~~~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:283:24: warning: ‘lcdkit_io_vcc_enable_cmds’ defined but not used [-Wunused-variable]
+  283 | static struct vcc_desc lcdkit_io_vcc_enable_cmds[] =
+      |                        ^~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:275:24: warning: ‘lcdkit_vcc_finit_cmds’ defined but not used [-Wunused-variable]
+  275 | static struct vcc_desc lcdkit_vcc_finit_cmds[] =
+      |                        ^~~~~~~~~~~~~~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:267:24: warning: ‘lcdkit_vci_init_cmds’ defined but not used [-Wunused-variable]
+  267 | static struct vcc_desc lcdkit_vci_init_cmds[] =
+      |                        ^~~~~~~~~~~~~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:259:24: warning: ‘lcdkit_vdd_init_cmds’ defined but not used [-Wunused-variable]
+  259 | static struct vcc_desc lcdkit_vdd_init_cmds[] =
+      |                        ^~~~~~~~~~~~~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:251:24: warning: ‘lcdkit_io_vcc_init_cmds’ defined but not used [-Wunused-variable]
+  251 | static struct vcc_desc lcdkit_io_vcc_init_cmds[] =
+      |                        ^~~~~~~~~~~~~~~~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:234:24: warning: ‘lcdkit_scharger_bl_disable_cmds’ defined but not used [-Wunused-variable]
+  234 | static struct vcc_desc lcdkit_scharger_bl_disable_cmds[] =
+      |                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:228:24: warning: ‘lcdkit_scharger_bl_enable_cmds’ defined but not used [-Wunused-variable]
+  228 | static struct vcc_desc lcdkit_scharger_bl_enable_cmds[] =
+      |                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:220:24: warning: ‘lcdkit_scharger_bias_disable_cmds’ defined but not used [-Wunused-variable]
+  220 | static struct vcc_desc lcdkit_scharger_bias_disable_cmds[] =
+      |                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:212:24: warning: ‘lcdkit_scharger_bias_enable_cmds’ defined but not used [-Wunused-variable]
+  212 | static struct vcc_desc lcdkit_scharger_bias_enable_cmds[] =
+      |                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:203:24: warning: ‘lcdkit_scharger_bias_put_cmds’ defined but not used [-Wunused-variable]
+  203 | static struct vcc_desc lcdkit_scharger_bias_put_cmds[] =
+      |                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:195:24: warning: ‘lcdkit_scharger_bias_set_cmds’ defined but not used [-Wunused-variable]
+  195 | static struct vcc_desc lcdkit_scharger_bias_set_cmds[] =
+      |                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:186:24: warning: ‘lcdkit_scharger_bias_get_cmds’ defined but not used [-Wunused-variable]
+  186 | static struct vcc_desc lcdkit_scharger_bias_get_cmds[] =
+      |                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:131:38: warning: ‘voltage_table’ defined but not used [-Wunused-variable]
+  131 | static struct lcdkit_vsp_vsn_voltage voltage_table[] = {
+      |                                      ^~~~~~~~~~~~~
+In file included from /home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:37,
+                 from /home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_panel_adaptor_hs.c:4:
+/home/ubuntu/kirin970/drivers/video/fbdev/hisi/dss/voltage/tps65132.h:48:32: warning: ‘vol_table’ defined but not used [-Wunused-variable]
+   48 | static struct tps65132_voltage vol_table[] = {
+      |                                ^~~~~~~~~
+In file included from /home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_panel_adaptor_hs.c:2:
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/include/lcdkit_panel.h:269:14: warning: ‘cmd_array’ defined but not used [-Wunused-variable]
+  269 | static char* cmd_array[SENCE_ARRAY_SIZE] = {
+      |              ^~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/include/lcdkit_panel.h:244:14: warning: ‘sence_array’ defined but not used [-Wunused-variable]
+  244 | static char* sence_array[SENCE_ARRAY_SIZE] = {
+      |              ^~~~~~~~~~~
+In function ‘get_lcd_ldo_info_for_rt’,
+    inlined from ‘lcdkit_parse_platform_dts’ at /home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_parse_hs.c:277:9:
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_parse_hs.c:47:4: warning: ‘strncpy’ specified bound depends on the length of the source argument [-Wstringop-overflow=]
+   47 |    strncpy(g_lcd_ldo_info.lcd_ldo_name[i], ldo_name, strlen(ldo_name));
+      |    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+cc1: some warnings being treated as errors
+make[6]: *** [/home/ubuntu/kirin970/scripts/Makefile.build:356: drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_parse_hs.o] Error 1
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_panel_adaptor_hs.c: In function ‘host_panel_oem_info_show’:
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_panel_adaptor_hs.c:2797:3: warning: ‘strncat’ specified bound depends on the length of the source argument [-Wstringop-overflow=]
+ 2797 |   strncat(str_oem, str_tmp,strlen(str_tmp));
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.c:5:
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/include/lcdkit_panel.h:160:48: warning: ‘struct lcdkit_dsi_panel_cmds’ declared inside parameter list will not be visible outside of this definition or declaration
+  160 | typedef void (* dcs_level_trans_func_t)(struct lcdkit_dsi_panel_cmds *, int, int);
+      |                                                ^~~~~~~~~~~~~~~~~~~~~
+In file included from /home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.c:11:
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/include/lcdkit_btb_check.h:10: warning: "GPIO_LCD_BTB_NAME" redefined
+   10 | #define GPIO_LCD_BTB_NAME           "gpio_lcdkit_btb"
+      | 
+In file included from /home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.c:6:
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:156: note: this is the location of the previous definition
+  156 | #define GPIO_LCD_BTB_NAME           "gpio_lcd_btb"
+      | 
+In file included from /home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.c:11:
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/include/lcdkit_btb_check.h:16:1: warning: useless storage class specifier in empty declaration
+   16 | };
+      | ^
+In file included from /home/ubuntu/kirin970/include/linux/printk.h:6,
+                 from /home/ubuntu/kirin970/include/linux/kernel.h:13,
+                 from /home/ubuntu/kirin970/include/linux/sched.h:17,
+                 from /home/ubuntu/kirin970/include/linux/uaccess.h:4,
+                 from /home/ubuntu/kirin970/drivers/video/fbdev/hisi/dss/hisi_fb.h:18,
+                 from /home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.c:1:
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.c: In function ‘lcdkit_display_on_cmds_check_delay’:
+/home/ubuntu/kirin970/include/linux/kern_levels.h:4:18: warning: format ‘%lu’ expects argument of type ‘long unsigned int’, but argument 3 has type ‘u32’ {aka ‘unsigned int’} [-Wformat=]
+    4 | #define KERN_SOH "\001"  /* ASCII Start Of Header */
+      |                  ^~~~~~
+/home/ubuntu/kirin970/include/linux/kern_levels.h:13:19: note: in expansion of macro ‘KERN_SOH’
+   13 | #define KERN_INFO KERN_SOH "6" /* informational */
+      |                   ^~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/include/lcdkit_dbg.h:66:20: note: in expansion of macro ‘KERN_INFO’
+   66 |             printk(KERN_INFO "[lcdkit]%s: "msg, __func__, ## __VA_ARGS__); } while (0)
+      |                    ^~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.c:77:9: note: in expansion of macro ‘LCDKIT_INFO’
+   77 |         LCDKIT_INFO("%lu > %lu, no need delay\n",
+      |         ^~~~~~~~~~~
+/home/ubuntu/kirin970/include/linux/kern_levels.h:4:18: warning: format ‘%lu’ expects argument of type ‘long unsigned int’, but argument 4 has type ‘u32’ {aka ‘unsigned int’} [-Wformat=]
+    4 | #define KERN_SOH "\001"  /* ASCII Start Of Header */
+      |                  ^~~~~~
+/home/ubuntu/kirin970/include/linux/kern_levels.h:13:19: note: in expansion of macro ‘KERN_SOH’
+   13 | #define KERN_INFO KERN_SOH "6" /* informational */
+      |                   ^~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/include/lcdkit_dbg.h:66:20: note: in expansion of macro ‘KERN_INFO’
+   66 |             printk(KERN_INFO "[lcdkit]%s: "msg, __func__, ## __VA_ARGS__); } while (0)
+      |                    ^~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.c:77:9: note: in expansion of macro ‘LCDKIT_INFO’
+   77 |         LCDKIT_INFO("%lu > %lu, no need delay\n",
+      |         ^~~~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.c: In function ‘lcdkit_get_vsp_voltage’:
+/home/ubuntu/kirin970/include/linux/kern_levels.h:4:18: warning: format ‘%ld’ expects argument of type ‘long int’, but argument 3 has type ‘u32’ {aka ‘unsigned int’} [-Wformat=]
+    4 | #define KERN_SOH "\001"  /* ASCII Start Of Header */
+      |                  ^~~~~~
+/home/ubuntu/kirin970/include/linux/kern_levels.h:13:19: note: in expansion of macro ‘KERN_SOH’
+   13 | #define KERN_INFO KERN_SOH "6" /* informational */
+      |                   ^~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/include/lcdkit_dbg.h:66:20: note: in expansion of macro ‘KERN_INFO’
+   66 |             printk(KERN_INFO "[lcdkit]%s: "msg, __func__, ## __VA_ARGS__); } while (0)
+      |                    ^~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.c:448:13: note: in expansion of macro ‘LCDKIT_INFO’
+  448 |             LCDKIT_INFO("vsp voltage:%ld\n",voltage_table[i].voltage);
+      |             ^~~~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.c: In function ‘lcdkit_get_vsn_voltage’:
+/home/ubuntu/kirin970/include/linux/kern_levels.h:4:18: warning: format ‘%ld’ expects argument of type ‘long int’, but argument 3 has type ‘u32’ {aka ‘unsigned int’} [-Wformat=]
+    4 | #define KERN_SOH "\001"  /* ASCII Start Of Header */
+      |                  ^~~~~~
+/home/ubuntu/kirin970/include/linux/kern_levels.h:13:19: note: in expansion of macro ‘KERN_SOH’
+   13 | #define KERN_INFO KERN_SOH "6" /* informational */
+      |                   ^~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/include/lcdkit_dbg.h:66:20: note: in expansion of macro ‘KERN_INFO’
+   66 |             printk(KERN_INFO "[lcdkit]%s: "msg, __func__, ## __VA_ARGS__); } while (0)
+      |                    ^~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.c:465:13: note: in expansion of macro ‘LCDKIT_INFO’
+  465 |             LCDKIT_INFO("vsn voltage:%ld\n",voltage_table[i].voltage);
+      |             ^~~~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.c: In function ‘jdi_panel_write’:
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.c:609:5: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+  609 |     char cmd1[2] = {0xff, 0x10};
+      |     ^~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.c:627:25: warning: unused variable ‘lcd_page10_cmds’ [-Wunused-variable]
+  627 |     struct dsi_cmd_desc lcd_page10_cmds[] = {
+      |                         ^~~~~~~~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.c:604:10: warning: unused variable ‘page10’ [-Wunused-variable]
+  604 |     char page10[2] = {0xff, 0x10};
+      |          ^~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.c: In function ‘jdi_panel_read’:
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.c:696:25: warning: unused variable ‘lcd_page10_cmds’ [-Wunused-variable]
+  696 |     struct dsi_cmd_desc lcd_page10_cmds[] = {
+      |                         ^~~~~~~~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.c:672:16: warning: unused variable ‘read_flag’ [-Wunused-variable]
+  672 |     static int read_flag = 0;
+      |                ^~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.c:670:10: warning: unused variable ‘page10’ [-Wunused-variable]
+  670 |     char page10[2] = {0xff, 0x10};
+      |          ^~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.c:661:9: warning: unused variable ‘i’ [-Wunused-variable]
+  661 |     int i = 0;
+      |         ^
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.c: In function ‘lcdkit_clear_sctrl_reg’:
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.c:792:9: warning: unused variable ‘ret’ [-Wunused-variable]
+  792 |     int ret       = 0;
+      |         ^~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.c: In function ‘lcdkit_snd_mipi_clk_cmd_store’:
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.c:2132:26: warning: unused variable ‘pinfo’ [-Wunused-variable]
+ 2132 |  struct hisi_panel_info *pinfo = NULL;
+      |                          ^~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.c: In function ‘lcdkit_snd_cmd_before_frame’:
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.c:2269:9: warning: unused variable ‘ret’ [-Wunused-variable]
+ 2269 |     int ret = 0;
+      |         ^~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.c: In function ‘lcdkit_set_fastboot’:
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.c:2354:31: warning: passing argument 2 of ‘lcdkit_dsi_rx’ discards ‘volatile’ qualifier from pointer target type [-Wdiscarded-qualifiers]
+ 2354 |         lcdkit_dsi_rx(hisifd, &lcdkit_brightness_ddic_info, 1, &lcdkit_info.panel_infos.bl_maxnit_cmds);
+      |                               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.c:5:
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/include/lcdkit_panel.h:1235:42: note: expected ‘uint32_t *’ {aka ‘unsigned int *’} but argument is of type ‘volatile int *’
+ 1235 | int lcdkit_dsi_rx(void* pdata, uint32_t* out, int len, struct lcdkit_dsi_panel_cmds*  cmds);
+      |                                ~~~~~~~~~~^~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.c: In function ‘lcdkit_rgbw_set_func’:
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.c:2480:2: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+ 2480 |  int ret = 0;
+      |  ^~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.c: In function ‘lcdkit_aod_alpm_setting_store’:
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.c:2556:5: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+ 2556 |     char playload[3] = {0x51, 0x00, 0x00};
+      |     ^~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.c:2532:21: warning: unused variable ‘reg_value_61h’ [-Wunused-variable]
+ 2532 |     static uint32_t reg_value_61h;
+      |                     ^~~~~~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.c: In function ‘read_td4336_project_id’:
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.c:2707:5: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+ 2707 |     struct dsi_cmd_desc project_id_cmd[] =
+      |     ^~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.c: In function ‘read_himax83112_project_id’:
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.c:2765:2: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+ 2765 |  struct dsi_cmd_desc otp_poweron1_cmds[] =
+      |  ^~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.c: At top level:
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.c:3073:31: error: initialization of ‘ssize_t (*)(struct platform_device *, uint32_t)’ {aka ‘long int (*)(struct platform_device *, unsigned int)’} from incompatible pointer type ‘int (*)(struct platform_device *, uint32_t)’ {aka ‘int (*)(struct platform_device *, unsigned int)’} [-Werror=incompatible-pointer-types]
+ 3073 |     .snd_mipi_clk_cmd_store = lcdkit_snd_mipi_clk_cmd_store,
+      |                               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.c:3073:31: note: (near initialization for ‘lcdkit_data.snd_mipi_clk_cmd_store’)
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.c:3077:28: error: initialization of ‘int (*)(struct platform_device *)’ from incompatible pointer type ‘int (*)(void *)’ [-Werror=incompatible-pointer-types]
+ 3077 |     .lcd_fps_updt_handle = lcdkit_fps_updt_handle,
+      |                            ^~~~~~~~~~~~~~~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.c:3077:28: note: (near initialization for ‘lcdkit_data.lcd_fps_updt_handle’)
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.c:3078:25: error: initialization of ‘ssize_t (*)(struct platform_device *, char *)’ {aka ‘long int (*)(struct platform_device *, char *)’} from incompatible pointer type ‘int (*)(void *, char *)’ [-Werror=incompatible-pointer-types]
+ 3078 |     .lcd_ce_mode_show = lcdkit_ce_mode_show,
+      |                         ^~~~~~~~~~~~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.c:3078:25: note: (near initialization for ‘lcdkit_data.lcd_ce_mode_show’)
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.c:3079:26: error: initialization of ‘ssize_t (*)(struct platform_device *, const char *, size_t)’ {aka ‘long int (*)(struct platform_device *, const char *, long unsigned int)’} from incompatible pointer type ‘int (*)(void *, const char *, size_t)’ {aka ‘int (*)(void *, const char *, long unsigned int)’} [-Werror=incompatible-pointer-types]
+ 3079 |     .lcd_ce_mode_store = lcdkit_ce_mode_store,
+      |                          ^~~~~~~~~~~~~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.c:3079:26: note: (near initialization for ‘lcdkit_data.lcd_ce_mode_store’)
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.c:3080:26: error: initialization of ‘ssize_t (*)(struct hisi_fb_data_type *)’ {aka ‘long int (*)(struct hisi_fb_data_type *)’} from incompatible pointer type ‘int (*)(struct hisi_fb_data_type *)’ [-Werror=incompatible-pointer-types]
+ 3080 |     .lcd_rgbw_set_func = lcdkit_rgbw_set_func,
+      |                          ^~~~~~~~~~~~~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.c:3080:26: note: (near initialization for ‘lcdkit_data.lcd_rgbw_set_func’)
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.c:3081:26: error: initialization of ‘ssize_t (*)(struct hisi_fb_data_type *)’ {aka ‘long int (*)(struct hisi_fb_data_type *)’} from incompatible pointer type ‘int (*)(struct hisi_fb_data_type *)’ [-Werror=incompatible-pointer-types]
+ 3081 |     .lcd_hbm_set_func  = lcdkit_hbm_set_func,
+      |                          ^~~~~~~~~~~~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.c:3081:26: note: (near initialization for ‘lcdkit_data.lcd_hbm_set_func’)
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.c:3084:30: error: initialization of ‘ssize_t (*)(struct hisi_fb_data_type *)’ {aka ‘long int (*)(struct hisi_fb_data_type *)’} from incompatible pointer type ‘int (*)(struct hisi_fb_data_type *)’ [-Werror=incompatible-pointer-types]
+ 3084 |  .lcd_color_param_get_func = lcdkit_color_param_get_func,
+      |                              ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.c:3084:30: note: (near initialization for ‘lcdkit_data.lcd_color_param_get_func’)
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.c: In function ‘sharp_panel_read’:
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.c:767:3: warning: ‘strncpy’ output truncated before terminating nul copying 38 bytes from a string of the same length [-Wstringop-truncation]
+  767 |   strncpy(lcdkit_panel_name,"SHARP_2LANE_NT36870_VN1_5P88_1440P_SV3",strlen("SHARP_2LANE_NT36870_VN1_5P88_1440P_SV3"));
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+At top level:
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.c:672:16: warning: ‘read_flag’ defined but not used [-Wunused-variable]
+  672 |     static int read_flag = 0;
+      |                ^~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.c:2532:21: warning: ‘reg_value_61h’ defined but not used [-Wunused-variable]
+ 2532 |     static uint32_t reg_value_61h;
+      |                     ^~~~~~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.c:2126:12: warning: ‘snd_mipi_clk_disable_esd’ defined but not used [-Wunused-variable]
+ 2126 | static int snd_mipi_clk_disable_esd = 0;
+      |            ^~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.c:6:
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:166:25: warning: ‘lcd_gpio_read_btb’ defined but not used [-Wunused-variable]
+  166 | static struct gpio_desc lcd_gpio_read_btb =
+      |                         ^~~~~~~~~~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:162:25: warning: ‘lcd_gpio_free_btb’ defined but not used [-Wunused-variable]
+  162 | static struct gpio_desc lcd_gpio_free_btb =
+      |                         ^~~~~~~~~~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:158:25: warning: ‘lcd_gpio_request_btb’ defined but not used [-Wunused-variable]
+  158 | static struct gpio_desc lcd_gpio_request_btb =
+      |                         ^~~~~~~~~~~~~~~~~~~~
+In file included from /home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.h:37,
+                 from /home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.c:6:
+/home/ubuntu/kirin970/drivers/video/fbdev/hisi/dss/voltage/tps65132.h:48:32: warning: ‘vol_table’ defined but not used [-Wunused-variable]
+   48 | static struct tps65132_voltage vol_table[] = {
+      |                                ^~~~~~~~~
+In file included from /home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.c:5:
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/include/lcdkit_panel.h:269:14: warning: ‘cmd_array’ defined but not used [-Wunused-variable]
+  269 | static char* cmd_array[SENCE_ARRAY_SIZE] = {
+      |              ^~~~~~~~~
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/include/lcdkit_panel.h:244:14: warning: ‘sence_array’ defined but not used [-Wunused-variable]
+  244 | static char* sence_array[SENCE_ARRAY_SIZE] = {
+      |              ^~~~~~~~~~~
+cc1: some warnings being treated as errors
+make[6]: *** [/home/ubuntu/kirin970/scripts/Makefile.build:356: drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_panel_adaptor_hs.o] Error 1
+In function ‘sharp_panel_read’,
+    inlined from ‘lcdkit_probe’ at /home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.c:3272:3:
+/home/ubuntu/kirin970/drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.c:769:3: warning: ‘strncpy’ specified bound depends on the length of the source argument [-Wstringop-overflow=]
+  769 |   strncpy(lcdkit_panel_name,lcdkit_info.panel_infos.panel_name,strlen(lcdkit_info.panel_infos.panel_name));
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+cc1: some warnings being treated as errors
+make[6]: *** [/home/ubuntu/kirin970/scripts/Makefile.build:356: drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi/lcdkit_disp.o] Error 1
+make[5]: *** [/home/ubuntu/kirin970/scripts/Makefile.build:687: drivers/devkit/lcdkit/lcdkit1.0/core/common/hisi] Error 2
+make[4]: *** [/home/ubuntu/kirin970/scripts/Makefile.build:687: drivers/devkit/lcdkit/lcdkit1.0/core/common] Error 2
+make[3]: *** [/home/ubuntu/kirin970/scripts/Makefile.build:687: drivers/devkit/lcdkit/lcdkit1.0] Error 2
+make[2]: *** [/home/ubuntu/kirin970/scripts/Makefile.build:687: drivers/devkit/lcdkit] Error 2
+make[1]: *** [/home/ubuntu/kirin970/Makefile:1221: drivers] Error 2
+make[1]: Leaving directory '/home/ubuntu/out'
+make: *** [Makefile:152: sub-make] Error 2

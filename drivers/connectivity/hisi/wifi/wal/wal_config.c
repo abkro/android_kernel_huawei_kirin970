@@ -2027,7 +2027,7 @@ oal_uint32  wal_config_process_pkt(frw_event_mem_stru *pst_event_mem)
         }
         else
         {
-            oal_memcopy((oal_void*)pst_rsp_msg_tmp, (oal_void*)ac_rsp_msg, uc_rsp_toal_len);
+            oal_memcmp((oal_void*)pst_rsp_msg_tmp, (oal_void*)ac_rsp_msg, uc_rsp_toal_len);
             if(OAL_SUCC != wal_set_msg_response_by_addr(ul_request_address, (oal_void*)pst_rsp_msg_tmp, OAL_SUCC, uc_rsp_toal_len))
             {
                 OAL_IO_PRINT("wal_config_process_pkt did't found the request msg, request addr:0x%lx\n", ul_request_address);
@@ -2231,7 +2231,7 @@ oal_int32  wal_recv_config_cmd(oal_uint8 *puc_buf, oal_uint16 us_len)
 
     WAL_MSG_REQ_STRU_INIT(st_msg_request);
 
-    oal_memcopy(ac_vap_name, puc_buf, OAL_IF_NAME_SIZE);
+    oal_memcmp(ac_vap_name, puc_buf, OAL_IF_NAME_SIZE);
     ac_vap_name[OAL_IF_NAME_SIZE - 1] = '\0';   /* 防止字符串异常 */
 
     /* 根据dev_name找到dev */
@@ -2274,7 +2274,7 @@ oal_int32  wal_recv_config_cmd(oal_uint8 *puc_buf, oal_uint16 us_len)
                        pst_mac_vap->uc_vap_id);
 
     /* 填写事件payload */
-    oal_memcopy(frw_get_event_payload(pst_event_mem) + OAL_SIZEOF(wal_msg_rep_hdr), puc_buf + OAL_IF_NAME_SIZE, us_msg_size);
+    oal_memcmp(frw_get_event_payload(pst_event_mem) + OAL_SIZEOF(wal_msg_rep_hdr), puc_buf + OAL_IF_NAME_SIZE, us_msg_size);
     pst_msg = (wal_msg_stru *)(puc_buf + OAL_IF_NAME_SIZE);
     pst_rep_hdr = (wal_msg_rep_hdr*)pst_event->auc_event_data;
 
@@ -2352,7 +2352,7 @@ oal_int32  wal_recv_config_cmd(oal_uint8 *puc_buf, oal_uint16 us_len)
         }
 
         oal_netbuf_data(pst_netbuf)[0] = 'M';     /* sdt需要 */
-        oal_memcopy(oal_netbuf_data(pst_netbuf) + 1, (oal_uint8 *)pst_rsp_msg->auc_msg_data, us_netbuf_len - 1);
+        oal_memcmp(oal_netbuf_data(pst_netbuf) + 1, (oal_uint8 *)pst_rsp_msg->auc_msg_data, us_netbuf_len - 1);
         oal_free(st_msg_request.pst_resp_mem);
         st_msg_request.pst_resp_mem = NULL;
 
@@ -2408,13 +2408,13 @@ oal_int32  wal_recv_memory_cmd(oal_uint8 *puc_buf, oal_uint16 us_len)
             return OAL_ERR_CODE_PTR_NULL;
         }
 
-        oal_memcopy(oal_netbuf_data(pst_netbuf), (oal_void *)ul_mem_addr, us_mem_len);
+        oal_memcmp(oal_netbuf_data(pst_netbuf), (oal_void *)ul_mem_addr, us_mem_len);
 
         oam_report_data2sdt(pst_netbuf, OAM_DATA_TYPE_MEM_RW, OAM_PRIMID_TYPE_DEV_ACK);
     }
     else if (MAC_SDT_MODE_WRITE == pst_mem_frame->uc_mode)
     {
-        oal_memcopy((oal_void *)ul_mem_addr, pst_mem_frame->auc_data, us_mem_len);
+        oal_memcmp((oal_void *)ul_mem_addr, pst_mem_frame->auc_data, us_mem_len);
     }
 
     return OAL_SUCC;
@@ -2430,7 +2430,7 @@ oal_int32  wal_parse_global_var_cmd(
 
     if (MAC_SDT_MODE_WRITE == pst_global_frame->uc_mode)
     {
-        oal_memcopy((oal_void *)ul_global_var_addr, (oal_void *)(pst_global_frame->auc_global_value), pst_global_frame->us_len);
+        oal_memcmp((oal_void *)ul_global_var_addr, (oal_void *)(pst_global_frame->auc_global_value), pst_global_frame->us_len);
     }
     else if (MAC_SDT_MODE_READ == pst_global_frame->uc_mode)
     {
@@ -2449,7 +2449,7 @@ oal_int32  wal_parse_global_var_cmd(
             return OAL_ERR_CODE_PTR_NULL;
         }
 
-        oal_memcopy(oal_netbuf_data(pst_netbuf), (oal_void *)ul_global_var_addr, us_skb_len);
+        oal_memcmp(oal_netbuf_data(pst_netbuf), (oal_void *)ul_global_var_addr, us_skb_len);
 #if (_PRE_PRODUCT_ID == _PRE_PRODUCT_ID_HI1151)
         oam_report_data2sdt(pst_netbuf, OAM_DATA_TYPE_GVAR_RW, OAM_PRIMID_TYPE_DEV_ACK);
 #else
@@ -2501,7 +2501,7 @@ oal_int32  wal_recv_reg_cmd(oal_uint8 *puc_buf, oal_uint16 us_len)
     oal_netbuf_stru             *pst_net_buf;
     oal_uint32                   ul_ret;
 
-    oal_memcopy(ac_vap_name, puc_buf, OAL_IF_NAME_SIZE);
+    oal_memcmp(ac_vap_name, puc_buf, OAL_IF_NAME_SIZE);
     ac_vap_name[OAL_IF_NAME_SIZE - 1] = '\0';   /* 防止字符串异常 */
 
     /* 根据dev_name找到dev */
@@ -2571,7 +2571,7 @@ oal_int32  wal_recv_reg_cmd(oal_uint8 *puc_buf, oal_uint16 us_len)
                 return OAL_ERR_CODE_PTR_NULL;
             }
 
-            oal_memcopy(oal_netbuf_data(pst_net_buf), (oal_uint8 *)pst_reg_frame, (oal_uint16)OAL_SIZEOF(wal_sdt_reg_frame_stru));
+            oal_memcmp(oal_netbuf_data(pst_net_buf), (oal_uint8 *)pst_reg_frame, (oal_uint16)OAL_SIZEOF(wal_sdt_reg_frame_stru));
 
             oam_report_data2sdt(pst_net_buf, OAM_DATA_TYPE_REG_RW, OAM_PRIMID_TYPE_DEV_ACK);
         }

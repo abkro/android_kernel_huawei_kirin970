@@ -176,7 +176,7 @@ OAL_STATIC OAL_INLINE oal_void  frw_event_report(frw_event_mem_stru *pst_event_m
 
 
     /* 复制事件头 */
-    oal_memcopy((oal_void *)auc_event, (const oal_void *)&pst_event->st_event_hdr, OAL_SIZEOF(frw_event_hdr_stru));
+    oal_memcmp((oal_void *)auc_event, (const oal_void *)&pst_event->st_event_hdr, OAL_SIZEOF(frw_event_hdr_stru));
 
     FRW_EVENT_INTERNAL(BROADCAST_MACADDR, 0, OAM_EVENT_INTERNAL, auc_event);
 }
