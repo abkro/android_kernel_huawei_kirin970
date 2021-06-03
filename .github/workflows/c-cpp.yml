@@ -1,0 +1,25 @@
+name: C/C++ CI
+
+on:
+  push:
+    branches: [ lineage-16.0 ]
+  pull_request:
+    branches: [ lineage-16.0 ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: defconfig
+      run: export ARCH=arm64
+    - name: make defconfig
+      run: make O=../out charlotte_defconfig
+    - name: make
+      run: make O=../out -j8
+    - name: make check
+      run: make check
+    - name: make distcheck
+      run: make distcheck
