@@ -364,7 +364,7 @@ int focal_parse_dts(
 		focal_pdata->pram_projectid_addr = FTS_BOOT_PROJ_CODE_ADDR2;
 	}
 	/* get tp color flag */
-	ret = of_property_read_u32(np,  "support_get_tp_color", &focal_pdata->support_get_tp_color);
+//	ret = of_property_read_u32(np,  "support_get_tp_color", &focal_pdata->support_get_tp_color);
 	if (ret) {
 		TS_LOG_INFO("%s, get device support get tp color failed, will use default value: 0 \n ", __func__);
 		focal_pdata->support_get_tp_color = 0; //default 0: no need know tp color
@@ -379,7 +379,7 @@ int focal_parse_dts(
 	}
 	strncpy(dev_data->tp_test_type, str_value, TS_CAP_TEST_TYPE_LEN);
 
-	ret = of_property_read_u32(np, FTS_IS_IN_CELL, &focal_pdata->focal_device_data->is_in_cell);
+//	ret = of_property_read_u32(np, FTS_IS_IN_CELL, &focal_pdata->focal_device_data->is_in_cell);
 	if (ret) {
 		focal_pdata->focal_device_data->is_in_cell = true;
 		TS_LOG_INFO("%s:get is_in_cell from dts failed ,use default \n", __func__);
@@ -397,7 +397,7 @@ int focal_parse_dts(
 	}
 	TS_LOG_INFO("%s:get is_in_cell from dts:%d \n", __func__, focal_pdata->focal_device_data->is_in_cell );
 
-	ret = of_property_read_u32(np, FTS_WD_CHECK, &dev_data->need_wd_check_status);
+//	ret = of_property_read_u32(np, FTS_WD_CHECK, &dev_data->need_wd_check_status);
 	if (ret) {
 		dev_data->need_wd_check_status = 0;
 		TS_LOG_INFO("%s:get need_wd_check_status from dts failed ,use default FT8716 value\n", __func__);
@@ -579,19 +579,19 @@ int focal_parse_dts(
 	focal_of_property_read_u32_default(np, FTS_COVER_FORCE_GLOVE,
 		&dev_data->cover_force_glove, 0);
 	glove_info = &(dev_data->ts_platform_data->feature_info.glove_info);
-	focal_of_property_read_u32_default(np, FTS_GLOVE_SUPPORTED,&glove_info->glove_supported, 1);
+//	focal_of_property_read_u32_default(np, FTS_GLOVE_SUPPORTED,&glove_info->glove_supported, 1);
 	if(glove_info->glove_supported){
-		focal_of_property_read_u32_default(np, FTS_GLOVE_SWITCH_ADDR,&glove_info->glove_switch_addr, 0);
+//		focal_of_property_read_u32_default(np, FTS_GLOVE_SWITCH_ADDR,&glove_info->glove_switch_addr, 0);
 	}
 	holster_info = &dev_data->ts_platform_data->feature_info.holster_info;
-	focal_of_property_read_u32_default(np, FTS_HOLSTER_SUPPORTED,&holster_info->holster_supported, 0);
+//	focal_of_property_read_u32_default(np, FTS_HOLSTER_SUPPORTED,&holster_info->holster_supported, 0);
 	if(holster_info->holster_supported){
-		focal_of_property_read_u32_default(np, FTS_HOSTLER_SWITCH_ADDR,&holster_info->holster_switch_addr, 0);
+//		focal_of_property_read_u32_default(np, FTS_HOSTLER_SWITCH_ADDR,&holster_info->holster_switch_addr, 0);
 	}
 	roi_info = &dev_data->ts_platform_data->feature_info.roi_info;
-	focal_of_property_read_u32_default(np, FTS_ROI_SUPPORTED,&roi_info->roi_supported, 0);
+//	focal_of_property_read_u32_default(np, FTS_ROI_SUPPORTED,&roi_info->roi_supported, 0);
 	if(roi_info->roi_supported){
-		focal_of_property_read_u32_default(np, FTS_ROI_SWITCH_ADDR,&roi_info->roi_control_addr, 0);
+//		focal_of_property_read_u32_default(np, FTS_ROI_SWITCH_ADDR,&roi_info->roi_control_addr, 0);
 		focal_of_property_read_u32_default(np, FTS_ROI_PKG_NUM_ADDR,&focal_pdata->roi_pkg_num_addr, 0);
 	} else {
 		focal_pdata->roi_pkg_num_addr = 0;
@@ -603,7 +603,7 @@ int focal_parse_dts(
 	TS_LOG_INFO("%s:projectid_len_control =%d\n", __func__, focal_pdata->projectid_length_control_flag);
 
 	gesture_info = &(dev_data->ts_platform_data->feature_info.wakeup_gesture_enable_info);
-	focal_of_property_read_u32_default(np, FTS_GESTURE_SUPPORTED,&gesture_info->switch_value, 0);
+//	focal_of_property_read_u32_default(np, FTS_GESTURE_SUPPORTED,&gesture_info->switch_value, 0);
 
 	TS_LOG_ERR("%s:gesture_supported =%d\n",__func__,
 		gesture_info->switch_value);

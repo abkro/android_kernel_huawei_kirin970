@@ -55,6 +55,8 @@ OAL_STATIC oal_int32 oal_dft_dump_key_info(char* buf,oal_int32 key_type, oal_uin
 
         oal_memset(&first_tm,0,OAL_SIZEOF(first_tm));
         oal_memcmp(&first_tv,&pst_dft_item->first_timestamp, OAL_SIZEOF(first_tv));
+        #pragma GCC diagnostic push
+        #pragma GCC diagnostic ignored "-Wmaybe-uninitialized"
         first_tv.tv_sec -= sys_tz.tz_minuteswest * 60;
         rtc_time_to_tm(first_tv.tv_sec, &first_tm);
 
@@ -63,6 +65,7 @@ OAL_STATIC oal_int32 oal_dft_dump_key_info(char* buf,oal_int32 key_type, oal_uin
         if(last_tv.tv_sec)
         {
             last_tv.tv_sec -= sys_tz.tz_minuteswest * 60;
+            #pragma GCC diagnostic pop
             rtc_time_to_tm(last_tv.tv_sec, &last_tm);
             last_time_flag = 1;
         }

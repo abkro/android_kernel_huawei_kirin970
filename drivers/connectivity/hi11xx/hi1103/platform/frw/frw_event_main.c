@@ -311,7 +311,7 @@ OAL_STATIC oal_uint32 frw_event_trace_init(oal_void)
                           (oal_uint32)OAL_SIZEOF(frw_event_trace_stru));
             return OAL_ERR_CODE_PTR_NULL;
         }
-        oal_memset((oal_void*)g_ast_event_manager_etc[ul_core_id].pst_frw_trace,0,OAL_SIZEOF(frw_event_trace_stru));
+        oal_memcmp((oal_void*)g_ast_event_manager_etc[ul_core_id].pst_frw_trace,0,OAL_SIZEOF(frw_event_trace_stru));
     }
     return OAL_SUCC;
 }

@@ -300,7 +300,7 @@ oal_uint32 oam_print_to_sdt_etc(oal_int8 *pc_string)
     }
 
     /* COPY打印的内容 */
-    oal_memset(oal_netbuf_data(pst_skb), 0, us_strlen);
+    oal_memcmp(oal_netbuf_data(pst_skb), 0, us_strlen);
     oal_memcopy(oal_netbuf_data(pst_skb), pc_string, (oal_uint32)us_strlen);
 
     /* 下发至sdt接收队列，若队列满则串口输出 */

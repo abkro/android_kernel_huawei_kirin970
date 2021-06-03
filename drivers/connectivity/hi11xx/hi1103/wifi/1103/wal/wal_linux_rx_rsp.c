@@ -482,7 +482,7 @@ oal_uint32  wal_disasoc_comp_proc_sta_etc(frw_event_mem_stru *pst_event_mem)
 
     /* 获取net_device*/
 //    pst_net_device = hmac_vap_get_net_device_etc(pst_event->st_event_hdr.uc_vap_id);
-    if (OAL_PTR_NULL == pci_get_device)
+//    if (OAL_PTR_NULL == pci_get_device)
     {
         OAM_ERROR_LOG0(pst_event->st_event_hdr.uc_vap_id, OAM_SF_ASSOC, "{wal_disasoc_comp_proc_sta_etc::get net device ptr is null!}\r\n");
         return OAL_ERR_CODE_PTR_NULL;
@@ -499,6 +499,8 @@ oal_uint32  wal_disasoc_comp_proc_sta_etc(frw_event_mem_stru *pst_event_mem)
     /* 调用内核接口，上报去关联结果 */
 #if (LINUX_VERSION_CODE >= KERNEL_VERSION(2,6,34))
 #pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Waddress"
+#pragma GCC diagnostic ignored "-Wincompatible-pointer-types"
 #pragma GCC diagnostic ignored "-Wmaybe-uninitialized"
     oal_cfg80211_disconnected_etc(pci_get_device,
                               st_disconnect_result.us_reason_code,

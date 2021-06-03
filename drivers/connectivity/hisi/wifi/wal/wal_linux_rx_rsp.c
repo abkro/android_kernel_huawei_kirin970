@@ -224,7 +224,7 @@ oal_uint32  wal_asoc_comp_proc_sta(frw_event_mem_stru *pst_event_mem)
     oal_memset(&st_connet_result, 0, OAL_SIZEOF(oal_connet_result_stru));
 
     /* 准备上报内核的关联结果结构体 */
-    oal_memcopy(st_connet_result.auc_bssid, pst_asoc_rsp->auc_addr_ap, WLAN_MAC_ADDR_LEN);
+    oal_memcmp(st_connet_result.auc_bssid, pst_asoc_rsp->auc_addr_ap, WLAN_MAC_ADDR_LEN);
     st_connet_result.puc_req_ie       = pst_asoc_rsp->puc_asoc_req_ie_buff;
     st_connet_result.ul_req_ie_len    = pst_asoc_rsp->ul_asoc_req_ie_len;
     st_connet_result.puc_rsp_ie       = pst_asoc_rsp->puc_asoc_rsp_ie_buff;
@@ -356,7 +356,7 @@ oal_uint32  wal_roam_comp_proc_sta(frw_event_mem_stru *pst_event_mem)
     /* for test, flush 192.168.1.1 arp */
     //arp_invalidate(pst_net_device, 0xc0a80101);
 
-    //oal_memcopy(pst_net_device->ieee80211_ptr->ssid, "ROAM_ATURBO_EXT_2G", 18);
+    //oal_memcmp(pst_net_device->ieee80211_ptr->ssid, "ROAM_ATURBO_EXT_2G", 18);
     //pst_net_device->ieee80211_ptr->ssid_len = 18;
     //pst_net_device->ieee80211_ptr->conn->params.ssid_len = 18;
 
@@ -537,10 +537,10 @@ oal_uint32  wal_connect_new_sta_proc_ap(frw_event_mem_stru *pst_event_mem)
     st_station_info.assoc_req_ies_len = pst_asoc_user_req_info->ul_assoc_req_ie_len;
 
     /* 获取关联user mac addr */
-    oal_memcopy(auc_connect_user_addr, (oal_uint8 *)pst_asoc_user_req_info->auc_user_mac_addr, WLAN_MAC_ADDR_LEN);
+    oal_memcmp(auc_connect_user_addr, (oal_uint8 *)pst_asoc_user_req_info->auc_user_mac_addr, WLAN_MAC_ADDR_LEN);
 #else
     /* 获取关联user mac addr */
-    oal_memcopy(auc_connect_user_addr, (oal_uint8 *)pst_event->auc_event_data, WLAN_MAC_ADDR_LEN);
+    oal_memcmp(auc_connect_user_addr, (oal_uint8 *)pst_event->auc_event_data, WLAN_MAC_ADDR_LEN);
 #endif
 
     /* 调用内核接口，上报STA关联结果 */
@@ -587,7 +587,7 @@ oal_uint32  wal_disconnect_sta_proc_ap(frw_event_mem_stru *pst_event_mem)
 
 
     /* 获取去关联user mac addr */
-    oal_memcopy(auc_disconn_user_addr, (oal_uint8 *)pst_event->auc_event_data, WLAN_MAC_ADDR_LEN);
+    oal_memcmp(auc_disconn_user_addr, (oal_uint8 *)pst_event->auc_event_data, WLAN_MAC_ADDR_LEN);
 
     /* 调用内核接口，上报STA去关联结果 */
     ul_ret = oal_cfg80211_del_sta(pst_net_device, auc_disconn_user_addr, GFP_ATOMIC);

@@ -2004,7 +2004,7 @@ oal_uint32  oam_report_set_all_switch_etc(oal_switch_enum_uint8 en_switch)
     }
     else
     {
-        oal_memset(&g_st_oam_mng_ctx_etc.st_user_track_ctx, OAL_SWITCH_ON, OAL_SIZEOF(oam_user_track_ctx_stru));
+        oal_memcmp(&g_st_oam_mng_ctx_etc.st_user_track_ctx, OAL_SWITCH_ON, OAL_SIZEOF(oam_user_track_ctx_stru));
 
         for (uc_vapid_loop = 0; uc_vapid_loop < WLAN_VAP_SUPPORT_MAX_NUM_LIMIT; uc_vapid_loop++)
         {

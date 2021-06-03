@@ -238,7 +238,7 @@ oal_int32 oal_pcie_firmware_cmd_read_files(oal_pcie_res *pst_pcie_res, oal_uint8
         PCI_PRINT_LOG(PCI_LOG_DBG, "pcie read files READY ack");
 
         size = OAL_MIN(strlen(STR_FILES_READY), len-1);
-        strncpy(buff, STR_FILES_READY, size);
+  //      strncpy(buff, STR_FILES_READY, size);
         buff[len - 1] = '\0';
 
         g_ul_files_flag = FILES_BIN_SEND;
@@ -249,7 +249,7 @@ oal_int32 oal_pcie_firmware_cmd_read_files(oal_pcie_res *pst_pcie_res, oal_uint8
         PCI_PRINT_LOG(PCI_LOG_DBG, "pcie read files FILES OK ack");
 
         size = OAL_MIN(strlen(STR_FILES_OK), len-1);
-        strncpy(buff, STR_FILES_OK, size);
+    //    strncpy(buff, STR_FILES_OK, size);
         buff[len - 1] = '\0';
 
         g_ul_files_flag = FILES_CMD_SEND;
@@ -391,7 +391,7 @@ oal_int32 oal_pcie_firmware_cmd_read_writem(oal_pcie_res *pst_pcie_res, oal_uint
     PCI_PRINT_LOG(PCI_LOG_DBG, "pcie writem cmd read");
 
     size = OAL_MIN(strlen(STR_WRITEM_OK), len-1);
-    strncpy(buff, STR_WRITEM_OK, size);
+//    strncpy(buff, STR_WRITEM_OK, size);
     buff[len - 1] = '\0';
 
     return OAL_SUCC;

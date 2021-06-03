@@ -60,7 +60,7 @@ oal_int32 wal_cfg80211_start_req(oal_net_device_stru    *pst_net_dev,
         OAM_ERROR_LOG2(0, OAM_SF_SCAN, "{wal_cfg80211_start_req::us_len %d > WAL_MSG_WRITE_MAX_LEN %d err!}\r\n", us_len, WAL_MSG_WRITE_MAX_LEN);
         return OAL_ERR_CODE_INVALID_CONFIG;
     }
-    oal_memcopy(st_write_msg.auc_value, ps_param, us_len);
+    oal_memcmp(st_write_msg.auc_value, ps_param, us_len);
 
     /***************************************************************************
            抛事件到wal层处理
@@ -112,7 +112,7 @@ oal_uint32  wal_cfg80211_start_scan(oal_net_device_stru *pst_net_dev, mac_cfg802
         return OAL_ERR_CODE_PTR_NULL;
     }
 
-    oal_memcopy(pst_mac_cfg80211_scan_param, pst_scan_param, OAL_SIZEOF(mac_cfg80211_scan_param_stru));
+    oal_memcmp(pst_mac_cfg80211_scan_param, pst_scan_param, OAL_SIZEOF(mac_cfg80211_scan_param_stru));
 
     /* TBD gong: 1.传的是指针的指针, 2.sizeof指针  */
     ul_ret = (oal_uint32)wal_cfg80211_start_req(pst_net_dev, &pst_mac_cfg80211_scan_param,
@@ -144,7 +144,7 @@ oal_uint32  wal_cfg80211_start_sched_scan(oal_net_device_stru *pst_net_dev, mac_
         return OAL_ERR_CODE_PTR_NULL;
     }
 
-    oal_memcopy(pst_pno_scan_params, pst_pno_scan_info, OAL_SIZEOF(mac_pno_scan_stru));
+    oal_memcmp(pst_pno_scan_params, pst_pno_scan_info, OAL_SIZEOF(mac_pno_scan_stru));
 
 
     OAL_MEMZERO(&st_write_msg, OAL_SIZEOF(st_write_msg));
@@ -153,7 +153,7 @@ oal_uint32  wal_cfg80211_start_sched_scan(oal_net_device_stru *pst_net_dev, mac_
     st_write_msg.us_len = OAL_SIZEOF(pst_pno_scan_params);
 
     /* 填写 msg 消息体 */
-    oal_memcopy(st_write_msg.auc_value, &pst_pno_scan_params, OAL_SIZEOF(pst_pno_scan_params));
+    oal_memcmp(st_write_msg.auc_value, &pst_pno_scan_params, OAL_SIZEOF(pst_pno_scan_params));
 
     /***************************************************************************
            抛事件到wal层处理

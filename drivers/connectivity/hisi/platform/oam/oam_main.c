@@ -275,7 +275,7 @@ oal_uint32 oam_print_to_sdt(oal_int8 *pc_string)
 
     /* COPY打印的内容 */
     oal_memset(oal_netbuf_data(pst_skb), 0, us_strlen);
-    oal_memcopy(oal_netbuf_data(pst_skb), pc_string, (oal_uint32)us_strlen);
+    oal_memcmp(oal_netbuf_data(pst_skb), pc_string, (oal_uint32)us_strlen);
 
     /* 下发至sdt接收队列，若队列满则串口输出 */
     ul_ret = oam_report_data2sdt(pst_skb, OAM_DATA_TYPE_STRING, OAM_PRIMID_TYPE_OUTPUT_CONTENT);
@@ -307,7 +307,7 @@ oal_uint32 oam_upload_log_to_sdt(oal_int8 *pc_string)
     }
 
     /* COPY打印的内容 */
-    oal_memcopy(oal_netbuf_data(pst_skb), pc_string, OAL_SIZEOF(oam_log_info_stru));
+    oal_memcmp(oal_netbuf_data(pst_skb), pc_string, OAL_SIZEOF(oam_log_info_stru));
 
     /* 下发至sdt接收队列，若队列满则串口输出 */
     ul_ret = oam_report_data2sdt(pst_skb, OAM_DATA_TYPE_LOG, OAM_PRIMID_TYPE_OUTPUT_CONTENT);
@@ -334,7 +334,7 @@ oal_uint32 oam_upload_device_log_to_sdt(oal_uint8 *pc_string, oal_uint16 len)
     }
 
     /* COPY打印的内容 */
-    oal_memcopy(oal_netbuf_data(pst_skb), pc_string, len);
+    oal_memcmp(oal_netbuf_data(pst_skb), pc_string, len);
 
     /* 下发至sdt接收队列，若队列满则串口输出 */
     ul_ret = oam_report_data2sdt(pst_skb, OAM_DATA_TYPE_DEVICE_LOG, OAM_PRIMID_TYPE_OUTPUT_CONTENT);
@@ -434,7 +434,7 @@ oal_uint32  oam_set_file_path(oal_int8 *pc_file_path, oal_uint32 ul_length)
     }
 
     puc_file_path = DmtStub_GetDebugFilePath();
-    oal_memcopy(g_st_oam_mng_ctx.ac_file_path, puc_file_path, strlen(puc_file_path));
+    oal_memcmp(g_st_oam_mng_ctx.ac_file_path, puc_file_path, strlen(puc_file_path));
 
     /* 以下操作是为了将上一次的日志文件清空 */
     f_event_file = oal_file_open_rw(g_st_oam_mng_ctx.ac_file_path);
@@ -460,7 +460,7 @@ oal_uint32  oam_set_file_path(oal_int8 *pc_file_path, oal_uint32 ul_length)
         return OAL_ERR_CODE_ARRAY_OVERFLOW;
     }
 
-    oal_memcopy(g_st_oam_mng_ctx.ac_file_path, pc_file_path, ul_length);
+    oal_memcmp(g_st_oam_mng_ctx.ac_file_path, pc_file_path, ul_length);
 
 #endif
 

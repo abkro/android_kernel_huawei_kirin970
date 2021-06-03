@@ -516,7 +516,7 @@ OAL_STATIC oal_uint32  frw_ipc_send_inter_msg(oal_uint8  uc_msg_type,
     /* 填充数据 */
     if (us_len > 0)
     {
-        oal_memcopy((oal_void *)pst_ipc_msg->auc_data, (oal_void *)puc_data, us_len);
+        oal_memcmp((oal_void *)pst_ipc_msg->auc_data, (oal_void *)puc_data, us_len);
     }
 
     /* 发送内部消息 */

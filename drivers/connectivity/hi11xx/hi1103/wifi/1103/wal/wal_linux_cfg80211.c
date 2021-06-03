@@ -1558,7 +1558,7 @@ OAL_STATIC oal_int32  wal_cfg80211_disconnect(
     }
 
     /* 解析内核下发的connect参数 */
-    oal_memset(&st_mac_cfg_kick_user_param, 0, OAL_SIZEOF(mac_cfg_kick_user_param_stru));
+    oal_memcmp(&st_mac_cfg_kick_user_param, 0, OAL_SIZEOF(mac_cfg_kick_user_param_stru));
 
     /* 解析内核下发的去关联原因  */
     st_mac_cfg_kick_user_param.us_reason_code = us_reason_code;
@@ -1624,7 +1624,7 @@ OAL_STATIC oal_int32 wal_cfg80211_add_key(oal_wiphy_stru          *pst_wiphy,
 
 
     /*2.1 消息参数准备*/
-    oal_memset(&st_payload_params, 0, OAL_SIZEOF(st_payload_params));
+    oal_memcmp(&st_payload_params, 0, OAL_SIZEOF(st_payload_params));
     st_payload_params.uc_key_index = uc_key_index;
 
     OAL_MEMZERO(st_payload_params.auc_mac_addr, WLAN_MAC_ADDR_LEN);
@@ -2162,7 +2162,7 @@ OAL_STATIC oal_int32 wal_cfg80211_set_wiphy_params(oal_wiphy_stru *pst_wiphy, oa
 
     /* 填写消息 */
     pst_wiphy_param = (mac_cfg_wiphy_param_stru *)(st_write_msg.auc_value);
-    oal_memset(pst_wiphy_param, 0, sizeof(mac_cfg_wiphy_param_stru));
+    oal_memcmp(pst_wiphy_param, 0, sizeof(mac_cfg_wiphy_param_stru));
 
     if (ul_changed & WIPHY_PARAM_FRAG_THRESHOLD)
     {
@@ -2253,7 +2253,7 @@ OAL_STATIC oal_int32 wal_cfg80211_set_beacon(
     uc_vap_id   = pst_mac_vap->uc_vap_id;
 
     /* 初始化beacon interval 和DTIM_PERIOD 参数 */
-    oal_memset(&st_beacon_param, 0, sizeof(mac_beacon_param_stru));
+    oal_memcmp(&st_beacon_param, 0, sizeof(mac_beacon_param_stru));
     st_beacon_param.l_interval    = pst_beacon_info->interval;
     st_beacon_param.l_dtim_period = pst_beacon_info->dtim_period;
 
@@ -2399,7 +2399,7 @@ OAL_STATIC oal_int32 wal_cfg80211_add_beacon(
     uc_vap_id   = pst_mac_vap->uc_vap_id;
 
     /* 初始化beacon interval 和DTIM_PERIOD 参数 */
-    oal_memset(&st_beacon_param, 0, sizeof(mac_beacon_param_stru));
+    oal_memcmp(&st_beacon_param, 0, sizeof(mac_beacon_param_stru));
     st_beacon_param.l_interval    = pst_beacon_info->interval;
     st_beacon_param.l_dtim_period = pst_beacon_info->dtim_period;
 
@@ -2863,7 +2863,7 @@ OAL_STATIC oal_int32 wal_cfg80211_change_beacon(oal_wiphy_stru         *pst_wiph
 
 
     /* 初始化beacon interval 和DTIM_PERIOD 参数 */
-    oal_memset(&st_beacon_param, 0, sizeof(mac_beacon_param_stru));
+    oal_memcmp(&st_beacon_param, 0, sizeof(mac_beacon_param_stru));
 
     l_ret = wal_cfg80211_fill_beacon_param(pst_netdev, pst_beacon_info, &st_beacon_param);
     if (OAL_SUCC != l_ret)
@@ -3103,7 +3103,7 @@ OAL_STATIC oal_int32 wal_cfg80211_start_ap(oal_wiphy_stru           *pst_wiphy,
          OAM_WARNING_LOG1(uc_vap_id, OAM_SF_ANY, "{wal_cfg80211_start_ap::ssid len error, len[%d].}", l_ssid_len);
          return -OAL_EFAIL;
     }
-    oal_memset(auc_ssid_ie, 0, sizeof(auc_ssid_ie));
+    oal_memcmp(auc_ssid_ie, 0, sizeof(auc_ssid_ie));
     oal_memcopy(auc_ssid_ie, pst_ap_settings->ssid, (oal_uint32)l_ssid_len);
     puc_ssid_ie = auc_ssid_ie;
     uc_ssid_len = (oal_uint8)l_ssid_len;
@@ -3142,7 +3142,7 @@ OAL_STATIC oal_int32 wal_cfg80211_start_ap(oal_wiphy_stru           *pst_wiphy,
     *****************************************************************************/
 
     /* 初始化beacon interval 和DTIM_PERIOD 参数 */
-    oal_memset(&st_beacon_param, 0, sizeof(mac_beacon_param_stru));
+    oal_memcmp(&st_beacon_param, 0, sizeof(mac_beacon_param_stru));
     st_beacon_param.l_interval    = pst_ap_settings->beacon_interval;
     st_beacon_param.l_dtim_period = pst_ap_settings->dtim_period;
 #if (LINUX_VERSION_CODE >= KERNEL_VERSION(3, 10, 44))//TBD:1102 需要，暂时用内核版本号区分
@@ -4058,7 +4058,7 @@ OAL_STATIC oal_int32 wal_cfg80211_del_station(oal_wiphy_stru        *pst_wiphy,
 
     if (OAL_PTR_NULL == puc_mac)
     {
-        oal_memset(auc_mac_boardcast,0xff,OAL_MAC_ADDR_LEN);
+        oal_memcmp(auc_mac_boardcast,0xff,OAL_MAC_ADDR_LEN);
         puc_mac = auc_mac_boardcast;
         OAM_INFO_LOG0(pst_mac_vap->uc_vap_id, OAM_SF_ANY, "{wal_cfg80211_del_station::deleting all user!}\r\n");
     }
@@ -4707,7 +4707,7 @@ OAL_STATIC oal_wireless_dev_stru * wal_cfg80211_add_virtual_intf(oal_wiphy_stru 
         return ERR_PTR(-ENOMEM);
     }
 
-    oal_memset(pst_wdev, 0, OAL_SIZEOF(oal_wireless_dev_stru));
+    oal_memcmp(pst_wdev, 0, OAL_SIZEOF(oal_wireless_dev_stru));
 
     /* 对netdevice进行赋值 */
     /* 对新创建的net_device 初始化对应参数 */
@@ -6930,7 +6930,7 @@ oal_int32 wal_cfg2io_set_beacon(
     }
 
     uc_vap_id = pst_mac_vap->uc_vap_id;
-    oal_memset(&st_beacon_param, 0, sizeof(mac_beacon_param_stru));
+    oal_memcmp(&st_beacon_param, 0, sizeof(mac_beacon_param_stru));
 
     /*****************************************************************************
         1.设置信道
@@ -6959,7 +6959,7 @@ oal_int32 wal_cfg2io_set_beacon(
          OAM_WARNING_LOG1(uc_vap_id, OAM_SF_ANY, "{wal_cfg2io_set_beacon::ssid len error, len[%d].}", ul_ssid_len);
          return -OAL_EFAIL;
     }
-    oal_memset(auc_ssid_ie, 0, sizeof(auc_ssid_ie));
+    oal_memcmp(auc_ssid_ie, 0, sizeof(auc_ssid_ie));
     l_ret = (oal_int32)oal_copy_from_user(auc_ssid_ie, pst_ap_settings->ssid, ul_ssid_len);
     if(l_ret)
     {
