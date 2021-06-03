@@ -17,6 +17,8 @@ jobs:
       run: export ARCH=arm64
     - name: make defconfig
       run: make O=../out charlotte_defconfig
+    - name: make prepare
+      run: make prepare
     - name: make
       run: make O=../out -j8
     - name: make check
