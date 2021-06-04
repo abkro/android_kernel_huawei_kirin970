@@ -55,7 +55,7 @@ OAL_STATIC oal_void wal_cfgvendor_del_radar_channel(mac_vendor_cmd_channel_list_
         auc_tmp_channel_list[uc_channel_idx++] = pst_channel_list->auc_channel_list_5g[uc_loops];
     }
     pst_channel_list->uc_channel_num_5g = uc_channel_idx;
-    oal_memcopy(pst_channel_list->auc_channel_list_5g, auc_tmp_channel_list, uc_channel_idx);
+    oal_memcmp(pst_channel_list->auc_channel_list_5g, auc_tmp_channel_list, uc_channel_idx);
 }
 
 
@@ -259,7 +259,7 @@ OAL_STATIC oal_int32 wal_cfgvendor_set_country(oal_wiphy_stru *wiphy,
         {
             case ANDR_WIFI_ATTRIBUTE_COUNTRY:
 #ifdef _PRE_WLAN_FEATURE_11D
-                oal_memcopy(auc_country_code, oal_nla_data(iter),
+                oal_memcmp(auc_country_code, oal_nla_data(iter),
                             OAL_MIN(oal_nla_len(iter), OAL_SIZEOF(auc_country_code)));
                 OAM_WARNING_LOG4(0, OAM_SF_ANY, "{wal_cfgvendor_set_country::country code:0x%X 0x%X 0x%X, len = %d!}\r\n",
                                  auc_country_code[0], auc_country_code[1], auc_country_code[2], oal_nla_len(iter));
@@ -345,7 +345,7 @@ OAL_STATIC oal_int32 wal_send_random_mac_oui(oal_net_device_stru *pst_net_dev,
         抛事件到wal层处理
     ***************************************************************************/
     WAL_WRITE_MSG_HDR_INIT(&st_write_msg, WLAN_CFGID_SET_RANDOM_MAC_OUI, WLAN_RANDOM_MAC_OUI_LEN);
-    oal_memcopy(st_write_msg.auc_value, auc_random_mac_oui, WLAN_RANDOM_MAC_OUI_LEN);
+    oal_memcmp(st_write_msg.auc_value, auc_random_mac_oui, WLAN_RANDOM_MAC_OUI_LEN);
 
     /* 发送消息 */
     l_ret = wal_send_cfg_event(pst_net_dev,
@@ -379,11 +379,11 @@ OAL_STATIC oal_int32 wal_cfgvendor_set_random_mac_oui(oal_wiphy_stru *pst_wiphy,
     l_type = oal_nla_type(p_data);
 
     if (ANDR_WIFI_ATTRIBUTE_RANDOM_MAC_OUI == l_type)
-    {
-        /* 随机mac地址前3字节(mac oui)由Android下发,wps pbc场景和hilink关联场景会将此3字节清0 */
-        oal_memcopy(auc_random_mac_oui, oal_nla_data(p_data), WLAN_RANDOM_MAC_OUI_LEN);
+   {
+   /* 随机mac地址前3字节(mac oui)由Android下发,wps pbc场景和hilink关联场景会将此3字节清0 */
+//        oal_memcmp(auc_random_mac_oui, oal_nla_data(p_data), WLAN_RANDOM_MAC_OUI_LEN);
         OAM_WARNING_LOG3(0, OAM_SF_ANY, "{wal_cfgvendor_set_random_mac_oui::mac_ou:0x%.2x:%.2x:%.2x}\r\n",
-                         auc_random_mac_oui[0], auc_random_mac_oui[1], auc_random_mac_oui[2]);
+                      auc_random_mac_oui[0], auc_random_mac_oui[1], auc_random_mac_oui[2]);
     }
     else
     {

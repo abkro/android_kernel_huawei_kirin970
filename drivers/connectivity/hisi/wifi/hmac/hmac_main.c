@@ -170,7 +170,7 @@ oal_void  hmac_board_get_instance(mac_board_stru **ppst_hmac_board)
         return OAL_ERR_CODE_MAC_DEVICE_NULL;
     }
 
-    oal_memcopy((oal_uint8 *)(pst_mac_device->st_mac_rates_11g),
+    oal_memcmp((oal_uint8 *)(pst_mac_device->st_mac_rates_11g),
         (oal_uint8 *)pst_data_rate,
         sizeof(mac_data_rate_stru) * MAC_DATARATES_PHY_80211G_NUM);
 
@@ -1171,7 +1171,7 @@ oal_uint32  hmac_sdt_recv_reg_cmd(
                        pst_mac_vap->uc_device_id,
                        pst_mac_vap->uc_vap_id);
 
-    oal_memcopy(pst_event->auc_event_data, puc_buf + OAL_IF_NAME_SIZE, us_len - OAL_IF_NAME_SIZE);
+    oal_memcmp(pst_event->auc_event_data, puc_buf + OAL_IF_NAME_SIZE, us_len - OAL_IF_NAME_SIZE);
 
     frw_event_dispatch_event(pst_event_mem);
     FRW_EVENT_FREE(pst_event_mem);

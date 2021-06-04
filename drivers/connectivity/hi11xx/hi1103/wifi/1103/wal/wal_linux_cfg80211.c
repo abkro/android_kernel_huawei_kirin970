@@ -4058,7 +4058,7 @@ OAL_STATIC oal_int32 wal_cfg80211_del_station(oal_wiphy_stru        *pst_wiphy,
 
     if (OAL_PTR_NULL == puc_mac)
     {
-        oal_memcmp(auc_mac_boardcast,0xff,OAL_MAC_ADDR_LEN);
+//        oal_memcmp(auc_mac_boardcast,0xff,OAL_MAC_ADDR_LEN);
         puc_mac = auc_mac_boardcast;
         OAM_INFO_LOG0(pst_mac_vap->uc_vap_id, OAM_SF_ANY, "{wal_cfg80211_del_station::deleting all user!}\r\n");
     }

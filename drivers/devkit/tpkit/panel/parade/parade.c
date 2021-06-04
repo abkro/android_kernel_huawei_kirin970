@@ -193,7 +193,7 @@ struct ts_device_ops ts_kit_parade_ops = {
 	.chip_irq_bottom_half =  parade_irq_bottom_half,
 	.chip_suspend = parade_core_suspend,
 	.chip_resume = parade_core_resume,
-	.chip_hw_reset= parade_hw_reset,
+//	.chip_hw_reset= parade_hw_reset,
 	.chip_fw_update_boot = parade_fw_update_boot,
 	.oem_info_switch = parade_oem_info_switch,
 	.chip_get_info = parade_chip_get_info,
@@ -493,12 +493,12 @@ static int parade_oem_write_nv_any_data_(struct parade_oem_data *parade_oem_data
 	write_buf[cmd_offset++] = LOW_BYTE(crc);
 	write_buf[cmd_offset++] = HI_BYTE(crc);
 
-	rc = parade_oem_data->ops.suspend(parade_oem_data);
+//	rc = parade_oem_data->ops.suspend(parade_oem_data);
 	if(rc != 0){
 	 	TS_LOG_ERR("%s suspend scan error\n", __func__);
                goto exit;
 	}
-	rc = parade_oem_data->ops.hid_send_output_and_wait(parade_oem_data, &hid_output);
+//	rc = parade_oem_data->ops.hid_send_output_and_wait(parade_oem_data, &hid_output);
 	if(rc != 0){
 		 	TS_LOG_ERR("%s send write nv data error\n", __func__);
                    goto exit;
@@ -510,7 +510,7 @@ static int parade_oem_write_nv_any_data_(struct parade_oem_data *parade_oem_data
 	else
 	          TS_LOG_INFO("%s write 16 bytes at offset=%d successful\n",  __func__, offset);
 exit:
-	rc = parade_oem_data->ops.resume(parade_oem_data);
+//	rc = parade_oem_data->ops.resume(parade_oem_data);
 	if(rc != 0){
 		 	TS_LOG_ERR("%s resume scan error\n", __func__);
 	}
@@ -702,7 +702,7 @@ static int parade_oem_read_nv_data(struct parade_oem_data *parade_oem_data, u8 b
                    goto exit;
          }
 
-         rc = parade_oem_data->ops.suspend(parade_oem_data);
+//         rc = parade_oem_data->ops.suspend(parade_oem_data);
 		 if(rc != 0){
 		 	TS_LOG_ERR("%s suspend scan error\n", __func__);
                    goto exit;
@@ -725,7 +725,7 @@ static int parade_oem_read_nv_data(struct parade_oem_data *parade_oem_data, u8 b
                    }
                    /*Enumerated Block ID is always 1 here*/
                    cmd_buf[4] = 1;
-                   rc = parade_oem_data->ops.hid_send_output_and_wait(parade_oem_data, &hid_output);
+          //         rc = parade_oem_data->ops.hid_send_output_and_wait(parade_oem_data, &hid_output);
 				   if(rc != 0){
 					 	TS_LOG_ERR("%s hid output error,rc=%d,at line: %d\n", __func__, rc, __LINE__);
 				               goto exit;
@@ -750,7 +750,7 @@ static int parade_oem_read_nv_data(struct parade_oem_data *parade_oem_data, u8 b
                    TS_LOG_INFO("%s actual_read_len=%d, remain_length=%d\n", __func__, actual_read_len, length);
          }
 exit:
-         rc = parade_oem_data->ops.resume(parade_oem_data);
+        // rc = parade_oem_data->ops.resume(parade_oem_data);
 		 if(rc != 0){
 		 	TS_LOG_ERR("%s resume scan error at line %d\n", __func__,__LINE__);
 		 }
@@ -771,12 +771,12 @@ static int parade_get_nv_info(struct parade_oem_data *parade_oem_data){
          struct parade_nv_info *info = &parade_oem_data->info;
          TS_LOG_INFO("%s enter\n", __func__);
 
-         rc = parade_oem_data->ops.suspend(parade_oem_data);
+      //   rc = parade_oem_data->ops.suspend(parade_oem_data);
 		 if(rc != 0){
 		 	TS_LOG_ERR("%s OEM Suspend Scan Error\n", __func__);
 			goto exit;
 		 }
-         rc = parade_oem_data->ops.hid_send_output_and_wait(parade_oem_data, &hid_output);
+    //     rc = parade_oem_data->ops.hid_send_output_and_wait(parade_oem_data, &hid_output);
 		 if(rc != 0){
 		 	TS_LOG_ERR("%s OEM HID output error\n", __func__);
 			goto exit;
@@ -804,7 +804,7 @@ static int parade_get_nv_info(struct parade_oem_data *parade_oem_data){
                    TS_LOG_ERR("%s oem infomation get failed\n", __func__);
          }
 exit:
-         rc = parade_oem_data->ops.resume(parade_oem_data);
+  //       rc = parade_oem_data->ops.resume(parade_oem_data);
 		 if(rc != 0){
 		 	TS_LOG_ERR("%s Resume Scan Error\n", __func__);
 		 }
@@ -826,12 +826,12 @@ static int parade_oem_init(struct parade_oem_data *parade_oem_data)
                    TS_LOG_ERR("%s error: parade_oem_data is null\n", __func__);
                    return -1;
          }
-         parade_oem_data->ops.suspend = parade_oem_suspend;
-         parade_oem_data->ops.resume = parade_oem_resume;
-         parade_oem_data->ops.write_nv_data = parade_oem_write_nv_data;
-         parade_oem_data->ops.read_nv_data = parade_oem_suspend;
-         parade_oem_data->ops.get_nv_info = parade_get_nv_info;
-         parade_oem_data->ops.hid_send_output_and_wait = parade_oem_hid_send_output_and_wait;
+//         parade_oem_data->ops.suspend = parade_oem_suspend;
+  //       parade_oem_data->ops.resume = parade_oem_resume;
+    //     parade_oem_data->ops.write_nv_data = parade_oem_write_nv_data;
+      //   parade_oem_data->ops.read_nv_data = parade_oem_suspend;
+        //  parade_oem_data->ops.get_nv_info = parade_get_nv_info;
+  //       parade_oem_data->ops.hid_send_output_and_wait = parade_oem_hid_send_output_and_wait;
 
          parade_oem_data->oem_info_ready = false;
          return 0;
@@ -1415,7 +1415,7 @@ int parade_hid_output_report_rate_switch_(struct cyttsp5_core_data *cd)
 	};
 	TS_LOG_INFO("%s HID_OUTPUT_REPORT_RATE_SWITCH is 0x%02x", __func__, HID_OUTPUT_REPORT_RATE_SWITCH);
 
-	return parade_hid_send_output_and_wait_(cd, &m_hid_output);
+//	return parade_hid_send_output_and_wait_(cd, &m_hid_output);
 }
 
 void parade_change_report_rate(void)
@@ -1444,7 +1444,7 @@ void parade_change_report_rate(void)
 	}
 
 	TS_LOG_INFO("parade_change_report_rate start\n");
-	rc = parade_hid_output_report_rate_switch_(cd);
+//	rc = parade_hid_output_report_rate_switch_(cd);
 	if(!rc) {
 		response_trcrq = cd->response_buf[CY_REPORT_RATE_TRCRQ];
 		response_trcts = cd->response_buf[CY_REPORT_RATE_TRCTS];
@@ -3274,7 +3274,7 @@ send_cmd:
 error:
 	mutex_lock(&cd->system_lock);
 	cd->hid_cmd_state = 0;
-	mutex_unlock(&cd->system_lock);
+//	mutex_unlock(&cd->system_lock);
 exit:
 	return rc;
 }
@@ -3744,7 +3744,7 @@ static int parade_core_suspend(void)
 				mutex_lock(&cd->system_lock);
 				tskit_parade_data->parade_chip_data->easy_wakeup_info.off_motion_on = true;
 				mutex_unlock(&cd->system_lock);
-				schedule_work(&parade_easy_wakeup_work);
+//				schedule_work(&parade_easy_wakeup_work);
 			}
 			break;
 		default:
@@ -5274,7 +5274,7 @@ static int parade_hid_output_null_(struct cyttsp5_core_data *cd)
 		HID_OUTPUT_APP_COMMAND(HID_OUTPUT_NULL),
 	};
 
-	return parade_hid_send_output_and_wait_(cd, &hid_output);
+//	return parade_hid_send_output_and_wait_(cd, &hid_output);
 }
 static int  parade_watchdog_work_check(void)
 {
@@ -5284,7 +5284,7 @@ static int  parade_watchdog_work_check(void)
 	rc = parade_check_cmd_status();
 	if(rc)
 		return rc;
-	rc = parade_hid_output_null_(cd);
+//	rc = parade_hid_output_null_(cd);
 
 	if (rc) {
 		TS_LOG_ERR(

@@ -691,7 +691,7 @@ oal_uint32 wal_parse_wmm_ie(oal_net_device_stru *pst_dev,
  #if defined(_PRE_PRODUCT_ID_HI110X_HOST)
         uc_uapsd = OAL_FALSE;
  #endif
-        oal_memcopy(st_write_msg.auc_value, &uc_uapsd, OAL_SIZEOF(oal_uint32));
+        oal_memcmp(st_write_msg.auc_value, &uc_uapsd, OAL_SIZEOF(oal_uint32));
 
         /* 发送消息 */
         ul_ret = (oal_uint32)wal_send_cfg_event(pst_dev,
@@ -1829,7 +1829,7 @@ OAL_STATIC oal_int32  wal_cfg80211_disconnect(
         return OAL_SUCC;
     }
 
-    oal_memcopy(st_mac_cfg_kick_user_param.auc_mac_addr, pst_mac_user->auc_user_mac_addr, WLAN_MAC_ADDR_LEN);
+    oal_memcmp(st_mac_cfg_kick_user_param.auc_mac_addr, pst_mac_user->auc_user_mac_addr, WLAN_MAC_ADDR_LEN);
 
     l_ret = wal_cfg80211_start_disconnect(pst_net_device, &st_mac_cfg_kick_user_param);
     if( OAL_SUCC != l_ret)
@@ -1897,7 +1897,7 @@ OAL_STATIC oal_int32 wal_cfg80211_add_key(oal_wiphy_stru          *pst_wiphy,
     if (OAL_PTR_NULL != puc_mac_addr)
     {
         /*不能使用内核下发的mac指针，可能被释放，需要拷贝到本地再使用*/
-        oal_memcopy(st_payload_params.auc_mac_addr, puc_mac_addr, WLAN_MAC_ADDR_LEN);
+        oal_memcmp(st_payload_params.auc_mac_addr, puc_mac_addr, WLAN_MAC_ADDR_LEN);
     }
 
 #if (_PRE_OS_VERSION_LINUX == _PRE_OS_VERSION)
@@ -1914,8 +1914,8 @@ OAL_STATIC oal_int32 wal_cfg80211_add_key(oal_wiphy_stru          *pst_wiphy,
     st_payload_params.st_key.key_len = pst_params->key_len;
     st_payload_params.st_key.seq_len = pst_params->seq_len;
     st_payload_params.st_key.cipher  = pst_params->cipher;
-    oal_memcopy(st_payload_params.st_key.auc_key, pst_params->key, (oal_uint32)pst_params->key_len);
-    oal_memcopy(st_payload_params.st_key.auc_seq, pst_params->seq, (oal_uint32)pst_params->seq_len);
+    oal_memcmp(st_payload_params.st_key.auc_key, pst_params->key, (oal_uint32)pst_params->key_len);
+    oal_memcmp(st_payload_params.st_key.auc_seq, pst_params->seq, (oal_uint32)pst_params->seq_len);
     OAM_INFO_LOG3(0, OAM_SF_ANY, "{wal_cfg80211_add_key::key_len:%d, seq_len:%d, cipher:0x%08x!}\r\n",
                   pst_params->key_len, pst_params->seq_len, pst_params->cipher);
 
@@ -1927,7 +1927,7 @@ OAL_STATIC oal_int32 wal_cfg80211_add_key(oal_wiphy_stru          *pst_wiphy,
     st_write_msg.us_len = OAL_SIZEOF(mac_addkey_param_stru);
 
     /*3.2 填写 msg 消息体 */
-    oal_memcopy(st_write_msg.auc_value, &st_payload_params, OAL_SIZEOF(mac_addkey_param_stru));
+    oal_memcmp(st_write_msg.auc_value, &st_payload_params, OAL_SIZEOF(mac_addkey_param_stru));
 
     /*由于消息中使用了局部变量指针，因此需要将发送该函数设置为同步，否则hmac处理时会使用野指针*/
     if (OAL_SUCC != wal_send_cfg_event(pst_netdev,
@@ -1997,7 +1997,7 @@ OAL_STATIC oal_int32 wal_cfg80211_get_key(oal_wiphy_stru *pst_wiphy,
     if (OAL_PTR_NULL != puc_mac_addr)
     {
         /*不能使用内核下发的mac指针，可能被释放，需要拷贝到本地再使用*/
-        oal_memcopy(auc_mac_addr, puc_mac_addr, WLAN_MAC_ADDR_LEN);
+        oal_memcmp(auc_mac_addr, puc_mac_addr, WLAN_MAC_ADDR_LEN);
         st_payload_params.puc_mac_addr = auc_mac_addr;
     }
     else
@@ -2042,7 +2042,7 @@ OAL_STATIC oal_int32 wal_cfg80211_get_key(oal_wiphy_stru *pst_wiphy,
     st_write_msg.us_len = OAL_SIZEOF(mac_getkey_param_stru);
 
     /*3.2 填写 msg 消息体 */
-    oal_memcopy(st_write_msg.auc_value, &st_payload_params, OAL_SIZEOF(mac_getkey_param_stru));
+    oal_memcmp(st_write_msg.auc_value, &st_payload_params, OAL_SIZEOF(mac_getkey_param_stru));
 
     /*由于消息中使用了局部变量指针，因此需要将发送该函数设置为同步，否则hmac处理时会使用野指针*/
     if (OAL_SUCC != wal_send_cfg_event(pst_netdev,
@@ -2115,7 +2115,7 @@ OAL_STATIC oal_int32 wal_cfg80211_remove_key(oal_wiphy_stru *pst_wiphy,
     if (OAL_PTR_NULL != puc_mac_addr)
     {
         /*不能使用内核下发的mac指针，可能被释放，需要拷贝到本地再使用*/
-        oal_memcopy(st_payload_params.auc_mac_addr, puc_mac_addr, WLAN_MAC_ADDR_LEN);
+        oal_memcmp(st_payload_params.auc_mac_addr, puc_mac_addr, WLAN_MAC_ADDR_LEN);
     }
 
 #if (_PRE_OS_VERSION_LINUX == _PRE_OS_VERSION)
@@ -2148,7 +2148,7 @@ OAL_STATIC oal_int32 wal_cfg80211_remove_key(oal_wiphy_stru *pst_wiphy,
     st_write_msg.us_len = OAL_SIZEOF(mac_removekey_param_stru);
 
     /*3.2 填写 msg 消息体 */
-    oal_memcopy(st_write_msg.auc_value, &st_payload_params, OAL_SIZEOF(mac_removekey_param_stru));
+    oal_memcmp(st_write_msg.auc_value, &st_payload_params, OAL_SIZEOF(mac_removekey_param_stru));
 
     if(OAL_SUCC != wal_send_cfg_event(pst_netdev,
                                WAL_MSG_TYPE_WRITE,
@@ -2230,7 +2230,7 @@ OAL_STATIC oal_int32 wal_cfg80211_set_default_key(oal_wiphy_stru *pst_wiphy,
     st_write_msg.us_len = OAL_SIZEOF(mac_setdefaultkey_param_stru);
 
     /*3.2 填写 msg 消息体 */
-    oal_memcopy(st_write_msg.auc_value, &st_payload_params, OAL_SIZEOF(mac_setdefaultkey_param_stru));
+    oal_memcmp(st_write_msg.auc_value, &st_payload_params, OAL_SIZEOF(mac_setdefaultkey_param_stru));
 
     l_ret = wal_send_cfg_event(pst_netdev,
                                WAL_MSG_TYPE_WRITE,
@@ -2532,7 +2532,7 @@ OAL_STATIC oal_int32 wal_cfg80211_set_beacon(
     WAL_WRITE_MSG_HDR_INIT(&st_write_msg, WLAN_CFGID_CFG80211_CONFIG_BEACON, OAL_SIZEOF(mac_beacon_param_stru));
 
     /* 填写 msg 消息体 */
-    oal_memcopy(st_write_msg.auc_value, &st_beacon_param, OAL_SIZEOF(mac_beacon_param_stru));
+    oal_memcmp(st_write_msg.auc_value, &st_beacon_param, OAL_SIZEOF(mac_beacon_param_stru));
 
     /* 发送消息 */
     l_ret = wal_send_cfg_event(pst_dev,
@@ -2557,7 +2557,7 @@ OAL_STATIC oal_int32 wal_cfg80211_set_beacon(
 
         pst_ssid_param = (mac_cfg_ssid_param_stru *)(st_write_msg.auc_value);
         pst_ssid_param->uc_ssid_len = uc_ssid_len;
-        oal_memcopy(pst_ssid_param->ac_ssid, puc_ie, uc_ssid_len);
+        oal_memcmp(pst_ssid_param->ac_ssid, puc_ie, uc_ssid_len);
 
         l_ret = wal_send_cfg_event(pst_dev,
                                WAL_MSG_TYPE_WRITE,
@@ -2695,7 +2695,7 @@ OAL_STATIC oal_int32 wal_cfg80211_add_beacon(
     WAL_WRITE_MSG_HDR_INIT(&st_write_msg, WLAN_CFGID_CFG80211_CONFIG_BEACON, OAL_SIZEOF(mac_beacon_param_stru));
 
     /* 填写 msg 消息体 */
-    oal_memcopy(st_write_msg.auc_value, &st_beacon_param, OAL_SIZEOF(mac_beacon_param_stru));
+    oal_memcmp(st_write_msg.auc_value, &st_beacon_param, OAL_SIZEOF(mac_beacon_param_stru));
 
     /* 发送消息 */
     l_ret = wal_send_cfg_event(pst_dev,
@@ -2720,7 +2720,7 @@ OAL_STATIC oal_int32 wal_cfg80211_add_beacon(
 
         pst_ssid_param = (mac_cfg_ssid_param_stru *)(st_write_msg.auc_value);
         pst_ssid_param->uc_ssid_len = uc_ssid_len;
-        oal_memcopy(pst_ssid_param->ac_ssid, puc_ie, uc_ssid_len);
+        oal_memcmp(pst_ssid_param->ac_ssid, puc_ie, uc_ssid_len);
 
         l_ret = wal_send_cfg_event(pst_dev,
                                WAL_MSG_TYPE_WRITE,
@@ -2800,7 +2800,7 @@ OAL_STATIC oal_int32 wal_cfg80211_set_ssid(oal_net_device_stru *pst_netdev,
 
     pst_ssid_param = (mac_cfg_ssid_param_stru *)(st_write_msg.auc_value);
     pst_ssid_param->uc_ssid_len = uc_ssid_len;
-    oal_memcopy(pst_ssid_param->ac_ssid, (oal_int8 *)puc_ssid_ie, uc_ssid_len);
+    oal_memcmp(pst_ssid_param->ac_ssid, (oal_int8 *)puc_ssid_ie, uc_ssid_len);
 
     l_ret = wal_send_cfg_event(pst_netdev,
                                WAL_MSG_TYPE_WRITE,
@@ -2864,8 +2864,8 @@ OAL_STATIC oal_int32 wal_cfg80211_fill_beacon_param(mac_vap_stru               *
     }
     else
     {
-        oal_memcopy(puc_beacon_info_tmp, pst_beacon_info->head, ul_beacon_head_len);
-        oal_memcopy(puc_beacon_info_tmp + ul_beacon_head_len, pst_beacon_info->tail, ul_beacon_tail_len);
+        oal_memcmp(puc_beacon_info_tmp, pst_beacon_info->head, ul_beacon_head_len);
+        oal_memcmp(puc_beacon_info_tmp + ul_beacon_head_len, pst_beacon_info->tail, ul_beacon_tail_len);
     }
 
     /* 为了复用51的解析接口，将新内核结构中的内容赋值给51接口识别的结构体，进而获取信息元素 */
@@ -2984,7 +2984,7 @@ OAL_STATIC oal_int32 wal_cfg80211_change_beacon(oal_wiphy_stru         *pst_wiph
     WAL_WRITE_MSG_HDR_INIT(&st_write_msg, WLAN_CFGID_CFG80211_CONFIG_BEACON, OAL_SIZEOF(mac_beacon_param_stru));
 
     /* 填写 msg 消息体 */
-    oal_memcopy(st_write_msg.auc_value, &st_beacon_param, OAL_SIZEOF(mac_beacon_param_stru));
+    oal_memcmp(st_write_msg.auc_value, &st_beacon_param, OAL_SIZEOF(mac_beacon_param_stru));
 
     /* 发送消息 */
     l_ret = wal_send_cfg_event(pst_netdev,
@@ -3213,7 +3213,7 @@ OAL_STATIC oal_int32 wal_cfg80211_start_ap(oal_wiphy_stru           *pst_wiphy,
          return -OAL_EFAIL;
     }
     oal_memset(auc_ssid_ie, 0, sizeof(auc_ssid_ie));
-    oal_memcopy(auc_ssid_ie, pst_ap_settings->ssid, (oal_uint32)l_ssid_len);
+    oal_memcmp(auc_ssid_ie, pst_ap_settings->ssid, (oal_uint32)l_ssid_len);
     puc_ssid_ie = auc_ssid_ie;
     uc_ssid_len = (oal_uint8)l_ssid_len;
 
@@ -3258,7 +3258,7 @@ OAL_STATIC oal_int32 wal_cfg80211_start_ap(oal_wiphy_stru           *pst_wiphy,
     WAL_WRITE_MSG_HDR_INIT(&st_write_msg, WLAN_CFGID_CFG80211_CONFIG_BEACON, OAL_SIZEOF(mac_beacon_param_stru));
 
     /* 填写 msg 消息体 */
-    oal_memcopy(st_write_msg.auc_value, &st_beacon_param, OAL_SIZEOF(mac_beacon_param_stru));
+    oal_memcmp(st_write_msg.auc_value, &st_beacon_param, OAL_SIZEOF(mac_beacon_param_stru));
 
     /* 发送消息 */
     l_ret = wal_send_cfg_event(pst_netdev,
@@ -3817,7 +3817,7 @@ OAL_STATIC oal_int32 wal_cfg80211_sched_scan_start(oal_wiphy_stru               
             OAM_WARNING_LOG1(0, OAM_SF_SCAN, "{wal_cfg80211_sched_scan_start:: wrong ssid_len[%d]!}", pst_ssid_tmp->ssid_len);
             continue;
         }
-        oal_memcopy(st_pno_scan_info.ast_match_ssid_set[l_loop].auc_ssid, pst_ssid_tmp->ssid, pst_ssid_tmp->ssid_len);
+        oal_memcmp(st_pno_scan_info.ast_match_ssid_set[l_loop].auc_ssid, pst_ssid_tmp->ssid, pst_ssid_tmp->ssid_len);
         st_pno_scan_info.ast_match_ssid_set[l_loop].auc_ssid[pst_ssid_tmp->ssid_len] = '\0';
         st_pno_scan_info.ast_match_ssid_set[l_loop].en_scan_ssid = wal_pno_scan_with_assigned_ssid(pst_ssid_tmp, pst_scan_ssid_list, pst_request->n_ssids);
         st_pno_scan_info.l_ssid_count++;
@@ -4145,7 +4145,7 @@ OAL_STATIC oal_int32 wal_cfg80211_del_station(oal_wiphy_stru        *pst_wiphy,
     }
 
     st_kick_user_param.us_reason_code = us_reason_code;
-    oal_memcopy(st_kick_user_param.auc_mac_addr, puc_mac, OAL_MAC_ADDR_LEN);
+    oal_memcmp(st_kick_user_param.auc_mac_addr, puc_mac, OAL_MAC_ADDR_LEN);
     uint_ret = wal_cfg80211_start_disconnect(pst_dev, &st_kick_user_param);
     if (OAL_SUCC != uint_ret)
     {
@@ -4372,7 +4372,7 @@ OAL_STATIC oal_int32 wal_cfg80211_get_station(oal_wiphy_stru        *pst_wiphy,
     st_write_msg.us_len = OAL_SIZEOF(st_dmac_query_request_event);
 
     /*3.2 填写 msg 消息体 */
-    oal_memcopy(st_write_msg.auc_value, pst_query_station_info, OAL_SIZEOF(dmac_query_station_info_request_event));
+    oal_memcmp(st_write_msg.auc_value, pst_query_station_info, OAL_SIZEOF(dmac_query_station_info_request_event));
 
     l_ret = wal_send_cfg_event(pst_dev,
                                WAL_MSG_TYPE_WRITE,
@@ -4728,7 +4728,7 @@ OAL_STATIC oal_wireless_dev_stru * wal_cfg80211_add_virtual_intf(oal_wiphy_stru 
         return ERR_PTR(-ENODEV);
     }
     pst_cfg_net_dev = pst_cfg_hmac_vap->pst_net_device;
-    oal_memcopy(auc_name, puc_name, OAL_MIN(OAL_IF_NAME_SIZE, OAL_STRLEN(puc_name)));
+    oal_memcmp(auc_name, puc_name, OAL_MIN(OAL_IF_NAME_SIZE, OAL_STRLEN(puc_name)));
 #if defined(_PRE_WLAN_FEATURE_FLOWCTL)
     pst_net_dev = oal_net_alloc_netdev_mqs(0, auc_name, oal_ether_setup, WAL_NETDEV_SUBQUEUE_MAX_NUM, 1);    /* 此函数第一个入参代表私有长度，此处不涉及为0 */
 #elif defined(_PRE_WLAN_FEATURE_OFFLOAD_FLOWCTL)
@@ -5047,8 +5047,8 @@ OAL_STATIC oal_int32 wal_cfg80211_set_pmksa(oal_wiphy_stru           *pst_wiphy,
     ***************************************************************************/
     WAL_WRITE_MSG_HDR_INIT(&st_write_msg, WLAN_CFGID_CFG80211_SET_PMKSA, OAL_SIZEOF(mac_cfg_pmksa_param_stru));
     pst_cfg_pmksa = (mac_cfg_pmksa_param_stru *)st_write_msg.auc_value;
-    oal_memcopy(pst_cfg_pmksa->auc_bssid, pmksa->bssid, WLAN_MAC_ADDR_LEN);
-    oal_memcopy(pst_cfg_pmksa->auc_pmkid, pmksa->pmkid, WLAN_PMKID_LEN);
+    oal_memcmp(pst_cfg_pmksa->auc_bssid, pmksa->bssid, WLAN_MAC_ADDR_LEN);
+    oal_memcmp(pst_cfg_pmksa->auc_pmkid, pmksa->pmkid, WLAN_PMKID_LEN);
 
     l_ret = wal_send_cfg_event(pst_net_device,
                                 WAL_MSG_TYPE_WRITE,
@@ -5095,8 +5095,8 @@ OAL_STATIC oal_int32 wal_cfg80211_del_pmksa(oal_wiphy_stru           *pst_wiphy,
     ***************************************************************************/
     WAL_WRITE_MSG_HDR_INIT(&st_write_msg, WLAN_CFGID_CFG80211_DEL_PMKSA, OAL_SIZEOF(mac_cfg_pmksa_param_stru));
     pst_cfg_pmksa = (mac_cfg_pmksa_param_stru *)st_write_msg.auc_value;
-    oal_memcopy(pst_cfg_pmksa->auc_bssid, pmksa->bssid, WLAN_MAC_ADDR_LEN);
-    oal_memcopy(pst_cfg_pmksa->auc_pmkid, pmksa->pmkid, WLAN_PMKID_LEN);
+    oal_memcmp(pst_cfg_pmksa->auc_bssid, pmksa->bssid, WLAN_MAC_ADDR_LEN);
+    oal_memcmp(pst_cfg_pmksa->auc_pmkid, pmksa->pmkid, WLAN_PMKID_LEN);
 
     l_ret = wal_send_cfg_event(pst_net_device,
                                 WAL_MSG_TYPE_WRITE,
@@ -5250,7 +5250,7 @@ OAL_STATIC oal_int32 wal_cfg80211_remain_on_channel(oal_wiphy_stru           *ps
 
 
     /* 3.2 填写 msg 消息体 */
-    oal_memcopy(st_write_msg.auc_value, &st_remain_on_channel, OAL_SIZEOF(mac_remain_on_channel_param_stru));
+    oal_memcmp(st_write_msg.auc_value, &st_remain_on_channel, OAL_SIZEOF(mac_remain_on_channel_param_stru));
 
     /* 3.3 发送消息 */
     l_ret = wal_send_cfg_event(pst_netdev,
@@ -5321,7 +5321,7 @@ OAL_STATIC oal_int32 wal_cfg80211_cancel_remain_on_channel(oal_wiphy_stru       
 
 
     /* 3.2 填写 msg 消息体 */
-    oal_memcopy(st_write_msg.auc_value, &st_cancel_remain_on_channel, OAL_SIZEOF(mac_remain_on_channel_param_stru));
+    oal_memcmp(st_write_msg.auc_value, &st_cancel_remain_on_channel, OAL_SIZEOF(mac_remain_on_channel_param_stru));
 
     /* 3.3 发送消息 */
     l_ret = wal_send_cfg_event(pst_netdev,
@@ -5465,7 +5465,7 @@ OAL_STATIC oal_uint32 wal_mgmt_do_tx(oal_net_device_stru    *pst_netdev,
     WAL_WRITE_MSG_HDR_INIT(&st_write_msg, WLAN_CFGID_CFG80211_MGMT_TX, OAL_SIZEOF(mac_mgmt_frame_stru));
 
     /* 3.2 填写 msg 消息体 */
-    oal_memcopy(st_write_msg.auc_value, pst_mgmt_tx_param, OAL_SIZEOF(mac_mgmt_frame_stru));
+    oal_memcmp(st_write_msg.auc_value, pst_mgmt_tx_param, OAL_SIZEOF(mac_mgmt_frame_stru));
 
     /* 3.3 发送消息 */
     l_ret = wal_send_cfg_event(pst_netdev,
@@ -5899,7 +5899,7 @@ oal_int32 wal_cfg80211_mgmt_tx(oal_wiphy_stru                *pst_wiphy,
 
 
     /* 3.2 填写 msg 消息体 */
-    oal_memcopy(st_write_msg.auc_value, &st_mgmt_tx, OAL_SIZEOF(st_mgmt_tx));
+    oal_memcmp(st_write_msg.auc_value, &st_mgmt_tx, OAL_SIZEOF(st_mgmt_tx));
 
     /* 3.3 发送消息 */
     l_ret = wal_send_cfg_event(pst_netdev,
@@ -6112,7 +6112,7 @@ OAL_STATIC oal_int32 wal_cfg80211_update_ft_ies(oal_wiphy_stru                  
     pst_mac_ft_ies = (mac_cfg80211_ft_ies_stru *)st_write_msg.auc_value;
     pst_mac_ft_ies->us_mdid = pst_fties->md;
     pst_mac_ft_ies->us_len  = pst_fties->ie_len;
-    oal_memcopy(pst_mac_ft_ies->auc_ie, pst_fties->ie, pst_fties->ie_len);
+    oal_memcmp(pst_mac_ft_ies->auc_ie, pst_fties->ie, pst_fties->ie_len);
 
     l_ret = wal_send_cfg_event(pst_netdev,
                                WAL_MSG_TYPE_WRITE,

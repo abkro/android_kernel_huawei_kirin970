@@ -573,7 +573,7 @@ oal_uint32  hmac_user_del(mac_vap_stru *pst_mac_vap, hmac_user_stru *pst_hmac_us
 #if (_PRE_OS_VERSION_WIN32 != _PRE_OS_VERSION)
     /* TBD: 添加此操作51DMT异常，暂看不出异常原因 */
     /* 用户 mac地址和idx 需至少一份有效，供dmac侧查找待删除的用户 */
-    oal_memcopy(pst_del_user_payload->auc_user_mac_addr, pst_mac_user->auc_user_mac_addr, WLAN_MAC_ADDR_LEN);
+    oal_memcmp(pst_del_user_payload->auc_user_mac_addr, pst_mac_user->auc_user_mac_addr, WLAN_MAC_ADDR_LEN);
 #endif
 
     /* 填充事件头 */
@@ -625,7 +625,7 @@ oal_uint32  hmac_user_del(mac_vap_stru *pst_mac_vap, hmac_user_stru *pst_hmac_us
         oal_itoa(hwifi_get_init_value(CUS_TAG_INI, WLAN_CFG_INIT_USED_MEM_FOR_START), pc_param, 8);
         oal_itoa(hwifi_get_init_value(CUS_TAG_INI, WLAN_CFG_INIT_USED_MEM_FOR_STOP), pc_tmp, 8);
         pc_param[OAL_STRLEN(pc_param)] = ' ';
-        oal_memcopy(pc_param + OAL_STRLEN(pc_param), pc_tmp, OAL_STRLEN(pc_tmp));
+        oal_memcmp(pc_param + OAL_STRLEN(pc_param), pc_tmp, OAL_STRLEN(pc_tmp));
 
         us_len = (oal_uint16)(OAL_STRLEN(pc_param) + 1);
         hmac_config_sdio_flowctrl(pst_mac_vap, us_len, pc_param);
@@ -869,7 +869,7 @@ oal_uint32  hmac_user_add(mac_vap_stru *pst_mac_vap, oal_uint8 *puc_mac_addr, oa
     st_80211_ucast_switch.en_frame_switch = OAL_SWITCH_ON;
     st_80211_ucast_switch.en_cb_switch = OAL_SWITCH_ON;
     st_80211_ucast_switch.en_dscr_switch = OAL_SWITCH_ON;
-    oal_memcopy(st_80211_ucast_switch.auc_user_macaddr,
+    oal_memcmp(st_80211_ucast_switch.auc_user_macaddr,
                 (const oal_void *)puc_mac_addr,
                 OAL_SIZEOF(st_80211_ucast_switch.auc_user_macaddr));
     hmac_config_80211_ucast_switch(pst_mac_vap,OAL_SIZEOF(st_80211_ucast_switch),(oal_uint8 *)&st_80211_ucast_switch);

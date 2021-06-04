@@ -647,10 +647,10 @@ static int kbase_platform_init(struct kbase_device *kbdev)
 
 		callbacks = (struct devfreq_cooling_ops *)POWER_MODEL_CALLBACKS;
 
-		kbdev->devfreq_cooling = of_devfreq_cooling_register_power(
-				kbdev->dev->of_node,
-				kbdev->devfreq,
-				callbacks);
+//		kbdev->devfreq_cooling = of_devfreq_cooling_register_power(
+//				kbdev->dev->of_node,
+//				kbdev->devfreq,
+//				callbacks);
 		if (IS_ERR_OR_NULL(kbdev->devfreq_cooling)) {
 			err = PTR_ERR(kbdev->devfreq_cooling);
 			dev_err(kbdev->dev,

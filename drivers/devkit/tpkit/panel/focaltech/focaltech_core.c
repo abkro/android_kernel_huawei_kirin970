@@ -167,7 +167,7 @@ struct ts_device_ops ts_focal_ops = {
 	.chip_fw_update_sd = focal_fw_update_sd,
 	.chip_get_info = focal_chip_get_info,
 	.chip_get_capacitance_test_type = focal_chip_get_capacitance_test_type,
-	.chip_set_info_flag = focal_set_info_flag,
+//	.chip_set_info_flag = focal_set_info_flag,
 	.chip_before_suspend = focal_before_suspend,
 	.chip_suspend = focal_suspend,
 	.chip_resume = focal_resume,
@@ -1715,11 +1715,11 @@ static int focal_irq_bottom_half(struct ts_cmd_node *in_cmd,
 	if (TS_BUS_I2C == g_focal_dev_data->ts_platform_data->bops->btype) {
 		if(g_focal_dev_data->ts_platform_data->feature_info.roi_info.roi_switch
 			&& g_focal_dev_data->ts_platform_data->feature_info.roi_info.roi_supported){
-			if (g_focal_pdata->roi_pkg_num_addr) {
-				focal_read_reg((u8)(g_focal_pdata->roi_pkg_num_addr), &roi_package_num);
-			} else {
-				focal_read_reg(FTS_ROI_PACKAGE_NUM, &roi_package_num);
-			}
+//			if (g_focal_pdata->roi_pkg_num_addr) {
+//				focal_read_reg((u8)(g_focal_pdata->roi_pkg_num_addr), &roi_package_num);
+//			} else {
+//				focal_read_reg(FTS_ROI_PACKAGE_NUM, &roi_package_num);
+//			}
 
 			if(roi_package_num > 0){
 				//focal_roi_data[ROI_DATA_READ_LENGTH] = roi_package_num;

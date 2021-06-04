@@ -1678,7 +1678,7 @@ void novatek_kit_parse_specific_dts(struct ts_kit_device_data *chip_data)
 		TS_LOG_INFO("can not get roi_supported value,default false\n");
 		nvt_ts->chip_data->ts_platform_data->feature_info.roi_info.roi_supported = 0;
 	}
-	retval = of_property_read_string(device, "producer", &producer);
+//	retval = of_property_read_string(device, "producer", &producer);
 	if (!retval && NULL != producer) {
 		strcpy(chip_data->module_name, producer);
 	}
@@ -2544,14 +2544,14 @@ static int novatek_chip_detect( struct ts_kit_platform_data *data)
 	nvt_ts->PS_Config_Lmt_Short_Rawdata_P = &PS_Config_Lmt_Short_Rawdata_P;
 	nvt_ts->PS_Config_Lmt_Short_Rawdata_N = &PS_Config_Lmt_Short_Rawdata_N;
 	nvt_ts->mADCOper_Cnt = &mADCOper_Cnt;
-	nvt_ts->PS_Config_Lmt_FW_Rawdata_P = &PS_Config_Lmt_FW_Rawdata_P;
+/*	nvt_ts->PS_Config_Lmt_FW_Rawdata_P = &PS_Config_Lmt_FW_Rawdata_P;
 	nvt_ts->PS_Config_Lmt_FW_Rawdata_N = &PS_Config_Lmt_FW_Rawdata_N;
 	nvt_ts->PS_Config_Lmt_FW_Rawdata_X_Delta = &PS_Config_Lmt_FW_Rawdata_X_Delta;
 	nvt_ts->PS_Config_Lmt_FW_Rawdata_Y_Delta = &PS_Config_Lmt_FW_Rawdata_Y_Delta;
 	nvt_ts->PS_Config_Lmt_Open_Rawdata_P_A = &PS_Config_Lmt_Open_Rawdata_P_A;
 	nvt_ts->PS_Config_Lmt_Open_Rawdata_N_A = &PS_Config_Lmt_Open_Rawdata_N_A;
 	nvt_ts->NVT_TDDI_AIN_X = &AIN_X;
-	nvt_ts->NVT_TDDI_AIN_Y = &AIN_Y;
+	nvt_ts->NVT_TDDI_AIN_Y = &AIN_Y; */
 
 #if TOUCH_KEY_NUM > 0
 	nvt_ts->max_button_num = TOUCH_KEY_NUM;

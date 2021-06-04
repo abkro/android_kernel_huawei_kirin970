@@ -582,7 +582,7 @@ OAL_STATIC oal_int32  wal_atcmsrv_ioctl_set_always_tx(oal_net_device_stru *pst_n
     /***************************************************************************
                                 抛事件到wal层处理
     ***************************************************************************/
-    oal_memcopy(st_write_msg.auc_value, auc_param, OAL_STRLEN((oal_int8*)auc_param));
+    oal_memcmp(st_write_msg.auc_value, auc_param, OAL_STRLEN((oal_int8*)auc_param));
 
     st_write_msg.auc_value[OAL_STRLEN((oal_int8*)auc_param)] = '\0';
     us_len = (oal_uint16)(OAL_STRLEN((oal_int8*)auc_param) + 1);
@@ -1211,7 +1211,7 @@ OAL_STATIC oal_int32  wal_atcmsrv_ioctl_set_always_rx(oal_net_device_stru *pst_n
     /***************************************************************************
                                 抛事件到wal层处理
     ***************************************************************************/
-    oal_memcopy(st_write_msg.auc_value, auc_param, OAL_STRLEN((oal_int8*)auc_param));
+    oal_memcmp(st_write_msg.auc_value, auc_param, OAL_STRLEN((oal_int8*)auc_param));
 
     st_write_msg.auc_value[OAL_STRLEN((oal_int8*)auc_param)] = '\0';
     us_len = (oal_uint16)(OAL_STRLEN((oal_int8*)auc_param) + 1);
@@ -1421,7 +1421,7 @@ OAL_STATIC oal_int32 wal_atcmdsrv_efuse_regs_read(oal_net_device_stru *pst_net_d
     /***************************************************************************
                                 抛事件到wal层处理
     ***************************************************************************/
-    oal_memcopy(st_write_msg.auc_value, auc_param, OAL_STRLEN((oal_int8*)auc_param));
+    oal_memcmp(st_write_msg.auc_value, auc_param, OAL_STRLEN((oal_int8*)auc_param));
     st_write_msg.auc_value[OAL_STRLEN((oal_int8*)auc_param)] = '\0';
 
     us_len = (oal_uint16)(OAL_STRLEN((oal_int8*)auc_param) + 1);

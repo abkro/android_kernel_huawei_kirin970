@@ -656,7 +656,7 @@ OAL_STATIC oal_uint32  oam_event_print_to_sdt(
     st_event.st_event_hdr.en_event_type  = en_event_type;
     oal_set_mac_addr(st_event.st_event_hdr.auc_user_macaddr, puc_mac_hdr_addr);
 
-    oal_memcopy((oal_void *)st_event.auc_event_info,
+    oal_memcmp((oal_void *)st_event.auc_event_info,
                 (const oal_void *)puc_string,
                  OAM_EVENT_INFO_MAX_LEN);
 
@@ -667,7 +667,7 @@ OAL_STATIC oal_uint32  oam_event_print_to_sdt(
         return OAL_ERR_CODE_PTR_NULL;
     }
 
-    oal_memcopy((oal_void *)oal_netbuf_data(pst_netbuf),
+    oal_memcmp((oal_void *)oal_netbuf_data(pst_netbuf),
                 (const oal_void *)&st_event,
                 OAM_EVENT_STRU_SIZE);
 
@@ -917,7 +917,7 @@ oal_uint32  oam_ota_report_to_sdt(oal_uint8    *puc_param_one_addr,
         case OAM_OTA_TYPE_HMAC_VAP_MEMBER_SIZE:
         case OAM_OTA_TYPE_DMAC_VAP_MEMBER_SIZE:
             pst_ota_data->st_ota_hdr.us_ota_data_len = us_param_one_len;
-            oal_memcopy((oal_void *)pst_ota_data->auc_ota_data,
+            oal_memcmp((oal_void *)pst_ota_data->auc_ota_data,
                         (const oal_void *)puc_param_one_addr,
                         (oal_uint32)us_param_one_len);
 
@@ -930,12 +930,12 @@ oal_uint32  oam_ota_report_to_sdt(oal_uint8    *puc_param_one_addr,
             pst_ota_data->st_ota_hdr.us_ota_data_len  = us_param_one_len + us_param_two_len;
 
             /* 复制帧头 */
-            oal_memcopy((oal_void *)pst_ota_data->auc_ota_data,
+            oal_memcmp((oal_void *)pst_ota_data->auc_ota_data,
                         (const oal_void *)puc_param_one_addr,
                         (oal_uint32)us_param_one_len);
 
             /* 复制帧体 */
-            oal_memcopy((oal_void *)(pst_ota_data->auc_ota_data + us_param_one_len),
+            oal_memcmp((oal_void *)(pst_ota_data->auc_ota_data + us_param_one_len),
                         (const oal_void *)puc_param_two_addr,
                         (oal_uint32)us_param_two_len);
 
@@ -1118,11 +1118,11 @@ OAL_STATIC oal_uint32  oam_report_80211_frame_to_sdt(
 #endif
 
     /* 复制帧头 */
-    oal_memcopy((oal_void *)pst_ota_data->auc_ota_data,
+    oal_memcmp((oal_void *)pst_ota_data->auc_ota_data,
                 (const oal_void *)puc_mac_hdr_addr,
                 (oal_uint32)uc_mac_hdr_len);
     /* 复制帧体 */
-    oal_memcopy((oal_void *)(pst_ota_data->auc_ota_data + uc_mac_hdr_len),
+    oal_memcmp((oal_void *)(pst_ota_data->auc_ota_data + uc_mac_hdr_len),
                 (const oal_void *)puc_mac_body_addr,
                 (oal_uint32)(us_mac_frame_len - uc_mac_hdr_len));
 
@@ -1305,7 +1305,7 @@ OAL_STATIC oal_uint32  oam_report_dscr_to_sdt(
 #endif
 
     /* 复制数据,填写ota数据 */
-    oal_memcopy((oal_void *)pst_ota_data->auc_ota_data,
+    oal_memcmp((oal_void *)pst_ota_data->auc_ota_data,
                 (const oal_void *)puc_dscr_addr,
                 (oal_uint32)us_dscr_len);
 
@@ -1450,10 +1450,10 @@ OAL_STATIC oal_uint32  oam_report_beacon_to_sdt(
 #endif
 
     /* 复制数据,填写ota数据 */
-    oal_memcopy((oal_void *)pst_ota_data->auc_ota_data,
+    oal_memcmp((oal_void *)pst_ota_data->auc_ota_data,
                 (const oal_void *)puc_beacon_hdr_addr,
                 (oal_uint32)uc_beacon_hdr_len);
-    oal_memcopy((oal_void *)(pst_ota_data->auc_ota_data + uc_beacon_hdr_len),
+    oal_memcmp((oal_void *)(pst_ota_data->auc_ota_data + uc_beacon_hdr_len),
                 (const oal_void *)puc_beacon_body_addr,
                 (oal_uint32)(us_beacon_len - uc_beacon_hdr_len));
 
@@ -1609,7 +1609,7 @@ OAL_STATIC oal_uint32  oam_report_eth_frame_to_sdt(
 #endif
 
     /* 复制数据,填写ota数据 */
-    oal_memcopy((oal_void *)pst_ota_data->auc_ota_data,
+    oal_memcmp((oal_void *)pst_ota_data->auc_ota_data,
                 (const oal_void *)puc_eth_frame_hdr_addr,
                 (oal_uint32)us_eth_frame_len);
 
@@ -1725,7 +1725,7 @@ OAL_STATIC oal_uint32  oam_report_netbuf_cb_to_sdt(
 #endif
 
     /* 复制数据,填写ota数据 */
-    oal_memcopy((oal_void *)pst_ota_data->auc_ota_data,
+    oal_memcmp((oal_void *)pst_ota_data->auc_ota_data,
                 (const oal_void *)puc_netbuf_cb,
                 OAM_SKB_CB_LEN);
 
@@ -1817,7 +1817,7 @@ OAL_STATIC oal_uint32  oam_report_timer_track_to_sdt(
     st_timer_track_info.en_type     = en_type;
 
     /* 复制数据,填写ota数据 */
-    oal_memcopy((oal_void *)pst_ota_data->auc_ota_data,
+    oal_memcmp((oal_void *)pst_ota_data->auc_ota_data,
                 (const oal_void *)&st_timer_track_info,
                 OAL_SIZEOF(st_timer_track_info));
 
@@ -1893,7 +1893,7 @@ OAL_STATIC oal_uint32  oam_report_mpdu_num_to_sdt(
 #endif
 
     /* 复制数据,填写ota数据 */
-    oal_memcopy((oal_void *)pst_ota_data->auc_ota_data,
+    oal_memcmp((oal_void *)pst_ota_data->auc_ota_data,
                 (const oal_void *)pst_mpdu_num,
                 OAL_SIZEOF(oam_report_mpdu_num_stru));
 
@@ -1964,7 +1964,7 @@ oal_uint32  oam_report_dft_params_to_sdt(
 #endif
 
     /* 复制数据,填写ota数据 */
-    oal_memcopy((oal_void *)pst_ota_data->auc_ota_data,
+    oal_memcmp((oal_void *)pst_ota_data->auc_ota_data,
                 (const oal_void *)puc_param,
                 us_param_len);
 

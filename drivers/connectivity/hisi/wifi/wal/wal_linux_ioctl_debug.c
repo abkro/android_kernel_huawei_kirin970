@@ -1503,7 +1503,7 @@ OAL_STATIC oal_uint32  wal_hipriv_set_ether_switch(oal_net_device_stru *pst_net_
     WAL_WRITE_MSG_HDR_INIT(&st_write_msg, WLAN_CFGID_ETH_SWITCH, OAL_SIZEOF(st_eth_switch_param));
 
     /* 设置配置命令参数 */
-    oal_memcopy(st_write_msg.auc_value,
+    oal_memcmp(st_write_msg.auc_value,
                 (const oal_void *)&st_eth_switch_param,
                 OAL_SIZEOF(st_eth_switch_param));
 
@@ -1603,7 +1603,7 @@ OAL_STATIC oal_uint32  wal_hipriv_set_80211_ucast_switch(oal_net_device_stru *ps
     WAL_WRITE_MSG_HDR_INIT(&st_write_msg, WLAN_CFGID_80211_UCAST_SWITCH, OAL_SIZEOF(st_80211_ucast_switch));
 
     /* 设置配置命令参数 */
-    oal_memcopy(st_write_msg.auc_value,
+    oal_memcmp(st_write_msg.auc_value,
                 (const oal_void *)&st_80211_ucast_switch,
                 OAL_SIZEOF(st_80211_ucast_switch));
 
@@ -1672,7 +1672,7 @@ OAL_STATIC oal_uint32  wal_hipriv_set_txop_ps_machw(oal_net_device_stru *pst_net
     WAL_WRITE_MSG_HDR_INIT(&st_write_msg, WLAN_CFGID_TXOP_PS_MACHW, OAL_SIZEOF(st_txopps_machw_param));
 
     /* 设置配置命令参数 */
-    oal_memcopy(st_write_msg.auc_value,
+    oal_memcmp(st_write_msg.auc_value,
                 (const oal_void *)&st_txopps_machw_param,
                 OAL_SIZEOF(st_txopps_machw_param));
 
@@ -1764,7 +1764,7 @@ OAL_STATIC oal_uint32  wal_hipriv_set_80211_mcast_switch(oal_net_device_stru *ps
     WAL_WRITE_MSG_HDR_INIT(&st_write_msg, WLAN_CFGID_80211_MCAST_SWITCH, OAL_SIZEOF(st_80211_mcast_switch));
 
     /* 设置配置命令参数 */
-    oal_memcopy(st_write_msg.auc_value,
+    oal_memcmp(st_write_msg.auc_value,
                 (const oal_void *)&st_80211_mcast_switch,
                 OAL_SIZEOF(st_80211_mcast_switch));
 
@@ -1853,7 +1853,7 @@ OAL_STATIC oal_uint32  wal_hipriv_set_all_80211_ucast(oal_net_device_stru *pst_n
 
 
     /* 设置广播mac地址 */
-    oal_memcopy(st_80211_ucast_switch.auc_user_macaddr, BROADCAST_MACADDR, WLAN_MAC_ADDR_LEN);
+    oal_memcmp(st_80211_ucast_switch.auc_user_macaddr, BROADCAST_MACADDR, WLAN_MAC_ADDR_LEN);
 
     /***************************************************************************
                                 抛事件到wal层处理
@@ -1861,7 +1861,7 @@ OAL_STATIC oal_uint32  wal_hipriv_set_all_80211_ucast(oal_net_device_stru *pst_n
     WAL_WRITE_MSG_HDR_INIT(&st_write_msg, WLAN_CFGID_80211_UCAST_SWITCH, OAL_SIZEOF(st_80211_ucast_switch));
 
     /* 设置配置命令参数 */
-    oal_memcopy(st_write_msg.auc_value,
+    oal_memcmp(st_write_msg.auc_value,
                 (const oal_void *)&st_80211_ucast_switch,
                 OAL_SIZEOF(st_80211_ucast_switch));
 
@@ -2058,7 +2058,7 @@ OAL_STATIC oal_uint32  wal_hipriv_set_rssi_switch(oal_net_device_stru *pst_net_d
     WAL_WRITE_MSG_HDR_INIT(&st_write_msg, WLAN_CFGID_RSSI_SWITCH, OAL_SIZEOF(st_rssi_switch));
 
     /* 设置配置命令参数 */
-    oal_memcopy(st_write_msg.auc_value,
+    oal_memcmp(st_write_msg.auc_value,
                 (const oal_void *)&st_rssi_switch,
                 OAL_SIZEOF(st_rssi_switch));
 
@@ -2138,7 +2138,7 @@ OAL_STATIC oal_uint32  wal_hipriv_set_probe_switch(oal_net_device_stru *pst_net_
     WAL_WRITE_MSG_HDR_INIT(&st_write_msg, WLAN_CFGID_PROBE_SWITCH, OAL_SIZEOF(st_probe_switch));
 
     /* 设置配置命令参数 */
-    oal_memcopy(st_write_msg.auc_value,
+    oal_memcmp(st_write_msg.auc_value,
                 (const oal_void *)&st_probe_switch,
                 OAL_SIZEOF(st_probe_switch));
 
@@ -2184,7 +2184,7 @@ OAL_STATIC oal_uint32  wal_hipriv_get_mpdu_num(oal_net_device_stru *pst_net_dev,
     WAL_WRITE_MSG_HDR_INIT(&st_write_msg, WLAN_CFGID_GET_MPDU_NUM, OAL_SIZEOF(st_param));
 
     /* 设置配置命令参数 */
-    oal_memcopy(st_write_msg.auc_value,
+    oal_memcmp(st_write_msg.auc_value,
                 (const oal_void *)&st_param,
                 OAL_SIZEOF(st_param));
 
@@ -3535,7 +3535,7 @@ OAL_STATIC oal_uint32  wal_hipriv_dbb_scaling_amend(oal_net_device_stru *pst_net
     WAL_WRITE_MSG_HDR_INIT(&st_write_msg, WLAN_CFGID_DBB_SCALING_AMEND, us_len);
 
     /* 设置配置命令参数 */
-    oal_memcopy(st_write_msg.auc_value,
+    oal_memcmp(st_write_msg.auc_value,
                 (const oal_void *)&st_dbb_scaling,
                 us_len);
 
@@ -4157,7 +4157,7 @@ OAL_STATIC oal_uint32  wal_hipriv_start_join(oal_net_device_stru *pst_net_dev, o
     }
 
     /* 将要关联AP的编号复制到事件msg中，AP编号是数字的ASSCI码，不超过4个字节 */
-    oal_memcopy((oal_int8 *)st_write_msg.auc_value, (oal_int8 *)ac_name, OAL_SIZEOF(oal_int32));
+    oal_memcmp((oal_int8 *)st_write_msg.auc_value, (oal_int8 *)ac_name, OAL_SIZEOF(oal_int32));
 
     l_ret = wal_send_cfg_event(pst_net_dev,
                                WAL_MSG_TYPE_WRITE,
@@ -5022,7 +5022,7 @@ OAL_STATIC oal_uint32  wal_hipriv_reset_device(oal_net_device_stru *pst_cfg_net_
     /***************************************************************************
                                 抛事件到wal层处理
     ***************************************************************************/
-    oal_memcopy(st_write_msg.auc_value, pc_param, OAL_STRLEN(pc_param));
+    oal_memcmp(st_write_msg.auc_value, pc_param, OAL_STRLEN(pc_param));
 
     st_write_msg.auc_value[OAL_STRLEN(pc_param)] = '\0';
 
@@ -5062,7 +5062,7 @@ OAL_STATIC oal_uint32  wal_hipriv_reset_operate(oal_net_device_stru *pst_cfg_net
     /***************************************************************************
                                 抛事件到wal层处理
     ***************************************************************************/
-    oal_memcopy(st_write_msg.auc_value, pc_param, OAL_STRLEN(pc_param));
+    oal_memcmp(st_write_msg.auc_value, pc_param, OAL_STRLEN(pc_param));
 
     st_write_msg.auc_value[OAL_STRLEN(pc_param)] = '\0';
 
@@ -5104,7 +5104,7 @@ OAL_STATIC oal_uint32  wal_hipriv_uapsd_debug(oal_net_device_stru *pst_cfg_net_d
     /***************************************************************************
                                 抛事件到wal层处理
     ***************************************************************************/
-    oal_memcopy(st_write_msg.auc_value, pc_param, OAL_STRLEN(pc_param));
+    oal_memcmp(st_write_msg.auc_value, pc_param, OAL_STRLEN(pc_param));
 
     st_write_msg.auc_value[OAL_STRLEN(pc_param)] = '\0';
 
@@ -5173,7 +5173,7 @@ OAL_STATIC oal_uint32  wal_hipriv_set_phy_stat_en(oal_net_device_stru *pst_cfg_n
     WAL_WRITE_MSG_HDR_INIT(&st_write_msg, WLAN_CFGID_PHY_STAT_EN, OAL_SIZEOF(st_phy_stat_node_idx));
 
     /* 填写消息体，参数 */
-    oal_memcopy(st_write_msg.auc_value, &st_phy_stat_node_idx, OAL_SIZEOF(st_phy_stat_node_idx));
+    oal_memcmp(st_write_msg.auc_value, &st_phy_stat_node_idx, OAL_SIZEOF(st_phy_stat_node_idx));
 
     l_ret = wal_send_cfg_event(pst_cfg_net_dev,
                                WAL_MSG_TYPE_WRITE,
@@ -5275,7 +5275,7 @@ OAL_STATIC oal_uint32  wal_hipriv_usr_queue_stat(oal_net_device_stru *pst_net_de
     WAL_WRITE_MSG_HDR_INIT(&st_write_msg, WLAN_CFGID_USR_QUEUE_STAT, OAL_SIZEOF(st_usr_queue_param));
 
     /* 填写消息体，参数 */
-    oal_memcopy(st_write_msg.auc_value, &st_usr_queue_param, OAL_SIZEOF(st_usr_queue_param));
+    oal_memcmp(st_write_msg.auc_value, &st_usr_queue_param, OAL_SIZEOF(st_usr_queue_param));
 
     l_ret = wal_send_cfg_event(pst_net_dev,
                                WAL_MSG_TYPE_WRITE,
@@ -5348,7 +5348,7 @@ OAL_STATIC oal_uint32  wal_hipriv_report_all_stat(oal_net_device_stru *pst_net_d
 
     /* sh hipriv.sh "Hisilicon0 reprt_all_stat type(phy/machw/mgmt/irq/all)  0|1" */
     /* 获取repot类型 */
-    oal_memcopy(st_write_msg.auc_value, pc_param, OAL_STRLEN(pc_param));
+    oal_memcmp(st_write_msg.auc_value, pc_param, OAL_STRLEN(pc_param));
     st_write_msg.auc_value[OAL_STRLEN(pc_param)] = '\0';
     us_len = (oal_uint16)(OAL_STRLEN(pc_param) + 1);
     /***************************************************************************
@@ -5425,7 +5425,7 @@ OAL_STATIC oal_uint32  wal_hipriv_set_ampdu_aggr_num(oal_net_device_stru *pst_ne
     WAL_WRITE_MSG_HDR_INIT(&st_write_msg, WLAN_CFGID_SET_AGGR_NUM, OAL_SIZEOF(st_aggr_num_ctl));
 
     /* 填写消息体，参数 */
-    oal_memcopy(st_write_msg.auc_value, &st_aggr_num_ctl, OAL_SIZEOF(st_aggr_num_ctl));
+    oal_memcmp(st_write_msg.auc_value, &st_aggr_num_ctl, OAL_SIZEOF(st_aggr_num_ctl));
 
     l_ret = wal_send_cfg_event(pst_net_dev,
                                WAL_MSG_TYPE_WRITE,
@@ -5977,8 +5977,8 @@ OAL_STATIC oal_uint32  wal_hipriv_alg(oal_net_device_stru *pst_net_dev, oal_int8
     ***************************************************************************/
     us_config_len = OAL_SIZEOF(mac_ioctl_alg_config_stru) + us_param_len+ 1;
     WAL_WRITE_MSG_HDR_INIT(&st_write_msg, WLAN_CFGID_ALG, us_config_len);
-    oal_memcopy(st_write_msg.auc_value, &st_alg_config, OAL_SIZEOF(mac_ioctl_alg_config_stru));
-    oal_memcopy(st_write_msg.auc_value + OAL_SIZEOF(mac_ioctl_alg_config_stru), pc_param, us_param_len + 1);
+    oal_memcmp(st_write_msg.auc_value, &st_alg_config, OAL_SIZEOF(mac_ioctl_alg_config_stru));
+    oal_memcmp(st_write_msg.auc_value + OAL_SIZEOF(mac_ioctl_alg_config_stru), pc_param, us_param_len + 1);
     l_ret = wal_send_cfg_event(pst_net_dev,
                                WAL_MSG_TYPE_WRITE,
                                WAL_MSG_WRITE_MSG_HDR_LENGTH + us_config_len,
@@ -6892,7 +6892,7 @@ OAL_STATIC oal_uint32 wal_hipriv_set_default_key(oal_net_device_stru *pst_net_de
                               抛事件到wal层处理
     ***************************************************************************/
     /*3.2 填写 msg 消息体 */
-    oal_memcopy(st_write_msg.auc_value, &st_payload_params, OAL_SIZEOF(mac_setdefaultkey_param_stru));
+    oal_memcmp(st_write_msg.auc_value, &st_payload_params, OAL_SIZEOF(mac_setdefaultkey_param_stru));
     WAL_WRITE_MSG_HDR_INIT(&st_write_msg, WLAN_CFGID_DEFAULT_KEY, OAL_SIZEOF(mac_setdefaultkey_param_stru));
 
     l_ret = wal_send_cfg_event(pst_net_dev,
@@ -7014,7 +7014,7 @@ OAL_STATIC oal_uint32 wal_hipriv_test_add_key(oal_net_device_stru *pst_net_dev, 
         auc_key[ul_char_index/2] = (oal_uint8)(auc_key[ul_char_index/2] * 16 * (ul_char_index % 2) + oal_strtohex(pc_key));
         pc_key++;
     }
-    oal_memcopy(st_payload_params.st_key.auc_key, auc_key, (oal_uint32)st_payload_params.st_key.key_len);
+    oal_memcmp(st_payload_params.st_key.auc_key, auc_key, (oal_uint32)st_payload_params.st_key.key_len);
 
 
     /* 获取目的地址 */
@@ -7037,7 +7037,7 @@ OAL_STATIC oal_uint32 wal_hipriv_test_add_key(oal_net_device_stru *pst_net_dev, 
     ***************************************************************************/
     /*3.2 填写 msg 消息体 */
     us_len = (oal_uint32)OAL_SIZEOF(mac_addkey_param_stru);
-    oal_memcopy((oal_int8*)st_write_msg.auc_value, (oal_int8*)&st_payload_params, (oal_uint32)us_len);
+    oal_memcmp((oal_int8*)st_write_msg.auc_value, (oal_int8*)&st_payload_params, (oal_uint32)us_len);
     WAL_WRITE_MSG_HDR_INIT(&st_write_msg, WLAN_CFGID_ADD_KEY, us_len);
 
     l_ret = wal_send_cfg_event(pst_net_dev,
@@ -7543,7 +7543,7 @@ OAL_STATIC oal_uint32  wal_hipriv_2040_coext_info(oal_net_device_stru *pst_net_d
     /***************************************************************************
                               抛事件到wal层处理
     ***************************************************************************/
-    oal_memcopy(st_write_msg.auc_value, pc_param, OAL_STRLEN(pc_param));
+    oal_memcmp(st_write_msg.auc_value, pc_param, OAL_STRLEN(pc_param));
 
     st_write_msg.auc_value[OAL_STRLEN(pc_param)] = '\0';
 
@@ -7577,7 +7577,7 @@ OAL_STATIC oal_uint32  wal_hipriv_get_version(oal_net_device_stru *pst_net_dev, 
     /***************************************************************************
                               抛事件到wal层处理
     ***************************************************************************/
-    oal_memcopy(st_write_msg.auc_value, pc_param, OAL_STRLEN(pc_param));
+    oal_memcmp(st_write_msg.auc_value, pc_param, OAL_STRLEN(pc_param));
 
     st_write_msg.auc_value[OAL_STRLEN(pc_param)] = '\0';
 
@@ -9456,7 +9456,7 @@ OAL_STATIC oal_uint32  wal_hipriv_report_thrput_stat(oal_net_device_stru *pst_ne
     WAL_WRITE_MSG_HDR_INIT(&st_write_msg, WLAN_CFGID_USR_THRPUT_STAT, OAL_SIZEOF(st_usr_thrput));
 
     /* 填写消息体，参数 */
-    oal_memcopy(st_write_msg.auc_value, &st_usr_thrput, OAL_SIZEOF(st_usr_thrput));
+    oal_memcmp(st_write_msg.auc_value, &st_usr_thrput, OAL_SIZEOF(st_usr_thrput));
 
     l_ret = wal_send_cfg_event(pst_net_dev,
                                WAL_MSG_TYPE_WRITE,
@@ -9664,7 +9664,7 @@ OAL_STATIC oal_uint32  wal_hipriv_report_ampdu_stat(oal_net_device_stru *pst_net
     WAL_WRITE_MSG_HDR_INIT(&st_write_msg, WLAN_CFGID_REPORT_AMPDU_STAT, OAL_SIZEOF(st_ampdu_param));
 
     /* 填写消息体，参数 */
-    oal_memcopy(st_write_msg.auc_value, &st_ampdu_param, OAL_SIZEOF(st_ampdu_param));
+    oal_memcmp(st_write_msg.auc_value, &st_ampdu_param, OAL_SIZEOF(st_ampdu_param));
 
     l_ret = wal_send_cfg_event(pst_net_dev,
                                WAL_MSG_TYPE_WRITE,
@@ -9889,7 +9889,7 @@ OAL_STATIC oal_uint32  wal_hipriv_set_rx_filter_val(oal_net_device_stru *pst_net
     WAL_WRITE_MSG_HDR_INIT(&st_write_msg, WLAN_CFGID_RX_FILTER_VAL, OAL_SIZEOF(hmac_cfg_rx_filter_stru));
 
     /* 设置配置命令参数 */
-    oal_memcopy(st_write_msg.auc_value, &st_rx_filter_val, OAL_SIZEOF(hmac_cfg_rx_filter_stru));
+    oal_memcmp(st_write_msg.auc_value, &st_rx_filter_val, OAL_SIZEOF(hmac_cfg_rx_filter_stru));
 
     l_ret = wal_send_cfg_event(pst_net_dev,
                                WAL_MSG_TYPE_WRITE,
@@ -9930,7 +9930,7 @@ OAL_STATIC oal_uint32  wal_hipriv_get_rx_filter_val(oal_net_device_stru *pst_net
     WAL_WRITE_MSG_HDR_INIT(&st_write_msg, WLAN_CFGID_RX_FILTER_VAL, OAL_SIZEOF(hmac_cfg_rx_filter_stru));
 
     /* 设置配置命令参数 */
-    oal_memcopy(st_write_msg.auc_value, &st_rx_filter_val, OAL_SIZEOF(hmac_cfg_rx_filter_stru));
+    oal_memcmp(st_write_msg.auc_value, &st_rx_filter_val, OAL_SIZEOF(hmac_cfg_rx_filter_stru));
 
     l_ret = wal_send_cfg_event(pst_net_dev,
                                WAL_MSG_TYPE_WRITE,
@@ -10003,7 +10003,7 @@ OAL_STATIC oal_uint32  wal_hipriv_get_rx_filter_en(oal_net_device_stru *pst_net_
     /***************************************************************************
                               抛事件到wal层处理
     ***************************************************************************/
-    oal_memcopy(st_write_msg.auc_value, pc_param, OAL_STRLEN(pc_param));
+    oal_memcmp(st_write_msg.auc_value, pc_param, OAL_STRLEN(pc_param));
 
     st_write_msg.auc_value[OAL_STRLEN(pc_param)] = '\0';
 
@@ -10062,7 +10062,7 @@ OAL_STATIC oal_uint32  wal_hipriv_scan_test(oal_net_device_stru *pst_net_dev, oa
 
     /* 设置配置命令参数 */
     pst_scan_test = (mac_ioctl_scan_test_config_stru *)(st_write_msg.auc_value);
-    oal_memcopy(pst_scan_test->ac_scan_type, ac_scan_type, sizeof(ac_scan_type));
+    oal_memcmp(pst_scan_test->ac_scan_type, ac_scan_type, sizeof(ac_scan_type));
     pst_scan_test->en_bandwidth = uc_bandwidth;
 
     l_ret = wal_send_cfg_event(pst_net_dev,
@@ -10118,7 +10118,7 @@ OAL_STATIC oal_uint32  wal_hipriv_freq_adjust(oal_net_device_stru *pst_net_dev, 
     WAL_WRITE_MSG_HDR_INIT(&st_write_msg, WLAN_CFGID_FREQ_ADJUST, OAL_SIZEOF(st_freq_adjust_ctl));
 
     /* 填写消息体，参数 */
-    oal_memcopy(st_write_msg.auc_value, &st_freq_adjust_ctl, OAL_SIZEOF(st_freq_adjust_ctl));
+    oal_memcmp(st_write_msg.auc_value, &st_freq_adjust_ctl, OAL_SIZEOF(st_freq_adjust_ctl));
 
     l_ret = wal_send_cfg_event(pst_net_dev,
                                WAL_MSG_TYPE_WRITE,
@@ -10155,7 +10155,7 @@ OAL_STATIC oal_uint32  wal_hipriv_acs(oal_net_device_stru *pst_net_dev, oal_int8
     /***************************************************************************
                                 抛事件到wal层处理
     ***************************************************************************/
-    oal_memcopy(st_write_msg.auc_value, pc_param, OAL_STRLEN(pc_param));
+    oal_memcmp(st_write_msg.auc_value, pc_param, OAL_STRLEN(pc_param));
 
     st_write_msg.auc_value[OAL_STRLEN(pc_param)] = '\0';
 
@@ -10898,7 +10898,7 @@ OAL_STATIC oal_uint32  wal_hipriv_data_acq(oal_net_device_stru *pst_net_dev, oal
     {
         ++pc_param;
     }
-    oal_memcopy(st_write_msg.auc_value, pc_param, OAL_STRLEN(pc_param));
+    oal_memcmp(st_write_msg.auc_value, pc_param, OAL_STRLEN(pc_param));
 
     st_write_msg.auc_value[OAL_STRLEN(pc_param)] = '\0';
 
@@ -11998,7 +11998,7 @@ OAL_STATIC  oal_uint32 wal_hipriv_test_send_action(oal_net_device_stru *pst_net_
     /***************************************************************************
                               抛事件到wal层处理
     ***************************************************************************/
-    oal_memcopy(st_write_msg.auc_value, &st_action_param, OAL_SIZEOF(mac_cfg_send_action_param_stru));
+    oal_memcmp(st_write_msg.auc_value, &st_action_param, OAL_SIZEOF(mac_cfg_send_action_param_stru));
     WAL_WRITE_MSG_HDR_INIT(&st_write_msg, WLAN_CFGID_SEND_ACTION, OAL_SIZEOF(mac_cfg_send_action_param_stru));
 
     l_cfg_rst = wal_send_cfg_event(pst_net_dev,
@@ -12089,7 +12089,7 @@ OAL_STATIC oal_uint32  wal_hipriv_send_nulldata(oal_net_device_stru *pst_net_dev
                                 抛事件到wal层处理
     ***************************************************************************/
     WAL_WRITE_MSG_HDR_INIT(&st_write_msg, WLAN_CFGID_SEND_NULLDATA, OAL_SIZEOF(mac_cfg_tx_nulldata_stru));
-    oal_memcopy((oal_void *)st_write_msg.auc_value,
+    oal_memcmp((oal_void *)st_write_msg.auc_value,
                 (const oal_void *)pst_tx_nulldata,
                 OAL_SIZEOF(mac_cfg_tx_nulldata_stru));
 
@@ -12292,7 +12292,7 @@ OAL_STATIC oal_uint32  wal_hipriv_set_p2p_ps(oal_net_device_stru *pst_net_dev, o
                         st_p2p_ops_param.uc_ct_window);
         us_len = OAL_SIZEOF(mac_cfg_p2p_ops_param_stru);
         WAL_WRITE_MSG_HDR_INIT(&st_write_msg, WLAN_CFGID_SET_P2P_PS_OPS, OAL_SIZEOF(mac_cfg_p2p_ops_param_stru));
-        oal_memcopy(st_write_msg.auc_value, &st_p2p_ops_param, OAL_SIZEOF(mac_cfg_p2p_ops_param_stru));
+        oal_memcmp(st_write_msg.auc_value, &st_p2p_ops_param, OAL_SIZEOF(mac_cfg_p2p_ops_param_stru));
     }
     else if (0 == (oal_strcmp("noa", ac_name)))
     {
@@ -12309,7 +12309,7 @@ OAL_STATIC oal_uint32  wal_hipriv_set_p2p_ps(oal_net_device_stru *pst_net_dev, o
                         st_p2p_noa_param.uc_count);
         us_len = OAL_SIZEOF(mac_cfg_p2p_noa_param_stru);
         WAL_WRITE_MSG_HDR_INIT(&st_write_msg, WLAN_CFGID_SET_P2P_PS_NOA, OAL_SIZEOF(mac_cfg_p2p_noa_param_stru));
-        oal_memcopy(st_write_msg.auc_value, &st_p2p_noa_param, OAL_SIZEOF(mac_cfg_p2p_noa_param_stru));
+        oal_memcmp(st_write_msg.auc_value, &st_p2p_noa_param, OAL_SIZEOF(mac_cfg_p2p_noa_param_stru));
     }
     else if (0 == (oal_strcmp("statistics", ac_name)))
     {
@@ -12339,7 +12339,7 @@ OAL_STATIC oal_uint32  wal_hipriv_set_p2p_ps(oal_net_device_stru *pst_net_dev, o
 
         us_len = OAL_SIZEOF(mac_cfg_p2p_stat_param_stru);
         WAL_WRITE_MSG_HDR_INIT(&st_write_msg, WLAN_CFGID_SET_P2P_PS_STAT, us_len);
-        oal_memcopy(st_write_msg.auc_value, &st_p2p_stat_param, us_len);
+        oal_memcmp(st_write_msg.auc_value, &st_p2p_stat_param, us_len);
         OAM_INFO_LOG2(0, OAM_SF_CFG, "{wal_hipriv_set_p2p_ps statistics::ctrl[%d], len:%d!}\r\n",
                         st_p2p_stat_param.uc_p2p_statistics_ctrl, us_len);
 #else
@@ -13132,7 +13132,7 @@ OAL_STATIC oal_uint32  wal_hipriv_get_smps_info(oal_net_device_stru *pst_net_dev
     /***************************************************************************
                               抛事件到wal层处理
     ***************************************************************************/
-    oal_memcopy(st_write_msg.auc_value, pc_param, OAL_STRLEN(pc_param));
+    oal_memcmp(st_write_msg.auc_value, pc_param, OAL_STRLEN(pc_param));
 
     st_write_msg.auc_value[OAL_STRLEN(pc_param)] = '\0';
 
@@ -13333,7 +13333,7 @@ OAL_STATIC oal_uint32  wal_hipriv_set_ampdu_mmss(oal_net_device_stru *pst_net_de
     WAL_WRITE_MSG_HDR_INIT(&st_write_msg, WLAN_CFGID_AMPDU_MMSS, OAL_SIZEOF(st_ampdu_mmss_cfg));
 
     /* 填写消息体，参数 */
-    oal_memcopy(st_write_msg.auc_value, &st_ampdu_mmss_cfg, OAL_SIZEOF(st_ampdu_mmss_cfg));
+    oal_memcmp(st_write_msg.auc_value, &st_ampdu_mmss_cfg, OAL_SIZEOF(st_ampdu_mmss_cfg));
 
     l_ret = wal_send_cfg_event(pst_net_dev,
                                WAL_MSG_TYPE_WRITE,
@@ -14214,7 +14214,7 @@ OAL_STATIC oal_uint32  wal_hipriv_get_all_reg_value(oal_net_device_stru *pst_net
     /***************************************************************************
                               抛事件到wal层处理
     ***************************************************************************/
-    oal_memcopy(st_write_msg.auc_value, pc_param, OAL_STRLEN(pc_param));
+    oal_memcmp(st_write_msg.auc_value, pc_param, OAL_STRLEN(pc_param));
 
     st_write_msg.auc_value[OAL_STRLEN(pc_param)] = '\0';
 

@@ -333,7 +333,7 @@ OAL_STATIC OAL_INLINE oal_void hmac_amsdu_build_netbuf(hmac_vap_stru *pst_vap, h
 
     us_offset = (oal_uint16)oal_netbuf_get_len(pst_dest_buf);
     oal_netbuf_put(pst_dest_buf, us_buf_len);
-    oal_memcopy(oal_netbuf_data(pst_dest_buf) + us_offset, oal_netbuf_data(pst_buf), us_buf_len);
+    oal_memcmp(oal_netbuf_data(pst_dest_buf) + us_offset, oal_netbuf_data(pst_buf), us_buf_len);
 
     oal_netbuf_free(pst_buf);
 
@@ -352,7 +352,7 @@ OAL_STATIC OAL_INLINE oal_uint32 hmac_amsdu_alloc_netbuf(hmac_amsdu_stru *pst_am
     /* ×ÓÖ¡Á´ÈëamsduÎ²²¿ */
     oal_netbuf_add_to_list_tail(pst_dest_buf, &pst_amsdu->st_msdu_head);
 
-    oal_memcopy(oal_netbuf_cb(pst_dest_buf), oal_netbuf_cb(pst_buf), OAL_SIZEOF(mac_tx_ctl_stru));
+    oal_memcmp(oal_netbuf_cb(pst_dest_buf), oal_netbuf_cb(pst_buf), OAL_SIZEOF(mac_tx_ctl_stru));
 
     oal_netbuf_copy_queue_mapping(pst_dest_buf, pst_buf);
 

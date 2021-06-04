@@ -909,7 +909,7 @@ static void gt1x_put_test_result(
 	char statistics_data[STATISTICS_DATA_LEN] = {0};
 
 	if (gt1x_ts->dev_data->ts_platform_data->chip_data->rawdata_newformatflag == TS_RAWDATA_NEWFORMAT){
-		gt1x_put_test_result_newformat(info,ts_test);
+//		gt1x_put_test_result_newformat(info,ts_test);
 		return;
 	}
 	

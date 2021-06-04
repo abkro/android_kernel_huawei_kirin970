@@ -232,7 +232,7 @@ oal_uint32 oam_log_get_ratelimit_param(
         return OAL_ERR_CODE_PTR_NULL;
     }
 
-    oal_memcopy(pst_printk_ratelimit, &g_st_oam_mng_ctx.st_log_ctx.st_ratelimit[en_ratelimit_type],
+    oal_memcmp(pst_printk_ratelimit, &g_st_oam_mng_ctx.st_log_ctx.st_ratelimit[en_ratelimit_type],
                 OAL_SIZEOF(oam_ratelimit_stru));
 
     return ul_ret;
@@ -433,7 +433,7 @@ oal_uint32 oam_get_feature_name( oam_feature_enum_uint8     en_feature_id,
     uc_feature_len = (oal_uint8)OAL_STRLEN((oal_int8*)gst_oam_feature_list[en_feature_id].auc_feature_name_abbr);
     uc_size = (uc_size > uc_feature_len) ? uc_feature_len : uc_size;
 
-    oal_memcopy(puc_feature_name, gst_oam_feature_list[en_feature_id].auc_feature_name_abbr, uc_size);
+    oal_memcmp(puc_feature_name, gst_oam_feature_list[en_feature_id].auc_feature_name_abbr, uc_size);
 
     return OAL_SUCC;
 }

@@ -3728,7 +3728,7 @@ int focal_get_raw_dataNewformat(
 	int ret = 0;
 	int i = 0;
 	struct focal_platform_data *pdata = NULL;
-	struct ts_rawdata_info_new* infonew = info;
+//	struct ts_rawdata_info_new* infonew = info;
 
 	TS_LOG_INFO("%s:focal get rawdata called for new format\n", __func__);
 
@@ -3808,7 +3808,7 @@ int focal_get_raw_dataNewformat(
 			__func__, ret);
 		goto free_mem;
 	}
-	ret =  focal_start_test_tp(params, infonew);
+//	ret =  focal_start_test_tp(params, infonew);
 	if (!ret)
 		TS_LOG_INFO("%s:tp test pass\n", __func__);
 	else

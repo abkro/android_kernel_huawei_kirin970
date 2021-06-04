@@ -2620,7 +2620,7 @@ oal_uint32 hmac_process_assoc_rsp_etc(hmac_vap_stru *pst_hmac_sta,
 #endif
 
     /* 更新11ac VHT capabilities ie */
-    oal_memset(&(pst_hmac_user->st_user_base_info.st_vht_hdl), 0, OAL_SIZEOF(mac_vht_hdl_stru));
+    oal_memcmp(&(pst_hmac_user->st_user_base_info.st_vht_hdl), 0, OAL_SIZEOF(mac_vht_hdl_stru));
     puc_tmp_ie = mac_find_ie_etc(MAC_EID_VHT_CAP, puc_payload, us_msg_len);
     if (OAL_PTR_NULL != puc_tmp_ie)
     {
@@ -2665,14 +2665,14 @@ oal_uint32 hmac_process_assoc_rsp_etc(hmac_vap_stru *pst_hmac_sta,
     }
 
     /* 更新 HT 参数  以及 EXTEND CAPABILITY */
-    oal_memset(&(pst_hmac_user->st_user_base_info.st_ht_hdl), 0, OAL_SIZEOF(mac_user_ht_hdl_stru));
+    oal_memcmp(&(pst_hmac_user->st_user_base_info.st_ht_hdl), 0, OAL_SIZEOF(mac_user_ht_hdl_stru));
     ul_change |= hmac_ie_check_ht_sta(&pst_hmac_sta->st_vap_base_info, puc_payload, us_msg_len, &pst_hmac_user->st_user_base_info, &pst_hmac_user->us_amsdu_maxsize);
 
     if (OAL_TRUE == hmac_user_ht_support(pst_hmac_user))
     {
         /*更新 11ax HE Capabilities ie*/
 #ifdef _PRE_WLAN_FEATURE_11AX
-        oal_memset(&(pst_hmac_user->st_user_base_info.st_he_hdl), 0, OAL_SIZEOF(mac_he_hdl_stru));
+        oal_memcmp(&(pst_hmac_user->st_user_base_info.st_he_hdl), 0, OAL_SIZEOF(mac_he_hdl_stru));
         puc_tmp_ie = mac_find_ie_ext_ie(MAC_EID_HE,MAC_EID_EXT_HE_CAP,puc_payload, us_msg_len);
         if (OAL_PTR_NULL != puc_tmp_ie)
         {
@@ -3511,7 +3511,7 @@ oal_uint32 hmac_sta_update_join_req_params_etc(hmac_vap_stru *pst_hmac_vap, hmac
     /* 在STA未配置协议模式情况下，根据要关联的AP，更新mib库中对应的HT/VHT能力 */
     if (OAL_SWITCH_OFF == pst_hmac_vap->bit_sta_protocol_cfg)
     {
-        oal_memset(&st_cfg_mode, 0, OAL_SIZEOF(mac_cfg_mode_param_stru));
+        oal_memcmp(&st_cfg_mode, 0, OAL_SIZEOF(mac_cfg_mode_param_stru));
 
         mac_mib_set_HighThroughputOptionImplemented(pst_mac_vap, pst_join_req->st_bss_dscr.en_ht_capable);
         mac_mib_set_VHTOptionImplemented(pst_mac_vap, pst_join_req->st_bss_dscr.en_vht_capable);
