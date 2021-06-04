@@ -398,7 +398,7 @@ oal_uint32 hmac_config_11i_get_key_etc(mac_vap_stru *pst_mac_vap, oal_uint16 us_
 
 
     /*4.1 ÃÜÔ¿¸³Öµ×ª»»*/
-    oal_memset(&st_key, 0, sizeof(st_key));
+    oal_memcmp(&st_key, 0, sizeof(st_key));
     st_key.key     = pst_priv_key->auc_key;
     st_key.key_len = (oal_int32)pst_priv_key->ul_key_len;
     st_key.seq     = pst_priv_key->auc_seq;

@@ -383,7 +383,7 @@ OAL_STATIC oal_int32 wal_cfgvendor_set_random_mac_oui(oal_wiphy_stru *pst_wiphy,
    /* 随机mac地址前3字节(mac oui)由Android下发,wps pbc场景和hilink关联场景会将此3字节清0 */
 //        oal_memcmp(auc_random_mac_oui, oal_nla_data(p_data), WLAN_RANDOM_MAC_OUI_LEN);
         OAM_WARNING_LOG3(0, OAM_SF_ANY, "{wal_cfgvendor_set_random_mac_oui::mac_ou:0x%.2x:%.2x:%.2x}\r\n",
-                      auc_random_mac_oui[0], auc_random_mac_oui[1], auc_random_mac_oui[2]);
+//                      auc_random_mac_oui[0], auc_random_mac_oui[1], auc_random_mac_oui[2]);
     }
     else
     {

@@ -1600,7 +1600,7 @@ int production_test_data(char *path_limits, int stop_on_fail, TestToDo *todo,str
 
 	TS_LOG_INFO("%s: test starting...\n", __func__);
 	struct fts_ts_info *fts_info = fts_get_info();
-	fd = request_firmware(&(fts_info->fw),path_limits, fts_info->i2c_cmd_dev);
+//	fd = request_firmware(fts_info->fw),path_limits, fts_info->i2c_cmd_dev);
 	TS_LOG_INFO("%s Start to reading %s...:%d\n", __func__, path_limits,fd);
 	if(fd != 0) {
 		TS_LOG_ERR("%s file not found: ERROR %02X\n", __func__, ERROR_FILE_NOT_FOUND);

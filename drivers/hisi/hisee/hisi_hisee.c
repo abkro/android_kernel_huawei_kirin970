@@ -915,14 +915,14 @@ static void show_hisee_module_status(char *buff)
 	char *index_name = "rpmb_is_ready=";
 
 	snprintf(counter_value, sizeof(counter_value), "%d\n", g_hisee_data.rpmb_is_ready);
-	strncpy(buff, index_name, strlen(index_name));
-	strncpy(buff + strlen(buff), counter_value, strlen(counter_value));
+//	strncpy(buff, index_name, strlen(index_name));
+//	strncpy(buff + strlen(buff), counter_value, strlen(counter_value));
 
 	memset(counter_value, 0, 12);
 	index_name = "smc_cmd_running=";
 	snprintf(counter_value, sizeof(counter_value), "%d\n", g_hisee_data.smc_cmd_running);
-	strncpy(buff + strlen(buff), index_name, strlen(index_name));
-	strncpy(buff + strlen(buff), counter_value, strlen(counter_value));
+//	strncpy(buff + strlen(buff), index_name, strlen(index_name));
+//	strncpy(buff + strlen(buff), counter_value, strlen(counter_value));
 	return;
 }
 
@@ -952,7 +952,7 @@ static ssize_t hisee_powerctrl_show(struct device *dev, struct device_attribute 
 		break;
 	default:
 		pr_err("%s(): invalid powerctrl status\n", __func__);
-		strncpy(buf, "0", sizeof("0"));
+//		strncpy(buf, "0", sizeof("0"));
 		return strlen(buf);
 	}
 	/*save error no in the buf of user.*/
@@ -1084,7 +1084,7 @@ static ssize_t hisee_ioctl_show(struct device *dev, struct device_attribute *att
 	}
 	if (i == ARRAY_SIZE(g_errcode_items_des)) {
 		pr_err("%s(): can't find errcode=%d definition\n", __func__, err_code);
-		strncpy(buf, "-1,failed!", sizeof("-1,failed!"));
+//		strncpy(buf, "-1,failed!", sizeof("-1,failed!"));
 		return strlen(buf);
 	}
 	if (HISEE_OK == err_code) {

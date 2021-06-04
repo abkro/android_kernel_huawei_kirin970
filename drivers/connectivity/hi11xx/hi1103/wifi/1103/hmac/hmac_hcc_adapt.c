@@ -46,7 +46,7 @@ extern oal_uint32 hmac_hcc_tx_data_etc(frw_event_mem_stru * pst_hcc_event_mem, o
 *****************************************************************************/
 oal_void hmac_tx_net_queue_map_init_etc(oal_void)
 {
-    oal_memset(g_wlan_queue_to_dmac_queue,DATA_LO_QUEUE,OAL_SIZEOF(g_wlan_queue_to_dmac_queue));
+    oal_memcmp(g_wlan_queue_to_dmac_queue,DATA_LO_QUEUE,OAL_SIZEOF(g_wlan_queue_to_dmac_queue));
 #ifdef _PRE_WLAN_FEATURE_OFFLOAD_FLOWCTL
     g_wlan_queue_to_dmac_queue[WLAN_HI_QUEUE] = DATA_HI_QUEUE;
     g_wlan_queue_to_dmac_queue[WLAN_NORMAL_QUEUE] = DATA_LO_QUEUE;
@@ -100,7 +100,7 @@ OAL_STATIC DECLARE_WIFI_PANIC_STRU(hmac_panic_hcc_adapt,hmac_tx_event_pkts_info_
 
 oal_void hmac_tx_sched_info_init_etc(oal_void)
 {
-    oal_memset(g_hcc_sched_stat,DATA_LO_QUEUE,OAL_SIZEOF(g_hcc_sched_stat));
+    oal_memcmp(g_hcc_sched_stat,DATA_LO_QUEUE,OAL_SIZEOF(g_hcc_sched_stat));
 
     /*set the event sched PRI, TBD*/
     g_hcc_sched_stat[FRW_EVENT_TYPE_HIGH_PRIO] = DATA_HI_QUEUE;
@@ -116,7 +116,7 @@ oal_void hmac_tx_sched_info_init_etc(oal_void)
     g_hcc_sched_stat[FRW_EVENT_TYPE_TIMEOUT] = DATA_HI_QUEUE;
     g_hcc_sched_stat[FRW_EVENT_TYPE_DMAC_MISC] = DATA_HI_QUEUE;
 
-    oal_memset(g_hcc_flowctrl_stat,HCC_FC_NONE,OAL_SIZEOF(g_hcc_flowctrl_stat));
+    oal_memcmp(g_hcc_flowctrl_stat,HCC_FC_NONE,OAL_SIZEOF(g_hcc_flowctrl_stat));
 #if 0
     g_hcc_flowctrl_stat[FRW_EVENT_TYPE_HIGH_PRIO] = HCC_FC_NONE;
     g_hcc_flowctrl_stat[FRW_EVENT_TYPE_HOST_CRX] = HCC_FC_NONE;

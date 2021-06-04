@@ -968,7 +968,7 @@ static unsigned int hook_local_in(const struct nf_hook_ops *ops,
 
 static struct nf_hook_ops net_hooks[] = {
 	{
-		.hook		= hook_local_in,
+//		.hook		= hook_local_in,
 #if (LINUX_VERSION_CODE < KERNEL_VERSION(4,4,0))
 		.owner		= THIS_MODULE,
 #endif
@@ -977,7 +977,7 @@ static struct nf_hook_ops net_hooks[] = {
 		.priority	= NF_IP_PRI_FILTER - 1,
 	},
 	{
-		.hook		= hook_local_out,
+//		.hook		= hook_local_out,
 #if (LINUX_VERSION_CODE < KERNEL_VERSION(4,4,0))
 		.owner		= THIS_MODULE,
 #endif

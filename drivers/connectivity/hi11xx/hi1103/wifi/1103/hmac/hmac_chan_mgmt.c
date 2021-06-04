@@ -419,7 +419,7 @@ oal_void  hmac_chan_multi_switch_to_new_channel_etc(mac_vap_stru *pst_mac_vap, o
 
 oal_void  hmac_chan_sync_init_etc(mac_vap_stru *pst_mac_vap, dmac_set_chan_stru *pst_set_chan)
 {
-    oal_memset(pst_set_chan, 0, OAL_SIZEOF(dmac_set_chan_stru));
+    oal_memcmp(pst_set_chan, 0, OAL_SIZEOF(dmac_set_chan_stru));
     oal_memcopy(&pst_set_chan->st_channel, &pst_mac_vap->st_channel,
                     OAL_SIZEOF(mac_channel_stru));
     oal_memcopy(&pst_set_chan->st_ch_switch_info, &pst_mac_vap->st_ch_switch_info,

@@ -178,7 +178,7 @@ oal_int32   hmac_cfg80211_dump_survey_etc(oal_wiphy_stru *pst_wiphy, oal_net_dev
         return -OAL_EINVAL;
     }
 
-    oal_memset(pst_info, 0, OAL_SIZEOF(oal_survey_info_stru));
+    oal_memcmp(pst_info, 0, OAL_SIZEOF(oal_survey_info_stru));
 
     pst_mac_vap = OAL_NET_DEV_PRIV(pst_netdev);
     if (!pst_mac_vap)

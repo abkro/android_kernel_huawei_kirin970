@@ -1010,7 +1010,7 @@ oal_uint32  hmac_config_add_vap_etc(mac_vap_stru *pst_vap, oal_uint16 us_len, oa
     /* 将申请到的mac_vap空间挂到net_device ml_priv指针上去 */
     OAL_NET_DEV_PRIV(pst_param->pst_net_dev) = &pst_hmac_vap->st_vap_base_info;
 
-    oal_memset(pst_hmac_vap->auc_dscp_tid_map,HMAC_DSCP_VALUE_INVALID,HMAC_MAX_DSCP_VALUE_NUM);
+    oal_memcmp(pst_hmac_vap->auc_dscp_tid_map,HMAC_DSCP_VALUE_INVALID,HMAC_MAX_DSCP_VALUE_NUM);
 #ifdef _PRE_WLAN_FEATURE_SINGLE_PROXYSTA
     hmac_proxysta_init_vap(pst_hmac_vap, pst_param);
 #endif
@@ -5481,7 +5481,7 @@ oal_uint32  hmac_config_clean_dscp_tid_map(mac_vap_stru *pst_mac_vap, oal_uint16
         return OAL_ERR_CODE_PTR_NULL;
     }
 
-    oal_memset(pst_hmac_vap->auc_dscp_tid_map, HMAC_DSCP_VALUE_INVALID, HMAC_MAX_DSCP_VALUE_NUM);
+    oal_memcmp(pst_hmac_vap->auc_dscp_tid_map, HMAC_DSCP_VALUE_INVALID, HMAC_MAX_DSCP_VALUE_NUM);
     OAM_WARNING_LOG0(pst_mac_vap->uc_vap_id, OAM_SF_CFG, "{hmac_config_clean_dscp_tid_map::dscp_tid_map is cleaned\r\n.}");
     return OAL_SUCC;
 }
@@ -14973,7 +14973,7 @@ OAL_STATIC oal_ssize_t hmac_alg_test_result_proc_read(oal_device_stru *dev, oal_
     {
         return 0;
     }
-    oal_memset(pst_config, 0, 128);
+    oal_memcmp(pst_config, 0, 128);
     pst_config->uc_argc = 2;
     pst_config->auc_argv_offset[0] = 0;
     pst_config->auc_argv_offset[1] = 5;
@@ -15059,7 +15059,7 @@ oal_int32  hmac_alg_test_main_common_init(oal_void)
 {
     oal_uint32  ul_ret;
 
-    oal_memset(&g_st_alg_test_hmac, 0, OAL_SIZEOF(g_st_alg_test_hmac));
+    oal_memcmp(&g_st_alg_test_hmac, 0, OAL_SIZEOF(g_st_alg_test_hmac));
 
     ul_ret = hmac_alg_test_result_create_proc(OAL_PTR_NULL);
     if (OAL_SUCC != ul_ret)
@@ -18131,7 +18131,7 @@ oal_uint32 hmac_config_receive_all_sta_rssi(mac_vap_stru *pst_mac_vap, oal_uint8
     }
 
     pst_sta_rssi_stru = (hmac_notify_all_sta_rssi_stru *)frw_get_event_payload(pst_event_mem);
-    oal_memset(pst_sta_rssi_stru, 0, OAL_SIZEOF(hmac_notify_all_sta_rssi_stru));
+    oal_memcmp(pst_sta_rssi_stru, 0, OAL_SIZEOF(hmac_notify_all_sta_rssi_stru));
 
     for (us_user_idx = 0; us_user_idx < MAC_RES_MAX_USER_LIMIT; us_user_idx++)
     {
@@ -18161,7 +18161,7 @@ oal_uint32 hmac_config_receive_all_sta_rssi(mac_vap_stru *pst_mac_vap, oal_uint8
                 return OAL_ERR_CODE_ALLOC_MEM_FAIL;
             }
             pst_sta_rssi_stru = (hmac_notify_all_sta_rssi_stru *)frw_get_event_payload(pst_event_mem);
-            oal_memset(pst_sta_rssi_stru, 0, OAL_SIZEOF(hmac_notify_all_sta_rssi_stru));
+            oal_memcmp(pst_sta_rssi_stru, 0, OAL_SIZEOF(hmac_notify_all_sta_rssi_stru));
             pst_sta_rssi_stru->ul_start_index = us_user_idx;
         }
 
