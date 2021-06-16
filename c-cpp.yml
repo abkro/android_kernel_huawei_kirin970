@@ -1,0 +1,21 @@
+name: C/C++ CI
+
+on:
+  push:
+    branches: [ hal-9 ]
+  pull_request:
+    branches: [ hal-9 ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: out
+      run: mkdir out
+    - name: configure
+      run: make ARCH=arm64 O=out charlotte_defconfig
+    - name: make
+      run: make O=out -j8
